@@ -34,7 +34,7 @@ Le contenu (copy, case studies) vit dans `i18n/messages/` et `doc/`. Le catalogu
 
 **Mis en avant (case studies) :** FleetScan (`scratch_tracker`), Shadow, Take The Crown (`1V1_streetball`), Spill Crumb (`spill_crumb_V1`).
 
-**Secondaires :** Jikowood, Enna, Maxwel Jones, Folio Photo, Purpose Sport — voir les URLs dans le catalogue.
+**Secondaires :** Jikowood, Enna, Maxwel Jones, Hors Cadre (nana), Purpose Sport — voir les URLs dans le catalogue.
 
 Inventaire détaillé et critères de sélection : [`doc/portfolio-projects-inventory.md`](doc/portfolio-projects-inventory.md).
 

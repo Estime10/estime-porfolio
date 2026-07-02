@@ -208,18 +208,28 @@
         ],
         "stack": ["Next.js 15", "Tailwind 4", "i18n", "GSAP", "Web3Forms"]
       },
-      "folio-photo": {
-        "name": "PhotoVibes",
-        "tagline": "Immersive photography portfolio",
+      "nana": {
+        "name": "Hors Cadre",
+        "tagline": "Photographer portfolio — movement, moment and emotion",
         "type": "Creative website",
-        "status": "Release 1.0.0",
-        "tags": ["Creative direction", "Gallery UX", "Performance trade-offs"],
-        "summary": "A production photography portfolio with category galleries, lightbox flows, page transitions, and seeded shuffle behavior.",
+        "status": "In progress",
+        "tags": ["Gallery", "Liquid Glass", "Trilingual i18n", "Admin Phase 2"],
+        "summary": "Premium showcase for a photographer: GSAP splash, masonry gallery by album, fullscreen modal and Liquid Glass aesthetic; admin back-office and Supabase in Phase 2.",
         "highlights": [
-          "Masonry layout and blur-card modal interactions",
-          "GSAP + Framer Motion across around 62 visual assets"
+          "react-photo-album masonry with free downloads",
+          "GSAP splash, cover → album transitions and reduced motion",
+          "233 Vitest tests + Playwright E2E, features/ architecture"
         ],
-        "stack": ["Next.js 16", "Tailwind 4", "i18n", "GSAP", "Framer Motion"]
+        "stack": [
+          "Next.js 16",
+          "Tailwind 4",
+          "next-intl",
+          "GSAP",
+          "react-photo-album",
+          "Supabase",
+          "Vitest",
+          "Playwright"
+        ]
       },
       "purpose-sport": {
         "name": "Purpose Sport",

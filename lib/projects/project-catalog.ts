@@ -10,7 +10,7 @@ export const SECONDARY_PROJECT_SLUGS = [
   "jikowood",
   "enna",
   "maxweljones",
-  "folio-photo",
+  "nana",
   "purpose-sport",
 ] as const;
 
@@ -51,11 +51,10 @@ export const PROJECT_CATALOG: readonly ProjectCatalogEntry[] = [
     liveUrl: "https://www.maxweljones.com",
   },
   {
-    slug: "folio-photo",
+    slug: "nana",
     tier: "secondary",
     year: 2026,
     hasCaseStudy: false,
-    liveUrl: "https://photovibesbyshana.vercel.app/",
   },
   {
     slug: "purpose-sport",

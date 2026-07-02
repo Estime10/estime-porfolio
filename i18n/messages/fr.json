@@ -205,15 +205,28 @@
         "highlights": ["Architecture features/ documentée", "Network slide et annuaire membres"],
         "stack": ["Next.js 15", "Tailwind 4", "i18n", "GSAP", "Web3Forms"]
       },
-      "folio-photo": {
-        "name": "PhotoVibes",
-        "tagline": "Portfolio photographique immersif",
+      "nana": {
+        "name": "Hors Cadre",
+        "tagline": "Portfolio photographe — mouvement, moment et émotion",
         "type": "Site créatif",
-        "status": "Release 1.0.0",
-        "summary": "Portfolio visuel en production avec galeries par catégories et lightbox ; zone contact maintenue en placeholder.",
-        "tags": ["Prod", "Galerie immersive", "Créatif", "Contact placeholder"],
-        "highlights": ["Masonry et blur-card modal", "GSAP + Framer Motion sur ~62 visuels"],
-        "stack": ["Next.js 16", "Tailwind 4", "i18n", "GSAP", "Framer Motion"]
+        "status": "En cours",
+        "summary": "Vitrine premium pour photographe : splash GSAP, galerie masonry par albums, modale plein écran et esthétique Liquid Glass ; back-office admin et Supabase en Phase 2.",
+        "tags": ["Galerie", "Liquid Glass", "i18n trilingue", "Admin Phase 2"],
+        "highlights": [
+          "react-photo-album masonry et téléchargement libre",
+          "GSAP splash, transitions cover → album et reduced motion",
+          "233 tests Vitest + E2E Playwright, architecture features/"
+        ],
+        "stack": [
+          "Next.js 16",
+          "Tailwind 4",
+          "next-intl",
+          "GSAP",
+          "react-photo-album",
+          "Supabase",
+          "Vitest",
+          "Playwright"
+        ]
       },
       "purpose-sport": {
         "name": "Purpose Sport",

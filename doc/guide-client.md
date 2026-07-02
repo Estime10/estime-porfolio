@@ -186,13 +186,13 @@ Projets présentés en détail avec page dédiée :
 
 Sites livrés en production, accessibles via **« Voir le site en ligne »** :
 
-| Projet              | Secteur                             | Lien                                                                  |
-| ------------------- | ----------------------------------- | --------------------------------------------------------------------- |
-| **Jikowood**        | Artisan menuisier — vitrine premium | En cours (pas encore en ligne)                                        |
-| **Enna Consulting** | Consulting RH B2B                   | [ennabv.be](https://www.ennabv.be)                                    |
-| **Maxwel Jones**    | Holding corporate                   | [maxweljones.com](https://www.maxweljones.com)                        |
-| **PhotoVibes**      | Portfolio photographique            | [photovibesbyshana.vercel.app](https://photovibesbyshana.vercel.app/) |
-| **Purpose Sport**   | Management sportif basket           | [purpose-sport.com](https://purpose-sport.com)                        |
+| Projet              | Secteur                             | Lien                                           |
+| ------------------- | ----------------------------------- | ---------------------------------------------- |
+| **Jikowood**        | Artisan menuisier — vitrine premium | En cours (pas encore en ligne)                 |
+| **Enna Consulting** | Consulting RH B2B                   | [ennabv.be](https://www.ennabv.be)             |
+| **Maxwel Jones**    | Holding corporate                   | [maxweljones.com](https://www.maxweljones.com) |
+| **Hors Cadre**      | Portfolio photographe premium       | En cours de déploiement                        |
+| **Purpose Sport**   | Management sportif basket           | [purpose-sport.com](https://purpose-sport.com) |
 
 ---
 

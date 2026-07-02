@@ -20,22 +20,22 @@
 `/Users/estimevangu/Desktop/REPOSITORIES/creativity/mes-apps/`
 
 **Projets analysés (8) :**  
-`enna` · `folio_photo_vbs` · `jikowood_refonte` · `shadow` · `maxweljones` · `purpose_sport_latest` · `scratch_tracker` · `portfolio_pro`
+`enna` · `nana` · `jikowood_refonte` · `shadow` · `maxweljones` · `purpose_sport_latest` · `scratch_tracker` · `portfolio_pro`
 
 ---
 
 ## Vue d’ensemble — Matrice rapide
 
-| Projet                            | Type                                 | Année   | Statut              | Fullstack | Motion / UX | Tests        | Prod documentée                      | Tier portfolio          |
-| --------------------------------- | ------------------------------------ | ------- | ------------------- | --------- | ----------- | ------------ | ------------------------------------ | ----------------------- |
-| **FleetScan** (`scratch_tracker`) | App métier B2B                       | 2026    | En cours            | ★★★       | ★★          | ★★★          | Non (MVP)                            | **Principal**           |
-| **Shadow**                        | App privée (messagerie + calendrier) | 2026    | En cours            | ★★★       | ★★          | ★★★          | Pré-deploy                           | **Principal**           |
-| **Jikowood refonte**              | Vitrine premium artisan              | 2026    | En cours            | ★         | ★★★         | ★★★          | Partiel                              | **Principal**           |
-| **portfolio_pro**                 | Portfolio product engineer           | 2026    | En cours (shell OK) | ★         | ★★★         | ★ (lint/tsc) | À déployer                           | **Principal** (meta)    |
-| **Enna**                          | Vitrine B2B RH                       | 2026    | Release 1.0.0       | ★         | ★★          | ★            | ★★★ (`ennabv.be`)                    | **Secondaire**          |
-| **Maxwel Jones**                  | Vitrine corporate one-page           | 2025–26 | Release 1.0.0       | ★         | ★★          | —            | ★★★ (`maxweljones.com`)              | **Secondaire**          |
-| **folio_photo_vbs**               | Portfolio photo immersif             | 2026    | Release 1.0.0       | ★         | ★★★         | —            | ★★★ (`photovibesbyshana.vercel.app`) | **Secondaire** (visuel) |
-| **Purpose Sport**                 | Vitrine agence sport                 | 2025    | Release 1.0.0       | ★         | ★★          | ★            | ★★★ (`purpose-sport.com`)            | **Secondaire**          |
+| Projet                            | Type                                 | Année   | Statut              | Fullstack | Motion / UX | Tests        | Prod documentée           | Tier portfolio          |
+| --------------------------------- | ------------------------------------ | ------- | ------------------- | --------- | ----------- | ------------ | ------------------------- | ----------------------- |
+| **FleetScan** (`scratch_tracker`) | App métier B2B                       | 2026    | En cours            | ★★★       | ★★          | ★★★          | Non (MVP)                 | **Principal**           |
+| **Shadow**                        | App privée (messagerie + calendrier) | 2026    | En cours            | ★★★       | ★★          | ★★★          | Pré-deploy                | **Principal**           |
+| **Jikowood refonte**              | Vitrine premium artisan              | 2026    | En cours            | ★         | ★★★         | ★★★          | Partiel                   | **Principal**           |
+| **portfolio_pro**                 | Portfolio product engineer           | 2026    | En cours (shell OK) | ★         | ★★★         | ★ (lint/tsc) | À déployer                | **Principal** (meta)    |
+| **Enna**                          | Vitrine B2B RH                       | 2026    | Release 1.0.0       | ★         | ★★          | ★            | ★★★ (`ennabv.be`)         | **Secondaire**          |
+| **Maxwel Jones**                  | Vitrine corporate one-page           | 2025–26 | Release 1.0.0       | ★         | ★★          | —            | ★★★ (`maxweljones.com`)   | **Secondaire**          |
+| **Hors Cadre** (`nana`)           | Portfolio photographe premium        | 2026    | En cours (Phase 1)  | ★★        | ★★★         | ★★★          | Déploiement à venir       | **Secondaire** (visuel) |
+| **Purpose Sport**                 | Vitrine agence sport                 | 2025    | Release 1.0.0       | ★         | ★★          | ★            | ★★★ (`purpose-sport.com`) | **Secondaire**          |
 
 ---
 
@@ -47,7 +47,7 @@
 VITRINES (conversion, narration, motion premium)
 ├── enna          → B2B, i18n, contact EmailJS, prod BE
 ├── jikowood      → artisan premium, galerie, Lenis, tests E2E
-├── folio_photo   → créatif photo, galerie / lightbox
+├── nana            → portfolio photographe, galerie masonry, Liquid Glass
 ├── maxweljones   → corporate, réseau, Web3Forms
 └── purpose_sport → data-driven (12 joueurs), vidéos
 
@@ -61,33 +61,33 @@ META
 
 ### 2. Patterns techniques récurrents (ton « signature »)
 
-| Pattern                                                 | Projets concernés                                          |
-| ------------------------------------------------------- | ---------------------------------------------------------- |
-| Next.js App Router + React 19                           | Tous                                                       |
-| i18n multi-locale (fr/en/nl)                            | enna, jikowood, folio, scratch, portfolio_pro              |
-| GSAP + `prefers-reduced-motion`                         | enna, jikowood, folio, maxweljones, portfolio_pro, scratch |
-| Framer Motion                                           | shadow, purpose_sport, folio, enna                         |
-| Supabase (auth + RLS + migrations)                      | shadow, scratch_tracker                                    |
-| Architecture `features/` stricte                        | shadow, scratch, jikowood, portfolio_pro                   |
-| Vitest (+ Playwright sur les plus matures)              | jikowood, shadow, scratch, enna                            |
-| Vitrine sans backend (données statiques / mock contact) | folio, jikowood (contact UI seul), enna (témoignages mock) |
+| Pattern                                                 | Projets concernés                                                                        |
+| ------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| Next.js App Router + React 19                           | Tous                                                                                     |
+| i18n multi-locale (fr/en/nl)                            | enna, jikowood, nana, scratch, portfolio_pro                                             |
+| GSAP + `prefers-reduced-motion`                         | enna, jikowood, nana, maxweljones, portfolio_pro, scratch                                |
+| Framer Motion                                           | shadow, purpose_sport, enna                                                              |
+| Supabase (auth + RLS + migrations)                      | shadow, scratch_tracker                                                                  |
+| Architecture `features/` stricte                        | shadow, scratch, jikowood, portfolio_pro                                                 |
+| Vitest (+ Playwright sur les plus matures)              | jikowood, shadow, scratch, enna, nana                                                    |
+| Vitrine sans backend (données statiques / mock contact) | nana (seed local, Supabase Phase 2), jikowood (contact UI seul), enna (témoignages mock) |
 
 ### 3. Narrative portfolio (ce que tu racontes)
 
 1. **Je construis des produits**, pas seulement des pages — Shadow + FleetScan prouvent auth, rôles, données, contraintes terrain.
-2. **Je soigne l’exécution frontend** — Jikowood, folio, portfolio_pro = motion, galerie, design system, détails.
+2. **Je soigne l’exécution frontend** — Jikowood, Hors Cadre (nana), portfolio_pro = motion, galerie, design system, détails.
 3. **Je livre en conditions réelles** — Enna, Maxwel Jones, Purpose Sport = domaines prod, SEO, conversion.
 4. **Je documente et j’architecture** — docs dans shadow/jikowood/maxweljones/scratch ; portfolio_pro = stratégie phases 1–7.
 
 ### 4. Gaps communs à combler avant publication
 
-| Gap                                           | Projets                                       | Action                                               |
-| --------------------------------------------- | --------------------------------------------- | ---------------------------------------------------- |
-| **Aucun screenshot marketing** dans les repos | Presque tous                                  | Captures desktop + mobile (prod ou staging)          |
-| **Pas de vidéo démo**                         | Tous sauf purpose (vidéos joueurs)            | 30–60 s par principal (Loom / enregistrement)        |
-| **Contact / formulaire mock**                 | jikowood (UI seul), folio (email placeholder) | Mentionner honnêtement en case study ou brancher     |
-| **Assets manquants en local**                 | purpose_sport (`og-image`, certaines images)  | Re-télécharger depuis prod ou Vercel                 |
-| **README générique**                          | folio, purpose                                | Remplacer par fiche projet dans portfolio uniquement |
+| Gap                                           | Projets                                      | Action                                               |
+| --------------------------------------------- | -------------------------------------------- | ---------------------------------------------------- |
+| **Aucun screenshot marketing** dans les repos | Presque tous                                 | Captures desktop + mobile (prod ou staging)          |
+| **Pas de vidéo démo**                         | Tous sauf purpose (vidéos joueurs)           | 30–60 s par principal (Loom / enregistrement)        |
+| **Contact / formulaire mock**                 | jikowood (UI seul)                           | Mentionner honnêtement en case study ou brancher     |
+| **Assets manquants en local**                 | purpose_sport (`og-image`, certaines images) | Re-télécharger depuis prod ou Vercel                 |
+| **README générique**                          | purpose                                      | Remplacer par fiche projet dans portfolio uniquement |
 
 ### 5. Lien avec `portfolio_pro` (roadmap contenu)
 
@@ -118,7 +118,7 @@ META
 ### Projets secondaires (3–6) — cartes plus courtes, visuelles
 
 - **Maxwel Jones** — polish corporate, animations, archi features/
-- **folio_photo_vbs** — direction artistique, galerie (fort visuel, faible backend)
+- **nana (Hors Cadre)** — direction artistique Liquid Glass, galerie masonry, 233 tests
 - **Purpose Sport** — secteur sport, roster + vidéos
 - **Enna** — si pas en case study complète
 
@@ -405,32 +405,33 @@ Secondaire fort en **polish front + structure** ; moins différenciant technique
 
 ---
 
-### 7. PhotoVibes — `folio_photo_vbs`
+### 7. Hors Cadre — `nana`
 
 #### Informations générales
 
-| Champ        | Valeur                                                                    |
-| ------------ | ------------------------------------------------------------------------- |
-| **Nom**      | Portfolio photo (PhotoVibes / Shana)                                      |
-| **Dossier**  | `mes-apps/folio_photo_vbs`                                                |
-| **Repo**     | `Estime10/folio_photo_vbs`                                                |
-| **Année**    | 2026                                                                      |
-| **Type**     | Portfolio photographique immersif                                         |
-| **Objectif** | Mettre en valeur travaux photo par catégories + Story / Gallery / Contact |
-| **Statut**   | Fonctionnel local — contact `contact@example.com` placeholder             |
+| Champ        | Valeur                                                                       |
+| ------------ | ---------------------------------------------------------------------------- |
+| **Nom**      | Hors Cadre (marque) — dépôt `nana`                                           |
+| **Dossier**  | `creativity/nana`                                                            |
+| **Repo**     | `Estime10/nana` (local)                                                      |
+| **Année**    | 2026                                                                         |
+| **Type**     | Portfolio photographe premium (Liquid Glass, galerie masonry)                |
+| **Objectif** | Vitrine immersive + back-office admin (upload massif, WebP) — Phase 2        |
+| **Statut**   | Phase 1 livrée (splash, home, galerie desktop, i18n fr/nl/en) — prod à venir |
 
 #### Stack
 
-Next.js 16, GSAP + Framer Motion, i18n fr/en/nl, ~62 images `public/images/`, masonry, lightbox, blur-card modal, seeded shuffle.
+Next.js 16, Tailwind 4, next-intl (cookie, sans segment URL), GSAP, react-photo-album, Zod, Vitest (233 tests) + Playwright E2E. Supabase CLI préparé (auth admin, Storage, migrations — Phase 2).
 
 #### Assets
 
-- ✅ **~62 photos** locales (basketball, brand, fitness, lifestyle, profile)
-- ❌ Screenshots UI, pas de tests
+- ✅ Seed galerie locale `features/gallery/data/` + images `public/images/gallery/`
+- ✅ Architecture `features/` documentée dans le README nana
+- ❌ Screenshots UI portfolio, pas encore déployé en prod
 
 #### Force portfolio
 
-**Visuel / motion** — carte secondaire courte avec galerie animée ; pas case study technique principale.
+**Visuel / motion / qualité d’ingénierie** — remplace l’ancien `folio_photo_vbs` (PhotoVibes). Carte secondaire : galerie masonry, transitions GSAP, tests solides ; case study technique possible après Phase 2 Supabase.
 
 ---
 
@@ -500,7 +501,7 @@ mes-apps/
 ├── jikowood_refonte/    → docs/ARCHITECTURE-CONVENTIONS.md
 ├── enna/                → PRESENTATION_CLIENT_SITE.md
 ├── maxweljones/         → docs/ARCHITECTURE_ANALYSIS.md
-├── folio_photo_vbs/     → public/images/
+├── nana/                → features/gallery/, README architecture
 └── purpose_sport_latest/→ data/data.ts, public/players/
 
 portfolio_pro/
