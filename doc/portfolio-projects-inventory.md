@@ -26,16 +26,16 @@
 
 ## Vue d’ensemble — Matrice rapide
 
-| Projet                            | Type                                 | Année   | Statut              | Fullstack | Motion / UX | Tests        | Prod documentée           | Tier portfolio          |
-| --------------------------------- | ------------------------------------ | ------- | ------------------- | --------- | ----------- | ------------ | ------------------------- | ----------------------- |
-| **FleetScan** (`scratch_tracker`) | App métier B2B                       | 2026    | En cours            | ★★★       | ★★          | ★★★          | Non (MVP)                 | **Principal**           |
-| **Shadow**                        | App privée (messagerie + calendrier) | 2026    | En cours            | ★★★       | ★★          | ★★★          | Pré-deploy                | **Principal**           |
-| **Jikowood refonte**              | Vitrine premium artisan              | 2026    | En cours            | ★         | ★★★         | ★★★          | Partiel                   | **Principal**           |
-| **portfolio_pro**                 | Portfolio product engineer           | 2026    | En cours (shell OK) | ★         | ★★★         | ★ (lint/tsc) | À déployer                | **Principal** (meta)    |
-| **Enna**                          | Vitrine B2B RH                       | 2026    | Release 1.0.0       | ★         | ★★          | ★            | ★★★ (`ennabv.be`)         | **Secondaire**          |
-| **Maxwel Jones**                  | Vitrine corporate one-page           | 2025–26 | Release 1.0.0       | ★         | ★★          | —            | ★★★ (`maxweljones.com`)   | **Secondaire**          |
-| **Hors Cadre** (`nana`)           | Portfolio photographe premium        | 2026    | En cours (Phase 1)  | ★★        | ★★★         | ★★★          | Déploiement à venir       | **Secondaire** (visuel) |
-| **Purpose Sport**                 | Vitrine agence sport                 | 2025    | Release 1.0.0       | ★         | ★★          | ★            | ★★★ (`purpose-sport.com`) | **Secondaire**          |
+| Projet                            | Type                                 | Année   | Statut              | Fullstack | Motion / UX | Tests        | Prod documentée                           | Tier portfolio          |
+| --------------------------------- | ------------------------------------ | ------- | ------------------- | --------- | ----------- | ------------ | ----------------------------------------- | ----------------------- |
+| **FleetScan** (`scratch_tracker`) | App métier B2B                       | 2026    | En cours            | ★★★       | ★★          | ★★★          | Non (MVP)                                 | **Principal**           |
+| **Shadow**                        | App privée (messagerie + calendrier) | 2026    | En cours            | ★★★       | ★★          | ★★★          | Pré-deploy                                | **Principal**           |
+| **Jikowood refonte**              | Vitrine premium artisan              | 2026    | En cours            | ★         | ★★★         | ★★★          | Partiel                                   | **Principal**           |
+| **portfolio_pro**                 | Portfolio product engineer           | 2026    | En cours (shell OK) | ★         | ★★★         | ★ (lint/tsc) | À déployer                                | **Principal** (meta)    |
+| **Enna**                          | Vitrine B2B RH                       | 2026    | Release 1.0.0       | ★         | ★★          | ★            | ★★★ (`ennabv.be`)                         | **Secondaire**          |
+| **Maxwel Jones**                  | Vitrine corporate one-page           | 2025–26 | Release 1.0.0       | ★         | ★★          | —            | ★★★ (`maxweljones.com`)                   | **Secondaire**          |
+| **Hors Cadre** (`nana`)           | Portfolio photographe premium        | 2026    | Release 1.0.0       | ★★        | ★★★         | ★★★          | ★★★ (`hors-cadre-photography.vercel.app`) | **Secondaire** (visuel) |
+| **Purpose Sport**                 | Vitrine agence sport                 | 2025    | Release 1.0.0       | ★         | ★★          | ★            | ★★★ (`purpose-sport.com`)                 | **Secondaire**          |
 
 ---
 
@@ -61,16 +61,16 @@ META
 
 ### 2. Patterns techniques récurrents (ton « signature »)
 
-| Pattern                                                 | Projets concernés                                                                        |
-| ------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| Next.js App Router + React 19                           | Tous                                                                                     |
-| i18n multi-locale (fr/en/nl)                            | enna, jikowood, nana, scratch, portfolio_pro                                             |
-| GSAP + `prefers-reduced-motion`                         | enna, jikowood, nana, maxweljones, portfolio_pro, scratch                                |
-| Framer Motion                                           | shadow, purpose_sport, enna                                                              |
-| Supabase (auth + RLS + migrations)                      | shadow, scratch_tracker                                                                  |
-| Architecture `features/` stricte                        | shadow, scratch, jikowood, portfolio_pro                                                 |
-| Vitest (+ Playwright sur les plus matures)              | jikowood, shadow, scratch, enna, nana                                                    |
-| Vitrine sans backend (données statiques / mock contact) | nana (seed local, Supabase Phase 2), jikowood (contact UI seul), enna (témoignages mock) |
+| Pattern                                                 | Projets concernés                                         |
+| ------------------------------------------------------- | --------------------------------------------------------- |
+| Next.js App Router + React 19                           | Tous                                                      |
+| i18n multi-locale (fr/en/nl)                            | enna, jikowood, nana, scratch, portfolio_pro              |
+| GSAP + `prefers-reduced-motion`                         | enna, jikowood, nana, maxweljones, portfolio_pro, scratch |
+| Framer Motion                                           | shadow, purpose_sport, enna                               |
+| Supabase (auth + RLS + migrations)                      | shadow, scratch_tracker, nana                             |
+| Architecture `features/` stricte                        | shadow, scratch, jikowood, portfolio_pro                  |
+| Vitest (+ Playwright sur les plus matures)              | jikowood, shadow, scratch, enna, nana                     |
+| Vitrine sans backend (données statiques / mock contact) | jikowood (contact UI seul), enna (témoignages mock)       |
 
 ### 3. Narrative portfolio (ce que tu racontes)
 
@@ -118,7 +118,7 @@ META
 ### Projets secondaires (3–6) — cartes plus courtes, visuelles
 
 - **Maxwel Jones** — polish corporate, animations, archi features/
-- **nana (Hors Cadre)** — direction artistique Liquid Glass, galerie masonry, 233 tests
+- **nana (Hors Cadre)** — galerie Supabase prod, atelier admin, Liquid Glass, 405 tests
 - **Purpose Sport** — secteur sport, roster + vidéos
 - **Enna** — si pas en case study complète
 
@@ -409,29 +409,34 @@ Secondaire fort en **polish front + structure** ; moins différenciant technique
 
 #### Informations générales
 
-| Champ        | Valeur                                                                       |
-| ------------ | ---------------------------------------------------------------------------- |
-| **Nom**      | Hors Cadre (marque) — dépôt `nana`                                           |
-| **Dossier**  | `creativity/nana`                                                            |
-| **Repo**     | `Estime10/nana` (local)                                                      |
-| **Année**    | 2026                                                                         |
-| **Type**     | Portfolio photographe premium (Liquid Glass, galerie masonry)                |
-| **Objectif** | Vitrine immersive + back-office admin (upload massif, WebP) — Phase 2        |
-| **Statut**   | Phase 1 livrée (splash, home, galerie desktop, i18n fr/nl/en) — prod à venir |
+| Champ        | Valeur                                                                                     |
+| ------------ | ------------------------------------------------------------------------------------------ |
+| **Nom**      | Hors Cadre (marque) — dépôt `nana`                                                         |
+| **Dossier**  | `creativity/nana`                                                                          |
+| **Repo**     | `Estime10/nana`                                                                            |
+| **Année**    | 2026                                                                                       |
+| **Type**     | Portfolio photographe premium mono-admin (public + atelier)                                |
+| **Objectif** | Vitrine immersive (galerie, masonry, téléchargement) + atelier privé (upload, publication) |
+| **Statut**   | **Release 1.0.0** — `https://hors-cadre-photography.vercel.app`                            |
 
 #### Stack
 
-Next.js 16, Tailwind 4, next-intl (cookie, sans segment URL), GSAP, react-photo-album, Zod, Vitest (233 tests) + Playwright E2E. Supabase CLI préparé (auth admin, Storage, migrations — Phase 2).
+Next.js 16, Tailwind 4, next-intl (fr/nl/en, cookie), GSAP, react-photo-album, Supabase (Auth, Postgres, Storage, RLS), Zod. ISR galerie, miniatures WebP, SEO (sitemap, robots, OG, hreflang). **405** tests Vitest + E2E public & atelier Playwright.
+
+#### Fonctionnalités clés
+
+- **Public :** splash GSAP, home, galerie albums publiés, masonry, modale plein écran, téléchargement, état vide soigné
+- **Atelier :** auth mono-admin, CRUD albums, upload massif WebP (jusqu'à 1 500 photos), drag & drop (albums + photos), publier/archiver/supprimer, aperçu public fidèle
+- **Sécurité :** segments admin dissimulés, RLS, `noindex` atelier
 
 #### Assets
 
-- ✅ Seed galerie locale `features/gallery/data/` + images `public/images/gallery/`
-- ✅ Architecture `features/` documentée dans le README nana
-- ❌ Screenshots UI portfolio, pas encore déployé en prod
+- ✅ Prod live — `hors-cadre-photography.vercel.app`
+- ✅ Docs : `docs/guide-vision-projet-nana.md`, `docs/guide-technique-developpeurs.md`
 
 #### Force portfolio
 
-**Visuel / motion / qualité d’ingénierie** — remplace l’ancien `folio_photo_vbs` (PhotoVibes). Carte secondaire : galerie masonry, transitions GSAP, tests solides ; case study technique possible après Phase 2 Supabase.
+**Visuel + produit fullstack mesuré** — remplace l'ancien `folio_photo_vbs` (PhotoVibes). Carte secondaire forte : galerie premium, atelier admin complet, Supabase prod-ready, couverture tests élevée.
 
 ---
 

@@ -143,15 +143,15 @@
     },
     "nana": {
       "name": "Hors Cadre",
-      "tagline": "Photographer portfolio — movement, moment and emotion",
+      "tagline": "Premium photographer portfolio — movement, moment and emotion",
       "type": "Creative website",
-      "status": "In progress",
-      "tags": ["Gallery", "Liquid Glass", "Trilingual i18n", "Admin Phase 2"],
-      "summary": "Premium showcase for a photographer: GSAP splash, masonry gallery by album, fullscreen modal and Liquid Glass aesthetic; admin back-office and Supabase in Phase 2.",
+      "status": "Release 1.0.0",
+      "tags": ["Prod", "Supabase gallery", "Admin studio", "Liquid Glass", "Trilingual i18n"],
+      "summary": "Mono-admin portfolio in production: Supabase gallery (masonry, free downloads), private studio (bulk WebP upload, publishing, drag & drop) and Liquid Glass aesthetic across three languages.",
       "highlights": [
-        "react-photo-album masonry with free downloads",
-        "GSAP splash, cover → album transitions and reduced motion",
-        "233 Vitest tests + Playwright E2E, features/ architecture"
+        "Full studio: album CRUD, upload up to 1,500 photos, thumbnails and faithful public preview",
+        "Supabase Auth/RLS/Storage, ISR, SEO (sitemap, OG, hreflang) and hidden admin segments",
+        "405 Vitest tests + public and studio Playwright E2E"
       ],
       "stack": [
         "Next.js 16",

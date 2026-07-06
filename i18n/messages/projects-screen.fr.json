@@ -140,15 +140,15 @@
     },
     "nana": {
       "name": "Hors Cadre",
-      "tagline": "Portfolio photographe — mouvement, moment et émotion",
+      "tagline": "Portfolio photographe premium — mouvement, moment et émotion",
       "type": "Site créatif",
-      "status": "En cours",
-      "summary": "Vitrine premium pour photographe : splash GSAP, galerie masonry par albums, modale plein écran et esthétique Liquid Glass ; back-office admin et Supabase en Phase 2.",
-      "tags": ["Galerie", "Liquid Glass", "i18n trilingue", "Admin Phase 2"],
+      "status": "Release 1.0.0",
+      "summary": "Portfolio mono-admin en production : galerie Supabase (masonry, téléchargement libre), atelier privé (upload WebP massif, publication, drag & drop) et esthétique Liquid Glass sur trois langues.",
+      "tags": ["Prod", "Galerie Supabase", "Atelier admin", "Liquid Glass", "i18n trilingue"],
       "highlights": [
-        "react-photo-album masonry et téléchargement libre",
-        "GSAP splash, transitions cover → album et reduced motion",
-        "233 tests Vitest + E2E Playwright, architecture features/"
+        "Atelier complet : CRUD albums, upload jusqu'à 1 500 photos, miniatures et aperçu public fidèle",
+        "Supabase Auth/RLS/Storage, ISR, SEO (sitemap, OG, hreflang) et segments admin dissimulés",
+        "405 tests Vitest + E2E public et atelier Playwright"
       ],
       "stack": [
         "Next.js 16",
