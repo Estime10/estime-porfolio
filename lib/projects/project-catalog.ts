@@ -55,7 +55,7 @@ export const PROJECT_CATALOG: readonly ProjectCatalogEntry[] = [
     tier: "secondary",
     year: 2026,
     hasCaseStudy: false,
-    liveUrl: "https://hors-cadre-photography.vercel.app",
+    liveUrl: "https://horscadre-photography.vercel.app/",
   },
   {
     slug: "purpose-sport",
