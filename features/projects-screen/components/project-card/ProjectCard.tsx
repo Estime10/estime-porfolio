@@ -41,12 +41,12 @@ export function ProjectCard({
 
       <p className={`text-body text-muted ${isFeatured ? "mt-6" : "mt-4"}`}>{project.summary}</p>
 
-      {isFeatured ? (
-        <ul className="mt-5 flex flex-col gap-2">
+      {project.highlights.length > 0 ? (
+        <ul className={`${isFeatured ? "mt-5" : "mt-4"} flex flex-col gap-2`}>
           {project.highlights.map((highlight) => (
             <li key={highlight} className="text-body text-foreground/90 flex gap-2">
               <span className="text-accent mt-0.5" aria-hidden>
-                —
+                -
               </span>
               <span>{highlight}</span>
             </li>
@@ -65,12 +65,12 @@ export function ProjectCard({
         variant="stack"
       />
 
-      <div className="mt-auto pt-6">
+      <div className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-6">
         {project.caseStudyHref ? (
           <CtaGradientLink href={project.caseStudyHref}>{readCaseStudyLabel}</CtaGradientLink>
         ) : null}
 
-        {!project.caseStudyHref && project.liveUrl ? (
+        {project.liveUrl ? (
           <CtaGradientLink external href={project.liveUrl}>
             {viewLiveLabel}
           </CtaGradientLink>

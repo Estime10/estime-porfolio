@@ -2,13 +2,13 @@ import { formatContactFormEmailTime } from "@/features/contact-screen/services/f
 import type { ContactFormSubmissionPayload } from "@/features/contact-screen/types/contactFormSubmissionPayload";
 
 /**
- * Corps JSON Formspree — champs visibles dans le tableau de bord et l’e-mail reçu.
+ * Corps JSON Formspree : champs visibles dans le tableau de bord et l’e-mail reçu.
  *
- * Sujet suggéré côté Formspree : Nouvelle demande — {{intent_label}} · {{name}}
+ * Sujet suggéré côté Formspree : Nouvelle demande · {{intent_label}} · {{name}}
  */
 export type FormspreeSubmissionBody = Readonly<Record<string, string>>;
 
-const EMPTY_COMPANY_PLACEHOLDER = "—";
+const EMPTY_COMPANY_PLACEHOLDER = "-";
 
 export function buildFormspreeSubmissionBody(
   payload: ContactFormSubmissionPayload,
@@ -18,7 +18,7 @@ export function buildFormspreeSubmissionBody(
   const email = payload.values.email.trim();
 
   return {
-    _subject: `Nouvelle demande — ${payload.intentLabel} · ${name}`,
+    _subject: `Nouvelle demande · ${payload.intentLabel} · ${name}`,
     name,
     email,
     company: company.length > 0 ? company : EMPTY_COMPANY_PLACEHOLDER,

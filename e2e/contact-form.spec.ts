@@ -25,6 +25,6 @@ test.describe("formulaire contact", () => {
     await submitButton.click();
 
     await expect(page.getByRole("heading", { name: "Message envoyé" })).toBeVisible();
-    await expect(page.getByText(/Merci — votre message est bien parti/i)).toBeVisible();
+    await expect(page.getByText(/Merci, votre message est bien parti/i)).toBeVisible();
   });
 });

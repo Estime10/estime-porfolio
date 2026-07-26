@@ -1,10 +1,10 @@
 import { ProjectCaseStudyLayout } from "@/features/projects-screen/components/project-case-study-layout/ProjectCaseStudyLayout";
 import { mapProjectCaseStudy } from "@/features/projects-screen/map-project-case-study/map-project-case-study/mapProjectCaseStudy";
-import type { FeaturedProjectSlug } from "@/lib/projects/project-catalog";
+import type { CaseStudyProjectSlug } from "@/lib/projects/project-catalog";
 import { getTranslations } from "next-intl/server";
 
 export type ProjectCaseStudyScreenProps = Readonly<{
-  slug: FeaturedProjectSlug;
+  slug: CaseStudyProjectSlug;
 }>;
 
 export async function ProjectCaseStudyScreen({ slug }: ProjectCaseStudyScreenProps) {

@@ -8,13 +8,13 @@ import { mapCaseStudyDetailSection } from "@/features/projects-screen/map-projec
 import { mapTaggedIntroSection } from "@/features/projects-screen/map-project-case-study/map-tagged-intro-section/mapTaggedIntroSection";
 import type { CaseStudyTranslator } from "@/features/projects-screen/types/caseStudyTranslator";
 import type { ProjectCaseStudyViewModel } from "@/features/projects-screen/types/projectViewModel";
-import type { FeaturedProjectSlug } from "@/lib/projects/project-catalog";
+import type { CaseStudyProjectSlug } from "@/lib/projects/project-catalog";
 
 type CaseStudyTagLabels = ProjectCaseStudyViewModel["tagLabels"];
 
 export function mapProjectCaseStudy(
   t: CaseStudyTranslator,
-  slug: FeaturedProjectSlug,
+  slug: CaseStudyProjectSlug,
   tagLabels: CaseStudyTagLabels,
 ): ProjectCaseStudyViewModel {
   const focusTagsKey = `${slug}.focusTags` as const;

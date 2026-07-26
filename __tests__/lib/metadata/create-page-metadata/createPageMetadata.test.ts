@@ -41,16 +41,16 @@ describe("createPageMetadata", () => {
     vi.stubEnv("NEXT_PUBLIC_SITE_URL", "https://portfolio.example.com");
 
     const metadata = createPageMetadata({
-      title: "Estime Vangu — Portfolio",
+      title: "Estime Vangu · Portfolio",
       description: "Splash entry.",
       pathname: "/",
       locale: "en",
       titleAbsolute: true,
     });
 
-    expect(metadata.title).toEqual({ absolute: "Estime Vangu — Portfolio" });
+    expect(metadata.title).toEqual({ absolute: "Estime Vangu · Portfolio" });
     expect(metadata.openGraph?.locale).toBe("en_US");
     expect(metadata.openGraph?.alternateLocale).toEqual(["fr_FR"]);
-    expect(metadata.openGraph?.title).toBe("Estime Vangu — Portfolio");
+    expect(metadata.openGraph?.title).toBe("Estime Vangu · Portfolio");
   });
 });

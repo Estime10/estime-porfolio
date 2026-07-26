@@ -3,11 +3,11 @@ import type { CaseStudyIntroBlockId } from "@/features/projects-screen/map-proje
 import { readOptionalTranslationTags } from "@/features/projects-screen/map-project-case-study/read-optional-translation-tags/readOptionalTranslationTags";
 import type { CaseStudyTranslator } from "@/features/projects-screen/types/caseStudyTranslator";
 import type { ProjectCaseStudyViewModel } from "@/features/projects-screen/types/projectViewModel";
-import type { FeaturedProjectSlug } from "@/lib/projects/project-catalog";
+import type { CaseStudyProjectSlug } from "@/lib/projects/project-catalog";
 
 export function mapTaggedIntroSection(
   t: CaseStudyTranslator,
-  slug: FeaturedProjectSlug,
+  slug: CaseStudyProjectSlug,
   blockId: CaseStudyIntroBlockId,
   index: number,
   title: string,

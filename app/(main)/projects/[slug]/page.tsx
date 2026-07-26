@@ -4,9 +4,9 @@ import { PROJECTS_ROUTE_PATH } from "@/lib/constants";
 import { resolveAppLocale } from "@/lib/i18n/resolve-app-locale/resolveAppLocale";
 import { createPageMetadata } from "@/lib/metadata/create-page-metadata/createPageMetadata";
 import {
-  FEATURED_PROJECT_SLUGS,
-  isProjectSlug,
-  type FeaturedProjectSlug,
+  CASE_STUDY_PROJECT_SLUGS,
+  isCaseStudyProjectSlug,
+  type CaseStudyProjectSlug,
 } from "@/lib/projects/project-catalog";
 import { getTranslations } from "next-intl/server";
 
@@ -14,23 +14,18 @@ type ProjectCaseStudyPageProps = Readonly<{
   params: Promise<{ slug: string }>;
 }>;
 
-function parseFeaturedSlug(slug: string): FeaturedProjectSlug | null {
-  if (!isProjectSlug(slug)) {
-    return null;
-  }
-  return (FEATURED_PROJECT_SLUGS as readonly string[]).includes(slug)
-    ? (slug as FeaturedProjectSlug)
-    : null;
+function parseCaseStudySlug(slug: string): CaseStudyProjectSlug | null {
+  return isCaseStudyProjectSlug(slug) ? slug : null;
 }
 
-export function generateStaticParams(): { slug: FeaturedProjectSlug }[] {
-  return FEATURED_PROJECT_SLUGS.map((slug) => ({ slug }));
+export function generateStaticParams(): { slug: CaseStudyProjectSlug }[] {
+  return CASE_STUDY_PROJECT_SLUGS.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: ProjectCaseStudyPageProps) {
   const { slug } = await params;
-  const featuredSlug = parseFeaturedSlug(slug);
-  if (!featuredSlug) {
+  const caseStudySlug = parseCaseStudySlug(slug);
+  if (!caseStudySlug) {
     return {};
   }
 
@@ -38,19 +33,19 @@ export async function generateMetadata({ params }: ProjectCaseStudyPageProps) {
   const locale = await resolveAppLocale();
 
   return createPageMetadata({
-    title: t(`${featuredSlug}.meta.title`),
-    description: t(`${featuredSlug}.meta.description`),
-    pathname: `${PROJECTS_ROUTE_PATH}/${featuredSlug}`,
+    title: t(`${caseStudySlug}.meta.title`),
+    description: t(`${caseStudySlug}.meta.description`),
+    pathname: `${PROJECTS_ROUTE_PATH}/${caseStudySlug}`,
     locale,
   });
 }
 
 export default async function ProjectCaseStudyPage({ params }: ProjectCaseStudyPageProps) {
   const { slug } = await params;
-  const featuredSlug = parseFeaturedSlug(slug);
-  if (!featuredSlug) {
+  const caseStudySlug = parseCaseStudySlug(slug);
+  if (!caseStudySlug) {
     notFound();
   }
 
-  return <ProjectCaseStudyScreen slug={featuredSlug} />;
+  return <ProjectCaseStudyScreen slug={caseStudySlug} />;
 }

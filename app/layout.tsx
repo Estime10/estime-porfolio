@@ -27,7 +27,7 @@ export const metadata = getRootMetadata({
     default: "Estime Vangu",
     template: "%s | Estime Vangu",
   },
-  description: "Portfolio — Estime Vangu.",
+  description: "Portfolio · Estime Vangu.",
 });
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {

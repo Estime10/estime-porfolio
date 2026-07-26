@@ -8,7 +8,7 @@ import { MAIN_CONTENT_ID } from "@/lib/constants";
 
 export const metadata = getRootMetadata({
   title: {
-    default: "Estime Vangu — Frontend & Product Engineer",
+    default: "Estime Vangu · Frontend & Product Engineer",
     template: "%s | Estime Vangu",
   },
   description:

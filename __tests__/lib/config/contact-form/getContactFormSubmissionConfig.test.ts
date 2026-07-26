@@ -14,7 +14,7 @@ describe("getContactFormSubmissionConfig", () => {
   });
 
   it("exposes the internal contact API route when Formspree is configured", () => {
-    vi.stubEnv("FORMSPREE_FORM_ID", "xjgqewyk");
+    vi.stubEnv("FORMSPREE_FORM_ID", "test_form_id");
 
     expect(getContactFormSubmissionConfig()).toEqual({
       endpoint: CONTACT_FORM_API_PATH,

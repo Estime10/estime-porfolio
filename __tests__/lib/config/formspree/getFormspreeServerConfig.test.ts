@@ -13,11 +13,11 @@ describe("getFormspreeServerConfig", () => {
   });
 
   it("builds the Formspree endpoint from the server form id", () => {
-    vi.stubEnv("FORMSPREE_FORM_ID", "  xjgqewyk  ");
+    vi.stubEnv("FORMSPREE_FORM_ID", "  test_form_id  ");
 
     expect(getFormspreeServerConfig()).toEqual({
-      formId: "xjgqewyk",
-      endpoint: "https://formspree.io/f/xjgqewyk",
+      formId: "test_form_id",
+      endpoint: "https://formspree.io/f/test_form_id",
     });
   });
 });

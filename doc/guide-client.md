@@ -140,14 +140,14 @@ Six sections thématiques avec sommaire latéral (ordinateur) ou horizontal (mob
 
 Deux niveaux :
 
-1. **Études de cas** — 4 projets détaillés (voir section suivante)
-2. **Autres réalisations** — sites en production avec lien direct
+1. **Études de cas featured** — 4 projets mis en avant
+2. **Other work** — 5 projets avec **étude de cas** + lien live quand disponible
 
 ### 5. Étude de cas (`/projects/[nom-du-projet]`)
 
 **Rôle :** comprendre un projet en profondeur — problème, approche, architecture, décisions.
 
-Réservée aux 4 projets mis en avant. Structure détaillée plus bas.
+Disponible pour les projets **featured** et **other work**. Structure détaillée plus bas.
 
 ### 6. Contact (`/contact`)
 
@@ -169,30 +169,26 @@ Le catalogue n’est **pas exhaustif**. Chaque projet est choisi pour illustrer 
 
 La curation fait partie du message : le niveau perçu compte autant que le volume.
 
-### Études de cas (4 projets)
+### Études de cas featured (4 projets)
 
-Projets présentés en détail avec page dédiée :
+| Projet          | En bref                                                                 | Type                   |
+| --------------- | ----------------------------------------------------------------------- | ---------------------- |
+| **FleetScan**   | Signalement d’incidents flotte via scan QR / plaque — outil terrain B2B | Application métier     |
+| **Shadow**      | Messagerie privée, calendrier partagé, app installable (PWA)            | Application web privée |
+| **Spill Crumb** | Réseau social anonyme — feed, réactions, notifications temps réel       | Application sociale    |
+| **Jikowood**    | Artisan menuisier — vitrine premium, galerie immersive, i18n fr/en/nl   | Site vitrine           |
 
-| Projet             | En bref                                                                 | Type                   |
-| ------------------ | ----------------------------------------------------------------------- | ---------------------- |
-| **FleetScan**      | Signalement d’incidents flotte via scan QR / plaque — outil terrain B2B | Application métier     |
-| **Shadow**         | Messagerie privée, calendrier partagé, app installable (PWA)            | Application web privée |
-| **Take The Crown** | Ligue streetball 1v1 — classements, stats, dashboard organisateur       | Application sportive   |
-| **Spill Crumb**    | Réseau social anonyme — feed, réactions, notifications temps réel       | Application sociale    |
+### Other work (5 projets — case study + live)
 
-**Statut affiché** sur chaque carte : _En cours_, _MVP prêt au ship_, _MVP en production_, etc. — toujours honnête sur l’avancement réel.
+Sur chaque carte : CTA **Lire l’étude de cas** et **Voir le site en ligne** (si URL live).
 
-### Autres réalisations (5 projets)
-
-Sites livrés en production, accessibles via **« Voir le site en ligne »** :
-
-| Projet              | Secteur                                                   | Lien                                                                           |
-| ------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| **Jikowood**        | Artisan menuisier — vitrine premium                       | En cours (pas encore en ligne)                                                 |
-| **Enna Consulting** | Consulting RH B2B                                         | [ennabv.be](https://www.ennabv.be)                                             |
-| **Maxwel Jones**    | Holding corporate                                         | [maxweljones.com](https://www.maxweljones.com)                                 |
-| **Hors Cadre**      | Portfolio photographe — galerie publique et atelier admin | [hors-cadre-photography.vercel.app](https://hors-cadre-photography.vercel.app) |
-| **Purpose Sport**   | Management sportif basket                                 | [purpose-sport.com](https://purpose-sport.com)                                 |
+| Projet                   | Secteur                          | Live / note                                                                   |
+| ------------------------ | -------------------------------- | ----------------------------------------------------------------------------- |
+| **Take The Crown (3x3)** | Plateforme basket 3x3 (`TTC-v0`) | [take-the-crown-v001.vercel.app](https://take-the-crown-v001.vercel.app/)     |
+| **Enna Consulting**      | Consulting RH B2B                | [ennabv.be](https://www.ennabv.be)                                            |
+| **Maxwel Jones**         | Holding corporate                | [maxweljones.com](https://www.maxweljones.com)                                |
+| **Hors Cadre**           | Portfolio photographe            | [horscadre-photography.vercel.app](https://horscadre-photography.vercel.app/) |
+| **Purpose Sport**        | Management sportif basket        | [purpose-sport.com](https://purpose-sport.com)                                |
 
 ---
 
@@ -311,9 +307,9 @@ Après envoi du formulaire, une confirmation s’affiche à l’écran. Estime r
 
 Non. C’est un produit sur mesure — architecture dédiée, contenu rédigé, animations et navigation pensées pour ce portfolio précis.
 
-### Pourquoi seulement 4 études de cas ?
+### Pourquoi des études de cas aussi sur Other work ?
 
-Pour garder une lecture profonde et crédible. Les autres projets sont listés avec lien live quand ils sont en production.
+Pour expliquer les choix même hors sélection « featured », tout en gardant un live link quand le site est en production.
 
 ### Estime fait-il aussi du backend ?
 

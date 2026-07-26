@@ -6,4 +6,4 @@ export const OPEN_GRAPH_IMAGE_PATH = "/opengraph-image" as const;
 export const OPEN_GRAPH_IMAGE_WIDTH = 1200;
 export const OPEN_GRAPH_IMAGE_HEIGHT = 630;
 
-export const OPEN_GRAPH_IMAGE_ALT = `${SITE_NAME} — Frontend & Product Engineer portfolio`;
+export const OPEN_GRAPH_IMAGE_ALT = `${SITE_NAME} · Frontend & Product Engineer portfolio`;

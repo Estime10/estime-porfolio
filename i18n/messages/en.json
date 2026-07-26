@@ -1,7 +1,7 @@
 {
   "SplashScreen": {
     "meta": {
-      "title": "Estime Vangu — Frontend & Product Engineer",
+      "title": "Estime Vangu · Frontend & Product Engineer",
       "description": "Frontend-focused developer building modern web applications with a strong emphasis on product thinking, performance, and user experience."
     }
   },
@@ -36,7 +36,7 @@
     },
     "meta": {
       "title": "Home",
-      "description": "Estime Vangu — Frontend Engineer oriented product. Web products from the frontend: UX, product logic, scalable delivery."
+      "description": "Estime Vangu, Frontend Engineer oriented product. Web products from the frontend: UX, product logic, scalable delivery."
     }
   },
   "ProjectsScreen": {
@@ -111,33 +111,9 @@
           "PWA"
         ]
       },
-      "1v1-streetball": {
-        "name": "Take The Crown",
-        "tagline": "1v1 streetball league — seasons, standings, and player stats",
-        "type": "Sports web application",
-        "status": "MVP ship-ready",
-        "summary": "1v1 league platform: league home, games, fight nights, standings, profiles with progression (XP, ranks), organizer dashboard, and score integrity enforced through Supabase RPC.",
-        "tags": ["1v1 league", "Standings", "Fight nights", "Player progression"],
-        "highlights": [
-          "12 documented business domains (games, standings, dashboard, fight-nights, watchers…)",
-          "League realtime, 60s cache, and game mutations via admin RPC only",
-          "250 Vitest tests + 11 Playwright E2E specs, fr / en / nl i18n"
-        ],
-        "stack": [
-          "Next.js 16",
-          "React 19",
-          "Tailwind 4",
-          "Supabase",
-          "Zod",
-          "next-intl",
-          "GSAP",
-          "Vitest",
-          "Playwright"
-        ]
-      },
       "spill-crumb": {
         "name": "Spill Crumb",
-        "tagline": "Anonymous social network — feed, reactions, and realtime notifications",
+        "tagline": "Anonymous social network · feed, reactions, and realtime notifications",
         "type": "Social web application",
         "status": "MVP in production",
         "summary": "Anonymous confession platform: paginated feed, pseudonym profiles, realtime interactions, anti-spam controls, and full admin back-office.",
@@ -161,64 +137,57 @@
       },
       "jikowood": {
         "name": "Jikowood",
-        "tagline": "Premium showcase redesign for a high-end carpenter",
+        "tagline": "Premium showcase rebuild for a high-end carpenter",
         "type": "Marketing website",
-        "status": "In progress",
-        "tags": ["Immersive showcase", "Visual storytelling", "Motion craft"],
-        "summary": "An immersive digital experience for premium craftsmanship: fullscreen gallery, smooth scroll, and visual-first narrative.",
+        "status": "Deployed (Vercel)",
+        "summary": "Immersive experience for a premium woodworking atelier: cinematic splash, fullscreen gallery, and a conversion-oriented trilingual journey, no backend.",
+        "tags": ["Premium showcase", "Immersive gallery", "BE i18n", "Frontend craft"],
         "highlights": [
-          "Gallery with pure-function previous / next navigation",
-          "GSAP + Lenis with reduced-motion support",
-          "Vitest, Playwright E2E, and documented engineering conventions"
+          "Fullscreen gallery with navigation computed as pure, tested functions",
+          "fr / en / nl i18n with localized slugs and a language cookie",
+          "Vitest + Playwright E2E and documented architecture conventions"
         ],
-        "stack": [
-          "Next.js 16",
-          "Tailwind 4",
-          "i18n",
-          "GSAP",
-          "Lenis",
-          "Zod",
-          "Vitest",
-          "Playwright"
-        ]
+        "stack": ["Next.js 16", "Tailwind 4", "i18n", "GSAP", "Zod", "Vitest", "Playwright"]
       },
       "enna": {
         "name": "Enna Consulting",
-        "tagline": "HR consulting - talent, diversity, employer brand",
-        "type": "B2B marketing website",
+        "tagline": "HR consulting · talent, diversity, employer brand",
+        "type": "B2B marketing site",
         "status": "Release 1.0.0",
-        "tags": ["Lead generation", "Trilingual", "B2B credibility"],
-        "summary": "A trilingual commercial one-pager focused on qualified contact conversion and hreflang SEO for the Belgian market.",
+        "summary": "Trilingual commercial one-pager (nl / fr / en) in production to convert into qualified contact, GSAP splash, localized sections, EmailJS form.",
+        "tags": ["Prod", "B2B HR", "BE i18n", "Lead gen"],
         "highlights": [
-          "nl / fr / en localization with section-based routes",
-          "GSAP splash and Framer Motion modal interactions"
+          "nl / fr / en i18n with section routes and hreflang",
+          "EmailJS contact + Zod + react-hook-form",
+          "GSAP splash and social proof (assumed mock testimonials)"
         ],
         "stack": ["Next.js 16", "Tailwind 4", "i18n", "GSAP", "EmailJS", "Zod", "Vitest"]
       },
       "maxweljones": {
         "name": "Maxwel Jones",
-        "tagline": "Corporate holding - Learn, Earn, Return",
-        "type": "Corporate website",
+        "tagline": "Corporate holding · Learn, Earn, Return",
+        "type": "Corporate site",
         "status": "Release 1.0.0",
-        "tags": ["Corporate trust", "Consultant network", "Scalable content"],
-        "summary": "An institutional one-page website with consultant network presentation, Web3Forms contact flow, and booking UI already prepared.",
+        "summary": "Institutional FR/EN one-pager: Learn/Earn/Return philosophy, consultant network, and Roundtable contact (Web3Forms), booking UI planned for 2027.",
+        "tags": ["Prod", "Corporate", "Network", "Booking UI 2027"],
         "highlights": [
-          "Documented feature-based architecture",
-          "Network slide and member directory experience"
+          "Documented features/ architecture with shared sections",
+          "Network slide and member directory",
+          "SEO: OG, JSON-LD, sitemap"
         ],
-        "stack": ["Next.js 15", "Tailwind 4", "i18n", "GSAP", "Web3Forms"]
+        "stack": ["Next.js 15", "Tailwind 4", "next-intl", "GSAP", "Web3Forms"]
       },
       "nana": {
         "name": "Hors Cadre",
-        "tagline": "Premium photographer portfolio — movement, moment and emotion",
-        "type": "Creative website",
+        "tagline": "Premium photographer portfolio · immersive gallery and private atelier",
+        "type": "Creative site",
         "status": "Release 1.0.0",
-        "tags": ["Prod", "Supabase gallery", "Admin studio", "Liquid Glass", "Trilingual i18n"],
-        "summary": "Mono-admin portfolio in production: Supabase gallery (masonry, free downloads), private studio (bulk WebP upload, publishing, drag & drop) and Liquid Glass aesthetic across three languages.",
+        "summary": "Mono-admin in production: public ISR gallery (masonry, download) and private atelier (bulk WebP upload, publish, drag & drop) on Supabase.",
+        "tags": ["Prod", "Supabase gallery", "Admin atelier", "Liquid Glass"],
         "highlights": [
-          "Full studio: album CRUD, upload up to 1,500 photos, thumbnails and faithful public preview",
-          "Supabase Auth/RLS/Storage, ISR, SEO (sitemap, OG, hreflang) and hidden admin segments",
-          "405 Vitest tests + public and studio Playwright E2E"
+          "Full atelier: album CRUD, upload up to 1,500 photos, faithful public preview",
+          "Supabase Auth/RLS/Storage, ISR, SEO, and obscured admin segments",
+          "455+ Vitest tests + public/atelier Playwright E2E"
         ],
         "stack": [
           "Next.js 16",
@@ -233,16 +202,40 @@
       },
       "purpose-sport": {
         "name": "Purpose Sport",
-        "tagline": "Sports management agency - basketball focus",
-        "type": "Marketing website",
+        "tagline": "Sports management agency · basketball focus",
+        "type": "Marketing site",
         "status": "Release 1.0.0",
-        "tags": ["Sports branding", "Data-rich roster", "Media integration"],
-        "summary": "A premium sports agency website presenting twelve athletes with profiles, stats, embedded videos, and a direct contact flow.",
+        "summary": "Data-driven showcase in production: 12-athlete roster, rich profiles, embedded video, and recruitment-oriented contact flow.",
+        "tags": ["Prod", "Sports business", "Roster", "Video"],
         "highlights": [
-          "Data-driven roster powered by structured JSON",
-          "react-player integration and Vercel Analytics tracking"
+          "TypeScript-structured roster (stats, careers, awards)",
+          "react-player + Vercel Analytics",
+          "fr / en i18n and Web3Forms contact"
         ],
-        "stack": ["Next.js 15", "Tailwind 3", "i18n", "Framer Motion", "i18next", "Jest"]
+        "stack": ["Next.js 15", "Tailwind 3", "Framer Motion", "i18next", "react-player", "Jest"]
+      },
+      "ttc-v0": {
+        "name": "Take The Crown (3x3)",
+        "tagline": "Digital infrastructure for 3x3 basketball: identity, events, rankings",
+        "type": "Sports SaaS platform",
+        "status": "Release 1.0.0",
+        "summary": "Domain-driven product to centralize 3x3 players, teams, organizers, and fans. Broad domain docs (Identity, Competition, Ranking…); MVP code focused on Event → Verified Match → Ranking, with defense-in-depth AuthZ.",
+        "tags": ["3x3", "Domain-first", "Events", "Supabase"],
+        "highlights": [
+          "Documented business chain: Identity → Event → Registration → Match → Result → Ranking",
+          "Ranking integrity: scores reserved to the event author, points only after verified matches",
+          "Defense-in-depth: Server Actions + Postgres RLS + checks inside ranking RPCs"
+        ],
+        "stack": [
+          "Next.js 16",
+          "React 19",
+          "Tailwind 4",
+          "Supabase",
+          "Zod",
+          "GSAP",
+          "Vitest",
+          "Playwright"
+        ]
       }
     },
     "caseStudies": {
@@ -435,95 +428,6 @@
           }
         }
       },
-      "1v1-streetball": {
-        "name": "Take The Crown",
-        "tagline": "Digitizing a 1v1 streetball league without compromising standings integrity",
-        "type": "Sports web application",
-        "status": "MVP ship-ready",
-        "year": "2026",
-        "role": "Fullstack product ownership: player journey (home, games, fight nights, standings), XP/rank progression, organizer dashboard, Supabase model (42 migrations), RLS/RPC security, and EN/FR client documentation.",
-        "focusTags": ["1v1 league", "Standings integrity", "Organizer dashboard", "Data security"],
-        "stack": [
-          "Next.js 16",
-          "React 19",
-          "Tailwind 4",
-          "Supabase",
-          "PostgreSQL RLS",
-          "Zod",
-          "next-intl",
-          "GSAP",
-          "Vitest",
-          "Playwright"
-        ],
-        "meta": {
-          "title": "Take The Crown - Case study",
-          "description": "1v1 streetball league: standings, player stats, admin dashboard, and secure architecture to guarantee score integrity."
-        },
-        "problem": {
-          "tags": ["Reliable standings", "Field usage", "League operations", "Player trust"],
-          "paragraphs": [
-            "A 1v1 streetball league runs on trust in the standings. Without a proper tool, results spread through messages, stats get lost, and the season becomes hard to arbitrate.",
-            "The organizer needs to record games quickly with clear business rules (consistent scores, automatic recalculation). Players want standings, history, and profiles without mobile friction.",
-            "The main risk was not visual polish but data integrity: an unprotected direct write can corrupt the entire standings with no operational visibility."
-          ]
-        },
-        "approach": {
-          "tags": ["Business RPC", "Defense in depth", "Feature-driven", "Senior audit"],
-          "paragraphs": [
-            "I structured the product around 12 documented business domains, with an explicit critical path: admin record → standings update → realtime player refresh.",
-            "Game mutations go only through admin RPC (service_role), never through direct PostgREST writes. RLS, API rate limiting, and Zod validation lock down boundaries.",
-            "Assumed trade-off: indie MVP (5–50 beta users) with in-house observability (super_admin error journal) rather than heavy ops stack — suited to volume and budget."
-          ]
-        },
-        "sections": {
-          "context": {
-            "title": "Product context",
-            "tags": ["Streetball", "Season", "Community"],
-            "paragraphs": [
-              "Take The Crown serves a local 1v1 basketball league: fight nights, player and spectator (watcher) directory, seasonal standings, progression (XP, ranks, streaks), and public profile pages.",
-              "Three roles structure access: player, organizer (admin — record game, drafts, validation), and technical operator (super_admin for platform logs).",
-              "The product is mobile-first with fr / en / nl i18n, Europe/Brussels timezone, and a complete client guide (EN + FR) in the repo."
-            ]
-          },
-          "architecture": {
-            "title": "Architecture",
-            "tags": ["App Router", "Supabase", "Server Actions"],
-            "paragraphs": [
-              "Strict separation: app/ (routing), features/ (12 domains), components/ (UI), lib/ (API guard, rate limit, realtime, animations). Thin pages, zero business logic in routes.",
-              "ProtectedLeagueRealtimeProvider refreshes lists and dashboard after game changes. unstable_cache 60s on league reads when service_role is configured."
-            ],
-            "bullets": [
-              "42 versioned SQL migrations, RLS on sensitive entities",
-              "Admin Server Actions: recordGame, drafts (save/update/finalize), delete",
-              "Architecture tests + check:circular-deps + DB/API load scripts",
-              "PWA, SEO (sitemap, OG), and documented brand assets"
-            ]
-          },
-          "decisions": {
-            "title": "Key decisions",
-            "tags": ["Security", "Integrity", "Quality"],
-            "paragraphs": [
-              "I revoked direct authenticated writes on games (migration 040) after audit: only admin RPC can mutate results.",
-              "A senior pre-production audit triggered P0/P1 hardening: GitHub Actions CI, strip debugDetail in prod, HSTS, distributed rate limit on admin actions."
-            ],
-            "bullets": [
-              "Prioritize standings integrity before comfort features",
-              "In-house error journal vs Sentry — zero cost, MVP volume fit",
-              "250 Vitest tests + 11 Playwright E2E (public routes, player journey, admin journey)",
-              "CSP, safe open redirect, ILIKE escape on city search"
-            ]
-          },
-          "execution": {
-            "title": "Execution and next steps",
-            "tags": ["MVP ship-ready", "Closed beta", "Manual ops"],
-            "paragraphs": [
-              "Code is validated for MVP ship: typecheck, lint, build, and green test suite after post-audit fixes.",
-              "Remaining manual actions concern ops (cloud migrations, Vercel env, admin role promotion) — separate from code maturity.",
-              "Next: closed beta (5–10 trusted users), then light instrumentation and Vitest coverage percentage."
-            ]
-          }
-        }
-      },
       "spill-crumb": {
         "name": "Spill Crumb",
         "tagline": "Anonymous confessions with realtime feed and platform governance",
@@ -551,17 +455,17 @@
         "problem": {
           "tags": ["Free expression", "Moderation", "Engagement", "Controlled scale"],
           "paragraphs": [
-            "The product targets a space where users share stories and confessions under a pseudonym — freedom of expression without exposing real identity.",
+            "The product targets a space where users share stories and confessions under a pseudonym, freedom of expression without exposing real identity.",
             "An anonymous social feed must handle volume, spam, and abuse without weighing down the experience. The 5 posts/day limit and rate limiting are explicit product guardrails.",
-            "Admin needs visibility: sponsoring, platform logs, and stats — without opening the codebase to understand system health."
+            "Admin needs visibility: sponsoring, platform logs, and stats, without opening the codebase to understand system health."
           ]
         },
         "approach": {
           "tags": ["Multi-store sync", "Targeted realtime", "Feature-first", "Strict CI"],
           "paragraphs": [
-            "I modeled decoupled post stores (feed, profile, live detail) with centralized fan-out via lib/post-store-sync — one mutation propagates cleanly everywhere.",
+            "I modeled decoupled post stores (feed, profile, live detail) with centralized fan-out via lib/post-store-sync, one mutation propagates cleanly everywhere.",
             "Supabase realtime is reserved for high-immediate-value interactions (feed, notifications, navbar badge), not applied everywhere by default.",
-            "Assumed trade-off: soft launch without mandatory Upstash (in-memory fallback per instance) — documented and recommended before marketing scale campaigns."
+            "Assumed trade-off: soft launch without mandatory Upstash (in-memory fallback per instance), documented and recommended before marketing scale campaigns."
           ]
         },
         "sections": {
@@ -571,7 +475,7 @@
             "paragraphs": [
               "Spill The Crumbs is available in fr / en / es, responsive across mobile-tablet-desktop, deployed on Vercel from main.",
               "16 product modules cover auth, onboarding, home, posts, profile, notifications, settings, add-new-post, and admin.",
-              "MVP is production-ready: email/password auth, stable backend, operational admin tools — with assumed limitations (post reporting, password reset) on the roadmap."
+              "MVP is production-ready: email/password auth, stable backend, operational admin tools, with assumed limitations (post reporting, password reset) on the roadmap."
             ]
           },
           "architecture": {
@@ -592,14 +496,14 @@
             "title": "Key decisions",
             "tags": ["Anti-spam", "Sync", "Ops"],
             "paragraphs": [
-              "The 5 posts/day limit is enforced app-side AND via DB trigger — defense in depth against client bypass.",
-              "The /admin/logs dashboard persists platform events with widgets and pagination — lightweight alternative to observability SaaS for MVP."
+              "The 5 posts/day limit is enforced app-side AND via DB trigger, defense in depth against client bypass.",
+              "The /admin/logs dashboard persists platform events with widgets and pagination, lightweight alternative to observability SaaS for MVP."
             ],
             "bullets": [
               "Mutation fan-out rather than coupled monolithic stores",
-              "Cookie-based i18n without URL segment — 3 locales, en fallback",
+              "Cookie-based i18n without URL segment · 3 locales, en fallback",
               "Husky pre-commit + develop → main pipeline with Vercel previews",
-              "Post reporting and verification emails deferred — transparent roadmap"
+              "Post reporting and verification emails deferred · transparent roadmap"
             ]
           },
           "execution": {
@@ -609,6 +513,513 @@
               "Product is live in soft launch / internal testing with post-deploy checklist (auth, realtime feed, notifications).",
               "Test coverage (638+ unit, 7 E2E specs) secures evolution on a rich domain (feed, reactions, comments, sponsoring).",
               "Next increments: report moderation, Upstash before scale campaign, password reset and confirmation emails."
+            ]
+          }
+        }
+      },
+      "jikowood": {
+        "focusTags": ["Frontend craft", "Immersive gallery", "Trilingual i18n", "Premium showcase"],
+        "name": "Jikowood",
+        "tagline": "Turn a craftsperson site into a credible premium experience",
+        "type": "Marketing website",
+        "status": "Deployed (Vercel)",
+        "year": "2026",
+        "role": "End-to-end frontend rebuild: experience direction (splash, hero, gallery), feature-first architecture, fr/en/nl i18n, GSAP motion with reduced-motion, and Vitest/Playwright quality gates.",
+        "stack": [
+          "Next.js 16",
+          "React 19",
+          "Tailwind 4",
+          "GSAP",
+          "Zod",
+          "react-hook-form",
+          "Vitest",
+          "Playwright"
+        ],
+        "meta": {
+          "title": "Jikowood · Frontend case study",
+          "description": "Premium showcase rebuild for a carpenter: immersive gallery, Belgian trilingual i18n, feature-first architecture, and E2E tests."
+        },
+        "problem": {
+          "tags": ["Brand image", "Conversion", "Craft credibility", "Immersion"],
+          "paragraphs": [
+            "The client needed a web presence matching a high-end atelier, not a generic template. The site had to communicate precision, modernity, and craftsmanship immediately.",
+            "Photographed projects are the main argument. Without a fluid gallery journey, photos stay a grid; with immersive navigation, they become proof and desire.",
+            "The Belgian context requires trilingual support (fr / en / nl) from day one. Bolting i18n on later would have broken URLs and SEO coherence."
+          ]
+        },
+        "approach": {
+          "tags": ["Feature-first", "Useful motion", "Static data", "Honest delivery"],
+          "paragraphs": [
+            "I set a feature-first architecture: App Router orchestrates, logic lives in features/ and lib/. Goal: ship fast without losing readability for a possible CMS later.",
+            "GSAP motion serves brand entry and the gallery, not scroll for scroll's sake. prefers-reduced-motion is respected from the animation hooks.",
+            "Assumed trade-off: 100% static content and UI-only contact (local success). The client can already judge craft; real email delivery and the jikowood.be cutover come next."
+          ]
+        },
+        "sections": {
+          "context": {
+            "title": "Product context",
+            "tags": ["Belgian craft", "Premium atelier", "Five projects"],
+            "paragraphs": [
+              "JIKOWOOD is a woodworking atelier (Micro Factory, Molenbeek) targeting custom interiors. The showcase must convince before the first call.",
+              "Five indexed projects (Cannes, Knokke, Krainem, Overijs, Uccle) ground storytelling in real photography, not placeholders.",
+              "Delivery targets a Vercel validation URL; jikowood.be switches once contact and content are locked."
+            ]
+          },
+          "architecture": {
+            "title": "Architecture",
+            "tags": ["App Router", "features/", "Multi-locale SSG"],
+            "paragraphs": [
+              "Dynamic [slug] and [slug]/[projectSlug] routes generate presentation, services, gallery, and contact pages per locale, without a /fr URL prefix.",
+              "Boundaries stay clean: app/ for routing, features/ for product UI, lib/ for i18n, motion, projects, and SEO. Conventions are documented in the client repo."
+            ],
+            "bullets": [
+              "Typed fr / en / nl messages + language cookie",
+              "Static project index (~43 JPEGs under public/projects/)",
+              "Fullscreen gallery navigation as pure tested functions",
+              "SEO: sitemap, robots, security headers, next/font"
+            ]
+          },
+          "decisions": {
+            "title": "Key decisions",
+            "tags": ["Prioritization", "Quality", "Scope"],
+            "paragraphs": [
+              "I prioritized visible craft (splash, notch hero, gallery) and engineering discipline (tests, docs) over a premature backend on a still-validating showcase.",
+              "Contact stays intentionally UI-only: wiring Formspree too early would freeze a flow before the client validated the journey."
+            ],
+            "bullets": [
+              "Do not claim Lenis / ScrollTrigger until they are wired",
+              "Custom i18n fitted to Belgian slugs rather than forcing next-intl",
+              "Playwright E2E on splash, services, contact, and fullscreen",
+              "Defer CMS / admin while content lives in the repo"
+            ]
+          },
+          "execution": {
+            "title": "Execution and next steps",
+            "tags": ["Vercel live", "Near-ship", "Cut over .be"],
+            "paragraphs": [
+              "The rebuild is live at https://jikowood-refonte.vercel.app, full journeys navigable in three languages.",
+              "Next increments: wire real contact delivery, lock content, cut over the client domain, and optionally add a light CMS.",
+              "The north star remains premium frontend craft with a maintainable architecture, not an effects demo."
+            ]
+          }
+        }
+      },
+      "ttc-v0": {
+        "focusTags": ["Identity Over Events", "Event → Ranking", "AuthZ / RLS", "Domain doc"],
+        "name": "Take The Crown (3x3)",
+        "tagline": "Model the sport before the code, then ship a trustworthy slice",
+        "type": "Sports SaaS platform",
+        "status": "Release 1.0.0",
+        "year": "2026",
+        "role": "I set the 3x3 product vision (Identity, Competition, Reputation), the domain/architecture documentation, and the MVP implementation: Player/Organizer auth, Geoapify events, verified matches, and World/Country ranking on Next.js + Supabase.",
+        "stack": [
+          "Next.js 16",
+          "React 19",
+          "Tailwind 4",
+          "Supabase",
+          "Zod",
+          "react-hook-form",
+          "GSAP",
+          "Vitest",
+          "Playwright"
+        ],
+        "meta": {
+          "title": "Take The Crown 3x3 · Case study",
+          "description": "3x3 basketball platform: domain model, Event→Verified→Ranking slice, defense-in-depth AuthZ, and Next.js + Supabase MVP."
+        },
+        "problem": {
+          "tags": ["3x3 fragmentation", "Multi-actors", "Ranking integrity"],
+          "paragraphs": [
+            "The 3x3 ecosystem is split across social networks, organizer sites, registrations, rankings, and chat apps. No single place owns both identity and history.",
+            "Without an Event → Match → Verified Result chain, rankings become noise: self-report, unauthorized scores, point farming.",
+            "The product must serve players, teams, organizers, and fans without replacing federations: a universal digital layer, not another isolated tournament tool."
+          ]
+        },
+        "approach": {
+          "tags": ["Domain Before Code", "Vertical MVP", "Simple First"],
+          "paragraphs": [
+            "Guiding principle: Identity Over Events. Model the sport (actors, competition, ranking) before stacking screens. Documented ≠ Implemented ≠ MVP stays explicit in the docs.",
+            "MVP targets the Identity → Event → Match → Result → Ranking → Discovery slice, not a truncated product with no end-to-end value.",
+            "Pragmatic stack: Next.js + Supabase monolith (Auth, Postgres+RLS, Storage). No public API or search microservices until data trust is proven."
+          ]
+        },
+        "sections": {
+          "context": {
+            "title": "Product context",
+            "tags": ["3x3", "Actors", "Pillars"],
+            "paragraphs": [
+              "Three pillars: Identity, Competition, Reputation. Ubiquitous language: User, Player, Team, Organization/Organizer, Match, Result, Ranking (≠ Rating ≠ Leaderboard).",
+              "Take The Crown 3x3 is distinct from the 1v1 league in the same brand universe: different codebase, different model (multi-events vs 1v1 league).",
+              "Docs also cover brackets, circuits, Opportunity, Multi-Tenancy… intentionally broader than shipped code, to guide increments without improvisation."
+            ]
+          },
+          "architecture": {
+            "title": "Architecture",
+            "tags": ["App Router", "Supabase", "Security"],
+            "paragraphs": [
+              "Feature-based frontend (auth, create, events, profile, ranking) plus an admin panel behind ADMIN_PANEL_PATH (server rewrite, slug out of the client bundle, profiles.role = admin).",
+              "Defense-in-depth AuthZ: Server Actions (requireEventAuthor) + Postgres RLS + author checks inside ranking RPCs, even via service_role.",
+              "Events: public creation with mandatory Geoapify address (address, place_id, lat/lng). Public profiles at opaque URLs /profile/[username]-[publicId], public_id ≠ auth.uid."
+            ],
+            "bullets": [
+              "Platform MVP roles: player | organizer | admin",
+              "Profile UI fork: Player = media gallery; Organizer = Draft/Upcoming/Passed counts",
+              "Public Storage buckets (avatars, profile-media) assumed for MVP",
+              "Synchronous ranking award via RPC after verified matches"
+            ]
+          },
+          "decisions": {
+            "title": "Key decisions",
+            "tags": ["Trade-offs", "Anti-farming", "Out of scope"],
+            "paragraphs": [
+              "Create = Event only: no Add Score entry in nav. Scores stay reserved to the event author; points only after verified status.",
+              "Next + Supabase monolith for MVP velocity: one stack and native RLS; public API and dedicated search engines deferred.",
+              "Private events, brackets, OAuth, ELO, livestream, and billing are out of MVP (Under construction UI or absent), even when present in the domain model."
+            ],
+            "bullets": [
+              "Score self-report abandoned to protect rankings",
+              "In-memory rate-limit acceptable for MVP; Redis later if multi-instance",
+              "CSP enforce deferred (P2) after asset inventory",
+              "List search: soft place_id match or ~1.5 km proximity"
+            ]
+          },
+          "execution": {
+            "title": "Execution and next steps",
+            "tags": ["Shipped", "Partial", "Live on Vercel"],
+            "paragraphs": [
+              "Shipped: email auth Player/Organizer, own-only settings, event CRUD (Geoapify, public), draft→verified matches, W/L points, /ranking World/Country, Player gallery, admin monitoring.",
+              "Partial: separate Player domain entity, competition/brackets, full ranking formula (Best 5, event weights, cursor pagination), Registration workflow on the product side.",
+              "Live at https://take-the-crown-v001.vercel.app/. Next value: lock useful Registration/brackets and harden ranking before expanding the documented domain further."
+            ]
+          }
+        }
+      },
+      "enna": {
+        "focusTags": ["B2B HR", "Belgian i18n", "Conversion", "Prod"],
+        "name": "Enna Consulting",
+        "tagline": "Make the HR offer readable and converting in Belgium",
+        "type": "B2B marketing site",
+        "status": "Release 1.0.0",
+        "year": "2026",
+        "role": "I delivered the B2B showcase end to end: Belgian i18n, conversion journey, motion, and EmailJS contact in production on ennabv.be.",
+        "stack": [
+          "Next.js 16",
+          "React 19",
+          "Tailwind 4",
+          "GSAP",
+          "Framer Motion",
+          "EmailJS",
+          "Zod",
+          "Vitest"
+        ],
+        "meta": {
+          "title": "Enna Consulting · Case study",
+          "description": "Trilingual B2B HR showcase in production: nl/fr/en i18n, contact conversion, and frontend execution."
+        },
+        "problem": {
+          "tags": ["Offer clarity", "BE market", "Lead gen"],
+          "paragraphs": [
+            "The HR offer (talent, diversity, employer brand) was hard to grasp without a structured showcase.",
+            "The Belgian market requires nl / fr / en from first contact.",
+            "Business goal: fast visitor → commercial conversation, not a static brochure."
+          ]
+        },
+        "approach": {
+          "tags": ["One-pager", "Custom i18n", "EmailJS"],
+          "paragraphs": [
+            "Scroll one-pager with localized section slugs.",
+            "Custom i18n (middleware + cookie), default nl, hreflang and sitemap per section×locale.",
+            "Client-side EmailJS contact; social proof via testimonials (assumed mock)."
+          ]
+        },
+        "sections": {
+          "context": {
+            "title": "Product context",
+            "tags": ["SME", "Talent", "Belgium"],
+            "paragraphs": [
+              "Audience: executives and HR. Message stays human while showing concrete outcomes.",
+              "The “Contact me” CTA structures the whole journey."
+            ]
+          },
+          "architecture": {
+            "title": "Architecture",
+            "tags": ["features/", "middleware", "SEO"],
+            "paragraphs": [
+              "features home / about / testimonials / splash; lib i18n, emailjs, seo.",
+              "Locale middleware + cookie; sitemap aligned on translated sections."
+            ],
+            "bullets": [
+              "Localized section routes",
+              "Zod form validation",
+              "GSAP splash + Framer modals",
+              "Vitest on locale resolution"
+            ]
+          },
+          "decisions": {
+            "title": "Key decisions",
+            "tags": ["Scope", "Social proof", "Delivery"],
+            "paragraphs": [
+              "No CMS or business backend: stable content, priority was going live.",
+              "Mock testimonials are explicit, better than fake social proof sold as real."
+            ],
+            "bullets": [
+              "EmailJS for contact (not Formspree)",
+              "Default locale nl",
+              "One-pager over multi-page marketing"
+            ]
+          },
+          "execution": {
+            "title": "Execution and next steps",
+            "tags": ["BE prod", "Motion", "Light tests"],
+            "paragraphs": [
+              "Live at https://www.ennabv.be with a navigable trilingual journey.",
+              "Limited Vitest coverage; template README still present, client presentation remains the product source.",
+              "Possible next: light CMS and real testimonials."
+            ]
+          }
+        }
+      },
+      "maxweljones": {
+        "focusTags": ["Corporate", "Network", "i18n", "Prod"],
+        "name": "Maxwel Jones",
+        "tagline": "Give a holding a credible Learn / Earn / Return presence",
+        "type": "Corporate site",
+        "status": "Release 1.0.0",
+        "year": "2026",
+        "role": "I designed and shipped the corporate site: features/ structure, FR/EN i18n, consultant network, Web3Forms contact, and 2027 booking preparation.",
+        "stack": ["Next.js 15", "React 19", "Tailwind 4", "next-intl", "GSAP", "Web3Forms"],
+        "meta": {
+          "title": "Maxwel Jones · Case study",
+          "description": "Corporate holding site: Learn/Earn/Return philosophy, consultant network, and production contact."
+        },
+        "problem": {
+          "tags": ["Credibility", "Philosophy", "Contact vs booking"],
+          "paragraphs": [
+            "A strategic holding needs a sober credible presence, not a startup template.",
+            "Learn–Earn–Return and the consultant network must be understandable without a pitch deck.",
+            "Real contact had to be immediate; structured booking could wait until 2027."
+          ]
+        },
+        "approach": {
+          "tags": ["One-page", "next-intl", "Web3Forms"],
+          "paragraphs": [
+            "Single scroll page with section menu and GSAP motion polish.",
+            "FR/EN i18n via next-intl.",
+            "Roundtable contact via Web3Forms; booking calendar UI gated as Coming Soon 2027."
+          ]
+        },
+        "sections": {
+          "context": {
+            "title": "Product context",
+            "tags": ["Holding", "Advisory", "Matching"],
+            "paragraphs": [
+              "Positioning: international strategic catalyst around Learn / Earn / Return.",
+              "Consultant network supports dialogue and matching, not an open marketplace."
+            ]
+          },
+          "architecture": {
+            "title": "Architecture",
+            "tags": ["features/", "shared/", "SEO"],
+            "paragraphs": [
+              "Feature components (hero, philosophy, network, contact…) and shared section primitives.",
+              "SEO: OG, JSON-LD, robots, sitemap."
+            ],
+            "bullets": [
+              "Members as TypeScript data (3 profiles)",
+              "Internal DRY/SOLID docs",
+              "No automated test suite"
+            ]
+          },
+          "decisions": {
+            "title": "Key decisions",
+            "tags": ["Static content", "Deferred booking"],
+            "paragraphs": [
+              "Network content kept intentionally small to stay credible.",
+              "2027 booking is an explicit product gate, UI prepares without promising real confirmation today."
+            ],
+            "bullets": [
+              "Web3Forms + env key",
+              "next-intl over custom i18n",
+              "Frontend polish focus"
+            ]
+          },
+          "execution": {
+            "title": "Execution and next steps",
+            "tags": ["Prod", "SEO", "Booking follow-up"],
+            "paragraphs": [
+              "Live at https://www.maxweljones.com.",
+              "Natural next step: enable real booking and grow the network if business demands it.",
+              "Assumed limit: no Vitest/Playwright in this repo."
+            ]
+          }
+        }
+      },
+      "nana": {
+        "focusTags": ["Gallery", "Admin atelier", "Supabase", "Perf"],
+        "name": "Hors Cadre",
+        "tagline": "Public immersion and private atelier for a mono-admin photographer",
+        "type": "Creative site",
+        "status": "Release 1.0.0",
+        "year": "2026",
+        "role": "I designed and shipped the full product: public gallery, Supabase atelier, perf/SEO/i18n, and tests through production.",
+        "stack": [
+          "Next.js 16",
+          "React 19",
+          "Tailwind 4",
+          "next-intl",
+          "GSAP",
+          "Supabase",
+          "react-photo-album",
+          "Vitest",
+          "Playwright"
+        ],
+        "meta": {
+          "title": "Hors Cadre · Case study",
+          "description": "Photographer portfolio: ISR gallery, Supabase admin atelier, Liquid Glass, and E2E tests in production."
+        },
+        "problem": {
+          "tags": ["Immersion", "Photo volume", "Public/admin split"],
+          "paragraphs": [
+            "A premium photo portfolio must immerse without friction, no visitor accounts.",
+            "The photographer must publish and reorder large volumes without a heavy CMS.",
+            "Public SEO surface and private atelier must stay clearly separated."
+          ]
+        },
+        "approach": {
+          "tags": ["Two worlds", "Client WebP", "Mono-admin"],
+          "paragraphs": [
+            "Public ISR vs admin via env segments + Server Actions, no exposed REST API.",
+            "Client-side WebP before Storage; album images in JSONB (ADR).",
+            "Mono-admin: signup closed after the first account."
+          ]
+        },
+        "sections": {
+          "context": {
+            "title": "Product context",
+            "tags": ["Hors Cadre brand", "Mobile-first", "3 languages"],
+            "paragraphs": [
+              "Hors Cadre brand: Liquid Glass aesthetic, free download of public photos.",
+              "fr / nl / en i18n via cookie, no URL prefix."
+            ]
+          },
+          "architecture": {
+            "title": "Architecture",
+            "tags": ["features/", "proxy", "ADR"],
+            "paragraphs": [
+              "features admin / gallery / home / splash; session and language proxy.",
+              "Single Supabase backend; ADR-001→015 document irreversible choices."
+            ],
+            "bullets": [
+              "640px thumbs + 300s ISR cache",
+              "Obscured admin segments",
+              "~455 Vitest tests + public/atelier E2E",
+              "Upload up to 1,500 photos"
+            ]
+          },
+          "decisions": {
+            "title": "Key decisions",
+            "tags": ["JSONB", "Perf", "Surface security"],
+            "paragraphs": [
+              "JSONB albums to iterate fast on the media model, possible legacy, documented.",
+              "Obscure admin URL + RLS: defense in depth without burdening the public site."
+            ],
+            "bullets": [
+              "No Sentry (Vercel/Supabase dashboards)",
+              "Cross-tab realtime out of scope",
+              "Live host: horscadre-photography.vercel.app"
+            ]
+          },
+          "execution": {
+            "title": "Execution and next steps",
+            "tags": ["Vercel prod", "High test coverage"],
+            "paragraphs": [
+              "Live at https://horscadre-photography.vercel.app/.",
+              "k6 load test ready; optional post-deploy run.",
+              "Next: app monitoring only if traffic justifies it."
+            ]
+          }
+        }
+      },
+      "purpose-sport": {
+        "focusTags": ["Roster", "Sports business", "Video", "Prod"],
+        "name": "Purpose Sport",
+        "tagline": "Present a rich basketball roster without drowning recruiters",
+        "type": "Marketing site",
+        "status": "Release 1.0.0",
+        "year": "2025",
+        "role": "I shipped the agency showcase: data-driven roster, player profiles, videos, i18n, and production contact.",
+        "stack": [
+          "Next.js 15",
+          "React 19",
+          "Tailwind 3",
+          "Framer Motion",
+          "i18next",
+          "react-player",
+          "Jest",
+          "Web3Forms"
+        ],
+        "meta": {
+          "title": "Purpose Sport · Case study",
+          "description": "Sports management showcase: 12-athlete roster, rich profiles, video, and production contact."
+        },
+        "problem": {
+          "tags": ["Athlete visibility", "Content density", "Direct contact"],
+          "paragraphs": [
+            "A basketball agency needs a credible roster (profiles, media) for clubs and recruiters.",
+            "Careers and awards are too dense for a generic marketing site.",
+            "Contact must be direct without unnecessary business backend."
+          ]
+        },
+        "approach": {
+          "tags": ["data.ts", "i18next", "Web3Forms"],
+          "paragraphs": [
+            "Content centralized in a TypeScript data module; sectioned one-page UI.",
+            "Client i18next i18n (fr/en).",
+            "Web3Forms contact, Framer motion, Vercel Analytics."
+          ]
+        },
+        "sections": {
+          "context": {
+            "title": "Product context",
+            "tags": ["Management", "12 athletes", "Recruiting"],
+            "paragraphs": [
+              "Recruiting/visibility showcase, detailed profiles + media.",
+              "Sports business market: roster density is the argument, not page count."
+            ]
+          },
+          "architecture": {
+            "title": "Architecture",
+            "tags": ["Minimal App Router", "data-driven"],
+            "paragraphs": [
+              "Minimal App Router (single page) and HomeScreen/UI components, more classic than 2026 feature-first projects.",
+              "next-sitemap postbuild; Vercel Analytics."
+            ],
+            "bullets": [
+              "~12 players in TypeScript",
+              "2 players with embedded video",
+              "Jest (limited coverage)"
+            ]
+          },
+          "decisions": {
+            "title": "Key decisions",
+            "tags": ["Static", "Fast delivery"],
+            "paragraphs": [
+              "No CMS/Supabase: content changes rarely and had to ship fast.",
+              "Tailwind 3 / Jest / yarn stack, assumed heritage of delivery time."
+            ],
+            "bullets": [
+              "Client-side Web3Forms key = known security debt",
+              "nl i18n mentioned but not shipped",
+              "OG assets sometimes missing locally"
+            ]
+          },
+          "execution": {
+            "title": "Execution and next steps",
+            "tags": ["Release 1.0.0", "Prod"],
+            "paragraphs": [
+              "Live at https://purpose-sport.com.",
+              "Useful next: secure contact key, complete media, modernize architecture if the product grows.",
+              "Assumed limit: less mature architecture than Enna / Hors Cadre / TTC, shipped for business, not as an architecture reference."
             ]
           }
         }
@@ -638,7 +1049,7 @@
       "frontendPhilosophy": {
         "title": "Frontend philosophy",
         "intro": [
-          "Frontend sets a product’s rhythm, fluidity, and perception — not just the screen.",
+          "Frontend sets a product’s rhythm, fluidity, and perception, not just the screen.",
           "I focus especially on:"
         ],
         "bullets": [
@@ -681,7 +1092,7 @@
       "motionInteraction": {
         "title": "Motion & interaction",
         "intro": [
-          "Animation and micro-interactions for hierarchy and fluidity — never for decoration."
+          "Animation and micro-interactions for hierarchy and fluidity, never for decoration."
         ],
         "outro": "Discreet, useful motion aligned with the rest of the interface."
       },
@@ -706,14 +1117,14 @@
     },
     "meta": {
       "title": "Profile",
-      "description": "Product approach, frontend philosophy, and execution — Estime Vangu, product-oriented frontend engineer."
+      "description": "Product approach, frontend philosophy, and execution, Estime Vangu, product-oriented frontend engineer."
     }
   },
   "ContactScreen": {
     "title": "Contact",
     "intro": {
       "paragraphs": [
-        "Tell me what you are looking for — I reply with a clear proposal, not a generic quote."
+        "Tell me what you are looking for, I reply with a clear proposal, not a generic quote."
       ]
     },
     "form": {
@@ -735,7 +1146,7 @@
           },
           "general-contact": {
             "label": "Get in touch",
-            "description": "Question, collaboration, or chat — without a structured project brief."
+            "description": "Question, collaboration, or chat, without a structured project brief."
           }
         }
       },
@@ -746,7 +1157,7 @@
       "submitting": "Sending…",
       "success": {
         "title": "Message sent",
-        "body": "Thanks — your message is on its way. I’ll get back to you as soon as possible."
+        "body": "Thanks, your message is on its way. I’ll get back to you as soon as possible."
       },
       "errors": {
         "intentRequired": "Choose an option to continue.",
@@ -777,7 +1188,7 @@
     },
     "meta": {
       "title": "Contact",
-      "description": "Dynamic contact form — site, application, or direct conversation."
+      "description": "Dynamic contact form, site, application, or direct conversation."
     }
   }
 }

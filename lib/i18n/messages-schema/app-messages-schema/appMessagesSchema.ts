@@ -3,7 +3,7 @@ import { CONTACT_FIELD_IDS } from "@/features/contact-screen/types/contact-field
 import { CONTACT_INTENT_IDS } from "@/features/contact-screen/types/contact-intent-id/contactIntentId";
 import { CASE_STUDY_SECTION_IDS } from "@/features/projects-screen/map-project-case-study/caseStudySectionIds";
 import { PROFILE_SECTION_IDS } from "@/features/profile-screen/map-profile-content/profileSectionIds";
-import { FEATURED_PROJECT_SLUGS, PROJECT_SLUGS } from "@/lib/projects/project-catalog";
+import { CASE_STUDY_PROJECT_SLUGS, PROJECT_SLUGS } from "@/lib/projects/project-catalog";
 import { createSlugRecordSchema } from "@/lib/i18n/messages-schema/create-slug-record-schema/createSlugRecordSchema";
 import {
   caseStudySectionSchema,
@@ -38,7 +38,7 @@ const caseStudiesSchema = z
     }),
   })
   .extend(
-    createSlugRecordSchema(FEATURED_PROJECT_SLUGS, featuredCaseStudyWithSectionsSchema).shape,
+    createSlugRecordSchema(CASE_STUDY_PROJECT_SLUGS, featuredCaseStudyWithSectionsSchema).shape,
   );
 
 export const appMessagesSchema = z.object({

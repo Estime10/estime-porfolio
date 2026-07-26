@@ -48,7 +48,12 @@ export async function POST(request: Request): Promise<NextResponse> {
   const forwardResult = await forwardContactSubmissionToFormspree(parsed.body, formspreeConfig);
 
   if (!forwardResult.ok) {
-    return NextResponse.json({ error: forwardResult.message }, { status: 502 });
+    console.error("[api/contact] Formspree forward failed", {
+      status: forwardResult.status,
+      message: forwardResult.message,
+    });
+    // Message générique côté client — détail Formspree reste serveur.
+    return NextResponse.json({ error: "Contact submission failed" }, { status: 502 });
   }
 
   return NextResponse.json({ ok: true });

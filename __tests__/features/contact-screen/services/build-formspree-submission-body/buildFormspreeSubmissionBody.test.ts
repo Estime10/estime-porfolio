@@ -23,7 +23,7 @@ const basePayload: ContactFormSubmissionPayload = {
 describe("buildFormspreeSubmissionBody", () => {
   it("maps trimmed values and metadata for Formspree", () => {
     expect(buildFormspreeSubmissionBody(basePayload)).toEqual({
-      _subject: "Nouvelle demande — Site vitrine · Estime Vangu",
+      _subject: "Nouvelle demande · Site vitrine · Estime Vangu",
       name: "Estime Vangu",
       email: "estimevangu.pro@gmail.com",
       company: "Acme",
@@ -43,6 +43,6 @@ describe("buildFormspreeSubmissionBody", () => {
           company: "   ",
         },
       }).company,
-    ).toBe("—");
+    ).toBe("-");
   });
 });

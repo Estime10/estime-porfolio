@@ -8,14 +8,14 @@ Ce projet n’est pas une landing générique : c’est une **application Next.j
 
 ## Ce que fait le site
 
-| Parcours         | Route              | Description                                                            |
-| ---------------- | ------------------ | ---------------------------------------------------------------------- |
-| **Splash**       | `/`                | Entrée brandée vers l’expérience principale                            |
-| **Accueil**      | `/home`            | Hero, positionnement, CTA projets & contact                            |
-| **Profil**       | `/profile`         | Parcours, compétences, sections narratives                             |
-| **Projets**      | `/projects`        | Catalogue (mis en avant + secondaires)                                 |
-| **Étude de cas** | `/projects/[slug]` | Case study détaillée (FleetScan, Shadow, Take The Crown, Spill Crumb…) |
-| **Contact**      | `/contact`         | Intentions métier, wizard progressif ou canaux directs                 |
+| Parcours         | Route              | Description                                            |
+| ---------------- | ------------------ | ------------------------------------------------------ |
+| **Splash**       | `/`                | Entrée brandée vers l’expérience principale            |
+| **Accueil**      | `/home`            | Hero, positionnement, CTA projets & contact            |
+| **Profil**       | `/profile`         | Parcours, compétences, sections narratives             |
+| **Projets**      | `/projects`        | Catalogue (mis en avant + secondaires)                 |
+| **Étude de cas** | `/projects/[slug]` | Case study (featured + other work)                     |
+| **Contact**      | `/contact`         | Intentions métier, wizard progressif ou canaux directs |
 
 **Fonctionnalités transverses :**
 
@@ -32,9 +32,9 @@ Ce projet n’est pas une landing générique : c’est une **application Next.j
 
 Le contenu (copy, case studies) vit dans `i18n/messages/` et `doc/`. Le catalogue technique est dans `lib/projects/project-catalog.ts`.
 
-**Mis en avant (case studies) :** FleetScan (`scratch_tracker`), Shadow, Take The Crown (`1V1_streetball`), Spill Crumb (`spill_crumb_V1`).
+**Mis en avant (case studies) :** FleetScan (`scratch_tracker`), Shadow, Spill Crumb (`spill_crumb_V1`), Jikowood (`jikowood_refonte`).
 
-**Secondaires :** Jikowood, Enna, Maxwel Jones, Hors Cadre (nana), Purpose Sport — voir les URLs dans le catalogue.
+**Other work (carte + case study + live quand dispo) :** Take The Crown 3x3 (`TTC-v0`), Enna, Maxwel Jones, Hors Cadre (`nana`), Purpose Sport.
 
 Inventaire détaillé et critères de sélection : [`doc/portfolio-projects-inventory.md`](doc/portfolio-projects-inventory.md).
 
@@ -81,22 +81,22 @@ Stratégie produit et phases de build : [`doc/porfolio-strategy.md`](doc/porfoli
 
 ## Démarrage local
 
-**Prérequis :** Node.js 20+, [pnpm](https://pnpm.io/) 9+
+**Prérequis :** Node.js 20+, [pnpm](https://pnpm.io/) 10+ (voir `packageManager` dans `package.json`)
 
 ```bash
-git clone https://github.com/Estime10/portfolio_pro.git
-cd portfolio_pro
+git clone https://github.com/Estime10/estime-porfolio.git
+cd estime-porfolio
 pnpm install
 ```
 
 Créer `.env.local` à la racine :
 
-| Variable               | Rôle                                                                |
-| ---------------------- | ------------------------------------------------------------------- |
-| `FORMSPREE_FORM_ID`    | ID Formspree **serveur** (ex. `xjgqewyk`) — jamais exposé au client |
-| `NEXT_PUBLIC_SITE_URL` | URL publique (canonical, OG, sitemap) — optionnel en local          |
+| Variable               | Rôle                                                                         |
+| ---------------------- | ---------------------------------------------------------------------------- |
+| `FORMSPREE_FORM_ID`    | ID Formspree **serveur uniquement** — définir aussi dans le dashboard Vercel |
+| `NEXT_PUBLIC_SITE_URL` | URL publique (canonical, OG, sitemap) — optionnel en local                   |
 
-Dans Formspree → **Settings**, autoriser le domaine de production et `http://localhost:3000` en développement si nécessaire.
+Ne jamais committer l’ID Formspree dans `vercel.json` ni une variable `NEXT_PUBLIC_*`. Dans Formspree → **Settings**, autoriser le domaine de production et `http://localhost:3000` en développement, et activer le filtrage / reCAPTCHA si le spam apparaît.
 
 ```bash
 pnpm dev
@@ -117,14 +117,14 @@ Ouvrir [http://localhost:3000](http://localhost:3000).
 | `pnpm lint`          | ESLint (0 warning)                  |
 | `pnpm format`        | Prettier — formater le dépôt        |
 | `pnpm format:check`  | Prettier — vérifier sans écrire     |
-| `pnpm typecheck`     | `tsc --noEmit`                      |
+| `pnpm typecheck`     | `next typegen` puis `tsc --noEmit`  |
 | `pnpm test`          | Tests unitaires (Vitest)            |
 | `pnpm test:watch`    | Tests en watch                      |
 | `pnpm test:coverage` | Couverture (zones contact / config) |
 | `pnpm test:e2e`      | Tests E2E Playwright (Chromium)     |
 | `pnpm test:e2e:ui`   | Playwright en mode UI               |
 
-Le hook **Husky** (pre-commit) exécute lint-staged + typecheck. La **CI** (`.github/workflows/ci.yml`) rejoue lint, typecheck, tests et build sur `main` et `develop`.
+Le hook **Husky** (pre-commit) exécute lint-staged + typecheck. La **CI** (`.github/workflows/ci.yml`) rejoue lint, format, typecheck, tests, build et E2E Playwright sur `main` et `develop`.
 
 ### Dépannage — `JavaScript heap out of memory`
 
@@ -146,7 +146,7 @@ Les tests sont dans **`__tests__/`** (pas colocalisés au code source). Les fixt
 
 ```bash
 pnpm test
-pnpm test:e2e      # build requis en CI ; en local lance `dev` automatiquement
+pnpm test:e2e      # build + Playwright (Chromium) — aussi en CI
 pnpm test:e2e:ui   # mode interactif Playwright
 ```
 
@@ -154,8 +154,9 @@ pnpm test:e2e:ui   # mode interactif Playwright
 
 ## Sécurité & limites
 
-- L’ID Formspree (`FORMSPREE_FORM_ID`) reste **côté serveur** ; le client poste uniquement vers `/api/contact` (validation Zod + rate limiting par IP).
-- Activer le reCAPTCHA / filtrage dans le tableau de bord Formspree en complément.
+- L’ID Formspree (`FORMSPREE_FORM_ID`) reste **côté serveur** (`.env.local` / variables Vercel) ; le client poste uniquement vers `/api/contact` (validation Zod + rate limiting par IP).
+- Ne pas versionner `FORMSPREE_FORM_ID` dans le dépôt (`vercel.json` inclus).
+- Activer le reCAPTCHA / filtrage dans le tableau de bord Formspree en complément — le rate limit in-memory de l’app est une défense best-effort (reset au cold start).
 - Les coordonnées publiques (e-mail, téléphone, réseaux) sont dans `lib/constants/publicContact.ts` — volontairement versionnées pour un portfolio.
 - Ne pas committer `.env.local` (déjà ignoré par git).
 
@@ -174,9 +175,9 @@ pnpm test:e2e:ui   # mode interactif Playwright
 
 ## État du projet
 
-- **Shell navigation, projets, profil, contact** : en place sur `develop`
-- **Case studies** : FleetScan, Shadow, Take The Crown, Spill Crumb
-- **Déploiement prod** : Vercel + variable `FORMSPREE_FORM_ID`
+- **Shell navigation, projets, profil, contact** : en place sur `main`
+- **Case studies** : featured (FleetScan, Shadow, Spill Crumb, Jikowood) + other work (TTC-v0, Enna, Maxwel Jones, Hors Cadre, Purpose Sport)
+- **Déploiement prod** : Vercel — variables `FORMSPREE_FORM_ID` (dashboard) et `NEXT_PUBLIC_SITE_URL`
 - **Pistes** : code-splitting GSAP, locale `nl` (mentionnée dans certains contenus, non implémentée)
 
 ---

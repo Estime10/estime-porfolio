@@ -46,7 +46,7 @@
 ```
 VITRINES (conversion, narration, motion premium)
 ├── enna          → B2B, i18n, contact EmailJS, prod BE
-├── jikowood      → artisan premium, galerie, Lenis, tests E2E
+├── jikowood      → artisan premium, galerie, GSAP, tests E2E
 ├── nana            → portfolio photographe, galerie masonry, Liquid Glass
 ├── maxweljones   → corporate, réseau, Web3Forms
 └── purpose_sport → data-driven (12 joueurs), vidéos
@@ -242,15 +242,15 @@ META
 
 #### Informations générales
 
-| Champ        | Valeur                                                                        |
-| ------------ | ----------------------------------------------------------------------------- |
-| **Nom**      | JIKOWOOD                                                                      |
-| **Dossier**  | `mes-apps/jikowood_refonte`                                                   |
-| **Repo**     | `Estime10/jikowood_refonte`                                                   |
-| **Année**    | 2026                                                                          |
-| **Type**     | Refonte site vitrine premium (artisan menuisier)                              |
-| **Objectif** | Vitrine haut de gamme : galerie projets, services, avis, contact              |
-| **Statut**   | **Quasi livrable** — formulaire contact **UI only** (succès local sans envoi) |
+| Champ        | Valeur                                                                                               |
+| ------------ | ---------------------------------------------------------------------------------------------------- |
+| **Nom**      | JIKOWOOD                                                                                             |
+| **Dossier**  | `mes-apps/jikowood_refonte`                                                                          |
+| **Repo**     | `Estime10/jikowood_refonte`                                                                          |
+| **Année**    | 2026                                                                                                 |
+| **Type**     | Refonte site vitrine premium (artisan menuisier)                                                     |
+| **Objectif** | Vitrine haut de gamme : galerie projets, services, avis, contact                                     |
+| **Statut**   | **Déployé (Vercel)** — case study portfolio ; contact **UI only** ; domaine `.be` pas encore basculé |
 
 #### Stack
 
@@ -260,8 +260,8 @@ META
 | Backend     | —                                                                |
 | DB          | Données statiques `lib/projects/projects-index.ts`               |
 | Auth        | —                                                                |
-| Infra       | Vercel probable                                                  |
-| Animation   | GSAP, **Lenis** smooth scroll, `lib/motion`                      |
+| Infra       | Vercel — https://jikowood-refonte.vercel.app                     |
+| Animation   | GSAP (`lib/motion`) + `prefers-reduced-motion`                   |
 | Outils clés | Vitest + coverage, Playwright E2E, Husky, Zod 4, react-hook-form |
 
 #### Ce qui est intéressant
@@ -294,22 +294,22 @@ META
 | ------------ | ------------------------------------------------------------------------------------------ |
 | **Nom**      | Portfolio Estime Vangu                                                                     |
 | **Dossier**  | `creativity/portfolio_pro`                                                                 |
-| **Repo**     | `Estime10/portfolio_pro`                                                                   |
+| **Repo**     | `Estime10/estime-porfolio`                                                                 |
 | **Année**    | 2026                                                                                       |
 | **Type**     | Portfolio product engineer (multi-pages, narratif)                                         |
 | **Objectif** | Démontrer frontend orienté produit, exécution UI, capacité à ship — anti-template Awwwards |
-| **Statut**   | **En cours** — Phase 1 identité livrée ; `/projects` et `/contact` = placeholders          |
+| **Statut**   | **En prod** — shell, projets, profil, contact, case studies featured ; itération contenu   |
 
 #### Stack
 
 | Couche      | Technologie                                                                                          |
 | ----------- | ---------------------------------------------------------------------------------------------------- |
-| Frontend    | Next.js 16, React 19, Tailwind 4, GSAP (41 modules animation)                                        |
-| Backend     | — (Server Actions locale i18n uniquement)                                                            |
+| Frontend    | Next.js 16, React 19, Tailwind 4, GSAP (modules animation lazy-load)                                 |
+| Backend     | Route Handler `/api/contact` (Formspree) + Server Action locale i18n                                 |
 | DB          | —                                                                                                    |
 | Auth        | —                                                                                                    |
-| Infra       | Vercel prévu (`.gitignore` .vercel), pas de `vercel.json`                                            |
-| Animation   | GSAP exclusif (pas Framer) — splash, thème interpolé 14 CSS vars, nav panneaux, contact strip        |
+| Infra       | Vercel (`vercel.json` + `FORMSPREE_FORM_ID` en env dashboard, pas dans le repo)                      |
+| Animation   | GSAP exclusif (pas Framer) — splash, thème interpolé, nav panneaux, contact strip                    |
 | Outils clés | next-intl (cookie, sans préfixe URL), ESLint strict (no any), Husky, Instrument Sans + IBM Plex Mono |
 
 #### Ce qui est intéressant
@@ -322,12 +322,12 @@ META
 
 #### Assets à récupérer
 
-| Type              | État                               | Action                              |
-| ----------------- | ---------------------------------- | ----------------------------------- |
-| Portrait          | ✅ `public/image/myself.webp`      | Hero                                |
-| Favicon           | ✅ généré `app/icon.tsx`           | —                                   |
-| Screenshots shell | ❌                                 | Capturer splash, home, profile, nav |
-| Contact réel      | ❌ placeholders `publicContact.ts` | Remplacer avant prod                |
+| Type              | État                          | Action                              |
+| ----------------- | ----------------------------- | ----------------------------------- |
+| Portrait          | ✅ `public/image/myself.webp` | Hero                                |
+| Favicon           | ✅ généré `app/icon.tsx`      | —                                   |
+| Screenshots shell | ❌                            | Capturer splash, home, profile, nav |
+| Contact réel      | ✅ `publicContact.ts`         | Coordonnées publiques volontaires   |
 
 #### Force portfolio
 

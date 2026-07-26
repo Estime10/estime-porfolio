@@ -48,7 +48,7 @@ describe("sendContactFormSubmission", () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          _subject: "Nouvelle demande — Site vitrine · Estime Vangu",
+          _subject: "Nouvelle demande · Site vitrine · Estime Vangu",
           name: "Estime Vangu",
           email: "estimevangu.pro@gmail.com",
           company: "Acme",

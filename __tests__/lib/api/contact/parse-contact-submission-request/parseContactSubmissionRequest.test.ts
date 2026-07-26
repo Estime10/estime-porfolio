@@ -4,7 +4,7 @@ import { parseContactSubmissionRequest } from "@/lib/api/contact/parse-contact-s
 describe("parseContactSubmissionRequest", () => {
   it("accepts a valid contact submission payload", () => {
     const result = parseContactSubmissionRequest({
-      _subject: "Nouvelle demande — Site vitrine · Estime",
+      _subject: "Nouvelle demande · Site vitrine · Estime",
       name: "Estime",
       email: "estime@example.com",
       company: "Acme",

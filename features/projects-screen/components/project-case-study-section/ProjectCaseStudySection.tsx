@@ -47,7 +47,7 @@ export function ProjectCaseStudySection({
           {section.bullets.map((bullet) => (
             <li key={bullet} className="text-body text-foreground/90 flex gap-2">
               <span className="text-accent mt-0.5" aria-hidden>
-                —
+                -
               </span>
               <span>{bullet}</span>
             </li>
