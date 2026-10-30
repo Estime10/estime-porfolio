@@ -5,20 +5,11 @@ import {
   type ProfileSectionId,
 } from "@/features/profile-screen/map-profile-content/profileSectionIds";
 import type {
-  ProfileBulletPresentation,
   ProfileContentViewModel,
   ProfileSectionViewModel,
 } from "@/features/profile-screen/types/profileSectionViewModel";
 
 type ProfileTranslator = Awaited<ReturnType<typeof getTranslations<"ProfileScreen">>>;
-
-const BULLET_PRESENTATION_BY_SECTION: Partial<Record<ProfileSectionId, ProfileBulletPresentation>> =
-  {
-    frontendPhilosophy: "chips",
-    technicalApproach: "chips",
-    collaborationExecution: "chips",
-    buildingApplications: "list",
-  };
 
 function mapProfileSection(
   t: ProfileTranslator,
@@ -43,7 +34,6 @@ function mapProfileSection(
     intro,
     bullets,
     outro,
-    bulletPresentation: bullets ? (BULLET_PRESENTATION_BY_SECTION[sectionId] ?? "list") : undefined,
   };
 }
 

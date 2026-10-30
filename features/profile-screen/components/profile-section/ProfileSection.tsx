@@ -33,12 +33,7 @@ export function ProfileSection({ section }: ProfileSectionProps) {
         ))}
       </div>
 
-      {section.bullets ? (
-        <ProfileSectionBullets
-          bullets={section.bullets}
-          presentation={section.bulletPresentation ?? "list"}
-        />
-      ) : null}
+      {section.bullets ? <ProfileSectionBullets bullets={section.bullets} /> : null}
 
       {section.outro ? (
         <p className="text-body text-foreground/90 mt-6 max-w-prose md:mt-8">{section.outro}</p>

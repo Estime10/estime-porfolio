@@ -35,9 +35,6 @@ export const CHROME_LOGO_GRADIENT_TEXT_ON_FILL = "!text-white dark:!text-slate-9
 /** Fond dégradé calqué sur le mot-signature du logo (`LogoEstimeVangu`). */
 export const CHROME_LOGO_GRADIENT_FILL = `${CHROME_SURFACE_RADIUS_IMPORTANT} ${CHROME_GLOSS_SLATE} ${CHROME_LOGO_GRADIENT_TEXT_ON_FILL}`;
 
-/** Pastilles profil — même dégradé, padding plus généreux. */
-export const CHROME_GRADIENT_CHIP = `${CHROME_SURFACE_RADIUS} ${CHROME_GLOSS_SLATE_BADGE} inline-flex items-center px-4 py-2 text-body font-normal leading-snug tracking-normal ${CHROME_LOGO_GRADIENT_TEXT_ON_FILL}`;
-
 /** Badge statut (cartes projets) — même rayon et proportions que les CTA. */
 export const CHROME_GRADIENT_STATUS_BADGE = `${CHROME_SURFACE_RADIUS} ${CHROME_GLOSS_SLATE_BADGE} ${CHROME_GLOSS_BADGE_LAYOUT} ${CHROME_LOGO_GRADIENT_TEXT_ON_FILL}`;
 

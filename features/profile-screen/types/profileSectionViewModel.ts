@@ -1,7 +1,4 @@
-export type ProfileBulletPresentation = "chips" | "list";
-
 export type ProfileSectionViewModel = Readonly<{
-  bulletPresentation?: ProfileBulletPresentation;
   bullets?: readonly string[];
   id: string;
   index: number;
