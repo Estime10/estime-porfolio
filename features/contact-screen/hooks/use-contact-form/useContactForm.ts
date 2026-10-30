@@ -26,7 +26,6 @@ export type { ContactFormPhase, ContactFormStatus };
 
 export type UseContactFormReturn = Readonly<{
   activeFields: ContactFormViewModel["fieldsByIntent"][ContactIntentId];
-  cancelDirectChannels: () => void;
   cancelWizard: () => void;
   errors: ContactFormValidationErrors;
   getErrorMessage: (code: ContactFormValidationErrorCode) => string;
@@ -34,7 +33,6 @@ export type UseContactFormReturn = Readonly<{
   handleFieldChange: (fieldId: ContactFieldId, value: string) => void;
   intentId: ContactIntentId | null;
   isSubmitEnabled: boolean;
-  openDirectChannels: (intentId: ContactIntentId) => void;
   phase: ContactFormPhase;
   revealedStepIndex: number;
   selectedIntent: ContactIntentOptionViewModel | null;
@@ -109,7 +107,6 @@ export function useContactForm(form: ContactFormViewModel): UseContactFormReturn
 
   return {
     activeFields,
-    cancelDirectChannels: phaseActions.cancelDirectChannels,
     cancelWizard: phaseActions.cancelWizard,
     errors,
     getErrorMessage,
@@ -117,7 +114,6 @@ export function useContactForm(form: ContactFormViewModel): UseContactFormReturn
     handleFieldChange,
     intentId,
     isSubmitEnabled: submitState.isSubmitEnabled,
-    openDirectChannels: phaseActions.openDirectChannels,
     phase,
     revealedStepIndex,
     selectedIntent,

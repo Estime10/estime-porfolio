@@ -1,3 +1,3 @@
-export type ContactFormPhase = "intent-selection" | "direct-channels" | "wizard" | "success";
+export type ContactFormPhase = "intent-selection" | "wizard" | "success";
 
 export type ContactFormStatus = "idle" | "submitting";

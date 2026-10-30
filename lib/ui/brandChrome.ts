@@ -1,6 +1,6 @@
 /**
- * Chrome visuel partagé : header (toggles) et CTA hero — même arrondi et
- * mêmes références que le logo (dégradé signature ardoise glossy).
+ * Chrome visuel partagé : CTA hero, badges et surfaces — mêmes références
+ * que le logo (dégradé signature ardoise glossy).
  */
 
 /** Rayon partagé CTA / badges glossy (`--chrome-surface-radius` dans `globals.css`). */
@@ -9,14 +9,11 @@ export const CHROME_SURFACE_RADIUS = "rounded-[var(--chrome-surface-radius)]";
 /** Même rayon, priorité sur `rounded-full` des boutons de base. */
 export const CHROME_SURFACE_RADIUS_IMPORTANT = "!rounded-[var(--chrome-surface-radius)]";
 
-/** Bordure neutre partagée : toggles header, CTA outline. */
+/** Bordure neutre partagée : CTA outline, formulaires, tags. */
 export const CHROME_OUTLINE_BORDER =
   "border border-solid border-[color:rgb(15_23_42_/0.18)] dark:border-[color:rgb(248_250_252_/0.18)]";
 
-/** Bordure + rayon partagé pour surfaces type CTA outline. */
-export const CHROME_OUTLINE_SURFACE = `${CHROME_SURFACE_RADIUS} ${CHROME_OUTLINE_BORDER}`;
-
-/** Aligné sur les toggles langue / thème (`LanguageSwitcher`, `ThemeToggle`). */
+/** Bordure + typo label — CTA outline et surfaces chrome. */
 export const CHROME_TOGGLE_OUTLINE = `text-label ${CHROME_SURFACE_RADIUS_IMPORTANT} ${CHROME_OUTLINE_BORDER}`;
 
 /** Surface ardoise glossy — CTA remplis, boutons primary. */
@@ -43,9 +40,6 @@ export const CHROME_GRADIENT_CHIP = `${CHROME_SURFACE_RADIUS} ${CHROME_GLOSS_SLA
 
 /** Badge statut (cartes projets) — même rayon et proportions que les CTA. */
 export const CHROME_GRADIENT_STATUS_BADGE = `${CHROME_SURFACE_RADIUS} ${CHROME_GLOSS_SLATE_BADGE} ${CHROME_GLOSS_BADGE_LAYOUT} ${CHROME_LOGO_GRADIENT_TEXT_ON_FILL}`;
-
-/** Tags focus projets — identique au badge statut. */
-export const CHROME_GRADIENT_PROJECT_TAG = CHROME_GRADIENT_STATUS_BADGE;
 
 /** Texte dégradé identique au logo (clip). */
 export const CHROME_LOGO_GRADIENT_TEXT = "ui-gloss-slate-text";

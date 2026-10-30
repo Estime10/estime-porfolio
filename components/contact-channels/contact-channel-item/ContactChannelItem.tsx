@@ -10,7 +10,7 @@ export type ContactChannelItemProps = Readonly<{
 
 export function ContactChannelItem({ channel, className = "" }: ContactChannelItemProps) {
   return (
-    <li className={`min-w-0 ${className}`.trim()} data-contact-channel-item>
+    <li className={`min-w-0 ${className}`.trim()}>
       <a
         aria-label={channel.ariaLabel}
         className="group border-border bg-background/20 focus-visible:ring-accent flex h-full min-h-0 flex-row items-center gap-3 rounded-2xl border p-3 transition-colors hover:border-[color:rgb(72_82_98_/0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background max-sm:gap-2 max-sm:rounded-xl max-sm:p-2 sm:gap-5 sm:p-4 md:gap-4 md:p-3.5 md:min-h-full dark:hover:border-[color:rgb(186_196_210_/0.55)]"

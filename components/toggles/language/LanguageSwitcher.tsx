@@ -4,8 +4,6 @@ import { useId } from "react";
 import { Button } from "@/components/button";
 import { useLanguageSwitcher } from "@/components/toggles/language/hooks";
 import { getLanguageSwitcherPanelLabel } from "@/components/toggles/language/lib/get-language-switcher-panel-label/getLanguageSwitcherPanelLabel";
-import { CHROME_TOGGLE_OUTLINE } from "@/lib/ui/brandChrome";
-import { CHROME_HEADER_TOGGLE_CHROME_CLASSES } from "@/lib/ui/chromeHeaderToggleButton";
 
 export function LanguageSwitcher() {
   const panelId = useId();
@@ -25,18 +23,15 @@ export function LanguageSwitcher() {
     <div ref={rootRef} className="relative flex items-center justify-end">
       <Button
         type="button"
-        variant="outline"
-        size="sm"
-        className={CHROME_HEADER_TOGGLE_CHROME_CLASSES}
+        variant="nav"
+        className="relative z-10 shrink-0 max-md:min-h-[var(--touch-min)] max-md:min-w-[var(--touch-min)]"
         aria-label={triggerLabel}
         aria-controls={isExpanded ? panelId : undefined}
         aria-expanded={isExpanded}
         aria-haspopup="dialog"
         onClick={toggle}
       >
-        <span className="font-mono text-[0.65rem] font-semibold tracking-[0.16em]">
-          {locale.toUpperCase()}
-        </span>
+        {locale.toUpperCase()}
       </Button>
       {panelMounted ? (
         <div
@@ -45,16 +40,15 @@ export function LanguageSwitcher() {
           role="dialog"
           aria-modal="true"
           aria-label={getLanguageSwitcherPanelLabel(locale)}
-          className="pointer-events-none absolute right-full top-1/2 mr-2 flex -translate-y-1/2 flex-row items-center gap-2"
+          className="pointer-events-none absolute right-full top-1/2 mr-3 flex -translate-y-1/2 flex-row items-center gap-3"
         >
           {inactiveLocales.map((code) => (
             <Button
               key={code}
               type="button"
-              variant="outline"
-              size="sm"
+              variant="nav"
               data-locale-option
-              className={`${CHROME_TOGGLE_OUTLINE} pointer-events-auto min-w-10 px-2 font-mono text-[0.65rem] font-semibold tracking-[0.16em]`}
+              className="pointer-events-auto"
               aria-label={code === "fr" ? "Français" : "English"}
               onClick={() => {
                 selectLocale(code);

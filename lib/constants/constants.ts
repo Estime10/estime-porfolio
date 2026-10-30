@@ -87,49 +87,6 @@ export const MAIN_ROUTE_TRANSITION_IN_DURATION_SECONDS = 0.65;
 export const MAIN_ROUTE_TRANSITION_EASE = MAIN_SHELL_FADE_IN_EASE;
 
 // =============================================================================
-// Animation — panneau contact hero (GSAP)
-// =============================================================================
-
-/** Durée d’ouverture du conteneur contact (hauteur). */
-export const CONTACT_STRIP_EXPAND_DURATION_SECONDS = 0.38;
-
-/** Courbe GSAP pour l’ouverture du conteneur contact. */
-export const CONTACT_STRIP_EXPAND_EASE = "power2.out";
-
-/** Durée d’entrée de chaque canal contact. */
-export const CONTACT_STRIP_ITEM_DURATION_SECONDS = 0.42;
-
-/** Décalage entre chaque canal (stagger). */
-export const CONTACT_STRIP_ITEM_STAGGER_SECONDS = 0.09;
-
-/** Courbe GSAP pour l’entrée des canaux contact. */
-export const CONTACT_STRIP_ITEM_EASE = "power3.out";
-
-/** Décalage vertical initial des canaux à l’ouverture (px). */
-export const CONTACT_STRIP_ITEM_OFFSET_Y_PX = 14;
-
-/** Durée de fermeture du conteneur contact. */
-export const CONTACT_STRIP_COLLAPSE_DURATION_SECONDS = 0.4;
-
-/** Courbe GSAP pour la fermeture du conteneur contact. */
-export const CONTACT_STRIP_COLLAPSE_EASE = "power2.inOut";
-
-/** Durée de sortie de chaque canal contact. */
-export const CONTACT_STRIP_ITEM_EXIT_DURATION_SECONDS = 0.32;
-
-/** Stagger entre canaux à la fermeture (s). */
-export const CONTACT_STRIP_ITEM_EXIT_STAGGER_SECONDS = 0.07;
-
-/** Décalage vertical des canaux à la fermeture (px, vers le haut). */
-export const CONTACT_STRIP_ITEM_EXIT_OFFSET_Y_PX = -12;
-
-/**
- * Recouvrement du repli hauteur sur la sortie des canaux (0–1 du span items).
- * Plus élevé = fermeture plus parallèle et fluide (miroir de l’ouverture).
- */
-export const CONTACT_STRIP_CLOSE_COLLAPSE_OVERLAP_RATIO = 0.58;
-
-// =============================================================================
 // Animation — formulaire contact (GSAP)
 // =============================================================================
 
@@ -143,10 +100,6 @@ export const CONTACT_FORM_FIELD_OFFSET_Y_PX = 12;
 
 export const CONTACT_FORM_SCROLL_DURATION_SECONDS = 0.62;
 export const CONTACT_FORM_SCROLL_EASE = "power2.inOut";
-
-export const CONTACT_FORM_INTENT_EXIT_DURATION_SECONDS = 0.34;
-export const CONTACT_FORM_INTENT_EXIT_EASE = "power2.in";
-export const CONTACT_FORM_INTENT_EXIT_OFFSET_Y_PX = -14;
 
 // =============================================================================
 // Routes applicatives

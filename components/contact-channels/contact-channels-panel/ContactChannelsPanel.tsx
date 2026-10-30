@@ -1,4 +1,4 @@
-import { ContactChannelItem } from "@/components/contact-channels/contact-icon-strip/ContactChannelItem";
+import { ContactChannelItem } from "@/components/contact-channels/contact-channel-item/ContactChannelItem";
 import { mapContactChannelsForStrip } from "@/lib/contact-channels/map-contact-channels-for-strip/mapContactChannelsForStrip";
 import type { ContactStripLabels } from "@/lib/contact-channels/types/contact-strip-labels/contactStripLabels";
 
