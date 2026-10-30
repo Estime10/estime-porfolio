@@ -22,11 +22,11 @@
   "HomeScreen": {
     "hero": {
       "name": "Estime Vangu",
-      "role": "Product-minded frontend engineer",
-      "intro": "I build modern web products starting from the frontend, combining UX, product logic, and technical execution into usable, scalable applications.",
+      "role": "Product-minded frontend developer",
+      "intro": "Before writing a line of code, I look for the why. I start from the user, simplify what's complicated, and ship interfaces that actually help.",
       "ctaStartProject": "Start a project",
       "ctaViewProjects": "View projects",
-      "availability": "Independent Next.js / Supabase developer in Brussels. Available for freelance missions and full-time roles, on-site or remote. FR · EN · NL."
+      "availability": "Based in Brussels."
     },
     "meta": {
       "title": "Estime Vangu · Freelance Next.js developer in Brussels",

@@ -22,11 +22,11 @@
   "HomeScreen": {
     "hero": {
       "name": "Estime Vangu",
-      "role": "Ingénieur frontend orienté produit",
-      "intro": "Je construis des produits web modernes en partant du frontend, en reliant UX, logique produit et exécution technique pour des applications utilisables et évolutives.",
+      "role": "Développeur frontend orienté produit",
+      "intro": "Avant d'écrire une ligne de code, je cherche à comprendre pourquoi. Je pars de l'utilisateur, je simplifie ce qui est compliqué et je livre des interfaces qui servent vraiment.",
       "ctaStartProject": "Lancer un projet",
       "ctaViewProjects": "Voir mes projets",
-      "availability": "Développeur Next.js / Supabase indépendant à Bruxelles. Disponible pour missions freelance et CDI, sur site ou en remote. FR · EN · NL."
+      "availability": "Basé à Bruxelles."
     },
     "meta": {
       "title": "Estime Vangu · Développeur Next.js freelance à Bruxelles",
