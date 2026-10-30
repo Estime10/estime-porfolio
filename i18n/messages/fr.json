@@ -69,7 +69,7 @@
         "tagline": "Le site d'une société de gestion locative à Anvers : migration de WordPress vers Next.js sans perte de SEO, back-office et moteur de réservation",
         "type": "Gestion locative · Anvers · 2026",
         "status": "En ligne",
-        "summary": "J'ai remplacé le site WordPress vieillissant de Kozy Antwerp par une plateforme Next.js trilingue. Elle réunit une vitrine pensée pour convaincre les propriétaires, un back-office de gestion des biens et un moteur de réservation (validation par l'admin, paiement Stripe) dont les règles sont garanties par la base de données.",
+        "summary": "Migration WordPress → Next.js trilingue pour une gestion locative à Anvers : vitrine, back-office et réservation Stripe, avec les règles critiques en base.",
         "tags": ["Back-office sur mesure", "SEO cutover", "Supabase", "Stripe", "Feature flags"],
         "highlights": [
           "52 URLs WordPress en 301, bruit WP en 410, bascule sans perte SEO",
@@ -136,14 +136,14 @@
       },
       "spill-crumb": {
         "name": "Spill The Crumb",
-        "tagline": "Un réseau social de confidences anonymes en temps réel, construit comme un vrai produit : feed live entre onglets, anti-spam garanti par la base, back-office et plus de 600 tests",
+        "tagline": "Réseau social de confidences anonymes en temps réel : feed live, anti-spam en base, back-office et 638 tests",
         "type": "Réseau social · 2026",
-        "status": "En ligne",
+        "status": "En développement",
         "summary": "Spill The Crumb est un feed communautaire où l'on partage et commente des « crumbs » sans exposer son identité. Je l'ai construit comme un produit prêt à grandir, pas comme une démo.",
-        "tags": ["Temps réel", "Règles en SQL", "600+ tests", "CI + E2E", "Observabilité"],
+        "tags": ["Temps réel", "Règles en SQL", "638 tests", "CI + E2E", "Observabilité"],
         "highlights": [
           "Stores posts synchronisés (feed, profil, détail) avec fan-out multi-stores",
-          "638+ tests Vitest, CI qualité + E2E Supabase local, rate limit Upstash",
+          "638 tests Vitest, CI qualité + E2E Supabase local, rate limit Upstash",
           "Auth, notifications realtime, sponsoring admin et persistance logs plateforme"
         ],
         "stack": [
@@ -164,7 +164,7 @@
         "tagline": "Le site vitrine et portfolio d'une menuiserie sur mesure à Bruxelles : plus d'une centaine de photos de réalisations, trois langues, avis clients et référencement local",
         "type": "Menuiserie sur mesure · Bruxelles · 2025",
         "status": "En ligne",
-        "summary": "Une menuiserie vend avec des photos. Pour ce client à Bruxelles, j'ai conçu et développé jikowood.be de bout en bout : un portfolio filtrable de 17 réalisations sur mesure, une page par projet, des avis clients stockés en base, un formulaire de contact et une interface en français, anglais et néerlandais.",
+        "summary": "Vitrine menuiserie à Bruxelles : portfolio filtrable, pages projet, avis en base et SEO local, en français, anglais et néerlandais.",
         "tags": [
           "En production",
           "SEO local",
@@ -195,7 +195,7 @@
         "tagline": "Le site vitrine trilingue d'une consultante RH : une seule page fluide, mais une vraie URL par section et par langue pour être trouvée et partagée en Belgique",
         "type": "Conseil RH · Belgique · 2026",
         "status": "En ligne",
-        "summary": "Pour une consultante en recrutement, diversité et marque employeur, j'ai conçu un site qui explique une offre en trois axes en quelques minutes et mène naturellement à la prise de contact. One-pager Next.js en FR/NL/EN : fluidité d'une page unique et 9 pages réelles pour Google (3 langues × 3 sections), chacune avec hreflang et données structurées.",
+        "summary": "One-pager RH trilingue : offre en trois axes, SEO par section et un parcours clair vers le contact.",
         "tags": [
           "SEO international",
           "Trilingue FR/NL/EN",
@@ -226,7 +226,7 @@
         "tagline": "Le site one-page d'une holding qui fédère un réseau d'entrepreneurs : un récit animé Learn / Earn / Return, un panneau réseau et un parcours de contact en deux temps",
         "type": "Holding · Réseau d'entrepreneurs · 2025-2026",
         "status": "En ligne",
-        "summary": "Pour Maxwel Jones, une holding construite autour d'un modèle en trois temps (apprendre, gagner, redonner), j'ai conçu une page qui raconte une vision au fil du scroll. 8 sections animées avec GSAP, un panneau latéral des membres, un formulaire de contact et un prototype de prise de rendez-vous pour valider le parcours avant d'investir dans un vrai système.",
+        "summary": "One-page pour une holding Learn / Earn / Return : récit animé, panneau réseau et contact en deux temps.",
         "tags": [
           "Storytelling animé",
           "Refonte d'architecture",
@@ -257,7 +257,7 @@
         "tagline": "Un portfolio photo premium et l'atelier privé sur mesure qui permet à la photographe de publier seule des albums de centaines d'images",
         "type": "Photographie · 2026",
         "status": "En ligne",
-        "summary": "Une photographe a besoin de deux choses : une vitrine qui met ses images au premier plan, et l'autonomie pour la mettre à jour sans passer par un développeur. J'ai construit les deux en quatre semaines avec Next.js 16 et Supabase.",
+        "summary": "Portfolio photo pour Hors Cadre : upload massif avec reprise automatique, galerie fluide et atelier privé.",
         "tags": [
           "Portfolio photo",
           "Back-office sur mesure",
@@ -288,7 +288,7 @@
         "tagline": "Le site d'une agence de management de basketteurs, pensé comme un catalogue de talents pour les clubs et les partenaires",
         "type": "Management sportif · 2025",
         "status": "En ligne",
-        "summary": "Pour une agence qui représente des joueurs de basket, j'ai construit une vitrine qui explique la mission en quelques écrans, puis met chaque joueur en valeur comme un dossier de recrutement (parcours, palmarès, vidéo). One-page bilingue Next.js, référencé dès la sortie (métadonnées, Search Console, sitemap auto), avec Analytics et tests Jest par section.",
+        "summary": "Vitrine bilingue pour une agence sportive : mission claire et dossiers joueurs pensés pour les recruteurs.",
         "tags": ["Sport business", "Catalogue joueurs", "Vidéo", "SEO", "Tests Jest"],
         "highlights": [
           "Roster structuré TypeScript (stats, carrières, awards)",
@@ -333,7 +333,7 @@
       }
     },
     "caseStudies": {
-      "backToProjects": "Retour aux projets",
+      "backToProjects": "Retour",
       "nav": {
         "label": "Sommaire"
       },
@@ -412,7 +412,7 @@
               "Données : 46 migrations SQL (profils, biens, réservations, rate limits, tarifs, purge). Storage pour les photos WebP. Staging sur staging.kozyantwerp.be (auth Vercel + noindex), prod sur kozyantwerp.be. Seules master et develop déclenchent un déploiement. Le calendrier public ne lit jamais la table des réservations : une RPC ne renvoie que des plages de dates, sans donnée personnelle."
             ],
             "bullets": [
-              "133 Vitest, 4 specs Playwright réservation, 15 fichiers pgTAP",
+              "133 Vitest, 4 specs Playwright réservation, tests pgTAP en base",
               "10 templates e-mail × 3 langues (demande, acceptation, refus, paiement, pré-arrivée, annulations, lead contact), plus 2 composants partagés et une page d'aperçu en dev",
               "Crons : pré-arrivée chaque jour, purge PII chaque lundi",
               "52 URLs WordPress mappées en 301, bruit WP en 410",
@@ -441,7 +441,7 @@
             "tags": ["Prod 27/10/2026", "Chiffres", "Prochaines étapes"],
             "paragraphs": [
               "30-31 août 2026 : design system, navigation GSAP, pages légales trilingues, PRD et journal de décisions, hero et panneaux. Septembre : Services, Collection FLIP, modale de réservation, images WebP ; démo contact le 30/09. 2-7 octobre : back-office (biens, calendriers, upload WebP, drag-and-drop), Supabase Auth. 9 octobre : première réservation en base, RPC sécurisée, biens archivables, Playwright sur les deux variantes de modale. 13 octobre : crawlabilité SEO. 16 octobre : modération pending/rejected, Stripe Checkout, React Email NL/FR/EN, rate limit, honeypot, expiration 48 h, AVIF. 18 octobre : tarifs, pré-arrivée, galerie. 19 octobre : journée sécurité (36 commits), verrou de concurrence et pgTAP (KA-13). 24-25 octobre : réservation masquée (KA-59), URLs sans préfixe (KA-61), JSON-LD (KA-60), leads Resend (KA-26), Checkout bloqué. 27 octobre 2026 : staging noindex, dernières redirections WP, vidéos hero, prod sur kozyantwerp.be.",
-              "Chiffres : 217 commits (dont 31 merges), 15 tickets Jira KA-13 à KA-62, ≈ 54 000 lignes de source + ≈ 7 700 de tests, Lighthouse staging Perf 83 / SEO 100 / A11y 100 / BP 96. S'y ajoutent 18 pages, ≈ 236 composants, 46 migrations, 133 fichiers Vitest, 4 specs Playwright, 15 fichiers pgTAP et 24 documents (PRD, décisions, ADR, sécurité, déploiement, cutover, runbook). En ligne le 30/10 : quatre logements publiés, 21 URLs au sitemap sur trois langues, wp-login.php en 410, .com et www redirigés vers kozyantwerp.be.",
+              "Chiffres : 217 commits (dont 31 merges), 15 tickets Jira KA-13 à KA-62, ≈ 54 000 lignes de source + ≈ 7 700 de tests, Lighthouse staging Perf 83 / SEO 100 / A11y 100 / BP 96. S'y ajoutent 18 pages, ≈ 236 composants, 46 migrations, 133 fichiers Vitest, 4 specs Playwright, tests pgTAP en base et 24 documents (PRD, décisions, ADR, sécurité, déploiement, cutover, runbook). En ligne le 30/10 : quatre logements publiés, 21 URLs au sitemap sur trois langues, wp-login.php en 410, .com et www redirigés vers kozyantwerp.be.",
               "Honnêteté produit : la réservation et Stripe ne sont pas encore ouverts au public (choix client). Pas de CI GitHub Actions (Husky + builds Vercel). Le moteur est prêt et testé : basculer une variable suffira pour l'ouvrir. La CI est la suite logique d'un projet qui a déjà ses tests. Le score Perf 83 vient surtout des vidéos du hero. La sync iCal avec Airbnb/Booking existe sur une branche et attend que la réservation directe soit ouverte. Prochaines étapes : ouverture réservation, CI lint/typecheck/Vitest/pgTAP, sync iCal KA-48, perf hero."
             ]
           }
@@ -624,15 +624,15 @@
         "focusTags": [
           "Temps réel",
           "Règles en SQL",
-          "600+ tests",
+          "638 tests",
           "CI + E2E",
           "Observabilité",
           "Audit et remédiation"
         ],
         "name": "Spill The Crumb",
-        "tagline": "Un réseau social de confidences anonymes en temps réel, construit comme un vrai produit : feed live entre onglets, anti-spam garanti par la base, back-office et plus de 600 tests",
+        "tagline": "Un réseau social de confidences anonymes en temps réel, construit comme un vrai produit : feed live entre onglets, anti-spam garanti par la base, back-office et 638 tests",
         "type": "Réseau social · 2026",
-        "status": "En ligne",
+        "status": "En développement",
         "year": "2026",
         "role": "Spill The Crumb est un feed communautaire où l'on partage et commente des « crumbs » sans exposer son identité. Je l'ai construit comme un produit prêt à grandir, pas comme une démo. Le feed se met à jour en direct, y compris entre onglets ; chaque réaction s'affiche instantanément puis se réconcilie avec le serveur ; et les règles qui comptent (anti-spam, compteurs, notifications) vivent dans Postgres. Autour : CI avec E2E sur une vraie base, tests de charge, observabilité maison, ADR et guide client. Au total : 230 commits, 45 migrations SQL, 638 tests, et 97/100 en performance Lighthouse sur les pages publiques.",
         "stack": [
@@ -656,7 +656,7 @@
         ],
         "meta": {
           "title": "Spill The Crumb · Étude de cas",
-          "description": "Réseau social de confidences anonymes : feed temps réel, anti-spam en base, CI E2E et 600+ tests."
+          "description": "Réseau social de confidences anonymes : feed temps réel, anti-spam en base, CI E2E et 638 tests."
         },
         "problem": {
           "tags": ["Feed anonyme", "Spam", "Cohérence temps réel", "Exploitable par un client"],
@@ -838,7 +838,7 @@
         "name": "Take The Crown (3x3)",
         "tagline": "Modéliser le sport avant le code, puis shipper une tranche fiable",
         "type": "Plateforme sportive SaaS",
-        "status": "En ligne",
+        "status": "En développement",
         "year": "2026",
         "role": "J'ai posé la vision produit 3x3 (Identity, Competition, Reputation), la documentation domaine/architecture et l'implémentation MVP : auth Player/Organizer, events Geoapify, matchs vérifiés et ranking World/Country sur Next.js + Supabase.",
         "stack": [
@@ -1345,86 +1345,83 @@
     },
     "intro": {
       "paragraphs": [
-        "Je développe des applications web modernes avec une approche frontend orientée produit.",
-        "Je travaille surtout sur des SaaS, du B2B et des outils internes où l’exécution frontend a un impact direct sur l’usage quotidien."
+        "Je développe des applications web en partant de l'usage.",
+        "Comprendre ce dont l'utilisateur a besoin, puis construire l'interface, la logique et les règles qui vont avec, jusqu'à la mise en ligne. Je travaille sur des produits où le frontend compte vraiment : plateformes de réservation, back-offices, applications temps réel et outils métier."
       ]
     },
     "sections": {
       "productMindset": {
         "title": "Vision produit",
         "intro": [
-          "Comprendre le besoin réel avant la solution technique. Arbitrer tôt, livrer des MVP ciblés, garder une trajectoire lisible.",
-          "Pas de features superflues : une base qui peut évoluer sans se complexifier trop vite."
+          "Comprendre le besoin réel avant de choisir la solution technique. J'arbitre tôt, je livre un premier produit ciblé et je garde une trajectoire lisible.",
+          "Sur Kozy Antwerp, j'ai écrit les spécifications et un journal de 20 décisions avec le client avant la première ligne de code. Quand le paiement n'était pas prêt, un seul interrupteur a permis de mettre la vitrine en ligne sans attendre."
         ],
-        "outro": "Chaque décision doit répondre à un usage concret, pas à une liste de fonctionnalités."
+        "outro": "Chaque fonctionnalité doit répondre à un usage concret, pas remplir une liste."
       },
       "frontendPhilosophy": {
         "title": "Philosophie frontend",
         "intro": [
-          "Le frontend donne le rythme, la fluidité et la perception d’un produit, pas seulement l’écran.",
-          "J’y concentre notamment :"
+          "Le frontend donne le rythme d'un produit : c'est lui qui le rend rapide, fluide et évident. Concrètement :"
         ],
         "bullets": [
-          "interactions naturelles",
-          "confort mobile et parcours fluides",
-          "cohérence visuelle",
-          "détails qui rendent l’usage évident"
+          "une réaction qui s'affiche instantanément, puis se synchronise avec le serveur (Spill the Crumb)",
+          "des centaines de photos envoyées d'un coup, avec reprise automatique si la connexion coupe (Hors Cadre)",
+          "une application qui continue de fonctionner sans réseau pour des chauffeurs sur le terrain (FleetScan)",
+          "des parcours pensés d'abord pour le mobile, et accessibles au clavier"
         ],
-        "outro": "Des interfaces qui se lisent vite et se parcourent sans friction."
+        "outro": "Des interfaces qui se comprennent vite et se parcourent sans friction."
       },
       "buildingApplications": {
         "title": "Ce que je construis",
         "intro": [
-          "Des outils pensés pour des contextes réels : workflows métier, usages quotidiens, logique produit derrière l’écran.",
-          "Typiquement :"
+          "Des outils pensés pour des usages réels, avec une vraie logique métier derrière l'écran :"
         ],
         "bullets": [
-          "plateformes SaaS",
-          "outils métier",
-          "dashboards",
-          "systèmes internes",
-          "applications à logique produit dense"
+          "des plateformes de réservation, avec validation, paiement et e-mails automatiques",
+          "des back-offices sur mesure",
+          "des applications en temps réel",
+          "des applications web installables qui fonctionnent hors ligne",
+          "des sites vitrines rapides et bien référencés"
         ],
-        "outro": "Le terrain d’usage guide ce qu’on livre, pas l’inverse."
+        "outro": "Le terrain d'usage guide ce que je livre, pas l'inverse."
       },
       "technicalApproach": {
         "title": "Approche technique",
         "intro": [
-          "Des architectures simples, orientées composants, avec des systèmes UI cohérents.",
-          "Je structure autour de :"
+          "Des architectures simples, organisées en composants, avec un système d'interface cohérent. Je m'appuie sur trois principes :"
         ],
         "bullets": [
-          "design systems",
-          "lisibilité du code",
-          "bases scalables",
-          "séparation claire des responsabilités"
+          "Les règles critiques vivent dans la base de données. Une double réservation ou un spam ne peuvent pas la contourner, même si l'interface a un bug.",
+          "Le code est testé. 638 tests automatisés sur Spill the Crumb, et des tests directement dans la base sur Kozy.",
+          "Les décisions sont écrites. Chaque choix d'architecture est documenté, pour que le prochain développeur comprenne pourquoi."
         ],
-        "outro": "La technique doit servir le produit, pas l’inverse."
+        "outro": "La technique doit servir le produit, pas l'inverse."
       },
       "motionInteraction": {
         "title": "Animation & interaction",
         "intro": [
-          "Animation et micro-interactions pour la hiérarchie et la fluidité, jamais pour décorer."
+          "L'animation guide le regard et rend l'interface fluide. Elle ne sert jamais à décorer."
         ],
-        "outro": "Motion discret, utile, aligné avec le reste de l’interface."
+        "outro": "Le mouvement reste discret et utile, avec GSAP, et il se coupe pour les personnes qui préfèrent réduire les animations."
       },
       "collaborationExecution": {
         "title": "Collaboration & exécution",
-        "intro": ["Communication nette, priorités claires, avancement concret.", "En pratique :"],
-        "bullets": [
-          "comprendre les enjeux rapidement",
-          "décisions utiles",
-          "livraison propre",
-          "autonomie sans perdre la structure"
+        "intro": [
+          "Une communication claire, des priorités nettes et un avancement visible. En pratique :"
         ],
-        "outro": "Des produits sérieux, bien cadrés, livrés proprement."
+        "bullets": [
+          "des tickets et des branches séparées pour tester et pour la production",
+          "une vérification sur un environnement de test avant chaque mise en ligne",
+          "un client tenu au courant avec des mots simples, pas du jargon",
+          "de l'autonomie, sans perdre le cadre"
+        ],
+        "outro": "Avancer clairement, jusqu'à la mise en ligne."
       }
     },
     "closing": {
       "label": "En résumé",
       "paragraphs": [
-        "Projets SaaS, B2B et outils modernes avec une vraie réflexion produit.",
-        "Des produits pensés pour durer, évoluer et rester simples à utiliser au quotidien."
+        "J'aime transformer un besoin flou en produit clair, fiable et agréable à utiliser, et le livrer jusqu'au bout."
       ]
     },
     "meta": {
@@ -1436,71 +1433,12 @@
     "title": "Contact",
     "intro": {
       "paragraphs": [
-        "Dites-moi ce que vous cherchez, je vous réponds avec une proposition claire, pas un devis générique."
+        "Écrivez-moi ou choisissez un canal : je réponds avec une proposition claire, pas un devis générique."
       ]
-    },
-    "form": {
-      "intent": {
-        "legend": "Que souhaitez-vous construire ?",
-        "hint": "Sélectionnez une option pour afficher les champs adaptés.",
-        "options": {
-          "marketing-site": {
-            "label": "Site vitrine / marketing",
-            "description": "Présenter une offre, une marque ou un portfolio avec une expérience soignée."
-          },
-          "business-app": {
-            "label": "Application métier",
-            "description": "Outil interne, produit B2B, auth, données et workflows terrain."
-          },
-          "product-redesign": {
-            "label": "Refonte produit",
-            "description": "Repenser un produit existant : UX, performance, dette technique."
-          },
-          "general-contact": {
-            "label": "Me contacter",
-            "description": "Question, collaboration ou échange, sans brief projet structuré."
-          }
-        }
-      },
-      "requiredMark": "*",
-      "back": "Retour aux options",
-      "cancel": "Annuler",
-      "submit": "Envoyer le message",
-      "submitting": "Envoi en cours…",
-      "success": {
-        "title": "Message envoyé",
-        "body": "Merci, votre message est bien parti. Je vous réponds dès que possible."
-      },
-      "errors": {
-        "intentRequired": "Choisissez une option pour continuer.",
-        "fieldRequired": "Ce champ est requis.",
-        "emailInvalid": "Adresse e-mail invalide.",
-        "submitFailed": "L’envoi a échoué. Réessayez dans un instant ou contactez-moi via les liens directs.",
-        "submitNotConfigured": "Envoi indisponible : configuration e-mail manquante côté serveur. Redémarrez le projet après avoir rempli le fichier .env."
-      },
-      "fields": {
-        "name": {
-          "label": "Nom",
-          "placeholder": "Votre nom"
-        },
-        "email": {
-          "label": "E-mail",
-          "placeholder": "vous@entreprise.com"
-        },
-        "company": {
-          "label": "Entreprise / projet",
-          "placeholder": "Nom de l’organisation ou du projet (optionnel)"
-        },
-        "message": {
-          "label": "Message",
-          "placeholder": "Contexte, objectifs, contraintes…",
-          "hint": "Plus vous êtes concret, plus la réponse sera utile."
-        }
-      }
     },
     "meta": {
       "title": "Contact",
-      "description": "Discutons de votre site, application ou mission. Indépendant Next.js à Bruxelles, disponible en freelance ou CDI, sur site ou en remote."
+      "description": "Me contacter par e-mail, téléphone ou réseaux. Indépendant Next.js à Bruxelles, freelance ou CDI, sur site ou remote."
     },
     "contactStrip": {
       "ariaLabel": "Moyens pour me contacter",
@@ -1512,8 +1450,8 @@
     }
   },
   "ThemeToggle": {
-    "light": "Passer au thème clair",
-    "dark": "Passer au thème sombre"
+    "light": "Clair",
+    "dark": "Sombre"
   },
   "NotFound": {
     "title": "Page introuvable",

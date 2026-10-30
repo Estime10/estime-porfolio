@@ -69,7 +69,7 @@
         "tagline": "The site of a short-stay property management company in Antwerp: WordPress to Next.js without SEO loss, back office and booking engine",
         "type": "Property management · Antwerp · 2026",
         "status": "Live",
-        "summary": "I replaced Kozy Antwerp's aging WordPress site with a trilingual Next.js platform. It brings together an owner-facing showcase built to convert, a property back office, and a booking engine (admin validation, Stripe) whose rules are enforced in the database.",
+        "summary": "WordPress to trilingual Next.js for short-stay property management in Antwerp: showcase, back office and Stripe booking, with critical rules in the database.",
         "tags": ["Custom back office", "SEO cutover", "Supabase", "Stripe", "Feature flags"],
         "highlights": [
           "52 WordPress URLs as 301s, WP noise as 410s, cutover without SEO loss",
@@ -136,11 +136,11 @@
       },
       "spill-crumb": {
         "name": "Spill The Crumb",
-        "tagline": "An anonymous realtime gossip social network, built as a real product: live feed across tabs, DB-enforced anti-spam, back office and 600+ automated tests",
+        "tagline": "Anonymous realtime confidences social network: live feed, DB anti-spam, back office and 638 tests",
         "type": "Social network · 2026",
-        "status": "Live",
+        "status": "In development",
         "summary": "Spill The Crumb is a community feed where people share and comment on “crumbs” without exposing their identity. I built it as a product ready to grow, not a demo.",
-        "tags": ["Realtime", "Rules in SQL", "600+ tests", "CI + E2E", "Observability"],
+        "tags": ["Realtime", "Rules in SQL", "638 tests", "CI + E2E", "Observability"],
         "highlights": [
           "Synchronized post stores (feed, profile, detail) with multi-store fan-out",
           "638+ Vitest tests, quality CI + local Supabase E2E, Upstash rate limits",
@@ -164,7 +164,7 @@
         "tagline": "Showcase and portfolio for a custom carpentry workshop in Brussels: 100+ project photos, three languages, client reviews and local SEO",
         "type": "Custom carpentry · Brussels · 2025",
         "status": "Live",
-        "summary": "A carpentry workshop sells through photos. For this Brussels client I designed and built jikowood.be end to end: a filterable portfolio of 17 custom projects, a page per project, reviews in a database, a contact form and a FR/EN/NL interface.",
+        "summary": "Brussels carpentry showcase: filterable portfolio, project pages, reviews in the database and local SEO, in FR/EN/NL.",
         "tags": [
           "In production",
           "Local SEO",
@@ -195,7 +195,7 @@
         "tagline": "Trilingual showcase for an HR consultant: one fluid page, but a real URL per section and language to be found and shared in Belgium",
         "type": "HR consulting · Belgium · 2026",
         "status": "Live",
-        "summary": "For a consultant in talent acquisition, diversity and employer branding, I designed a site that explains a three-axis offer in minutes and leads naturally to contact. A Next.js one-pager in FR/NL/EN: single-page fluidity plus 9 real pages for Google (3 languages × 3 sections), each with hreflang and structured data.",
+        "summary": "Trilingual HR one-pager: three-axis offer, per-section SEO and a clear path to contact.",
         "tags": [
           "International SEO",
           "Trilingual FR/NL/EN",
@@ -226,7 +226,7 @@
         "tagline": "One-page site for a holding that unites an entrepreneur network: an animated Learn / Earn / Return story, a network panel and a two-step contact journey",
         "type": "Holding · Entrepreneur network · 2025-2026",
         "status": "Live",
-        "summary": "For Maxwel Jones, a holding built around learn, earn, return, I designed a page that tells a vision through scroll. Eight GSAP-animated sections, a side panel of network members, a contact form and a meeting-booking prototype to validate the journey before investing in a real system.",
+        "summary": "One-pager for a Learn / Earn / Return holding: animated story, network panel and two-step contact.",
         "tags": [
           "Animated storytelling",
           "Architecture rewrite",
@@ -257,7 +257,7 @@
         "tagline": "A premium photo portfolio and the custom private studio that lets the photographer publish albums of hundreds of images on her own",
         "type": "Photography · 2026",
         "status": "Live",
-        "summary": "A photographer needs two things: a showcase that puts images first, and autonomy to update it without a developer. I built both in four weeks with Next.js 16 and Supabase.",
+        "summary": "Photo portfolio for Hors Cadre: bulk upload with auto-resume, fluid gallery and private atelier.",
         "tags": [
           "Photo portfolio",
           "Custom back office",
@@ -288,7 +288,7 @@
         "tagline": "Site for a basketball player management agency, built as a talent catalog for clubs and partners",
         "type": "Sports management · 2025",
         "status": "Live",
-        "summary": "For an agency representing basketball players, I built a showcase that explains the mission in a few screens, then presents each player like a recruitment dossier (career, awards, highlight video). Bilingual Next.js one-pager, indexed from launch (metadata, Search Console, auto sitemap), with Analytics and Jest tests per section.",
+        "summary": "Bilingual sports agency site: clear mission and player profiles built for recruiters.",
         "tags": ["Sports business", "Player catalog", "Video", "SEO", "Jest tests"],
         "highlights": [
           "TypeScript-structured roster (stats, careers, awards)",
@@ -333,7 +333,7 @@
       }
     },
     "caseStudies": {
-      "backToProjects": "Back to projects",
+      "backToProjects": "Back",
       "nav": {
         "label": "Table of contents"
       },
@@ -412,7 +412,7 @@
               "Data: 46 SQL migrations. WebP Storage. Staging staging.kozyantwerp.be (Vercel auth + noindex), prod kozyantwerp.be. Only master/develop deploy. Public calendar never reads bookings: an RPC returns date ranges only, no PII."
             ],
             "bullets": [
-              "133 Vitest, 4 Playwright booking specs, 15 pgTAP files",
+              "133 Vitest, 4 Playwright booking specs, database pgTAP tests",
               "10 email templates × 3 languages plus 2 shared components and a dev preview page",
               "Crons: daily pre-arrival, weekly PII purge",
               "52 WordPress URLs as 301s, WP noise as 410s",
@@ -441,7 +441,7 @@
             "tags": ["Prod 27/10/2026", "Numbers", "Next steps"],
             "paragraphs": [
               "30-31 Aug: design system, GSAP nav, legal pages, PRD, hero/panels. September: Services, FLIP Collection, booking modal, WebP; contact demo 30/09. 2-7 Oct: back office, Auth. 9 Oct: first booking in DB, secure RPC, archivable properties, Playwright on both modal variants. 13 Oct: SEO crawlability. 16 Oct: moderation, Stripe, React Email, rate limit, honeypot, 48h expiry, AVIF. 18 Oct: pricing, pre-arrival. 19 Oct: security day + concurrency lock (KA-13). 24-25 Oct: booking hidden (KA-59), prefixless URLs (KA-61), JSON-LD (KA-60), Resend leads (KA-26), Checkout blocked. 27 Oct 2026: staging noindex, final WP redirects, hero videos, prod kozyantwerp.be.",
-              "Numbers: 217 commits (31 merges), 15 Jira tickets KA-13 to KA-62, ~54k source lines + ~7.7k tests, Lighthouse staging Perf 83 / SEO 100 / A11y 100 / BP 96. Also 18 pages, ~236 components, 46 migrations, 133 Vitest files, 4 Playwright specs, 15 pgTAP, 24 docs. Live 30/10: four properties, 21 sitemap URLs, wp-login 410, .com/www → kozyantwerp.be.",
+              "Numbers: 217 commits (31 merges), 15 Jira tickets KA-13 to KA-62, ~54k source lines + ~7.7k tests, Lighthouse staging Perf 83 / SEO 100 / A11y 100 / BP 96. Also 18 pages, ~236 components, 46 migrations, 133 Vitest files, 4 Playwright specs, pgTAP tests, 24 docs. Live 30/10: four properties, 21 sitemap URLs, wp-login 410, .com/www → kozyantwerp.be.",
               "Honesty: booking and Stripe not public yet (client choice). No GitHub Actions CI (Husky + Vercel builds). Engine is ready: flipping one variable opens it. Perf 83 is mostly hero videos. iCal sync exists on a branch waiting for direct booking. Next: open booking, CI, KA-48, hero perf."
             ]
           }
@@ -632,15 +632,15 @@
         "focusTags": [
           "Realtime",
           "Rules in SQL",
-          "600+ tests",
+          "638 tests",
           "CI + E2E",
           "Observability",
           "Audit and remediation"
         ],
         "name": "Spill The Crumb",
-        "tagline": "An anonymous realtime gossip social network, built as a real product: live feed across tabs, DB-enforced anti-spam, back office and 600+ automated tests",
+        "tagline": "An anonymous realtime gossip social network, built as a real product: live feed across tabs, DB-enforced anti-spam, back office and 638 automated tests",
         "type": "Social network · 2026",
-        "status": "Live",
+        "status": "In development",
         "year": "2026",
         "role": "Spill The Crumb is a community feed where people share and comment on “crumbs” without exposing their identity. I built it as a product ready to grow, not a demo. The feed updates live across tabs; every reaction shows instantly then reconciles with the server; critical rules (anti-spam, counters, notifications) live in Postgres. Around that: CI with E2E on a real local DB, load tests, in-house observability, ADRs and a client guide. Totals: 230 commits, 45 SQL migrations, 638 tests, Lighthouse 97/100 performance on public pages.",
         "stack": [
@@ -664,7 +664,7 @@
         ],
         "meta": {
           "title": "Spill The Crumb · Case study",
-          "description": "Anonymous gossip social network: realtime feed, DB anti-spam, CI E2E and 600+ tests."
+          "description": "Anonymous gossip social network: realtime feed, DB anti-spam, CI E2E and 638 tests."
         },
         "problem": {
           "tags": ["Anonymous feed", "Spam", "Realtime consistency", "Runnable by a client"],
@@ -851,7 +851,7 @@
         "name": "Take The Crown (3x3)",
         "tagline": "Model the sport before the code, then ship a trustworthy slice",
         "type": "Sports SaaS platform",
-        "status": "Live",
+        "status": "In development",
         "year": "2026",
         "role": "I set the 3x3 product vision (Identity, Competition, Reputation), the domain/architecture documentation, and the MVP implementation: Player/Organizer auth, Geoapify events, verified matches, and World/Country ranking on Next.js + Supabase.",
         "stack": [
@@ -1353,86 +1353,79 @@
     },
     "intro": {
       "paragraphs": [
-        "I build modern web applications with a product-oriented frontend approach.",
-        "I mainly work on SaaS, B2B, and internal tools where frontend execution directly shapes day-to-day use."
+        "I build web applications starting from usage.",
+        "Understand what the user needs, then build the interface, the logic and the rules that go with it, through to launch. I work on products where frontend really matters: booking platforms, back offices, realtime apps and business tools."
       ]
     },
     "sections": {
       "productMindset": {
         "title": "Product mindset",
         "intro": [
-          "Understand the real need before the technical solution. Decide early, ship focused MVPs, keep a clear trajectory.",
-          "No superfluous features: a foundation that can grow without over-complicating too soon."
+          "Understand the real need before choosing the technical solution. I decide early, ship a focused first product and keep a readable trajectory.",
+          "On Kozy Antwerp, I wrote the specs and a journal of 20 decisions with the client before the first line of code. When payments were not ready, a single switch let us ship the showcase without waiting."
         ],
-        "outro": "Every decision should answer a concrete use case, not a feature checklist."
+        "outro": "Every feature must answer a concrete use case, not fill a checklist."
       },
       "frontendPhilosophy": {
         "title": "Frontend philosophy",
         "intro": [
-          "Frontend sets a product’s rhythm, fluidity, and perception, not just the screen.",
-          "I focus especially on:"
+          "Frontend sets a product’s rhythm: it makes it feel fast, fluid and obvious. Concretely:"
         ],
         "bullets": [
-          "natural interactions",
-          "mobile comfort and smooth flows",
-          "visual consistency",
-          "details that make usage obvious"
+          "a reaction that shows instantly, then syncs with the server (Spill the Crumb)",
+          "hundreds of photos uploaded at once, with automatic resume if the connection drops (Hors Cadre)",
+          "an app that keeps working offline for drivers in the field (FleetScan)",
+          "flows designed mobile-first, and usable with a keyboard"
         ],
-        "outro": "Interfaces that read quickly and move without friction."
+        "outro": "Interfaces that make sense quickly and move without friction."
       },
       "buildingApplications": {
         "title": "What I build",
-        "intro": [
-          "Tools built for real contexts: business workflows, daily use, product logic behind the screen.",
-          "Typically:"
-        ],
+        "intro": ["Tools built for real uses, with real business logic behind the screen:"],
         "bullets": [
-          "SaaS platforms",
-          "business tools",
-          "dashboards",
-          "internal systems",
-          "applications with dense product logic"
+          "booking platforms with validation, payment and automated emails",
+          "custom back offices",
+          "realtime applications",
+          "installable web apps that work offline",
+          "fast showcase sites with solid SEO"
         ],
-        "outro": "Real-world usage guides what we ship, not the other way around."
+        "outro": "Usage in the field guides what I ship, not the other way around."
       },
       "technicalApproach": {
         "title": "Technical approach",
         "intro": [
-          "Simple, component-oriented architectures with coherent UI systems.",
-          "I structure around:"
+          "Simple architectures, organised in components, with a coherent interface system. I rely on three principles:"
         ],
         "bullets": [
-          "design systems",
-          "readable code",
-          "scalable foundations",
-          "clear separation of concerns"
+          "Critical rules live in the database. A double booking or spam cannot bypass them, even if the UI has a bug.",
+          "The code is tested. 638 automated tests on Spill the Crumb, and database tests on Kozy.",
+          "Decisions are written down. Every architecture choice is documented so the next developer understands why."
         ],
         "outro": "Technology should serve the product, not the other way around."
       },
       "motionInteraction": {
         "title": "Motion & interaction",
         "intro": [
-          "Animation and micro-interactions for hierarchy and fluidity, never for decoration."
+          "Animation guides the eye and keeps the interface fluid. It never exists for decoration."
         ],
-        "outro": "Discreet, useful motion aligned with the rest of the interface."
+        "outro": "Motion stays discreet and useful, with GSAP, and it turns off for people who prefer reduced motion."
       },
       "collaborationExecution": {
         "title": "Collaboration & execution",
-        "intro": ["Clear communication, sharp priorities, concrete progress.", "In practice:"],
+        "intro": ["Clear communication, sharp priorities and visible progress. In practice:"],
         "bullets": [
-          "grasp challenges quickly",
-          "useful decisions",
-          "clean delivery",
-          "autonomy without losing structure"
+          "separate tickets and branches for testing and for production",
+          "a check on a staging environment before every launch",
+          "a client kept in the loop with plain words, not jargon",
+          "autonomy, without losing the frame"
         ],
-        "outro": "Serious products, well scoped, shipped cleanly."
+        "outro": "Move clearly, all the way to launch."
       }
     },
     "closing": {
       "label": "In short",
       "paragraphs": [
-        "SaaS, B2B, and modern tools with real product thinking.",
-        "Products built to last, evolve, and stay simple to use every day."
+        "I like turning a fuzzy need into a clear, reliable product that feels good to use, and shipping it end to end."
       ]
     },
     "meta": {
@@ -1444,71 +1437,12 @@
     "title": "Contact",
     "intro": {
       "paragraphs": [
-        "Tell me what you are looking for, I reply with a clear proposal, not a generic quote."
+        "Email me or pick a channel: I reply with a clear proposal, not a generic quote."
       ]
-    },
-    "form": {
-      "intent": {
-        "legend": "What do you want to build?",
-        "hint": "Select an option to reveal the relevant fields.",
-        "options": {
-          "marketing-site": {
-            "label": "Marketing / showcase site",
-            "description": "Present an offer, brand, or portfolio with a polished experience."
-          },
-          "business-app": {
-            "label": "Business application",
-            "description": "Internal tool, B2B product, auth, data, and field workflows."
-          },
-          "product-redesign": {
-            "label": "Product redesign",
-            "description": "Rethink an existing product: UX, performance, technical debt."
-          },
-          "general-contact": {
-            "label": "Get in touch",
-            "description": "Question, collaboration, or chat, without a structured project brief."
-          }
-        }
-      },
-      "requiredMark": "*",
-      "back": "Back to options",
-      "cancel": "Cancel",
-      "submit": "Send message",
-      "submitting": "Sending…",
-      "success": {
-        "title": "Message sent",
-        "body": "Thanks, your message is on its way. I’ll get back to you as soon as possible."
-      },
-      "errors": {
-        "intentRequired": "Choose an option to continue.",
-        "fieldRequired": "This field is required.",
-        "emailInvalid": "Invalid email address.",
-        "submitFailed": "Sending failed. Try again in a moment or reach out via the direct links.",
-        "submitNotConfigured": "Sending unavailable: email is not configured on the server. Restart the dev server after updating your .env file."
-      },
-      "fields": {
-        "name": {
-          "label": "Name",
-          "placeholder": "Your name"
-        },
-        "email": {
-          "label": "Email",
-          "placeholder": "you@company.com"
-        },
-        "company": {
-          "label": "Company / project",
-          "placeholder": "Organization or project name (optional)"
-        },
-        "message": {
-          "label": "Message",
-          "placeholder": "Context, goals, constraints…",
-          "hint": "The more concrete you are, the more useful the reply."
-        }
-      }
     },
     "meta": {
       "title": "Contact",
-      "description": "Let’s talk about your site, app or mission. Independent Next.js developer in Brussels, available for freelance or full-time, on-site or remote."
+      "description": "Reach me by email, phone or socials. Independent Next.js developer in Brussels, freelance or full-time, on-site or remote."
     },
     "contactStrip": {
       "ariaLabel": "Ways to contact me",
@@ -1520,8 +1454,8 @@
     }
   },
   "ThemeToggle": {
-    "light": "Switch to light theme",
-    "dark": "Switch to dark theme"
+    "light": "Light",
+    "dark": "Dark"
   },
   "NotFound": {
     "title": "Page not found",

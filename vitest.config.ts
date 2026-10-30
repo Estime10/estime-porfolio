@@ -11,13 +11,7 @@ export default defineConfig({
     coverage: {
       provider: "v8",
       reporter: ["text", "lcov"],
-      include: [
-        "features/contact-screen/**/*.ts",
-        "lib/config/formspree/**/*.ts",
-        "lib/config/contact-form/**/*.ts",
-        "lib/api/contact/**/*.ts",
-        "lib/constants/publicContact.ts",
-      ],
+      include: ["lib/constants/publicContact.ts", "lib/contact-channels/**/*.ts"],
       exclude: ["__tests__/**", "**/types/**"],
     },
   },

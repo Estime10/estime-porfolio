@@ -32,6 +32,8 @@ export type ProjectCaseStudyViewModel = Readonly<{
   tagline: string;
   type: string;
   status: string;
+  liveUrl?: string;
+  viewLiveLabel?: string;
   role: string;
   focusTags: readonly string[];
   stack: readonly string[];

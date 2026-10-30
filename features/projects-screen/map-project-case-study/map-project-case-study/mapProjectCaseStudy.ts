@@ -8,7 +8,7 @@ import { mapCaseStudyDetailSection } from "@/features/projects-screen/map-projec
 import { mapTaggedIntroSection } from "@/features/projects-screen/map-project-case-study/map-tagged-intro-section/mapTaggedIntroSection";
 import type { CaseStudyTranslator } from "@/features/projects-screen/types/caseStudyTranslator";
 import type { ProjectCaseStudyViewModel } from "@/features/projects-screen/types/projectViewModel";
-import type { CaseStudyProjectSlug } from "@/lib/projects/project-catalog";
+import { getProjectCatalogEntry, type CaseStudyProjectSlug } from "@/lib/projects/project-catalog";
 
 type CaseStudyTagLabels = ProjectCaseStudyViewModel["tagLabels"];
 
@@ -16,7 +16,9 @@ export function mapProjectCaseStudy(
   t: CaseStudyTranslator,
   slug: CaseStudyProjectSlug,
   tagLabels: CaseStudyTagLabels,
+  viewLiveLabel?: string,
 ): ProjectCaseStudyViewModel {
+  const catalogEntry = getProjectCatalogEntry(slug);
   const focusTagsKey = `${slug}.focusTags` as const;
   const stackKey = `${slug}.stack` as const;
 
@@ -53,6 +55,8 @@ export function mapProjectCaseStudy(
     tagline: t(`${slug}.tagline`),
     type: t(`${slug}.type`),
     status: t(`${slug}.status`),
+    liveUrl: catalogEntry?.liveUrl,
+    viewLiveLabel: catalogEntry?.liveUrl ? viewLiveLabel : undefined,
     role: t(`${slug}.role`),
     focusTags: asTranslationStringArray(t.raw(focusTagsKey) as object, focusTagsKey),
     stack: asTranslationStringArray(t.raw(stackKey) as object, stackKey),

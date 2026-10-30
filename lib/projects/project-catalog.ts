@@ -171,6 +171,10 @@ export const PROJECT_CATALOG: readonly ProjectCatalogEntry[] = [
   },
 ] as const;
 
+export function getProjectCatalogEntry(slug: ProjectSlug): ProjectCatalogEntry | undefined {
+  return PROJECT_CATALOG.find((entry) => entry.slug === slug);
+}
+
 export function isProjectSlug(value: string): value is ProjectSlug {
   return (PROJECT_SLUGS as readonly string[]).includes(value);
 }

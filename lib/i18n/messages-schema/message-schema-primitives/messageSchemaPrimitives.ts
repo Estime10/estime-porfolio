@@ -59,14 +59,3 @@ export const featuredCaseStudyBaseSchema = z.object({
   problem: taggedParagraphBlockSchema,
   approach: taggedParagraphBlockSchema,
 });
-
-export const contactFieldCopySchema = z.object({
-  label: z.string().min(1),
-  placeholder: z.string().min(1),
-  hint: z.string().min(1).optional(),
-});
-
-export const contactIntentOptionSchema = z.object({
-  label: z.string().min(1),
-  description: z.string().min(1),
-});

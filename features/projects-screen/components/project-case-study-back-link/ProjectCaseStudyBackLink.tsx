@@ -1,20 +1,21 @@
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
-import { getChromeHeaderIconLinkClassName } from "@/lib/ui/chromeHeaderToggleButton";
+import { NavLink } from "@/components/button";
+import { PROJECTS_ROUTE_PATH } from "@/lib/constants";
 
 export type ProjectCaseStudyBackLinkProps = Readonly<{
-  href?: string;
+  /** Slug du projet pour revenir à sa card sur `/projects#{slug}`. */
+  projectSlug?: string;
   label: string;
 }>;
 
-export function ProjectCaseStudyBackLink({
-  href = "/projects",
-  label,
-}: ProjectCaseStudyBackLinkProps) {
+export function ProjectCaseStudyBackLink({ projectSlug, label }: ProjectCaseStudyBackLinkProps) {
+  const href = projectSlug ? `${PROJECTS_ROUTE_PATH}#${projectSlug}` : PROJECTS_ROUTE_PATH;
+
   return (
-    <Link aria-label={label} className={getChromeHeaderIconLinkClassName()} href={href}>
-      <span className="sr-only">{label}</span>
-      <ArrowLeft aria-hidden className="text-foreground size-4 shrink-0" strokeWidth={2} />
-    </Link>
+    <NavLink
+      href={href}
+      className="relative z-10 max-md:inline-flex max-md:min-h-[var(--touch-min)] max-md:items-center"
+    >
+      {label}
+    </NavLink>
   );
 }

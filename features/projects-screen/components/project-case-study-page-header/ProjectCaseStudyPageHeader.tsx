@@ -10,6 +10,8 @@ export type ProjectCaseStudyPageHeaderProps = Readonly<{
   stack: readonly string[];
   stackLabel: string;
   status: string;
+  liveUrl?: string;
+  viewLiveLabel?: string;
   tagline: string;
   type: string;
 }>;
@@ -22,6 +24,8 @@ export function ProjectCaseStudyPageHeader({
   stack,
   stackLabel,
   status,
+  liveUrl,
+  viewLiveLabel,
   tagline,
   type,
 }: ProjectCaseStudyPageHeaderProps) {
@@ -30,7 +34,17 @@ export function ProjectCaseStudyPageHeader({
       <p className={CARD_EYEBROW_CLASS}>{type}</p>
       <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
         <h1 className="text-h1 text-foreground min-w-0 flex-1">{name}</h1>
-        <span className={`${CHROME_GRADIENT_STATUS_BADGE} shrink-0`}>{status}</span>
+        {liveUrl ? (
+          <a
+            href={liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={viewLiveLabel ?? status}
+            className={`${CHROME_GRADIENT_STATUS_BADGE} shrink-0 cursor-pointer outline-none ring-offset-background focus-visible:ring-accent focus-visible:ring-2 focus-visible:ring-offset-2`}
+          >
+            {status}
+          </a>
+        ) : null}
       </div>
       <p className="text-body-lg text-muted mt-4">{tagline}</p>
       <p className="text-body text-foreground/90 mt-6">{role}</p>

@@ -25,9 +25,6 @@ export default defineConfig({
     url: baseURL,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
-    env: {
-      FORMSPREE_FORM_ID: "e2e_test_form",
-    },
   },
   projects: [
     {

@@ -18,6 +18,8 @@ export function ProjectCaseStudyLayout({ content }: ProjectCaseStudyLayoutProps)
         stack={content.stack}
         stackLabel={content.tagLabels.stack}
         status={content.status}
+        liveUrl={content.liveUrl}
+        viewLiveLabel={content.viewLiveLabel}
         tagline={content.tagline}
         type={content.type}
       />

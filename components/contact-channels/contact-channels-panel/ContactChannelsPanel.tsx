@@ -8,7 +8,7 @@ export type ContactChannelsPanelProps = Readonly<{
   labels: ContactStripLabels;
 }>;
 
-/** Bandeau permanent : 2 canaux par ligne, le dernier en pleine largeur. */
+/** Grille de canaux : 2 colonnes, dernier item en pleine largeur. */
 export function ContactChannelsPanel({
   className = "",
   id = "contact-channels",
@@ -18,19 +18,13 @@ export function ContactChannelsPanel({
   const lastIndex = channels.length - 1;
 
   return (
-    <nav
-      aria-label={labels.ariaLabel}
-      className={`flex w-full flex-col ${className}`.trim()}
-      id={id}
-    >
-      <ul className="m-0 grid min-h-0 w-full flex-1 list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-4 md:grid-rows-3 md:gap-4 lg:gap-5">
+    <nav aria-label={labels.ariaLabel} className={`w-full ${className}`.trim()} id={id}>
+      <ul className="m-0 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-2 sm:gap-4">
         {channels.map((channel, index) => (
           <ContactChannelItem
             key={channel.id}
             channel={channel}
-            className={
-              index === lastIndex ? "sm:col-span-2 md:min-h-0 md:h-full" : "md:min-h-0 md:h-full"
-            }
+            className={index === lastIndex ? "sm:col-span-2" : undefined}
           />
         ))}
       </ul>

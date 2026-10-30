@@ -1,6 +1,7 @@
 import { ProjectCard } from "@/features/projects-screen/components/project-card/ProjectCard";
 import { ProjectsPageHeader } from "@/features/projects-screen/components/projects-page-header/ProjectsPageHeader";
 import { ProjectsSectionIntro } from "@/features/projects-screen/components/projects-section-intro/ProjectsSectionIntro";
+import { ScrollToProjectHash } from "@/features/projects-screen/components/scroll-to-project-hash/ScrollToProjectHash";
 import type { ProjectsContentViewModel } from "@/features/projects-screen/types/projectViewModel";
 
 export type ProjectsLayoutProps = Readonly<{
@@ -12,6 +13,7 @@ export function ProjectsLayout({ content }: ProjectsLayoutProps) {
 
   return (
     <article className="ui-container ui-section pb-20 md:pb-28">
+      <ScrollToProjectHash />
       <ProjectsPageHeader
         introParagraphs={content.introParagraphs}
         selectionNote={content.selectionNote}

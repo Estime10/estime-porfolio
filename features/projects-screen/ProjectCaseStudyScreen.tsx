@@ -15,7 +15,7 @@ export async function ProjectCaseStudyScreen({ slug }: ProjectCaseStudyScreenPro
     stack: tScreen("tags.stack"),
     section: tScreen("tags.section"),
   };
-  const content = mapProjectCaseStudy(t, slug, tagLabels);
+  const content = mapProjectCaseStudy(t, slug, tagLabels, tScreen("card.viewLive"));
 
   return <ProjectCaseStudyLayout content={content} />;
 }

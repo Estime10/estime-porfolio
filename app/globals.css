@@ -436,7 +436,7 @@ body {
 }
 
 .ui-gloss-slate:hover,
-.ui-gloss-slate-badge:hover {
+a.ui-gloss-slate-badge:hover {
   filter: brightness(1.06);
   box-shadow:
     inset 0 1px 0 0 rgb(255 255 255 / 0.24),
@@ -446,7 +446,7 @@ body {
 }
 
 .ui-gloss-slate:active,
-.ui-gloss-slate-badge:active {
+a.ui-gloss-slate-badge:active {
   filter: brightness(0.96);
 }
 
@@ -628,13 +628,6 @@ html.dark .ui-gloss-slate-badge {
 .ui-section {
   padding-top: var(--section-space-y-top);
   padding-bottom: var(--section-space-y-bottom);
-}
-
-/** Pages formulaire / contenu dense — moins d’air en haut sur desktop */
-@media (min-width: 1024px) {
-  .ui-section-contact {
-    padding-top: var(--space-8);
-  }
 }
 
 .ui-grid {

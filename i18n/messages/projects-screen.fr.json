@@ -34,7 +34,7 @@
       "tagline": "Le site d'une société de gestion locative à Anvers : migration de WordPress vers Next.js sans perte de SEO, back-office et moteur de réservation",
       "type": "Gestion locative · Anvers · 2026",
       "status": "En ligne",
-      "summary": "J'ai remplacé le site WordPress vieillissant de Kozy Antwerp par une plateforme Next.js trilingue. Elle réunit une vitrine pensée pour convaincre les propriétaires, un back-office de gestion des biens et un moteur de réservation (validation par l'admin, paiement Stripe) dont les règles sont garanties par la base de données.",
+      "summary": "Migration WordPress → Next.js trilingue pour une gestion locative à Anvers : vitrine, back-office et réservation Stripe, avec les règles critiques en base.",
       "tags": ["Back-office sur mesure", "SEO cutover", "Supabase", "Stripe", "Feature flags"],
       "highlights": [
         "52 URLs WordPress en 301, bruit WP en 410, bascule sans perte SEO",
@@ -84,14 +84,14 @@
     },
     "spill-crumb": {
       "name": "Spill The Crumb",
-      "tagline": "Un réseau social de confidences anonymes en temps réel, construit comme un vrai produit : feed live entre onglets, anti-spam garanti par la base, back-office et plus de 600 tests",
+      "tagline": "Réseau social de confidences anonymes en temps réel : feed live, anti-spam en base, back-office et 638 tests",
       "type": "Réseau social · 2026",
-      "status": "En ligne",
+      "status": "En développement",
       "summary": "Spill The Crumb est un feed communautaire où l'on partage et commente des « crumbs » sans exposer son identité. Je l'ai construit comme un produit prêt à grandir, pas comme une démo.",
-      "tags": ["Temps réel", "Règles en SQL", "600+ tests", "CI + E2E", "Observabilité"],
+      "tags": ["Temps réel", "Règles en SQL", "638 tests", "CI + E2E", "Observabilité"],
       "highlights": [
         "Stores posts synchronisés (feed, profil, détail) avec fan-out multi-stores",
-        "638+ tests Vitest, CI qualité + E2E Supabase local, rate limit Upstash",
+        "638 tests Vitest, CI qualité + E2E Supabase local, rate limit Upstash",
         "Auth, notifications realtime, sponsoring admin et persistance logs plateforme"
       ],
       "stack": [
@@ -112,7 +112,7 @@
       "tagline": "Le site vitrine et portfolio d'une menuiserie sur mesure à Bruxelles : plus d'une centaine de photos de réalisations, trois langues, avis clients et référencement local",
       "type": "Menuiserie sur mesure · Bruxelles · 2025",
       "status": "En ligne",
-      "summary": "Une menuiserie vend avec des photos. Pour ce client à Bruxelles, j'ai conçu et développé jikowood.be de bout en bout : un portfolio filtrable de 17 réalisations sur mesure, une page par projet, des avis clients stockés en base, un formulaire de contact et une interface en français, anglais et néerlandais.",
+      "summary": "Vitrine menuiserie à Bruxelles : portfolio filtrable, pages projet, avis en base et SEO local, en français, anglais et néerlandais.",
       "tags": [
         "En production",
         "SEO local",
@@ -143,7 +143,7 @@
       "tagline": "Le site vitrine trilingue d'une consultante RH : une seule page fluide, mais une vraie URL par section et par langue pour être trouvée et partagée en Belgique",
       "type": "Conseil RH · Belgique · 2026",
       "status": "En ligne",
-      "summary": "Pour une consultante en recrutement, diversité et marque employeur, j'ai conçu un site qui explique une offre en trois axes en quelques minutes et mène naturellement à la prise de contact. One-pager Next.js en FR/NL/EN : fluidité d'une page unique et 9 pages réelles pour Google (3 langues × 3 sections), chacune avec hreflang et données structurées.",
+      "summary": "One-pager RH trilingue : offre en trois axes, SEO par section et un parcours clair vers le contact.",
       "tags": [
         "SEO international",
         "Trilingue FR/NL/EN",
@@ -174,7 +174,7 @@
       "tagline": "Le site one-page d'une holding qui fédère un réseau d'entrepreneurs : un récit animé Learn / Earn / Return, un panneau réseau et un parcours de contact en deux temps",
       "type": "Holding · Réseau d'entrepreneurs · 2025-2026",
       "status": "En ligne",
-      "summary": "Pour Maxwel Jones, une holding construite autour d'un modèle en trois temps (apprendre, gagner, redonner), j'ai conçu une page qui raconte une vision au fil du scroll. 8 sections animées avec GSAP, un panneau latéral des membres, un formulaire de contact et un prototype de prise de rendez-vous pour valider le parcours avant d'investir dans un vrai système.",
+      "summary": "One-page pour une holding Learn / Earn / Return : récit animé, panneau réseau et contact en deux temps.",
       "tags": [
         "Storytelling animé",
         "Refonte d'architecture",
@@ -205,7 +205,7 @@
       "tagline": "Un portfolio photo premium et l'atelier privé sur mesure qui permet à la photographe de publier seule des albums de centaines d'images",
       "type": "Photographie · 2026",
       "status": "En ligne",
-      "summary": "Une photographe a besoin de deux choses : une vitrine qui met ses images au premier plan, et l'autonomie pour la mettre à jour sans passer par un développeur. J'ai construit les deux en quatre semaines avec Next.js 16 et Supabase.",
+      "summary": "Portfolio photo pour Hors Cadre : upload massif avec reprise automatique, galerie fluide et atelier privé.",
       "tags": [
         "Portfolio photo",
         "Back-office sur mesure",
@@ -236,7 +236,7 @@
       "tagline": "Le site d'une agence de management de basketteurs, pensé comme un catalogue de talents pour les clubs et les partenaires",
       "type": "Management sportif · 2025",
       "status": "En ligne",
-      "summary": "Pour une agence qui représente des joueurs de basket, j'ai construit une vitrine qui explique la mission en quelques écrans, puis met chaque joueur en valeur comme un dossier de recrutement (parcours, palmarès, vidéo). One-page bilingue Next.js, référencé dès la sortie (métadonnées, Search Console, sitemap auto), avec Analytics et tests Jest par section.",
+      "summary": "Vitrine bilingue pour une agence sportive : mission claire et dossiers joueurs pensés pour les recruteurs.",
       "tags": ["Sport business", "Catalogue joueurs", "Vidéo", "SEO", "Tests Jest"],
       "highlights": [
         "Roster structuré TypeScript (stats, carrières, awards)",
@@ -281,7 +281,7 @@
     }
   },
   "caseStudies": {
-    "backToProjects": "Retour aux projets",
+    "backToProjects": "Retour",
     "nav": {
       "label": "Sommaire"
     },
@@ -360,7 +360,7 @@
             "Données : 46 migrations SQL (profils, biens, réservations, rate limits, tarifs, purge). Storage pour les photos WebP. Staging sur staging.kozyantwerp.be (auth Vercel + noindex), prod sur kozyantwerp.be. Seules master et develop déclenchent un déploiement. Le calendrier public ne lit jamais la table des réservations : une RPC ne renvoie que des plages de dates, sans donnée personnelle."
           ],
           "bullets": [
-            "133 Vitest, 4 specs Playwright réservation, 15 fichiers pgTAP",
+            "133 Vitest, 4 specs Playwright réservation, tests pgTAP en base",
             "10 templates e-mail × 3 langues (demande, acceptation, refus, paiement, pré-arrivée, annulations, lead contact), plus 2 composants partagés et une page d'aperçu en dev",
             "Crons : pré-arrivée chaque jour, purge PII chaque lundi",
             "52 URLs WordPress mappées en 301, bruit WP en 410",
@@ -389,7 +389,7 @@
           "tags": ["Prod 27/10/2026", "Chiffres", "Prochaines étapes"],
           "paragraphs": [
             "30-31 août 2026 : design system, navigation GSAP, pages légales trilingues, PRD et journal de décisions, hero et panneaux. Septembre : Services, Collection FLIP, modale de réservation, images WebP ; démo contact le 30/09. 2-7 octobre : back-office (biens, calendriers, upload WebP, drag-and-drop), Supabase Auth. 9 octobre : première réservation en base, RPC sécurisée, biens archivables, Playwright sur les deux variantes de modale. 13 octobre : crawlabilité SEO. 16 octobre : modération pending/rejected, Stripe Checkout, React Email NL/FR/EN, rate limit, honeypot, expiration 48 h, AVIF. 18 octobre : tarifs, pré-arrivée, galerie. 19 octobre : journée sécurité (36 commits), verrou de concurrence et pgTAP (KA-13). 24-25 octobre : réservation masquée (KA-59), URLs sans préfixe (KA-61), JSON-LD (KA-60), leads Resend (KA-26), Checkout bloqué. 27 octobre 2026 : staging noindex, dernières redirections WP, vidéos hero, prod sur kozyantwerp.be.",
-            "Chiffres : 217 commits (dont 31 merges), 15 tickets Jira KA-13 à KA-62, ≈ 54 000 lignes de source + ≈ 7 700 de tests, Lighthouse staging Perf 83 / SEO 100 / A11y 100 / BP 96. S'y ajoutent 18 pages, ≈ 236 composants, 46 migrations, 133 fichiers Vitest, 4 specs Playwright, 15 fichiers pgTAP et 24 documents (PRD, décisions, ADR, sécurité, déploiement, cutover, runbook). En ligne le 30/10 : quatre logements publiés, 21 URLs au sitemap sur trois langues, wp-login.php en 410, .com et www redirigés vers kozyantwerp.be.",
+            "Chiffres : 217 commits (dont 31 merges), 15 tickets Jira KA-13 à KA-62, ≈ 54 000 lignes de source + ≈ 7 700 de tests, Lighthouse staging Perf 83 / SEO 100 / A11y 100 / BP 96. S'y ajoutent 18 pages, ≈ 236 composants, 46 migrations, 133 fichiers Vitest, 4 specs Playwright, tests pgTAP en base et 24 documents (PRD, décisions, ADR, sécurité, déploiement, cutover, runbook). En ligne le 30/10 : quatre logements publiés, 21 URLs au sitemap sur trois langues, wp-login.php en 410, .com et www redirigés vers kozyantwerp.be.",
             "Honnêteté produit : la réservation et Stripe ne sont pas encore ouverts au public (choix client). Pas de CI GitHub Actions (Husky + builds Vercel). Le moteur est prêt et testé : basculer une variable suffira pour l'ouvrir. La CI est la suite logique d'un projet qui a déjà ses tests. Le score Perf 83 vient surtout des vidéos du hero. La sync iCal avec Airbnb/Booking existe sur une branche et attend que la réservation directe soit ouverte. Prochaines étapes : ouverture réservation, CI lint/typecheck/Vitest/pgTAP, sync iCal KA-48, perf hero."
           ]
         }
@@ -572,15 +572,15 @@
       "focusTags": [
         "Temps réel",
         "Règles en SQL",
-        "600+ tests",
+        "638 tests",
         "CI + E2E",
         "Observabilité",
         "Audit et remédiation"
       ],
       "name": "Spill The Crumb",
-      "tagline": "Un réseau social de confidences anonymes en temps réel, construit comme un vrai produit : feed live entre onglets, anti-spam garanti par la base, back-office et plus de 600 tests",
+      "tagline": "Un réseau social de confidences anonymes en temps réel, construit comme un vrai produit : feed live entre onglets, anti-spam garanti par la base, back-office et 638 tests",
       "type": "Réseau social · 2026",
-      "status": "En ligne",
+      "status": "En développement",
       "year": "2026",
       "role": "Spill The Crumb est un feed communautaire où l'on partage et commente des « crumbs » sans exposer son identité. Je l'ai construit comme un produit prêt à grandir, pas comme une démo. Le feed se met à jour en direct, y compris entre onglets ; chaque réaction s'affiche instantanément puis se réconcilie avec le serveur ; et les règles qui comptent (anti-spam, compteurs, notifications) vivent dans Postgres. Autour : CI avec E2E sur une vraie base, tests de charge, observabilité maison, ADR et guide client. Au total : 230 commits, 45 migrations SQL, 638 tests, et 97/100 en performance Lighthouse sur les pages publiques.",
       "stack": [
@@ -604,7 +604,7 @@
       ],
       "meta": {
         "title": "Spill The Crumb · Étude de cas",
-        "description": "Réseau social de confidences anonymes : feed temps réel, anti-spam en base, CI E2E et 600+ tests."
+        "description": "Réseau social de confidences anonymes : feed temps réel, anti-spam en base, CI E2E et 638 tests."
       },
       "problem": {
         "tags": ["Feed anonyme", "Spam", "Cohérence temps réel", "Exploitable par un client"],
@@ -786,7 +786,7 @@
       "name": "Take The Crown (3x3)",
       "tagline": "Modéliser le sport avant le code, puis shipper une tranche fiable",
       "type": "Plateforme sportive SaaS",
-      "status": "En ligne",
+      "status": "En développement",
       "year": "2026",
       "role": "J'ai posé la vision produit 3x3 (Identity, Competition, Reputation), la documentation domaine/architecture et l'implémentation MVP : auth Player/Organizer, events Geoapify, matchs vérifiés et ranking World/Country sur Next.js + Supabase.",
       "stack": [

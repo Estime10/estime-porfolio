@@ -19,7 +19,10 @@ export function ProjectCard({
   const cover = project.coverImage;
 
   return (
-    <article className="flex h-full flex-col">
+    <article
+      id={project.slug}
+      className="flex h-full scroll-mt-[calc(var(--nav-height)+var(--space-6))] flex-col"
+    >
       {cover ? (
         <div
           className={
@@ -43,11 +46,11 @@ export function ProjectCard({
       <div
         className={
           featured
-            ? "mt-6 flex max-w-3xl flex-1 flex-col md:mt-8"
-            : "mt-5 flex max-w-prose flex-1 flex-col md:mt-6"
+            ? "mt-6 flex w-full max-w-3xl flex-1 flex-col md:mt-8"
+            : "mt-5 flex w-full flex-1 flex-col md:mt-6"
         }
       >
-        <p className="text-label text-muted">{project.type}</p>
+        <p className="text-label text-muted text-balance">{project.type}</p>
         <h2
           className={
             featured
@@ -57,7 +60,7 @@ export function ProjectCard({
         >
           {project.name}
         </h2>
-        <p className="text-body text-secondary mt-2 text-pretty md:mt-3">{project.tagline}</p>
+        <p className="text-body text-secondary mt-2 text-balance md:mt-3">{project.tagline}</p>
         <p className="text-body text-muted mt-4 text-pretty md:mt-5">{project.summary}</p>
 
         <div className="mt-auto flex flex-wrap items-center gap-3 pt-6 md:pt-8">

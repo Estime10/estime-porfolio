@@ -1,14 +1,10 @@
 import { z } from "zod";
-import { CONTACT_FIELD_IDS } from "@/features/contact-screen/types/contact-field-id/contactFieldId";
-import { CONTACT_INTENT_IDS } from "@/features/contact-screen/types/contact-intent-id/contactIntentId";
 import { CASE_STUDY_SECTION_IDS } from "@/features/projects-screen/map-project-case-study/caseStudySectionIds";
 import { PROFILE_SECTION_IDS } from "@/features/profile-screen/map-profile-content/profileSectionIds";
 import { CASE_STUDY_PROJECT_SLUGS, PROJECT_SLUGS } from "@/lib/projects/project-catalog";
 import { createSlugRecordSchema } from "@/lib/i18n/messages-schema/create-slug-record-schema/createSlugRecordSchema";
 import {
   caseStudySectionSchema,
-  contactFieldCopySchema,
-  contactIntentOptionSchema,
   contactStripLabelsSchema,
   featuredCaseStudyBaseSchema,
   pageMetaSchema,
@@ -118,30 +114,6 @@ export const appMessagesSchema = z.object({
       paragraphs: translationStringArraySchema,
     }),
     contactStrip: contactStripLabelsSchema,
-    form: z.object({
-      intent: z.object({
-        legend: z.string().min(1),
-        hint: z.string().min(1),
-        options: createSlugRecordSchema(CONTACT_INTENT_IDS, contactIntentOptionSchema),
-      }),
-      requiredMark: z.string().min(1),
-      back: z.string().min(1),
-      cancel: z.string().min(1),
-      submit: z.string().min(1),
-      submitting: z.string().min(1),
-      success: z.object({
-        title: z.string().min(1),
-        body: z.string().min(1),
-      }),
-      errors: z.object({
-        intentRequired: z.string().min(1),
-        fieldRequired: z.string().min(1),
-        emailInvalid: z.string().min(1),
-        submitFailed: z.string().min(1),
-        submitNotConfigured: z.string().min(1),
-      }),
-      fields: createSlugRecordSchema(CONTACT_FIELD_IDS, contactFieldCopySchema),
-    }),
     meta: pageMetaSchema,
   }),
   ThemeToggle: z.object({

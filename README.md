@@ -22,9 +22,7 @@ Ce projet n’est pas une landing générique : c’est une **application Next.j
 - **i18n** français / anglais (`next-intl`)
 - **Thème** clair / sombre avec transition animée (GSAP, `prefers-reduced-motion`)
 - **Navigation** desktop & mobile avec animations de panneaux
-- **Formulaire contact** par intention (site vitrine, app métier, refonte produit, contact général)
-- **Envoi e-mail** via [Formspree](https://formspree.io/) proxifié par `POST /api/contact` (ID serveur, rate limiting)
-- **Bandeau contact** (LinkedIn, Instagram, e-mail, téléphone) sur l’accueil et le flux « Me contacter »
+- **Page contact** via canaux directs (e-mail, téléphone, LinkedIn, GitHub, Instagram)
 
 ---
 
@@ -48,7 +46,6 @@ Inventaire détaillé et critères de sélection : [`doc/portfolio-projects-inve
 | UI         | [React 19](https://react.dev/), [Tailwind CSS 4](https://tailwindcss.com/) |
 | i18n       | [next-intl](https://next-intl.dev/)                                        |
 | Animations | [GSAP](https://gsap.com/)                                                  |
-| Contact    | [Formspree](https://formspree.io/) via Route Handler `/api/contact`        |
 | Qualité    | TypeScript strict, ESLint, Husky, Vitest                                   |
 | CI         | GitHub Actions (lint, typecheck, tests, build)                             |
 
@@ -91,12 +88,9 @@ pnpm install
 
 Créer `.env.local` à la racine :
 
-| Variable               | Rôle                                                                         |
-| ---------------------- | ---------------------------------------------------------------------------- |
-| `FORMSPREE_FORM_ID`    | ID Formspree **serveur uniquement** — définir aussi dans le dashboard Vercel |
-| `NEXT_PUBLIC_SITE_URL` | URL publique (canonical, OG, sitemap) — optionnel en local                   |
-
-Ne jamais committer l’ID Formspree dans `vercel.json` ni une variable `NEXT_PUBLIC_*`. Dans Formspree → **Settings**, autoriser le domaine de production et `http://localhost:3000` en développement, et activer le filtrage / reCAPTCHA si le spam apparaît.
+| Variable               | Rôle                                                       |
+| ---------------------- | ---------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL` | URL publique (canonical, OG, sitemap) — optionnel en local |
 
 ```bash
 pnpm dev
@@ -154,9 +148,6 @@ pnpm test:e2e:ui   # mode interactif Playwright
 
 ## Sécurité & limites
 
-- L’ID Formspree (`FORMSPREE_FORM_ID`) reste **côté serveur** (`.env.local` / variables Vercel) ; le client poste uniquement vers `/api/contact` (validation Zod + rate limiting par IP).
-- Ne pas versionner `FORMSPREE_FORM_ID` dans le dépôt (`vercel.json` inclus).
-- Activer le reCAPTCHA / filtrage dans le tableau de bord Formspree en complément — le rate limit in-memory de l’app est une défense best-effort (reset au cold start).
 - Les coordonnées publiques (e-mail, téléphone, réseaux) sont dans `lib/constants/publicContact.ts` — volontairement versionnées pour un portfolio.
 - Ne pas committer `.env.local` (déjà ignoré par git).
 
@@ -177,7 +168,7 @@ pnpm test:e2e:ui   # mode interactif Playwright
 
 - **Shell navigation, projets, profil, contact** : en place sur `main`
 - **Case studies** : featured (FleetScan, Shadow, Spill Crumb, Jikowood) + other work (TTC-v0, Enna, Maxwel Jones, Hors Cadre, Purpose Sport)
-- **Déploiement prod** : Vercel — variables `FORMSPREE_FORM_ID` (dashboard) et `NEXT_PUBLIC_SITE_URL`
+- **Déploiement prod** : Vercel — variable `NEXT_PUBLIC_SITE_URL` si besoin de canonical absolu
 - **Pistes** : code-splitting GSAP, locale `nl` (mentionnée dans certains contenus, non implémentée)
 
 ---

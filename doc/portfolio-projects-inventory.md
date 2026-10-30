@@ -305,10 +305,10 @@ META
 | Couche      | Technologie                                                                                          |
 | ----------- | ---------------------------------------------------------------------------------------------------- |
 | Frontend    | Next.js 16, React 19, Tailwind 4, GSAP (modules animation lazy-load)                                 |
-| Backend     | Route Handler `/api/contact` (Formspree) + Server Action locale i18n                                 |
+| Backend     | Pas d’API contact — canaux directs uniquement                                                        |
 | DB          | —                                                                                                    |
 | Auth        | —                                                                                                    |
-| Infra       | Vercel (`vercel.json` + `FORMSPREE_FORM_ID` en env dashboard, pas dans le repo)                      |
+| Infra       | Vercel                                                                                               |
 | Animation   | GSAP exclusif (pas Framer) — splash, thème interpolé, nav panneaux, contact strip                    |
 | Outils clés | next-intl (cookie, sans préfixe URL), ESLint strict (no any), Husky, Instrument Sans + IBM Plex Mono |
 
