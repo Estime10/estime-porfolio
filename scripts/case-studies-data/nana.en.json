@@ -1,0 +1,106 @@
+{
+  "focusTags": [
+    "Client project",
+    "Custom back office",
+    "Supabase",
+    "Row Level Security",
+    "Bulk upload",
+    "CI + E2E"
+  ],
+  "name": "Hors Cadre",
+  "tagline": "A premium photo portfolio and the custom private studio that lets the photographer publish albums of hundreds of images on her own",
+  "type": "Client project · Photography",
+  "status": "Live",
+  "year": "2026",
+  "role": "A photographer needs two things: a showcase that puts images first, and autonomy to update it without a developer. I built both in four weeks with Next.js 16 and Supabase. Public side: a gallery with crafted transitions. Studio side: a private back office where up to 1,200 photos per batch are converted to WebP in the browser, uploaded with resume, reordered by drag-and-drop and published in one click. Security goes all the way to the database. Totals: 142 commits, 15 PRs, 13 migrations, 142 test files, E2E CI and 15 ADRs.",
+  "stack": [
+    "Next.js 16",
+    "React 19",
+    "TypeScript",
+    "Supabase (Auth, Postgres, Storage)",
+    "PostgreSQL (RLS)",
+    "Server Actions",
+    "Zod",
+    "next-intl",
+    "GSAP",
+    "dnd-kit",
+    "react-photo-album",
+    "Vitest",
+    "Playwright",
+    "GitHub Actions",
+    "Vercel"
+  ],
+  "meta": {
+    "title": "Hors Cadre · Case study",
+    "description": "Premium photo portfolio and private studio: bulk WebP upload, Supabase RLS, CI and 15 ADRs."
+  },
+  "problem": {
+    "tags": ["Images first", "Publish autonomy", "Large volumes", "Controlled costs"],
+    "paragraphs": [
+      "A photographer’s portfolio has one rule: the UI must step aside for the images. No heavy cards, no copy competing with the photo, but transitions that make moving between albums feel valuable. The public site had to be calm, fast and fluid on mobile and desktop.",
+      "The real problem was behind the curtain. A shoot easily means hundreds of 10–50 MB files. Generic CMSs struggle, specialized hosts bill storage, and depending on a developer for every album is not viable. The tool had to serve one gesture: drop a whole folder, reorder, pick a cover, publish.",
+      "Third constraint: cost. A photo-heavy site can explode egress and transform bills. Every technical choice had to account for the cost of a displayed image."
+    ]
+  },
+  "approach": {
+    "tags": ["Written decisions", "Layered security", "Client-side upload", "Branches and CI"],
+    "paragraphs": [
+      "I documented it as a product: 15 ADRs with context, rejected options and trade-offs, plus a non-jargon vision guide for the client. ADR-001 compares Supabase to Firebase, a custom backend and a CMS.",
+      "Team-style Git even solo: feature/*, develop, uat, main, 15 PRs. GitHub Actions CI: lint, tests, build, then Playwright Chromium. Pre-commit: zero ESLint warnings, green tests.",
+      "Core idea: move heavy work where it costs least. Photo conversion in the admin browser. Public pages cached. Thumbnails served straight from Supabase Storage, not Vercel’s image optimizer."
+    ]
+  },
+  "sections": {
+    "context": {
+      "title": "Product context",
+      "tags": ["Photo portfolio", "Single administrator", "FR/EN via cookie"],
+      "paragraphs": [
+        "Two audiences. Visitors browse home, masonry gallery, then each album with a fullscreen viewer. The photographer, sole admin, manages everything from a private studio behind a non-public URL.",
+        "Deliberate mono-account model: the trigger refuses a second profile (PROFILE_ALREADY_EXISTS). Less attack surface, no team roles.",
+        "Out of v1: client accounts, print sales, comments, Sentry. FR/EN from the browser then cookie, no URL prefix, so album URLs stay simple."
+      ]
+    },
+    "architecture": {
+      "title": "Architecture",
+      "tags": ["Server Components", "Server Actions", "Postgres RLS", "Direct storage"],
+      "paragraphs": [
+        "Front: Next.js 16 Server Components. Public pages revalidate every 300s; studio edits invalidate cache surgically. proxy.ts refreshes the session, isolates admin session, redirects to login with returnTo, no-store on admin.",
+        "Back: no REST API. Every mutation is a Server Action in its own folder, always: identity + role, Zod, write, invalidate cache.",
+        "Data: albums (title, slug, publish, order, cover, images JSONB) and profiles (admin role). Files at album-photos/albums/{id}/{image}.webp. Cover dimensions denormalized so masonry does not jump."
+      ],
+      "bullets": [
+        "13 SQL migrations, reproducible local DB, generated types",
+        "5 RLS policies on albums (public read of published + admin CRUD)",
+        "~15 admin Server Actions, one function per file",
+        "142 Vitest files + 2 Playwright scenarios",
+        "Business limits: 1,200 files/batch, 50 MB/file, 640px thumb q=0.82, 3 retries",
+        "~15k app lines and ~7.5k test lines"
+      ]
+    },
+    "decisions": {
+      "title": "Key decisions",
+      "tags": ["Resilient upload", "JSONB race", "Defense in depth", "Cost per image"],
+      "paragraphs": [
+        "Upload that resumes where it stopped. Each photo: (1) WebP convert, (2) storage upload, (3) DB record, with a checkpoint after each step. source_fingerprint skips duplicates if the same folder is dropped again.",
+        "The disappearing photos bug. Images live in one JSONB. Add = read, append, write. Parallel uploads meant two requests read the same version and the second write erased the first. Fix: serialize the queue (ALBUM_UPLOAD_CONCURRENCY = 1) + dedupe. Integrity before speed. Next: atomic SQL append to restore parallelism.",
+        "Security layers: configurable admin URL (≥16 chars or 404), proxy for guests, assertAdminMutation on every action, Postgres RLS. Linter flagged is_admin() as SECURITY DEFINER: fixed by migration, not ignored.",
+        "Cost: client WebP (createImageBitmap + canvas), direct Supabase thumbs, egress branch (PR #14), cover dimensions in DB."
+      ],
+      "bullets": [
+        "Server Actions over REST (ADR-002)",
+        "Images in JSONB (ADR-005): one query per album, documented trade-off",
+        "Cover-column fallback fixed a prod 500 on 09/07",
+        "GSAP with prefers-reduced-motion (ADR-010), animation logic tested"
+      ]
+    },
+    "execution": {
+      "title": "Delivery and next steps",
+      "tags": ["4 weeks", "142 commits", "Next steps"],
+      "paragraphs": [
+        "14-15/06/2026: foundations, design system, GSAP splash, conducting bar, nav, cookie i18n, Vitest. 16/06: CI, a11y, responsive. 20-21/06: gallery, album, cover handoff, viewer, studio shell. 02-03/07: Supabase. 05/07: Server Action hardening, SEO, dnd, ADRs, prod. 08-12/07: uploads, backups, egress, direct thumbs.",
+        "Numbers: 142 commits in 29 days (12 active), 15 PRs, 13 migrations, 15 ADRs, 142 test files (~455 tests claimed), 437 TS files and 146 React components.",
+        "Honesty: upload reliability before speed, photographer autonomy before extras. k6 (250 VU) ready but not run; Sentry out of v1. Next: atomic append, per-photo alt text, custom domain, k6 run, docs synced to code."
+      ]
+    }
+  }
+}

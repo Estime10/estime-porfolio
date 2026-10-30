@@ -83,7 +83,11 @@ export const appMessagesSchema = z.object({
     }),
     sections: z.object({
       featured: z.string().min(1),
+      featuredNoteLead: z.string().min(1),
+      featuredNote: z.string().min(1),
       secondary: z.string().min(1),
+      inDevelopmentNoteLead: z.string().min(1),
+      inDevelopmentNote: z.string().min(1),
     }),
     card: z.object({
       readCaseStudy: z.string().min(1),

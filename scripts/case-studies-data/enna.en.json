@@ -1,0 +1,100 @@
+{
+  "focusTags": [
+    "Client project",
+    "International SEO",
+    "Trilingual FR/NL/EN",
+    "Accessibility",
+    "No backend",
+    "V1 in 3 days"
+  ],
+  "name": "Enna Consulting",
+  "tagline": "Trilingual showcase for an HR consultant: one fluid page, but a real URL per section and language to be found and shared in Belgium",
+  "type": "Client project · Belgium",
+  "status": "Live",
+  "year": "2026",
+  "role": "For a consultant in talent acquisition, diversity and employer branding, I designed a site that explains a three-axis offer in minutes and leads naturally to contact. A Next.js one-pager in FR/NL/EN: single-page fluidity plus 9 real pages for Google (3 languages × 3 sections), each with hreflang and structured data. V1 in 3 days, then refined through the ennabv.be domain (44 commits, 3 PRs).",
+  "stack": [
+    "Next.js 16",
+    "React 19",
+    "TypeScript",
+    "Tailwind CSS 4",
+    "React Hook Form",
+    "Zod",
+    "EmailJS",
+    "GSAP",
+    "Framer Motion",
+    "Vitest",
+    "Vercel"
+  ],
+  "meta": {
+    "title": "Enna Consulting · Case study",
+    "description": "Trilingual one-pager for an HR consultant: per-section URLs, international SEO and accessibility."
+  },
+  "problem": {
+    "tags": ["Three-axis offer", "Trilingual Belgian market", "Conversion to contact"],
+    "paragraphs": [
+      "Enna Consulting helps companies with talent acquisition, diversity & inclusion and employer branding. Audience: SME/ETI leaders and HR teams. The site had to make the offer clear fast, then get people to write.",
+      "Belgian constraint: the same prospect may search in NL, FR or EN. A classic one-pager has one URL: weak SEO, and you cannot share “Vision in Dutch”.",
+      "First screen: premium calm brand, one contact button. Simple hosting for an independent consultant: no server, no database, no subscription just for a form."
+    ]
+  },
+  "approach": {
+    "tags": ["Written client brief", "Static pages", "Living URL", "Accessibility first"],
+    "paragraphs": [
+      "Framed around one goal: turn a visitor into a qualified contact. Non-technical presentation doc versioned with the code.",
+      "Single-page comfort with real addresses per section: /fr/home, /nl/about, /en/testimonials. Nine prerendered pages with title, description, canonical, hreflang and social previews. URL updates on scroll without reload; back button stays coherent.",
+      "Trade-off: no backend. Browser-validated form via EmailJS. Started with Resend (server route); switched to EmailJS for a fully static site with no server secret."
+    ]
+  },
+  "sections": {
+    "context": {
+      "title": "Product context",
+      "tags": ["B2B HR consulting", "Trilingual NL/FR/EN", "Belgium"],
+      "paragraphs": [
+        "Targets: SME/ETI leaders, HR/TA, growing companies. Out of v1: blog, online booking, client area, analytics.",
+        "One repeated CTA: open the contact modal. Dutch default: any URL without a locale redirects there; choice is remembered."
+      ]
+    },
+    "architecture": {
+      "title": "Architecture",
+      "tags": ["App Router", "Locale middleware", "Zero server"],
+      "paragraphs": [
+        "Front: Next.js 16 catch-all for 9 pages, OnePager assembles sections. IntersectionObserver updates the URL via history.replaceState. Middleware: 308 redirects, 1-year cookie, assets/sitemap/social images pass through.",
+        "Back: none. Copy in three translation files. Form RHF + Zod → EmailJS with typed success/error. Documented EmailJS pitfall: empty recipient → 422; config checked up front. Modal: focus trap, scroll lock, portal, success state.",
+        "Motion: GSAP for splash only, Framer Motion for modals, Web Animations API for fades."
+      ],
+      "bullets": [
+        "9 static pages + splash + translated 404",
+        "hreflang fr-BE / nl-BE / en + x-default, ProfessionalService JSON-LD",
+        "OG/Twitter images generated in code",
+        "HTTP security headers",
+        "~3.5–4k lines, 9 production dependencies"
+      ]
+    },
+    "decisions": {
+      "title": "Key decisions",
+      "tags": ["URL per section", "Keyboard focus", "Reduced motion", "SEO robustness"],
+      "paragraphs": [
+        "URLs per section instead of # anchors (ignored by Google). April migration + sitemap hreflang. isProgrammaticScroll prevents URL flicker during menu-driven scrolling.",
+        "Accessibility as a feature: custom focus-trap hook, screen-reader form errors, splash skipped for prefers-reduced-motion.",
+        "Infinite loop bug, step by step. Splash animated then navigated to /home; timeline could restart → endless GET /home. Fix: cancellable timeline (cancel on unmount), navigate once. Shipped 5 minutes after the faulty refactor; same cancel pattern for reduced motion.",
+        "Robust site URL: NEXT_PUBLIC_SITE_URL then Vercel prod URL, force https, avoid Search Console duplicates."
+      ],
+      "bullets": [
+        "Cancellable GSAP splash: no ghost animations",
+        "One Zod schema, small homemade adapter",
+        "Open Graph locales fr_BE / nl_BE",
+        "No backend: zero server cost, zero server secret"
+      ]
+    },
+    "execution": {
+      "title": "Delivery and next steps",
+      "tags": ["V1 in 3 days", "ennabv.be domain", "Next steps"],
+      "paragraphs": [
+        "17/02/2026: architecture, i18n, menu, splash (loop bug fixed same night). 18/02: contact, Vision. 19/02: Testimonials, prod ready 0.1. V1 in three days. Then refactors, SEO, EmailJS, ennabv.be, per-locale routes (09/04). Last copy tweak 27/05.",
+        "Numbers: 44 commits on 8 active days, 3 PRs, 43 components, 9 pages, 3 languages.",
+        "Honesty: prioritized SEO, a11y and the form, shipped fast. Minimal tests (one render test), no CI. Next: route/SEO tests, GitHub Actions, light form anti-spam, client-validated testimonials."
+      ]
+    }
+  }
+}

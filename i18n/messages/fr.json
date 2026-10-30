@@ -48,18 +48,47 @@
       "section": "Thèmes abordés"
     },
     "sections": {
-      "featured": "Études de cas",
-      "secondary": "Autres réalisations"
+      "featured": "En production",
+      "featuredNoteLead": "Mes projets livrés.",
+      "featuredNote": "Des sites et produits en ligne, choisis pour la réflexion produit, l'architecture claire et l'exécution frontend.",
+      "secondary": "En développement",
+      "inDevelopmentNoteLead": "Mes projets en cours.",
+      "inDevelopmentNote": "Des idées de produit que je mène moi-même, pour explorer de nouveaux usages et pousser la technique plus loin."
     },
     "card": {
-      "readCaseStudy": "Lire l'étude de cas",
-      "viewLive": "Voir le site en ligne"
+      "readCaseStudy": "Voir le détail",
+      "viewLive": "Voir le site"
     },
     "meta": {
       "title": "Projets",
-      "description": "Études de cas Next.js et Supabase : produits B2B, sites clients et MVP livrés. Sélection orientée résultat, architecture et exécution frontend."
+      "description": "Sites livrés et produits en développement, Estime Vangu."
     },
     "items": {
+      "kozy-antwerp": {
+        "name": "Kozy Antwerp",
+        "tagline": "Le site d'une société de gestion locative à Anvers : migration de WordPress vers Next.js sans perte de SEO, back-office et moteur de réservation",
+        "type": "Gestion locative · Anvers · 2026",
+        "status": "En ligne",
+        "summary": "J'ai remplacé le site WordPress vieillissant de Kozy Antwerp par une plateforme Next.js trilingue. Elle réunit une vitrine pensée pour convaincre les propriétaires, un back-office de gestion des biens et un moteur de réservation (validation par l'admin, paiement Stripe) dont les règles sont garanties par la base de données.",
+        "tags": ["Back-office sur mesure", "SEO cutover", "Supabase", "Stripe", "Feature flags"],
+        "highlights": [
+          "52 URLs WordPress en 301, bruit WP en 410, bascule sans perte SEO",
+          "Réservation sans double booking : verrou SQL + soft-block + exclusion Postgres",
+          "RGPD : anonymisation voyageurs 30 jours après départ, cron hebdomadaire"
+        ],
+        "stack": [
+          "Next.js 16",
+          "React 19",
+          "TypeScript",
+          "Supabase",
+          "PostgreSQL (RLS, RPC, pgTAP)",
+          "Stripe Checkout",
+          "Resend",
+          "React Email",
+          "GSAP",
+          "Tailwind CSS 4"
+        ]
+      },
       "fleetscan": {
         "name": "FleetScan",
         "tagline": "Signalement d'incidents flotte via QR et plaque",
@@ -106,12 +135,12 @@
         ]
       },
       "spill-crumb": {
-        "name": "Spill Crumb",
-        "tagline": "Réseau social anonyme · feed, réactions et notifications temps réel",
-        "type": "Application web sociale",
+        "name": "Spill The Crumb",
+        "tagline": "Un réseau social de confidences anonymes en temps réel, construit comme un vrai produit : feed live entre onglets, anti-spam garanti par la base, back-office et plus de 600 tests",
+        "type": "Réseau social · 2026",
         "status": "En ligne",
-        "summary": "Plateforme de confessions anonymes : feed paginé, profils pseudonymes, interactions temps réel, anti-spam et back-office admin complet.",
-        "tags": ["Feed social", "Realtime", "Anti-spam", "Admin ops"],
+        "summary": "Spill The Crumb est un feed communautaire où l'on partage et commente des « crumbs » sans exposer son identité. Je l'ai construit comme un produit prêt à grandir, pas comme une démo.",
+        "tags": ["Temps réel", "Règles en SQL", "600+ tests", "CI + E2E", "Observabilité"],
         "highlights": [
           "Stores posts synchronisés (feed, profil, détail) avec fan-out multi-stores",
           "638+ tests Vitest, CI qualité + E2E Supabase local, rate limit Upstash",
@@ -120,64 +149,122 @@
         "stack": [
           "Next.js 16",
           "React 19",
-          "Tailwind 4",
-          "Supabase",
-          "Zod",
+          "TypeScript strict",
+          "Supabase (Auth, Realtime, Storage)",
+          "PostgreSQL (RLS, triggers, RPC, pg_trgm)",
           "next-safe-action",
-          "GSAP",
-          "Vitest",
-          "Playwright"
+          "Zod",
+          "React Hook Form",
+          "Zustand",
+          "Upstash Redis"
         ]
       },
       "jikowood": {
         "name": "Jikowood",
-        "tagline": "Refonte vitrine premium pour artisan menuisier",
-        "type": "Site vitrine",
+        "tagline": "Le site vitrine et portfolio d'une menuiserie sur mesure à Bruxelles : plus d'une centaine de photos de réalisations, trois langues, avis clients et référencement local",
+        "type": "Menuiserie sur mesure · Bruxelles · 2025",
         "status": "En ligne",
-        "summary": "Expérience immersive pour un atelier menuisier haut de gamme : splash cinématique, galerie fullscreen et parcours trilingue pensé conversion, sans backend.",
-        "tags": ["Vitrine premium", "Galerie immersive", "i18n BE", "Craft frontend"],
+        "summary": "Une menuiserie vend avec des photos. Pour ce client à Bruxelles, j'ai conçu et développé jikowood.be de bout en bout : un portfolio filtrable de 17 réalisations sur mesure, une page par projet, des avis clients stockés en base, un formulaire de contact et une interface en français, anglais et néerlandais.",
+        "tags": [
+          "En production",
+          "SEO local",
+          "Optimisation d'images",
+          "Trois langues",
+          "Suivi sur un an"
+        ],
         "highlights": [
           "Galerie fullscreen avec navigation calculée en fonctions pures testées",
           "i18n fr / en / nl avec slugs localisés et cookie de langue",
           "Vitest + Playwright E2E et conventions d'architecture documentées"
         ],
-        "stack": ["Next.js 16", "Tailwind 4", "i18n", "GSAP", "Zod", "Vitest", "Playwright"]
+        "stack": [
+          "Next.js 14 (App Router)",
+          "React 18",
+          "Tailwind CSS 3",
+          "framer-motion",
+          "Swiper",
+          "Zustand",
+          "MongoDB / Mongoose",
+          "Web3Forms",
+          "sharp / critters",
+          "next-sitemap"
+        ]
       },
       "enna": {
         "name": "Enna Consulting",
-        "tagline": "Consulting RH · talent, diversité, marque employeur",
-        "type": "Site vitrine B2B",
+        "tagline": "Le site vitrine trilingue d'une consultante RH : une seule page fluide, mais une vraie URL par section et par langue pour être trouvée et partagée en Belgique",
+        "type": "Conseil RH · Belgique · 2026",
         "status": "En ligne",
-        "summary": "One-pager commercial trilingue (nl / fr / en) en production pour convertir en contact qualifié, splash GSAP, sections localisées et formulaire EmailJS.",
-        "tags": ["En ligne", "B2B RH", "i18n BE", "Lead gen"],
+        "summary": "Pour une consultante en recrutement, diversité et marque employeur, j'ai conçu un site qui explique une offre en trois axes en quelques minutes et mène naturellement à la prise de contact. One-pager Next.js en FR/NL/EN : fluidité d'une page unique et 9 pages réelles pour Google (3 langues × 3 sections), chacune avec hreflang et données structurées.",
+        "tags": [
+          "SEO international",
+          "Trilingue FR/NL/EN",
+          "Accessibilité",
+          "Sans backend",
+          "V1 en 3 jours"
+        ],
         "highlights": [
           "i18n nl / fr / en avec routes section et hreflang",
           "Contact EmailJS + Zod + react-hook-form",
           "Splash GSAP et preuve sociale (témoignages clients)"
         ],
-        "stack": ["Next.js 16", "Tailwind 4", "i18n", "GSAP", "EmailJS", "Zod", "Vitest"]
+        "stack": [
+          "Next.js 16",
+          "React 19",
+          "TypeScript",
+          "Tailwind CSS 4",
+          "React Hook Form",
+          "Zod",
+          "EmailJS",
+          "GSAP",
+          "Framer Motion",
+          "Vitest"
+        ]
       },
       "maxweljones": {
         "name": "Maxwel Jones",
-        "tagline": "Holding corporate · Learn, Earn, Return",
-        "type": "Site corporate",
+        "tagline": "Le site one-page d'une holding qui fédère un réseau d'entrepreneurs : un récit animé Learn / Earn / Return, un panneau réseau et un parcours de contact en deux temps",
+        "type": "Holding · Réseau d'entrepreneurs · 2025-2026",
         "status": "En ligne",
-        "summary": "One-page institutionnelle FR/EN : philosophie Learn/Earn/Return, réseau consultants et contact Roundtable (Web3Forms), booking UI prévu 2027.",
-        "tags": ["En ligne", "Corporate", "Réseau", "Booking UI 2027"],
+        "summary": "Pour Maxwel Jones, une holding construite autour d'un modèle en trois temps (apprendre, gagner, redonner), j'ai conçu une page qui raconte une vision au fil du scroll. 8 sections animées avec GSAP, un panneau latéral des membres, un formulaire de contact et un prototype de prise de rendez-vous pour valider le parcours avant d'investir dans un vrai système.",
+        "tags": [
+          "Storytelling animé",
+          "Refonte d'architecture",
+          "Bilingue FR/EN",
+          "Prototype UX",
+          "Sécurité dépendances"
+        ],
         "highlights": [
           "Architecture features/ documentée avec sections partagées",
           "Network slide et annuaire membres",
           "SEO : OG, JSON-LD, sitemap"
         ],
-        "stack": ["Next.js 15", "Tailwind 4", "next-intl", "GSAP", "Web3Forms"]
+        "stack": [
+          "Next.js 15",
+          "React 19",
+          "TypeScript",
+          "Tailwind CSS 4",
+          "GSAP (ScrollTrigger)",
+          "Context API",
+          "Web3Forms",
+          "react-hot-toast",
+          "ESLint Airbnb",
+          "Husky"
+        ]
       },
       "nana": {
         "name": "Hors Cadre",
-        "tagline": "Portfolio photographe premium · galerie immersive et atelier privé",
-        "type": "Site créatif",
+        "tagline": "Un portfolio photo premium et l'atelier privé sur mesure qui permet à la photographe de publier seule des albums de centaines d'images",
+        "type": "Photographie · 2026",
         "status": "En ligne",
-        "summary": "Mono-admin en production : galerie publique ISR (masonry, téléchargement) et atelier privé (upload WebP massif, publication, drag & drop) sur Supabase.",
-        "tags": ["En ligne", "Galerie Supabase", "Atelier admin", "Liquid Glass"],
+        "summary": "Une photographe a besoin de deux choses : une vitrine qui met ses images au premier plan, et l'autonomie pour la mettre à jour sans passer par un développeur. J'ai construit les deux en quatre semaines avec Next.js 16 et Supabase.",
+        "tags": [
+          "Portfolio photo",
+          "Back-office sur mesure",
+          "Supabase",
+          "Row Level Security",
+          "Upload massif"
+        ],
         "highlights": [
           "Atelier complet : CRUD albums, upload jusqu'à 1 500 photos, aperçu public fidèle",
           "Supabase Auth/RLS/Storage, ISR, SEO et segments admin dissimulés",
@@ -185,34 +272,47 @@
         ],
         "stack": [
           "Next.js 16",
-          "Tailwind 4",
+          "React 19",
+          "TypeScript",
+          "Supabase (Auth, Postgres, Storage)",
+          "PostgreSQL (RLS)",
+          "Server Actions",
+          "Zod",
           "next-intl",
           "GSAP",
-          "react-photo-album",
-          "Supabase",
-          "Vitest",
-          "Playwright"
+          "dnd-kit"
         ]
       },
       "purpose-sport": {
         "name": "Purpose Sport",
-        "tagline": "Agence de management sportif · focus basket",
-        "type": "Site vitrine",
+        "tagline": "Le site d'une agence de management de basketteurs, pensé comme un catalogue de talents pour les clubs et les partenaires",
+        "type": "Management sportif · 2025",
         "status": "En ligne",
-        "summary": "Vitrine data-driven en production : roster de 12 athlètes, fiches riches, vidéo intégrée et parcours contact orienté recrutement.",
-        "tags": ["En ligne", "Sport business", "Roster", "Vidéo"],
+        "summary": "Pour une agence qui représente des joueurs de basket, j'ai construit une vitrine qui explique la mission en quelques écrans, puis met chaque joueur en valeur comme un dossier de recrutement (parcours, palmarès, vidéo). One-page bilingue Next.js, référencé dès la sortie (métadonnées, Search Console, sitemap auto), avec Analytics et tests Jest par section.",
+        "tags": ["Sport business", "Catalogue joueurs", "Vidéo", "SEO", "Tests Jest"],
         "highlights": [
           "Roster structuré TypeScript (stats, carrières, awards)",
           "react-player + Vercel Analytics",
           "i18n fr / en et contact Web3Forms"
         ],
-        "stack": ["Next.js 15", "Tailwind 3", "Framer Motion", "i18next", "react-player", "Jest"]
+        "stack": [
+          "Next.js 15",
+          "React 19",
+          "TypeScript",
+          "Tailwind CSS",
+          "Framer Motion",
+          "i18next",
+          "react-player",
+          "Web3Forms",
+          "next-sitemap",
+          "Vercel Analytics"
+        ]
       },
       "ttc-v0": {
         "name": "Take The Crown (3x3)",
         "tagline": "Infrastructure numérique du basket 3x3 : identité, events, classements",
         "type": "Plateforme sportive SaaS",
-        "status": "En ligne",
+        "status": "En développement",
         "summary": "Produit domain-driven pour centraliser joueurs, équipes, organisateurs et fans du 3x3. Doc métier large (Identity, Competition, Ranking…) ; code MVP centré sur la tranche Event → Match vérifié → Ranking, avec AuthZ en profondeur.",
         "tags": ["3x3", "Domain-first", "Events", "Supabase"],
         "highlights": [
@@ -240,6 +340,112 @@
       "labels": {
         "problem": "Problème",
         "approach": "Approche"
+      },
+      "kozy-antwerp": {
+        "focusTags": [
+          "Back-office sur mesure",
+          "SEO cutover",
+          "Supabase",
+          "Stripe",
+          "Feature flags",
+          "RGPD"
+        ],
+        "name": "Kozy Antwerp",
+        "tagline": "Le site d'une société de gestion locative à Anvers : migration de WordPress vers Next.js sans perte de SEO, back-office et moteur de réservation",
+        "type": "Gestion locative · Anvers · 2026",
+        "status": "En ligne",
+        "year": "2026",
+        "role": "J'ai remplacé le site WordPress vieillissant de Kozy Antwerp par une plateforme Next.js trilingue. Elle réunit une vitrine pensée pour convaincre les propriétaires, un back-office de gestion des biens et un moteur de réservation (validation par l'admin, paiement Stripe) dont les règles sont garanties par la base de données. J'ai commencé par le PRD et un journal de décisions avec le client, puis livré sur kozyantwerp.be en deux mois (217 commits, 46 migrations).",
+        "stack": [
+          "Next.js 16",
+          "React 19",
+          "TypeScript",
+          "Supabase",
+          "PostgreSQL (RLS, RPC, pgTAP)",
+          "Stripe Checkout",
+          "Resend",
+          "React Email",
+          "GSAP",
+          "Tailwind CSS 4",
+          "Zod",
+          "Vitest",
+          "Playwright",
+          "Vercel"
+        ],
+        "meta": {
+          "title": "Kozy Antwerp · Étude de cas",
+          "description": "Site de production d'une société de gestion locative : cutover WordPress sans perte SEO, back-office et réservation garantie en base."
+        },
+        "problem": {
+          "tags": ["WordPress daté", "SEO à préserver", "Conversion propriétaire", "Outil interne"],
+          "paragraphs": [
+            "Kozy Antwerp gère des locations courte durée et B&B à Anvers pour le compte de propriétaires. Son site WordPress/Elementor ne disait pas l'essentiel : en dix secondes, un propriétaire doit comprendre que Kozy s'occupe de tout, et avoir envie de demander une estimation de rendement. C'est la phrase que j'ai inscrite comme « job to be done » dans le PRD. Chaque section de la nouvelle vitrine a été jugée sur ce critère.",
+            "La contrainte forte : remplacer un site déjà indexé sans casser les anciennes URLs. L'historique Google devait survivre au basculement, avec un plan de rollback qui gardait WordPress au moins sept jours. Concrètement, il y avait 52 anciennes adresses à reprendre : fiches de logements, pages légales en néerlandais, un simulateur de rendement et un sous-domaine stay. dédié aux réservations. S'y ajoutait tout le bruit technique qu'un WordPress laisse derrière lui (wp-login.php, wp-admin, flux RSS, formulaires MetForm, catégories vides).",
+            "Derrière la vitrine, l'équipe avait besoin d'un vrai outil : CRUD des biens, calendriers, tarifs semaine / week-end / événement, demandes de réservation, validation admin, paiement Stripe et e-mails transactionnels. Pas d'un CMS générique. Un CMS aurait géré du contenu ; Kozy avait besoin de règles métier : qui peut réserver quelles dates, à quel prix, pendant combien de temps une demande bloque le calendrier, et ce qu'on fait des données d'un voyageur une fois parti."
+          ]
+        },
+        "approach": {
+          "tags": ["Doc d'abord", "Règles en SQL", "Feature flag", "Cutover SEO"],
+          "paragraphs": [
+            "J'ai commencé par écrire le PRD et un journal de 20 décisions (D01 à D20) avec le client, avant le code. Tickets Jira KA-xx, branches nommées, environnements master/prod et develop/staging. Le premier commit date du 30 août 2026 : design system et pages légales. Le deuxième, le même jour, est la documentation produit. Les choix structurants sont devenus des ADR : authentification admin et biens (ADR-005), réservations publiques (ADR-006), URLs sans préfixe de langue (ADR-008).",
+            "Les invariants critiques vivent en Postgres et sont testés avec pgTAP : pas de double réservation même sous charge (verrou pg_advisory_xact_lock, soft-block 48 h, contrainte d'exclusion), cycle pending puis accepted puis confirmed, anonymisation RGPD 30 jours après le départ. Pourquoi en base plutôt qu'en TypeScript ? Parce qu'une règle écrite dans l'interface ne protège rien si quelqu'un appelle l'API directement, et parce qu'une course entre deux requêtes ne se règle qu'au niveau de la transaction. Le voyageur n'écrit jamais dans la table bookings : sa demande passe par une Server Action validée par Zod, qui appelle une seule RPC (create_public_booking) avec les droits du service_role.",
+            "Trade-off assumé : un seul feature flag coupe la navigation, les URLs et les actions serveur de réservation. Le client a pu partir en production avec la vitrine pendant que Stripe et le tunnel restaient en test. Ce flag n'est pas un simple display:none : quand il est coupé, la navigation est filtrée, les URLs de réservation redirigent vers la Collection, la création renvoie booking_disabled et le paiement checkout_disabled, côté serveur."
+          ]
+        },
+        "sections": {
+          "context": {
+            "title": "Contexte produit",
+            "tags": ["Location courte durée", "Trilingue NL/FR/EN", "Anvers"],
+            "paragraphs": [
+              "Personas par priorité : propriétaire néerlandophone, propriétaire francophone, voyageur international. Côté interne, l'équipe Kozy utilise le panneau admin (Supabase Auth, promotion pending vers admin). Un compte qui s'inscrit reste pending et ne voit rien du panneau tant qu'un admin ne l'a pas promu. L'URL du panneau est configurable, et son chemin interne renvoie 404.",
+              "Le voyageur n'a pas de compte. Il choisit un bien dans la Collection, ouvre le calendrier dans une modale qui garde sa propre URL, saisit ses dates (1 à 30 nuits, arrivée au plus tôt le lendemain, heure de Bruxelles) et son identité, puis reçoit « Demande enregistrée, réponse sous 48 h ». S'il change d'avis, un lien d'annulation signé (HMAC, valable 14 jours) lui permet d'annuler tant qu'il n'a pas payé. Une fois confirmé, un e-mail de pré-arrivée envoie les informations d'accès la veille.",
+              "Hors périmètre v1 : comptes voyageurs, synchronisation iCal avec Airbnb/Booking (KA-48, branche non fusionnée), blog, et toute analytics (décision D12 : aucun tracker). Pas de tracker signifie aussi pas de bannière de cookies à imposer.",
+              "Le CTA principal de la vitrine (« Calculer mon rendement ») mène au contact, pas à la réservation publique tant que le flag est off. L'ancienne page WordPress « gratis-simulatie » redirige vers /contact?intent=yield : le lead arrive avec son intention déjà qualifiée. Le formulaire passe par une Server Action Resend, avec honeypot, rate limit et Reply-To vers le prospect (KA-26)."
+            ]
+          },
+          "architecture": {
+            "title": "Architecture",
+            "tags": ["App Router", "RPC SECURITY DEFINER", "Crons Vercel"],
+            "paragraphs": [
+              "Front : Next.js 16 App Router. proxy.ts traduit les URLs publiques localisées (sans préfixe /en/), applique les 301/410 WordPress et respecte le flag réservation, y compris pour les soft-nav Flight et Server Actions. L'App Router reste plat (/collection, /book/…). C'est le proxy qui réécrit /start (NL) ou /accueil (FR) vers la bonne route interne. Il distingue une navigation classique d'une requête Flight ou d'une Server Action, pour ne jamais rediriger une requête que le routeur React attend en réponse directe. La modale de réservation utilise une route interceptée : ouverte depuis la Collection, c'est une modale ; ouverte depuis un lien partagé, c'est une page complète. Les animations de marque (panneaux, expansion FLIP) sont en GSAP.",
+              "Back : Server Actions + Zod, quatre routes API (deux crons, webhook Stripe, llms.txt). La logique sensible est en RPC Postgres SECURITY DEFINER. Paiements via Stripe Checkout hébergé ; e-mails React Email en NL/FR/EN via Resend. Chaque RPC sensible fixe son search_path, retire les droits à public/anon/authenticated, et n'est exécutable que par le rôle prévu. Un test pgTAP (definer_hardening_catalog) vérifie ces réglages. Le webhook Stripe garde la trace des événements (stripe_events) et ne marque une réservation payée qu'à travers des garde-fous (mark_booking_paid_guards).",
+              "Données : 46 migrations SQL (profils, biens, réservations, rate limits, tarifs, purge). Storage pour les photos WebP. Staging sur staging.kozyantwerp.be (auth Vercel + noindex), prod sur kozyantwerp.be. Seules master et develop déclenchent un déploiement. Le calendrier public ne lit jamais la table des réservations : une RPC ne renvoie que des plages de dates, sans donnée personnelle."
+            ],
+            "bullets": [
+              "133 Vitest, 4 specs Playwright réservation, 15 fichiers pgTAP",
+              "10 templates e-mail × 3 langues (demande, acceptation, refus, paiement, pré-arrivée, annulations, lead contact), plus 2 composants partagés et une page d'aperçu en dev",
+              "Crons : pré-arrivée chaque jour, purge PII chaque lundi",
+              "52 URLs WordPress mappées en 301, bruit WP en 410",
+              "Sitemap trilingue, hreflang, JSON-LD, llms.txt, robots sans fuite du slug admin",
+              "Tarifs semaine, week-end (vendredi-dimanche) et événement spécial, calculés en SQL (test pgTAP compute_stay_total)",
+              "En-têtes prod : HSTS preload, X-Frame-Options DENY, CSP frame-ancestors 'none'"
+            ]
+          },
+          "decisions": {
+            "title": "Décisions clés",
+            "tags": ["Intégrité réservation", "Cutover", "Sécurité", "Livraison progressive"],
+            "paragraphs": [
+              "Le chemin vers « double réservation impossible » s'est fait en trois temps, le même soir du 19 octobre. La contrainte d'exclusion (EXCLUDE USING gist) ne couvrait que accepted et confirmed : une nouvelle demande pending pouvait chevaucher un séjour confirmé sans erreur. Premier correctif : vérification explicite avant insertion, alignée sur le calendrier public, figée par un test pgTAP. Puis la course : deux voyageurs à la même milliseconde passent tous les deux la vérif « existe-t-il déjà une réservation ? », puisqu'aucune n'est encore écrite. Résultat : N demandes et N e-mails pour les mêmes nuits. J'ai ajouté un pg_advisory_xact_lock par bien : les créations passent une par une, la deuxième voit la première, le verrou se libère en fin de transaction. Le test de concurrence et le e2e soft-block ont suivi. La contrainte utilise une borne inclusive : personne n'arrive le jour où un autre part, pour laisser le temps du ménage.",
+              "Migration SEO : inventaire CSV de 52 URLs, table de 301 dans next.config et en secours dans le proxy, 410 pour wp-login / wp-admin / feeds, redirection .com / www / stay. Le runbook de cutover découpe le jour J en neuf étapes : gel du contenu, déploiement tagué, smoke tests, bascule DNS, vérification TLS, smoke NL/FR/EN, soumission sitemap, échantillon de 301, annonce cutover done. Le choix 301 vs 410 est volontaire : rediriger wp-login.php vers l'accueil aurait été du bruit ; le déclarer disparu nettoie l'index. Baseline Lighthouse (25/10) : SEO ≥ 90 obtenu à 100.",
+              "Journée sécurité (19/10, 36 commits) : démarrée par un audit défensif de develop (0 critique, 7 P2, 12 P3), traitée dans une branche security (KA-47). Exemples : F-01, le panneau admin n'était protégé que dans le proxy et une next-action pouvait passer à côté (garde aussi dans le layout RSC, POST seulement) ; F-07, un anonyme pouvait lire bookings via REST/Realtime (policy retirée, calendrier uniquement via RPC de dates) ; F-12, révoquer une colonne ne sert à rien si un GRANT existe sur toute la table (migration qui révoque la table et n'accorde que les colonnes publiques). La même journée a ajouté les en-têtes HTTP, la protection contre l'énumération des comptes, l'expurgation des e-mails dans les logs, les liens d'annulation signés et la lecture IP en fail-closed."
+            ],
+            "bullets": [
+              "URLs sans préfixe de langue (ADR-008) avec hreflang et canonical cohérents",
+              "Flag D20 / KA-59 : une seule variable coupe navigation, URLs et Checkout",
+              "Validation admin avant paiement : exigence métier, pas un détail technique",
+              "RGPD : purge_booking_guest_pii(30) idempotente (pii_purged_at), service_role seulement, cron hebdomadaire"
+            ]
+          },
+          "execution": {
+            "title": "Exécution et suite",
+            "tags": ["Prod 27/10/2026", "Chiffres", "Prochaines étapes"],
+            "paragraphs": [
+              "30-31 août 2026 : design system, navigation GSAP, pages légales trilingues, PRD et journal de décisions, hero et panneaux. Septembre : Services, Collection FLIP, modale de réservation, images WebP ; démo contact le 30/09. 2-7 octobre : back-office (biens, calendriers, upload WebP, drag-and-drop), Supabase Auth. 9 octobre : première réservation en base, RPC sécurisée, biens archivables, Playwright sur les deux variantes de modale. 13 octobre : crawlabilité SEO. 16 octobre : modération pending/rejected, Stripe Checkout, React Email NL/FR/EN, rate limit, honeypot, expiration 48 h, AVIF. 18 octobre : tarifs, pré-arrivée, galerie. 19 octobre : journée sécurité (36 commits), verrou de concurrence et pgTAP (KA-13). 24-25 octobre : réservation masquée (KA-59), URLs sans préfixe (KA-61), JSON-LD (KA-60), leads Resend (KA-26), Checkout bloqué. 27 octobre 2026 : staging noindex, dernières redirections WP, vidéos hero, prod sur kozyantwerp.be.",
+              "Chiffres : 217 commits (dont 31 merges), 15 tickets Jira KA-13 à KA-62, ≈ 54 000 lignes de source + ≈ 7 700 de tests, Lighthouse staging Perf 83 / SEO 100 / A11y 100 / BP 96. S'y ajoutent 18 pages, ≈ 236 composants, 46 migrations, 133 fichiers Vitest, 4 specs Playwright, 15 fichiers pgTAP et 24 documents (PRD, décisions, ADR, sécurité, déploiement, cutover, runbook). En ligne le 30/10 : quatre logements publiés, 21 URLs au sitemap sur trois langues, wp-login.php en 410, .com et www redirigés vers kozyantwerp.be.",
+              "Honnêteté produit : la réservation et Stripe ne sont pas encore ouverts au public (choix client). Pas de CI GitHub Actions (Husky + builds Vercel). Le moteur est prêt et testé : basculer une variable suffira pour l'ouvrir. La CI est la suite logique d'un projet qui a déjà ses tests. Le score Perf 83 vient surtout des vidéos du hero. La sync iCal avec Airbnb/Booking existe sur une branche et attend que la réservation directe soit ouverte. Prochaines étapes : ouverture réservation, CI lint/typecheck/Vitest/pgTAP, sync iCal KA-48, perf hero."
+            ]
+          }
+        }
       },
       "fleetscan": {
         "focusTags": ["B2B terrain", "Fiabilité données", "Rôles métier", "MVP industrialisable"],
@@ -415,177 +621,214 @@
         }
       },
       "spill-crumb": {
-        "focusTags": ["Feed social", "Anonymat", "Realtime", "Anti-spam"],
-        "name": "Spill Crumb",
-        "tagline": "Confessions anonymes avec feed temps réel et gouvernance plateforme",
-        "type": "Application web sociale",
+        "focusTags": [
+          "Temps réel",
+          "Règles en SQL",
+          "600+ tests",
+          "CI + E2E",
+          "Observabilité",
+          "Audit et remédiation"
+        ],
+        "name": "Spill The Crumb",
+        "tagline": "Un réseau social de confidences anonymes en temps réel, construit comme un vrai produit : feed live entre onglets, anti-spam garanti par la base, back-office et plus de 600 tests",
+        "type": "Réseau social · 2026",
         "status": "En ligne",
         "year": "2026",
-        "role": "J'ai architecturé et développé la plateforme fullstack : auth, feed paginé, stores synchronisés, notifications realtime, anti-spam, admin sponsoring/logs et pipeline CI/E2E complet.",
+        "role": "Spill The Crumb est un feed communautaire où l'on partage et commente des « crumbs » sans exposer son identité. Je l'ai construit comme un produit prêt à grandir, pas comme une démo. Le feed se met à jour en direct, y compris entre onglets ; chaque réaction s'affiche instantanément puis se réconcilie avec le serveur ; et les règles qui comptent (anti-spam, compteurs, notifications) vivent dans Postgres. Autour : CI avec E2E sur une vraie base, tests de charge, observabilité maison, ADR et guide client. Au total : 230 commits, 45 migrations SQL, 638 tests, et 97/100 en performance Lighthouse sur les pages publiques.",
         "stack": [
           "Next.js 16",
           "React 19",
-          "Tailwind 4",
-          "Supabase",
+          "TypeScript strict",
+          "Supabase (Auth, Realtime, Storage)",
+          "PostgreSQL (RLS, triggers, RPC, pg_trgm)",
           "next-safe-action",
           "Zod",
+          "React Hook Form",
+          "Zustand",
           "Upstash Redis",
+          "next-intl",
           "GSAP",
+          "Tailwind CSS 4",
           "Vitest",
-          "Playwright"
+          "Playwright",
+          "GitHub Actions",
+          "Vercel"
         ],
         "meta": {
-          "title": "Spill Crumb · Étude de cas produit",
-          "description": "Réseau social anonyme : feed, réactions, notifications realtime, anti-spam et back-office admin en production."
+          "title": "Spill The Crumb · Étude de cas",
+          "description": "Réseau social de confidences anonymes : feed temps réel, anti-spam en base, CI E2E et 600+ tests."
         },
         "problem": {
-          "tags": ["Expression libre", "Modération", "Engagement", "Scale contrôlé"],
+          "tags": ["Feed anonyme", "Spam", "Cohérence temps réel", "Exploitable par un client"],
           "paragraphs": [
-            "Le produit vise un espace où les utilisateurs partagent histoires et confessions sous pseudonyme, liberté d'expression sans exposer l'identité réelle.",
-            "Un feed social anonyme doit gérer volume, spam et abus sans alourdir l'expérience. La limite de 5 posts/jour et le rate limiting sont des garde-fous produit explicites.",
-            "L'admin a besoin de visibilité : sponsoring, logs plateforme et stats, sans accéder au code pour comprendre l'état du système."
+            "Les réseaux sociaux classiques lient chaque message à une identité publique. Pour partager une confidence ou un petit drame, beaucoup préfèrent un espace où l'on publie sans exposer son nom, mais où une vraie communauté réagit, commente et fait remonter ce qui « chauffe ».",
+            "Ce type de produit attire deux problèmes dès le premier jour. Le premier est le spam : sans compte public à protéger, rien n'empêche de publier cent posts à la minute, surtout via l'API directe. Le second est la cohérence : un même post apparaît dans le feed, sur le profil et sur la page détail. Si un like ne se reflète que sur un écran sur trois, l'application paraît cassée.",
+            "Enfin, le produit devait pouvoir être exploité par quelqu'un d'autre que moi : tableau de bord, encarts sponsorisés gérables sans développeur, journal des erreurs et guide d'utilisation. Un feed qui marche ne suffisait pas : il fallait un outil qu'on peut piloter."
           ]
         },
         "approach": {
-          "tags": ["Multi-store sync", "Realtime ciblé", "Feature-first", "CI stricte"],
+          "tags": ["Règles en base", "Feature-first", "Décisions écrites", "Tests dès le début"],
           "paragraphs": [
-            "J'ai modélisé des stores posts découplés (feed, profil, détail live) avec un fan-out centralisé via lib/post-store-sync, une mutation se propage proprement partout.",
-            "Le realtime Supabase est réservé aux interactions à valeur immédiate (feed, notifications, badge navbar), pas appliqué partout par défaut.",
-            "Trade-off assumé : soft launch sans Upstash obligatoire (fallback in-memory par instance), documenté et recommandé avant campagne marketing à scale."
+            "Mon principe directeur : toute règle qui protège le produit doit tenir même si l'interface est contournée. L'anti-spam, l'auteur réel d'un post, les compteurs de likes et de commentaires, les notifications : tout cela est appliqué par des triggers et des policies RLS dans Postgres. Les compteurs sont dans post_stats, lisible mais jamais écrite par les clients. Seuls les triggers la mettent à jour.",
+            "Côté code, j'ai organisé l'application par fonctionnalité (16 domaines dans features/). app/ ne fait que du routage et components/ ne contient que de l'UI pure. Les Server Actions passent toutes par next-safe-action : un seul wrapper qui vérifie l'authentification et valide avec Zod.",
+            "J'ai écrit les choix structurants en ADR : proxy unique pour l'auth et la langue (ADR-001), stores séparés avec synchronisation (ADR-002), i18n sans préfixe d'URL (ADR-003). Les tests sont arrivés en même temps que les fonctionnalités : dès la première semaine, la CI lançait des E2E authentifiés sur une base Supabase locale."
           ]
         },
         "sections": {
           "context": {
             "title": "Contexte produit",
-            "tags": ["Anonymat", "Communauté", "Soft launch"],
+            "tags": ["Communauté", "Contenu court", "Sponsoring", "Trois langues"],
             "paragraphs": [
-              "Spill Crumb est disponible en fr / en / es, responsive mobile-tablette-desktop, déployé sur Vercel depuis main.",
-              "16 modules produit couvrent auth, onboarding, home, posts, profil, notifications, settings, add-new-post et admin.",
-              "Le MVP est production-ready : auth email/password, backend stable, outils admin opérationnels, avec limitations assumées (reporting posts, reset password) en roadmap."
+              "Parcours membre : inscription multi-étapes, onboarding, puis le feed. On publie un crumb avec catégorie et image (HEIC iPhone accepté et converti), on réagit, on commente (panneau desktop / bottom sheet mobile), on suit ses notifications. Le profil affiche posts et statistiques.",
+              "Le « Top drama » met en avant le post le plus discuté. Score : likes - dislikes + 2 × commentaires. Un commentaire vaut deux fois plus qu'un like, parce qu'il signale un vrai engagement.",
+              "Côté exploitation : dashboard stats, CRUD des encarts sponsorisés, journal plateforme et signalements. Interface en français, anglais et espagnol, sans préfixe d'URL (cookie ou navigateur). Les sponsors ne paient pas en ligne : les encarts sont créés à la main depuis l'admin, pour valider le modèle sans intégrer de paiement."
             ]
           },
           "architecture": {
             "title": "Architecture",
-            "tags": ["Stores", "Supabase", "Safe actions"],
+            "tags": ["App Router", "Stores synchronisés", "Triggers et RPC", "CI complète"],
             "paragraphs": [
-              "Pattern ProtectedFeaturePage : auth centralisée, loaders typés, erreurs i18n via AppFeatureError. Chaque feature suit screen + sections + services/hooks.",
-              "Mutations via next-safe-action + Zod. Clients Supabase séparés browser / server / admin (service_role jamais exposé côté client)."
+              "Front : Next.js 16, Server Components par défaut. L'état des posts vit dans trois stores Zustand distincts (feed paginé, profil, détail). Les animations GSAP respectent prefers-reduced-motion.",
+              "Back : Server Actions typées et une route interne d'ingestion de logs. La logique métier lourde est en SQL : 45 migrations (schéma, RLS, triggers de compteurs et notifications, RPC Top drama / stats admin / pseudo, index). proxy.ts rafraîchit la session, résout la langue et attribue un identifiant de corrélation à chaque requête.",
+              "Observabilité : platform_log_events consultables sur /admin/logs, purgés automatiquement (30 jours plateforme, 14 jours perf) par un workflow GitHub planifié via service_role."
             ],
             "bullets": [
-              "post-feed-store, profile-posts-store, live-store + registre sync handlers",
-              "Triggers post_stats, RPC top drama, RLS Postgres",
-              "Rate limit Upstash (auth, réactions, commentaires) + fallback in-memory",
-              "638+ tests Vitest, CI audit deps + coverage + E2E Supabase local"
+              "16 pages, 16 domaines, ≈ 260 composants, ≈ 40 000 lignes utiles (cloc)",
+              "638 tests dans ≈ 200 fichiers Vitest, plus specs Playwright E2E",
+              "CI en deux jobs : audit, lint, type-check, tests avec seuils, build ; puis E2E sur Supabase local avec seed",
+              "Rate limits : connexion 10/15 min, inscription 5/h, réactions 30/min, commentaires 10/min, recherche 60/min",
+              "Scripts de charge dédiés qui vérifient chaque limite",
+              "TypeScript strict : 0 any, 0 ts-ignore, types générés depuis la base"
             ]
           },
           "decisions": {
             "title": "Décisions clés",
-            "tags": ["Anti-spam", "Sync", "Ops"],
+            "tags": ["Anti-spam", "Sync multi-écrans", "Performance SQL", "Remédiation"],
             "paragraphs": [
-              "La limite 5 posts/jour est appliquée côté app ET trigger DB, défense en profondeur contre le contournement client.",
-              "Le dashboard /admin/logs persiste les événements plateforme avec widgets et pagination, alternative légère à un SaaS d'observabilité pour le MVP."
+              "L'anti-spam qui a failli ne jamais arriver en prod. La limite de 5 posts/jour est un trigger BEFORE INSERT. Il vérifie aussi que l'auteur déclaré est l'utilisateur connecté (POST_AUTHOR_MISMATCH), même via l'API REST. Pendant le développement, ce trigger gênait les tests manuels : je l'avais désactivé par une migration « TODO(prod) ». Le risque : livrer sans anti-spam. Je l'ai traité par une migration de réactivation (24/06), synchronisée avec POST_DAILY_LIMIT côté app.",
+              "Un like, trois écrans, plusieurs onglets. Dans l'ADR-002 j'ai comparé store global, refetch, React Query et Context. J'ai retenu trois stores spécialisés reliés par un registre de synchronisation. Une mutation est diffusée aux trois stores, un BroadcastChannel la relaie aux autres onglets, Supabase Realtime aux autres utilisateurs. Réaction d'abord optimiste (+1/-1 animé), puis réconciliée. Dette notée : tout nouveau store doit s'enregistrer dans le registre.",
+              "Perf SQL : policies RLS réécrites en (select auth.uid()) évalué une fois ; Top drama via colonne générée stockée drama_level indexée (Index Scan, pas full scan) ; recherche de pseudo via index trigramme pg_trgm ; pagination commentaires via index composite. Bug Storage : ma première policy lisait mal le chemin userId/postId/file (foldername vs filename) ; corrigée puis bucket restreint aux MIME photo."
             ],
             "bullets": [
-              "Fan-out mutations plutôt que stores monolithiques couplés",
-              "i18n cookie-based sans segment URL · 3 locales, fallback en",
-              "Husky pre-commit + pipeline develop → main avec previews Vercel",
-              "Signalement posts et emails de vérification reportés · roadmap transparente"
+              "ADR-001 : un seul proxy.ts pour session et langue",
+              "ADR-003 : i18n sans préfixe (cookie NEXT_LOCALE + Accept-Language)",
+              "Notifications par triggers SQL, sans auto-notification sur son propre post",
+              "Rate limit Upstash avec repli mémoire si non configuré"
             ]
           },
           "execution": {
             "title": "Exécution et suite",
-            "tags": ["Prod Vercel", "Tests massifs", "Roadmap modération"],
+            "tags": ["MVP en 3 semaines", "Audit fin octobre", "Chiffres", "Prochaines étapes"],
             "paragraphs": [
-              "Le produit est live en soft launch / tests internes avec checklist post-deploy (auth, realtime feed, notifications).",
-              "La couverture tests (638+ unitaires, 7 specs E2E) sécurise les évolutions sur un domaine riche (feed, réactions, commentaires, sponsoring).",
-              "Prochains incréments : modération signalements, Upstash avant campagne scale, reset password et emails de confirmation."
+              "6-10 juin 2026 : socle Next/Supabase/i18n, splash, auth multi-étapes, feed, publication, réactions, commentaires. 11-14 juin : optimisation feed, E2E auth en CI, profil, détail, sync onglets, Top drama. 22-26 juin : notifications, admin, WebP, anti-spam, SEO, sponsoring, logs. 29-30 juin : onboarding, guide client, grand refactor (31 commits le 29/06). 10 juillet : doc développeur. 26-30 octobre : audit, montée Next 16.4.3, remédiation P0/P1, aplatissement architecture, déploiement limité à main.",
+              "L'audit de fin octobre : le 26/10 montée de Next et dépendances sensibles. Le 29/10, migration de durcissement : un membre ne peut plus lister qui a liké quoi (likes lisibles par leur auteur seulement, compteurs via post_stats) ; âge 18+ et champs d'inscription vérifiés en base ; rôle/pseudo/naissance/genre immuables côté profil ; limites SQL 10 commentaires et 30 réactions/heure. Côté produit : signalement, mot de passe oublié, export et suppression de compte, focus clavier et contraste. Le 30/10 : déploiements limités à main.",
+              "Chiffres : 230 commits (6 juin → 30 octobre), 16 pages, 45 migrations, 638 tests, ≈ 40 000 lignes utiles, ≈ 43 docs dont 3 ADR. Lighthouse pages publiques : Perf 97, a11y 98-100. Honnêteté : sur un produit de confidences, l'anonymat se garantit en base. Prochaines étapes : file de modération admin, vraie PWA, splash plus court pour les connectés, fonctions en région UE, relecture juridique des CGU."
             ]
           }
         }
       },
       "jikowood": {
-        "focusTags": ["Craft frontend", "Galerie immersive", "i18n trilingue", "Vitrine premium"],
+        "focusTags": [
+          "En production",
+          "SEO local",
+          "Optimisation d'images",
+          "Trois langues",
+          "Suivi sur un an"
+        ],
         "name": "Jikowood",
-        "tagline": "Transformer une vitrine artisan en expérience premium crédible",
-        "type": "Site vitrine",
+        "tagline": "Le site vitrine et portfolio d'une menuiserie sur mesure à Bruxelles : plus d'une centaine de photos de réalisations, trois langues, avis clients et référencement local",
+        "type": "Menuiserie sur mesure · Bruxelles · 2025",
         "status": "En ligne",
-        "year": "2026",
-        "role": "J'ai conçu et livré la refonte frontend de bout en bout : direction d'expérience (splash, hero, galerie), architecture feature-first, i18n fr/en/nl, motion GSAP avec reduced-motion, et filet qualité Vitest/Playwright.",
+        "year": "2025",
+        "role": "Une menuiserie vend avec des photos. Pour ce client à Bruxelles, j'ai conçu et développé jikowood.be de bout en bout : un portfolio filtrable de 17 réalisations sur mesure, une page par projet, des avis clients stockés en base, un formulaire de contact et une interface en français, anglais et néerlandais. Le défi : servir ≈ 106 photos haute définition sans ralentir le site, et être trouvé localement sur Google. En production depuis janvier 2025, évolué pendant un an au rythme des chantiers (177 commits, 11 avis, 81 URLs au sitemap).",
         "stack": [
-          "Next.js 16",
-          "React 19",
-          "Tailwind 4",
-          "GSAP",
-          "Zod",
-          "react-hook-form",
-          "Vitest",
-          "Playwright"
+          "Next.js 14 (App Router)",
+          "React 18",
+          "Tailwind CSS 3",
+          "framer-motion",
+          "Swiper",
+          "Zustand",
+          "MongoDB / Mongoose",
+          "Web3Forms",
+          "sharp / critters",
+          "next-sitemap",
+          "Vercel Analytics",
+          "Speed Insights",
+          "Vercel"
         ],
         "meta": {
-          "title": "Jikowood · Étude de cas frontend",
-          "description": "Refonte vitrine premium pour artisan menuisier : galerie immersive, i18n belge trilingue, architecture feature-first et tests E2E."
+          "title": "Jikowood · Étude de cas",
+          "description": "Site vitrine d'une menuiserie bruxelloise : portfolio photo, SEO local, i18n et avis en base."
         },
         "problem": {
-          "tags": ["Image de marque", "Conversion", "Crédibilité artisan", "Immersion"],
+          "tags": ["Artisan local", "Photos lourdes", "Visibilité Google", "Bruxelles multilingue"],
           "paragraphs": [
-            "Le client avait besoin d'une présence web à la hauteur d'un atelier haut de gamme, pas d'une vitrine générique. Le site devait transmettre immédiatement précision, modernité et savoir-faire.",
-            "Les réalisations (chantiers photographiés) sont l'argument principal. Sans parcours galerie fluide, les photos restent une grille ; avec une navigation immersive, elles deviennent preuve et désir.",
-            "Le contexte belge impose le trilingue (fr / en / nl) dès le départ. Une i18n collée après coup aurait cassé les URLs et la cohérence SEO."
+            "Un menuisier sur mesure ne vend pas un produit sur catalogue : il vend un savoir-faire, prouvé par les réalisations. Un client qui cherche un dressing ou un meuble TV veut voir des projets concrets, dans des intérieurs réels, avant de demander un devis.",
+            "Problème technique immédiat : un portfolio crédible, c'est une centaine de photos HD, et des photos lourdes font fuir sur mobile. Le site devait rester rapide tout en montrant beaucoup.",
+            "Il devait aussi être trouvé. À Bruxelles, un même prospect peut chercher en français, néerlandais ou anglais. Apparaître sur « menuisier sur mesure Bruxelles » compte plus qu'une campagne. Enfin, le client devait pouvoir enrichir ses avis sans me rappeler à chaque fois."
           ]
         },
         "approach": {
-          "tags": ["Feature-first", "Motion utile", "Données statiques", "Honnêteté livrable"],
+          "tags": [
+            "Photos d'abord",
+            "SEO dès le premier sprint",
+            "Contenu sans redéploiement",
+            "Évolution continue"
+          ],
           "paragraphs": [
-            "J'ai posé une architecture feature-first : l'App Router orchestre, la logique vit dans features/ et lib/. Objectif : livrer vite sans perdre la lisibilité pour la suite (CMS éventuel).",
-            "La motion GSAP sert l'entrée de marque et la galerie, pas le scroll pour le scroll. prefers-reduced-motion est respecté dès les hooks d'animation.",
-            "Trade-off assumé : contenu 100 % statique et formulaire contact en UI only (succès local). Le client peut déjà juger le craft ; l'envoi réel et le basculement jikowood.be viennent ensuite."
+            "J'ai construit le site autour des réalisations. Accueil : À propos, Services, Réalisations, Avis, Contact. Portfolio filtrable par catégorie, page projet avec slug lisible et indexable.",
+            "Le SEO fait partie du premier sprint : dès le 15 janvier 2025, Open Graph, sitemap et robots ; le 16, passage SEO dédié. JSON-LD LocalBusiness pour les résultats locaux Google.",
+            "Avis en MongoDB plutôt qu'en dur : le client en ajoute sans redéploiement (note 1-5, statut d'approbation). Les projets restent des fichiers statiques, plus rapides à servir et rarement changés."
           ]
         },
         "sections": {
           "context": {
             "title": "Contexte produit",
-            "tags": ["Artisan BE", "Atelier premium", "Cinq chantiers"],
+            "tags": ["Menuiserie et agencement", "Devis", "Particuliers bruxellois"],
             "paragraphs": [
-              "JIKOWOOD est un atelier menuisier (Micro Factory, Molenbeek) qui vise une clientèle aménagement / sur-mesure. La vitrine doit convaincre avant le premier appel.",
-              "Cinq projets indexés (Cannes, Knokke, Krainem, Overijs, Uccle) ancrent le storytelling dans du réel photographié, pas des placeholders.",
-              "Le livrable cible une URL Vercel de validation ; le domaine jikowood.be reste à basculer une fois le contact et le contenu figés."
+              "Visiteur type : particulier avec un projet d'aménagement (rangement d'entrée, bureau, dressing, meuble TV, table, claustra). Il arrive depuis une recherche ou un lien, regarde des réalisations proches, lit des avis, demande un devis.",
+              "Parcours court et visuel : voir, être rassuré, contacter. Formulaire via Web3Forms, sans serveur de mail à maintenir.",
+              "Mode hors ligne basique (service worker + offline.html), Vercel Analytics et Speed Insights pour l'audience et les Web Vitals."
             ]
           },
           "architecture": {
             "title": "Architecture",
-            "tags": ["App Router", "features/", "SSG multi-locale"],
+            "tags": ["App Router", "Images optimisées", "API avis", "Vercel"],
             "paragraphs": [
-              "Les routes dynamiques [slug] et [slug]/[projectSlug] génèrent les pages présentation, services, galerie et contact pour chaque locale, sans préfixe /fr dans l'URL.",
-              "Les frontières sont nettes : app/ pour le routage, features/ pour l'UI métier, lib/ pour i18n, motion, projets et SEO. Les conventions sont documentées dans le dépôt client."
+              "Front : Next.js 14 App Router, découpé par écran. Animations framer-motion, carrousels Swiper. Langue dans un store Zustand, textes dans trois dictionnaires JSON.",
+              "Images : cœur de la performance. Photos WebP ; next/image sert AVIF/WebP selon le navigateur, tailles 640 à 3840 px. Traitement sharp, CSS critique via critters, découpage du bundle JS.",
+              "Back : route API pour lire/ajouter les avis MongoDB via Mongoose. 17 projets en fichiers statiques. HTTPS + HSTS, X-Frame-Options, nosniff, Referrer-Policy, Permissions-Policy restrictive."
             ],
             "bullets": [
-              "Messages typés fr / en / nl + cookie de langue",
-              "Index projets statique (~43 JPEG sous public/projects/)",
-              "Navigation galerie fullscreen en fonctions pures testées",
-              "SEO : sitemap, robots, security headers, fonts next/font"
+              "17 projets, ≈ 106 photos WebP, 4 catégories",
+              "11 avis servis par /api/testimonials",
+              "81 URLs déclarées au sitemap (projets × langues)",
+              "3 langues : FR, EN, NL",
+              "≈ 6 000 lignes, ESLint airbnb + jsx-a11y"
             ]
           },
           "decisions": {
             "title": "Décisions clés",
-            "tags": ["Priorisation", "Qualité", "Périmètre"],
+            "tags": ["Performance", "Cache", "SEO local", "Autonomie du client"],
             "paragraphs": [
-              "J'ai privilégié le craft visible (splash, hero notch, galerie) et la discipline d'ingénierie (tests, docs) plutôt qu'un backend prématuré sur une vitrine encore en validation.",
-              "Le contact reste volontairement UI-only : brancher Formspree trop tôt aurait figé un flux avant validation client du parcours."
+              "Le client voyait une ancienne version après mise à jour des photos (cache navigateur/CDN/build). Traité le 4 avril en cinq commits : generateBuildId horodaté, Cache-Control pour revalider le HTML, versionnage des images depuis mars. Avec le recul : seuls HTML et images remplacées ont besoin d'être revalidés ; les assets hachés peuvent être cachés un an.",
+              "Servir beaucoup de photos sans ralentir : garder la richesse du portfolio et optimiser la chaîne (WebP, formats modernes, tailles adaptées, cache 24 h des images optimisées, lazy loading).",
+              "Être trouvé localement : JSON-LD LocalBusiness, métadonnées, Open Graph, sitemap avec hreflang. Passages SEO de février, avril, mise à jour sitemap du 11 avril."
             ],
             "bullets": [
-              "Ne pas vendre Lenis / ScrollTrigger tant qu'ils ne sont pas câblés",
-              "i18n maison adaptée aux slugs BE plutôt que next-intl forcé",
-              "E2E Playwright sur splash, services, contact et fullscreen",
-              "Reporter CMS / admin tant que le contenu est géré en dépôt"
+              "Avis en base : contenu sans me solliciter",
+              "Projets en fichiers statiques : le plus consulté est le plus rapide",
+              "Web3Forms : pas d'infra e-mail pour une vitrine",
+              "Mise à jour sécurité Next 14.2.35 en décembre 2025"
             ]
           },
           "execution": {
             "title": "Exécution et suite",
-            "tags": ["Vercel live", "Quasi livrable", "Basculer .be"],
+            "tags": ["En ligne depuis janvier 2025", "Un an de suivi", "Chiffres", "Refonte"],
             "paragraphs": [
-              "La refonte est déployée sur https://jikowood-refonte.vercel.app, parcours complets navigables en trois langues.",
-              "Prochains incréments : brancher l'envoi contact, figer le contenu, basculer le domaine client, et éventuellement brancher un CMS léger.",
-              "La ligne directrice reste le craft frontend premium avec une architecture maintenable, pas une démo d'effets."
+              "7-16 janvier 2025 : sprint initial (sections, splash, i18n, filtres, avis MongoDB, OG, sitemap, SEO). Février : SEO. Mars : nouveaux projets, versionnage images. Avril : cache, build ID, refacto, nouvelles photos. Mai : nouveau chantier. Décembre 2025 : correctif sécurité Next et redéploiement.",
+              "Chiffres : 177 commits, 4 pages, 2 routes API, 17 projets, ≈ 106 photos, 11 avis, 3 langues, 81 URLs sitemap, ≈ 6 000 lignes.",
+              "Honnêteté : premier site client en production, maintenu un an. Ce que je renforcerais (et qu'une refonte intègre) : title/meta côté serveur sur l'accueil, URLs par langue réellement routées pour que le sitemap ne pointe plus vers des 404, validation manuelle des avis, cache long sur les statiques, TypeScript partout, tests et CI."
             ]
           }
         }
@@ -681,331 +924,414 @@
         }
       },
       "enna": {
-        "focusTags": ["B2B RH", "i18n belge", "Conversion", "En ligne"],
+        "focusTags": [
+          "SEO international",
+          "Trilingue FR/NL/EN",
+          "Accessibilité",
+          "Sans backend",
+          "V1 en 3 jours"
+        ],
         "name": "Enna Consulting",
-        "tagline": "Rendre l’offre RH lisible et orientée conversion en Belgique",
-        "type": "Site vitrine B2B",
+        "tagline": "Le site vitrine trilingue d'une consultante RH : une seule page fluide, mais une vraie URL par section et par langue pour être trouvée et partagée en Belgique",
+        "type": "Conseil RH · Belgique · 2026",
         "status": "En ligne",
         "year": "2026",
-        "role": "J'ai livré la vitrine B2B de bout en bout : i18n belge, parcours conversion, motion et contact EmailJS en production sur ennabv.be.",
+        "role": "Pour une consultante en recrutement, diversité et marque employeur, j'ai conçu un site qui explique une offre en trois axes en quelques minutes et mène naturellement à la prise de contact. One-pager Next.js en FR/NL/EN : fluidité d'une page unique et 9 pages réelles pour Google (3 langues × 3 sections), chacune avec hreflang et données structurées. V1 en 3 jours, puis affinage jusqu'au domaine ennabv.be (44 commits, 3 PR).",
         "stack": [
           "Next.js 16",
           "React 19",
-          "Tailwind 4",
+          "TypeScript",
+          "Tailwind CSS 4",
+          "React Hook Form",
+          "Zod",
+          "EmailJS",
           "GSAP",
           "Framer Motion",
-          "EmailJS",
-          "Zod",
-          "Vitest"
+          "Vitest",
+          "Vercel"
         ],
         "meta": {
           "title": "Enna Consulting · Étude de cas",
-          "description": "Vitrine RH B2B trilingue en production : i18n nl/fr/en, conversion contact et exécution frontend."
+          "description": "One-pager trilingue pour une consultante RH : URLs par section, SEO international et accessibilité."
         },
         "problem": {
-          "tags": ["Lisibilité offre", "Marché BE", "Lead gen"],
+          "tags": ["Offre en trois axes", "Marché belge trilingue", "Conversion en contact"],
           "paragraphs": [
-            "L'offre RH (talent, diversité, marque employeur) restait difficile à saisir sans vitrine structurée.",
-            "Le marché belge impose nl / fr / en dès le premier contact, une langue unique aurait limité la portée.",
-            "L'objectif business est un passage rapide visiteur → échange commercial, pas un site brochure figé."
+            "Enna Consulting accompagne des entreprises sur le recrutement (Talent Acquisition), la diversité et l'inclusion, et la marque employeur. Cibles : dirigeants de PME/ETI et équipes RH. Le site devait faire comprendre l'offre vite, puis mener à écrire.",
+            "Contrainte belge : un même prospect peut chercher en NL, FR ou EN. Un one-pager classique n'a qu'une URL : mal référencé, impossible de partager « la section Vision en néerlandais ».",
+            "Premier écran : marque premium et calme, un seul bouton vers le contact. Site simple à héberger pour une indépendante : pas de serveur, pas de base, pas d'abonnement pour un formulaire."
           ]
         },
         "approach": {
-          "tags": ["One-pager", "i18n custom", "EmailJS"],
+          "tags": ["Brief client écrit", "Pages statiques", "URL vivante", "Accessibilité d'abord"],
           "paragraphs": [
-            "One-pager scroll avec slugs de section localisés, sans rechargement lourd.",
-            "i18n maison (middleware + cookie), défaut nl, hreflang et sitemap par section×locale.",
-            "Contact client-side EmailJS pour livrer vite ; preuve sociale via témoignages (mock assumé)."
+            "Cadrage autour d'un seul objectif : transformer un visiteur en contact qualifié. Document de présentation non technique versionné avec le code (cibles, parcours Accueil → Vision → Témoignages → Contact).",
+            "Confort d'une page unique et vraie adresse par section : /fr/home, /nl/about, /en/testimonials. Les 9 pages sont générées à l'avance avec titre, description, canonical, hreflang et aperçu social. Pendant le scroll, l'URL se met à jour sans recharger ; le bouton retour reste cohérent.",
+            "Trade-off : pas de backend. Formulaire validé dans le navigateur puis EmailJS. J'avais commencé avec Resend (route serveur) ; bascule EmailJS pour un site entièrement statique, sans clé serveur à protéger."
           ]
         },
         "sections": {
           "context": {
             "title": "Contexte produit",
-            "tags": ["PME/ETI", "Talent", "Belgique"],
+            "tags": ["Conseil RH B2B", "Trilingue NL/FR/EN", "Belgique"],
             "paragraphs": [
-              "Cibles : dirigeants et RH. Le message doit rester humain tout en montrant des résultats concrets.",
-              "Le CTA « Me contacter » structure tout le parcours, chaque section nourrit la conversion."
+              "Cibles : dirigeants de PME/ETI, RH et Talent Acquisition, entreprises en croissance. Hors périmètre v1 : blog, RDV en ligne, espace client, analytics.",
+              "Un seul CTA répété : ouvrir la fenêtre de contact. Néerlandais par défaut : toute adresse sans langue y est redirigée ; le choix est mémorisé."
             ]
           },
           "architecture": {
             "title": "Architecture",
-            "tags": ["features/", "middleware", "SEO"],
+            "tags": ["App Router", "Middleware de langue", "Zéro serveur"],
             "paragraphs": [
-              "features home / about / testimonials / splash ; lib i18n, emailjs et seo.",
-              "Middleware locale + cookie ; sitemap aligné sur les sections traduites."
+              "Front : Next.js 16. Route attrape-tout pour les 9 pages, OnePager assemble les sections. IntersectionObserver met à jour l'URL via history.replaceState. Middleware : redirections 308, cookie 1 an, laisse passer assets/sitemap/images sociales.",
+              "Back : aucun. Textes dans trois fichiers de traduction. Formulaire RHF + Zod → EmailJS. Résultat typé succès/erreur. Piège EmailJS documenté : destinataire vide → 422 ; vérification amont et erreur lisible. Modale : focus trap, scroll lock, portail, succès.",
+              "Animations : GSAP pour le splash seulement, Framer Motion pour les modales, Web Animations API pour le fondu."
             ],
             "bullets": [
-              "Routes section localisées",
-              "Validation Zod sur le formulaire",
-              "Splash GSAP + modales Framer Motion",
-              "Vitest sur la résolution de locale"
+              "9 pages statiques + splash + 404 traduite",
+              "hreflang fr-BE / nl-BE / en + x-default, JSON-LD ProfessionalService",
+              "Images OG/Twitter générées par le code",
+              "En-têtes sécurité HTTP",
+              "≈ 3 500 à 4 000 lignes, 9 dépendances prod"
             ]
           },
           "decisions": {
             "title": "Décisions clés",
-            "tags": ["Périmètre", "Preuve sociale", "Livraison"],
+            "tags": ["URL par section", "Focus clavier", "Mouvement réduit", "Robustesse SEO"],
             "paragraphs": [
-              "Pas de CMS ni de backend métier : le contenu est stable et la priorité était la mise en ligne.",
-              "La preuve sociale reste factuelle : seuls les retours réellement obtenus sont mis en avant."
+              "URL par section plutôt que des ancres # (ignorées par Google). Migration avril + hreflang sitemap. Détail : pendant un scroll programmé depuis le menu, isProgrammaticScroll évite que l'URL clignote de section en section.",
+              "Accessibilité comme fonctionnalité : hook de focus trap maison (Tab boucle, restauration à la fermeture), erreurs annoncées aux lecteurs d'écran, splash sauté si prefers-reduced-motion.",
+              "Bug de la boucle infinie, pas à pas. Le splash devait animer puis envoyer vers /home. La timeline se relançait : suite de GET /home sans fin. Correctif : timeline annulable (cancel() au démontage), navigation une seule fois. Livré 5 minutes après le refactor fautif ; même mécanique pour le mouvement réduit.",
+              "URL du site robuste : ordre NEXT_PUBLIC_SITE_URL → URL prod Vercel, force https, pour éviter les doublons Search Console."
             ],
             "bullets": [
-              "EmailJS pour le contact (pas Formspree)",
-              "Défaut linguistique nl",
-              "One-pager plutôt que multi-pages marketing"
+              "Splash GSAP annulable : pas d'animation fantôme",
+              "Un schéma Zod, adaptateur maison plutôt qu'une dépendance de plus",
+              "Locales Open Graph fr_BE / nl_BE",
+              "Pas de backend : zéro coût serveur, zéro secret serveur"
             ]
           },
           "execution": {
             "title": "Exécution et suite",
-            "tags": ["Prod BE", "Motion", "Tests légers"],
+            "tags": ["V1 en 3 jours", "Domaine ennabv.be", "Prochaines étapes"],
             "paragraphs": [
-              "Site live sur https://www.ennabv.be avec parcours trilingue navigable.",
-              "Couverture Vitest limitée ; README template encore présent, la présentation client reste la source produit.",
-              "Suite possible : CMS léger et témoignages réels branchés."
+              "17/02/2026 : architecture, i18n, menu, splash (et bug de boucle corrigé le soir). 18/02 : contact, Vision ; PR #1 et #2. 19/02 : Témoignages (PR #3), « prod ready 0.1 ». V1 en trois jours. Puis refactors, SEO, EmailJS, domaine ennabv.be, routes par langue (09/04). Dernière retouche 27/05.",
+              "Chiffres : 44 commits sur 8 jours actifs, 3 PR, 43 composants, 9 pages, 3 langues.",
+              "Honnêteté : priorisé SEO, accessibilité et formulaire, livré vite. Couverture de tests minimale (un test de rendu), pas de CI. Prochaines étapes : tests routes/SEO, GitHub Actions, anti-spam formulaire, témoignages validés par la cliente."
             ]
           }
         }
       },
       "maxweljones": {
-        "focusTags": ["Corporate", "Réseau", "i18n", "En ligne"],
+        "focusTags": [
+          "Storytelling animé",
+          "Refonte d'architecture",
+          "Bilingue FR/EN",
+          "Prototype UX",
+          "Sécurité dépendances"
+        ],
         "name": "Maxwel Jones",
-        "tagline": "Donner une présence crédible à une holding Learn / Earn / Return",
-        "type": "Site corporate",
+        "tagline": "Le site one-page d'une holding qui fédère un réseau d'entrepreneurs : un récit animé Learn / Earn / Return, un panneau réseau et un parcours de contact en deux temps",
+        "type": "Holding · Réseau d'entrepreneurs · 2025-2026",
         "status": "En ligne",
         "year": "2026",
-        "role": "J'ai conçu et livré le site corporate : structure features/, i18n FR/EN, réseau consultants, contact Web3Forms et préparation booking 2027.",
-        "stack": ["Next.js 15", "React 19", "Tailwind 4", "next-intl", "GSAP", "Web3Forms"],
+        "role": "Pour Maxwel Jones, une holding construite autour d'un modèle en trois temps (apprendre, gagner, redonner), j'ai conçu une page qui raconte une vision au fil du scroll. 8 sections animées avec GSAP, un panneau latéral des membres, un formulaire de contact et un prototype de prise de rendez-vous pour valider le parcours avant d'investir dans un vrai système. Après une V1, j'ai refondu le code en modules par fonctionnalité et documenté ces choix. 71 commits, en ligne sur maxweljones.com.",
+        "stack": [
+          "Next.js 15",
+          "React 19",
+          "TypeScript",
+          "Tailwind CSS 4",
+          "GSAP (ScrollTrigger)",
+          "Context API",
+          "Web3Forms",
+          "react-hot-toast",
+          "ESLint Airbnb",
+          "Husky",
+          "Vercel"
+        ],
         "meta": {
           "title": "Maxwel Jones · Étude de cas",
-          "description": "Site corporate holding : philosophie Learn/Earn/Return, réseau consultants et contact en production."
+          "description": "One-page narrative pour une holding : storytelling GSAP, panneau réseau et contact en deux temps."
         },
         "problem": {
-          "tags": ["Crédibilité", "Philosophie", "Contact vs booking"],
+          "tags": ["Vision à raconter", "Réseau à montrer", "Contact qualifié", "Image premium"],
           "paragraphs": [
-            "Une holding / conseil stratégique a besoin d'une présence sobre et crédible, pas d'un template startup.",
-            "La philosophie Learn–Earn–Return et le réseau de consultants doivent se comprendre sans pitch deck.",
-            "Le contact réel devait être immédiat ; le booking structuré pouvait attendre 2027."
+            "Maxwel Jones n'est pas un produit qu'on achète en un clic. C'est une holding avec une philosophie Learn / Earn / Return et un réseau de personnes. Le site devait faire comprendre ce modèle et donner envie d'en faire partie, avec un rendu à la hauteur (noir et or, signature Connecting and Entertaining People).",
+            "Le premier écran devait poser l'identité : hero animé lettre par lettre, barres dorées, header qui apparaît au bon moment.",
+            "Il fallait montrer le réseau sans transformer la page en annuaire, et accueillir deux types de contact : table ronde (Roundtable) et rendez-vous consultant à terme, sans complexifier la page."
           ]
         },
         "approach": {
-          "tags": ["One-page", "next-intl", "Web3Forms"],
+          "tags": [
+            "One-page narrative",
+            "Features modulaires",
+            "Prototype avant système",
+            "Qualité dès J1"
+          ],
           "paragraphs": [
-            "Single page scroll avec menu de sections et polish motion GSAP.",
-            "i18n FR/EN via next-intl et messages typés.",
-            "Contact Roundtable via Web3Forms ; calendrier booking en UI avec gate « Coming Soon 2027 »."
+            "Dès J1 : ESLint Airbnb + a11y, Prettier, Husky. V1 avril 2025 en pages séparées.",
+            "Novembre 2025 : refonte one-page à défilement aimanté. Chaque section est un module (ui/, hooks/, utils/). Extraction de la logique métier et doc d'architecture (DRY, SOLID, inversion de dépendance).",
+            "Trade-off : la prise de RDV est un prototype (calendrier, créneaux, consultant, confirmation) sans réservation enregistrée, affiché Coming Soon. Le parcours existe sans le coût d'un vrai outil."
           ]
         },
         "sections": {
           "context": {
             "title": "Contexte produit",
-            "tags": ["Holding", "Conseil", "Mise en relation"],
+            "tags": ["Holding et réseau", "Bilingue FR/EN", "Contact en deux onglets"],
             "paragraphs": [
-              "Positionnement : catalyseur stratégique international autour des piliers Learn / Earn / Return.",
-              "Le réseau consultants sert le dialogue et le matching, pas une marketplace ouverte."
+              "Publics : entrepreneurs et partenaires qui veulent rejoindre ou solliciter le réseau ; personnes qui découvrent la holding.",
+              "8 sections : Hero, À propos (voir plus/moins), Philosophie, Learn, Earn, Return, Réseau, Contact. Contact : onglet Roundtable (formulaire e-mail + toast) et Book a Meeting (jours ouvrés, créneaux 15 min, choix consultant).",
+              "Hors périmètre v1 : réservation réelle, espace membre, blog, back-office."
             ]
           },
           "architecture": {
             "title": "Architecture",
-            "tags": ["features/", "shared/", "SEO"],
+            "tags": ["App Router", "Contexts React", "GSAP maîtrisé"],
             "paragraphs": [
-              "Composants features (hero, philosophy, network, contact…) et shared (SectionHeader, wrappers).",
-              "SEO soigné : OG, JSON-LD, robots, sitemap."
+              "Front : Next.js 15 + React 19. Layout : SEO (OG, Twitter, JSON-LD Organization) et providers langue/menu/réseau/animations. Page = 8 modules via index.ts.",
+              "Données : pas de backend. Textes FR/EN via t() à clés imbriquées ; membres dans un fichier typé ; langue mémorisée dans le navigateur.",
+              "Calendrier isolé (useContactCalendar, modal, bookingUtils) : jours ouvrés, 4 créneaux 12:00-12:45. Confirmation injectée en paramètre : toast aujourd'hui, API demain sans toucher l'UI. Formulaire Web3Forms + toast. Hébergement Vercel."
             ],
             "bullets": [
-              "Membres en data TypeScript (3 profils)",
-              "Docs internes DRY/SOLID",
-              "Pas de suite de tests automatisés"
+              "8 sections + header, menu mobile, panneau réseau, modale calendrier, footer",
+              "6 modules d'animation GSAP",
+              "Image OG générée, JSON-LD, sitemap, robots",
+              "≈ 4 000 à 5 000 lignes, 186 fichiers TS/TSX"
             ]
           },
           "decisions": {
             "title": "Décisions clés",
-            "tags": ["Contenu statique", "Booking différé"],
+            "tags": ["Hydratation", "Animations propres", "Scroll maîtrisé", "Veille sécurité"],
             "paragraphs": [
-              "Contenu réseau volontairement limité pour rester crédible plutôt que gonflé.",
-              "Booking 2027 assumé produit : l'UI prépare sans promettre une confirmation réelle aujourd'hui."
+              "Bug d'hydratation, pas à pas. Le serveur ne connaît pas la langue du navigateur. Première version : lecture immédiate de la préférence → HTML FR côté serveur, EN côté client, clignotement. Correctif (23/11) : démarrer en FR des deux côtés, appliquer la préférence après montage. Effet de bord : changer de langue relançait le Hero ; découplé le 01/12.",
+              "Animations GSAP dans gsap.context(), annulées au démontage : sans ça, les ScrollTrigger s'accumulent et animent des éléments morts.",
+              "Scroll aimanté + panneau : enregistrement puis restauration de la position de lecture à la fermeture. Navigation unifiée qui tient compte de la hauteur du header."
             ],
             "bullets": [
-              "Web3Forms + clé env",
-              "next-intl plutôt qu'i18n maison",
-              "Focus polish front"
+              "Refonte 23/11, extraction logique 02/12, composants partagés 30/01/2026",
+              "Inversion de dépendance : confirmation calendrier en paramètre",
+              "CVE-2025-55182 corrigée le 07/12/2025, React 19.2.4",
+              "Migration ESLint 9 flat config"
             ]
           },
           "execution": {
             "title": "Exécution et suite",
-            "tags": ["En ligne", "SEO", "Suite booking"],
+            "tags": ["Refonte nov. 2025", "Prod février 2026", "Prochaines étapes"],
             "paragraphs": [
-              "Live sur https://www.maxweljones.com.",
-              "Prochaine étape naturelle : activer le booking réel et étoffer le réseau si le business le demande.",
-              "Limite assumée : pas de Vitest/Playwright sur ce dépôt."
+              "03-09/04/2025 : V1 multi-pages, ESLint, Husky. 23/11 : refonte one-page, scroll aimanté, hydratation, README client. 01-02/12 : hero, header, panneau, menu, extraction métier. 07/12 : CVE. 29-30/01/2026 : Book a call, ESLint 9, React 19. 01-06/02 : À propos, SEO, Web3Forms, prod.",
+              "Chiffres : 71 commits sur 12 jours actifs, 2 PR majeures, 8 sections, 2 langues, 6 modules d'animation.",
+              "Honnêteté : architecture et UX avant tests. Pas encore de tests auto ni CI (lint + Husky). Langue côté navigateur : Google n'indexe que le FR. Prochaines étapes : vraie réservation, Vitest calendrier/formulaire, routes /fr /en, vraies photos des membres."
             ]
           }
         }
       },
       "nana": {
-        "focusTags": ["Galerie", "Atelier admin", "Supabase", "Perf"],
+        "focusTags": [
+          "Portfolio photo",
+          "Back-office sur mesure",
+          "Supabase",
+          "Row Level Security",
+          "Upload massif",
+          "CI + E2E"
+        ],
         "name": "Hors Cadre",
-        "tagline": "Immersion publique et atelier privé pour un photographe mono-admin",
-        "type": "Site créatif",
+        "tagline": "Un portfolio photo premium et l'atelier privé sur mesure qui permet à la photographe de publier seule des albums de centaines d'images",
+        "type": "Photographie · 2026",
         "status": "En ligne",
         "year": "2026",
-        "role": "J'ai conçu et livré le produit complet : galerie publique, atelier Supabase, perf/SEO/i18n et filet de tests jusqu'à la mise en production.",
+        "role": "Une photographe a besoin de deux choses : une vitrine qui met ses images au premier plan, et l'autonomie pour la mettre à jour sans passer par un développeur. J'ai construit les deux en quatre semaines avec Next.js 16 et Supabase. Côté public, une galerie aux transitions travaillées. Côté atelier, un back-office où jusqu'à 1 200 photos par lot sont converties en WebP dans le navigateur, envoyées avec reprise automatique, réordonnées par glisser-déposer et publiées en un clic. La sécurité est garantie jusque dans la base. Au total : 142 commits, 15 pull requests, 13 migrations, 142 fichiers de tests, CI E2E et 15 ADR.",
         "stack": [
           "Next.js 16",
           "React 19",
-          "Tailwind 4",
+          "TypeScript",
+          "Supabase (Auth, Postgres, Storage)",
+          "PostgreSQL (RLS)",
+          "Server Actions",
+          "Zod",
           "next-intl",
           "GSAP",
-          "Supabase",
+          "dnd-kit",
           "react-photo-album",
           "Vitest",
-          "Playwright"
+          "Playwright",
+          "GitHub Actions",
+          "Vercel"
         ],
         "meta": {
           "title": "Hors Cadre · Étude de cas",
-          "description": "Portfolio photographe : galerie ISR, atelier admin Supabase, Liquid Glass et tests E2E en production."
+          "description": "Portfolio photo premium et atelier privé : upload WebP massif, RLS Supabase, CI et 15 ADR."
         },
         "problem": {
-          "tags": ["Immersion", "Volume photos", "Séparation public/admin"],
+          "tags": ["Images d'abord", "Autonomie de publication", "Gros volumes", "Coûts maîtrisés"],
           "paragraphs": [
-            "Un portfolio photo premium doit immerser sans friction, pas de compte visiteur.",
-            "Le photographe doit publier et réordonner des volumes élevés sans CMS lourd.",
-            "Il faut séparer clairement vitrine SEO et atelier privé non indexé."
+            "Un portfolio de photographe a une règle simple : l'interface doit s'effacer devant les images. Pas de cartes chargées, pas de texte qui concurrence la photo, mais des transitions qui donnent de la valeur au passage d'un album à l'autre. Le site public devait être sobre, rapide et fluide sur mobile comme sur grand écran.",
+            "Le vrai problème était derrière. Un reportage, c'est vite plusieurs centaines de fichiers de 10 à 50 Mo. Les CMS génériques gèrent mal ce volume, les services spécialisés facturent au stockage, et dépendre d'un développeur pour chaque album n'est pas viable. Il fallait un outil pensé pour ce seul geste : déposer un dossier entier, réordonner, choisir une couverture, publier.",
+            "Troisième contrainte : le coût. Un site qui sert des photos peut faire exploser la facture (egress, transformations). Chaque choix technique devait tenir compte de ce que coûte une image affichée."
           ]
         },
         "approach": {
-          "tags": ["Deux mondes", "WebP client", "Mono-admin"],
+          "tags": [
+            "Décisions écrites",
+            "Sécurité en couches",
+            "Upload côté client",
+            "Branches et CI"
+          ],
           "paragraphs": [
-            "Public en ISR vs admin via segments env + Server Actions, pas d'API REST exposée.",
-            "Compression WebP côté client avant Storage ; images album en JSONB (ADR).",
-            "Mono-admin : inscription fermée après le premier compte."
+            "J'ai documenté le projet comme un produit : 15 ADR (001 à 015), chacune avec contexte, options écartées et compromis, plus un guide de vision pour la cliente. L'ADR-001 compare Supabase à Firebase, un backend maison et un CMS. Quand on me demande « pourquoi ce choix ? », la réponse existe déjà par écrit.",
+            "Flux Git d'équipe même seul : feature/*, develop, uat, main, 15 PR. CI GitHub Actions : lint, tests, build, puis Playwright Chromium. Pre-commit : zéro warning ESLint, tests verts.",
+            "Principe central : déplacer le travail lourd là où il coûte le moins. Conversion des photos dans le navigateur de l'admin. Pages publiques en cache. Vignettes servies directement depuis Supabase Storage, sans l'optimiseur Vercel."
           ]
         },
         "sections": {
           "context": {
             "title": "Contexte produit",
-            "tags": ["Marque Hors Cadre", "Mobile-first", "3 langues"],
+            "tags": ["Portfolio photo", "Un seul administrateur", "FR/EN par cookie"],
             "paragraphs": [
-              "Marque Hors Cadre : esthétique Liquid Glass, téléchargement libre des photos publiques.",
-              "i18n fr / nl / en par cookie, sans préfixe URL."
+              "Deux publics. Les visiteurs parcourent l'accueil, la galerie en mosaïque, puis chaque album avec visionneuse plein écran. La photographe, seule administratrice, gère tout depuis un atelier privé accessible par une adresse non publique.",
+              "Modèle mono-compte volontaire : le trigger refuse un deuxième profil (PROFILE_ALREADY_EXISTS). Moins de surface d'attaque, pas de gestion d'équipe.",
+              "Hors périmètre v1 : comptes clients, ventes de tirages, commentaires, Sentry. Langue FR/EN détectée puis mémorisée en cookie, sans préfixe URL, pour garder des adresses d'album simples."
             ]
           },
           "architecture": {
             "title": "Architecture",
-            "tags": ["features/", "proxy", "ADR"],
+            "tags": ["Server Components", "Server Actions", "RLS Postgres", "Storage direct"],
             "paragraphs": [
-              "features admin / gallery / home / splash ; proxy session et langue.",
-              "Backend unique Supabase ; ADR-001→015 documentent les choix irréversibles."
+              "Front : Next.js 16, Server Components. Pages publiques avec revalidate 300 s ; chaque modification d'atelier invalide le cache de façon ciblée. proxy.ts rafraîchit la session, isole la session admin, redirige vers la connexion avec returnTo, no-store sur l'admin.",
+              "Back : pas d'API REST. Chaque mutation est une Server Action dans son dossier, toujours dans le même ordre : identité et rôle, Zod, écriture, invalidation cache.",
+              "Données : table albums (titre, slug, publication, ordre, couverture, images JSONB) et profiles (rôle admin). Fichiers dans album-photos/albums/{albumId}/{imageId}.webp. Dimensions de couverture dénormalisées pour la mosaïque sans saut de layout."
             ],
             "bullets": [
-              "Thumbs 640px + cache ISR 300s",
-              "Segments admin obscurs",
-              "~455 tests Vitest + E2E public/atelier",
-              "Upload jusqu'à 1 500 photos"
+              "13 migrations SQL, base locale reproductible, types générés",
+              "5 policies RLS sur albums (lecture publiés + CRUD admin)",
+              "≈ 15 Server Actions admin, une fonction par fichier",
+              "142 fichiers Vitest + 2 scénarios Playwright",
+              "Limites métier : 1 200 fichiers/lot, 50 Mo/fichier, vignette 640 px q=0,82, 3 tentatives",
+              "≈ 15 000 lignes d'application et ≈ 7 500 de tests"
             ]
           },
           "decisions": {
             "title": "Décisions clés",
-            "tags": ["JSONB", "Perf", "Sécurité surface"],
+            "tags": ["Upload résilient", "Course JSONB", "Défense en profondeur", "Coût par image"],
             "paragraphs": [
-              "JSONB albums pour itérer vite sur le modèle média, legacy possible, documenté.",
-              "URL admin obscure + RLS : défense en profondeur sans complexifier le public."
+              "Un upload qui reprend là où il s'est arrêté. Chaque photo : (1) convertie WebP, (2) envoyée au stockage, (3) enregistrée en base. Point de reprise après chaque étape. Empreinte source_fingerprint pour ignorer les doublons si le même dossier est redéposé.",
+              "Le bug des photos qui disparaissaient. Les images sont dans un JSONB. Pour en ajouter une : lire, ajouter, réécrire. Avec des envois parallèles, deux requêtes lisaient la même version et la seconde écriture effaçait la première. Correctif : file sérialisée (ALBUM_UPLOAD_CONCURRENCY = 1) + dédoublonnage. Intégrité avant vitesse. Suite : append atomique en SQL pour rétablir le parallélisme.",
+              "Sécurité en couches : URL admin configurable (≥ 16 caractères sinon 404), proxy pour les non connectés, assertAdminMutation à chaque action, RLS Postgres. Le linter a signalé is_admin() en SECURITY DEFINER : corrigé par migration plutôt qu'ignoré.",
+              "Coût : WebP client (createImageBitmap + canvas), vignettes directes Supabase, branche egress (PR #14), dimensions de couverture en base."
             ],
             "bullets": [
-              "Pas de Sentry (monitoring Vercel/Supabase)",
-              "Realtime cross-tabs hors scope",
-              "Hostname live : horscadre-photography.vercel.app"
+              "Server Actions plutôt qu'API REST (ADR-002)",
+              "Images en JSONB (ADR-005) : un album en une requête, compromis documenté",
+              "Rétrocompatibilité colonnes couverture : a corrigé une erreur 500 en prod le 09/07",
+              "GSAP avec prefers-reduced-motion (ADR-010), logique d'animation testée"
             ]
           },
           "execution": {
             "title": "Exécution et suite",
-            "tags": ["Prod Vercel", "Tests élevés"],
+            "tags": ["4 semaines", "142 commits", "Prochaines étapes"],
             "paragraphs": [
-              "Live sur https://horscadre-photography.vercel.app/.",
-              "Load test k6 prêt ; run post-déploiement optionnel.",
-              "Suite : monitoring applicatif si le trafic le justifie, sans sur-ingénierie."
+              "14-15/06/2026 : fondations, design system, splash GSAP, barre conductrice, navigation, i18n cookie, Vitest. 16/06 : CI, a11y, responsive. 20-21/06 : galerie, album, transition couverture, visionneuse, coquille atelier. 02-03/07 : Supabase (auth, albums, upload, galerie publique). 05/07 : durcissement Server Actions, SEO, dnd, ADR, prod. 08-12/07 : uploads, backups, egress, vignettes directes.",
+              "Chiffres : 142 commits en 29 jours (12 jours actifs), 15 PR, 13 migrations, 15 ADR, 142 fichiers de tests (≈ 455 tests annoncés), 437 fichiers TS et 146 composants React.",
+              "Honnêteté : j'ai choisi la fiabilité de l'upload avant sa vitesse, et l'autonomie de la photographe avant les fonctionnalités annexes. k6 (250 VU) est prêt mais non lancé ; Sentry hors v1. Prochaines étapes : append atomique, alt text par photo, domaine personnalisé, campagne k6, doc alignée sur le code."
             ]
           }
         }
       },
       "purpose-sport": {
-        "focusTags": ["Roster", "Sport business", "Vidéo", "En ligne"],
+        "focusTags": ["Sport business", "Catalogue joueurs", "Vidéo", "SEO", "Tests Jest"],
         "name": "Purpose Sport",
-        "tagline": "Présenter un roster basket riche sans noyer le recruteur",
-        "type": "Site vitrine",
+        "tagline": "Le site d'une agence de management de basketteurs, pensé comme un catalogue de talents pour les clubs et les partenaires",
+        "type": "Management sportif · 2025",
         "status": "En ligne",
         "year": "2025",
-        "role": "J'ai livré la vitrine agence : roster data-driven, fiches joueurs, vidéos, i18n et contact en production.",
+        "role": "Pour une agence qui représente des joueurs de basket, j'ai construit une vitrine qui explique la mission en quelques écrans, puis met chaque joueur en valeur comme un dossier de recrutement (parcours, palmarès, vidéo). One-page bilingue Next.js, référencé dès la sortie (métadonnées, Search Console, sitemap auto), avec Analytics et tests Jest par section. V1 en trois jours, puis refonte complète de direction artistique. 61 commits, en ligne sur purpose-sport.com.",
         "stack": [
           "Next.js 15",
           "React 19",
-          "Tailwind 3",
+          "TypeScript",
+          "Tailwind CSS",
           "Framer Motion",
           "i18next",
           "react-player",
+          "Web3Forms",
+          "next-sitemap",
+          "Vercel Analytics",
           "Jest",
-          "Web3Forms"
+          "Testing Library",
+          "Husky",
+          "Vercel"
         ],
         "meta": {
           "title": "Purpose Sport · Étude de cas",
-          "description": "Vitrine management sportif : roster de 12 athlètes, fiches riches, vidéo et contact en production."
+          "description": "Vitrine d'agence de management basket : catalogue joueurs, vidéo, SEO et tests Jest."
         },
         "problem": {
-          "tags": ["Visibilité athlètes", "Densité contenu", "Contact direct"],
+          "tags": [
+            "Crédibilité d'agence",
+            "Joueurs à vendre",
+            "Recruteurs pressés",
+            "Visibilité Google"
+          ],
           "paragraphs": [
-            "Une agence basket doit présenter un roster crédible (fiches, médias) pour clubs et recruteurs.",
-            "Carrières et awards sont trop denses pour une vitrine générique.",
-            "Le contact doit être direct, sans backend métier inutile."
+            "Une agence de management sportif vend de la confiance. Un directeur sportif doit comprendre en quelques secondes qui elle représente et pourquoi lui faire confiance. Sans site crédible, elle dépend du bouche-à-oreille et des réseaux.",
+            "Cœur du besoin : les joueurs. Un recruteur veut poste, parcours, distinctions et images de jeu, vite, sans dix onglets.",
+            "Le site devait aussi être trouvable : nom sur Google, liens sociaux propres (titre, description, image)."
           ]
         },
         "approach": {
-          "tags": ["data.ts", "i18next", "Web3Forms"],
+          "tags": ["V1 rapide", "Refonte assumée", "Données séparées", "Tests de comportement"],
           "paragraphs": [
-            "Contenu centralisé dans un module data TypeScript ; UI one-page sectionnée.",
-            "i18n client i18next (fr/en).",
-            "Contact Web3Forms, motion Framer, analytics Vercel."
+            "V1 en trois jours (16-18/01/2025) : navigation, hero, présentation, accordéon joueurs, contact. Objectif : quelque chose de concret à discuter.",
+            "23/03/2025 : décision forte, tout supprimer et repartir. L'accordéon cachait les joueurs. Reconstruction autour d'une section Joueurs centrale (carte + vidéo) et cartes d'objectifs, puis nouvelle DA début avril. Recommencer coûtait moins cher que de tordre l'existant.",
+            "Contenu séparé du code : joueurs dans data/data.ts typé. Ajouter un joueur = une entrée. Tests Jest sur ce que voit l'utilisateur (joueur actif, pagination, lecteur), pas sur l'implémentation."
           ]
         },
         "sections": {
           "context": {
             "title": "Contexte produit",
-            "tags": ["Management", "12 athlètes", "Recrutement"],
+            "tags": ["Agence de basket", "Bilingue EN/FR", "Clubs et partenaires"],
             "paragraphs": [
-              "Vitrine de recrutement et de visibilité joueurs, fiches détaillées + médias.",
-              "Marché sport business : la densité du roster est l'argument, pas le volume de pages."
+              "Publics : recruteurs et directeurs sportifs, partenaires/sponsors, puis joueurs et familles.",
+              "Une page, six blocs : Hero, À propos, Objectifs, Joueurs, Contact, Footer. Navigation horizontale qui suit le scroll et s'efface près du formulaire.",
+              "Hors périmètre v1 : espace joueur, fiches individuelles indexables, stats live, back-office. Contenu modifié dans le code, raisonnable pour une dizaine de profils."
             ]
           },
           "architecture": {
             "title": "Architecture",
-            "tags": ["App Router minimal", "data-driven"],
+            "tags": ["App Router", "Contenu en données", "Vidéo à la demande"],
             "paragraphs": [
-              "App Router minimal (page unique) et composants HomeScreen / UI, stack plus classique que les projets 2026 feature-first.",
-              "next-sitemap en postbuild ; analytics Vercel."
+              "Layout : SEO complet (OG, Twitter, canonical, robots, Search Console, manifest), three fonts next/font, Analytics, providers i18n et scroll.",
+              "Section Joueurs : carte active (carrière, récompenses, vidéo) + liste paginée 6/page. react-player en dynamic ssr:false : pas d'hydratation cassée, premier affichage léger.",
+              "Contact : 5 champs libellés a11y, Web3Forms depuis le navigateur. Pas de base : joueurs, vidéos et traductions livrés avec le site. Sitemap/robots régénérés postbuild."
             ],
             "bullets": [
-              "Roster ~12 joueurs en TypeScript",
-              "2 joueurs avec vidéo intégrée",
-              "Jest (couverture limitée)"
+              "1 page, 6 sections, 2 langues (EN par défaut)",
+              "11 profils (10 affichés), 3 vidéos highlights",
+              "6 fichiers Jest (une par section + navigation)",
+              "≈ 5 000 à 6 000 lignes dont données joueurs et i18n"
             ]
           },
           "decisions": {
             "title": "Décisions clés",
-            "tags": ["Statique", "Livraison rapide"],
+            "tags": ["Refonte", "Vidéo sans pénalité", "Scroll intelligent", "Tester l'usage"],
             "paragraphs": [
-              "Pas de CMS/Supabase : le contenu change peu et devait ship vite.",
-              "Stack Tailwind 3 / Jest / yarn, héritage assumé du moment de livraison."
+              "Repartir de zéro au bon moment. En mars 2025 la V1 marchait, mais sa structure contredisait l'objectif. Supprimer puis reconstruire en trois jours (objectifs, Joueurs+vidéo, Husky, Jest) plutôt qu'empiler des rustines.",
+              "Vidéo sans plomber la page : lecteur chargé à la demande côté client seulement.",
+              "Navigation scroll-aware via IntersectionObserver partagé ; navbar masquée quand le formulaire occupe l'écran."
             ],
             "bullets": [
-              "Clé Web3Forms côté client = dette sécurité connue",
-              "i18n nl mentionné mais non livré",
-              "Assets OG parfois absents en local"
+              "Tests orientés usage (joueur, pagination, lecteur)",
+              "Contenu séparé du code",
+              "SEO dès le lancement (Search Console, next-sitemap)",
+              "Correctif RSC CVE le 23/12/2025 puis release 1.0.0"
             ]
           },
           "execution": {
             "title": "Exécution et suite",
-            "tags": ["En ligne", "En ligne"],
+            "tags": ["V1 en 3 jours", "Refonte mars 2025", "Prochaines étapes"],
             "paragraphs": [
-              "Live sur https://purpose-sport.com.",
-              "Suite utile : sécuriser la clé contact, compléter les médias et éventuellement moderniser l'archi si le produit évolue.",
-              "Limite assumée : architecture moins mature que Enna / Hors Cadre / TTC, livré pour le métier, pas comme référence d'archi."
+              "16-18/01/2025 : V1. 13/03 : animations, skeletons, mobile. 23-25/03 : refonte, objectifs, Joueurs+vidéo, Husky, Jest. 04-10/04 : desktop/mobile, Analytics, DA, Search Console, sitemap. 23/12/2025 : correctif sécurité et release 1.0.0.",
+              "Chiffres : 61 commits sur 13 jours actifs, 6 tests, 20 composants, 11 profils, 2 langues, 1 refonte complète.",
+              "Honnêteté : projet de début 2025. Composants plus gros que ce que j'écris aujourd'hui, vidéos dans le repo, détection de langue inachevée. Prochaines étapes : découper les sections, héberger les vidéos ailleurs avec poster, retours d'échec formulaire visibles, CI, pages indexables par joueur."
             ]
           }
         }

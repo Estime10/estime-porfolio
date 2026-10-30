@@ -1,0 +1,107 @@
+{
+  "focusTags": [
+    "Temps réel",
+    "Règles en SQL",
+    "600+ tests",
+    "CI + E2E",
+    "Observabilité",
+    "Audit et remédiation"
+  ],
+  "name": "Spill The Crumb",
+  "tagline": "Un réseau social de confidences anonymes en temps réel, construit comme un vrai produit : feed live entre onglets, anti-spam garanti par la base, back-office et plus de 600 tests",
+  "type": "Produit web · Réseau social",
+  "status": "En ligne",
+  "year": "2026",
+  "role": "Spill The Crumb est un feed communautaire où l'on partage et commente des « crumbs » sans exposer son identité. Je l'ai construit comme un produit prêt à grandir, pas comme une démo. Le feed se met à jour en direct, y compris entre onglets ; chaque réaction s'affiche instantanément puis se réconcilie avec le serveur ; et les règles qui comptent (anti-spam, compteurs, notifications) vivent dans Postgres. Autour : CI avec E2E sur une vraie base, tests de charge, observabilité maison, ADR et guide client. Au total : 230 commits, 45 migrations SQL, 638 tests, et 97/100 en performance Lighthouse sur les pages publiques.",
+  "stack": [
+    "Next.js 16",
+    "React 19",
+    "TypeScript strict",
+    "Supabase (Auth, Realtime, Storage)",
+    "PostgreSQL (RLS, triggers, RPC, pg_trgm)",
+    "next-safe-action",
+    "Zod",
+    "React Hook Form",
+    "Zustand",
+    "Upstash Redis",
+    "next-intl",
+    "GSAP",
+    "Tailwind CSS 4",
+    "Vitest",
+    "Playwright",
+    "GitHub Actions",
+    "Vercel"
+  ],
+  "meta": {
+    "title": "Spill The Crumb · Étude de cas",
+    "description": "Réseau social de confidences anonymes : feed temps réel, anti-spam en base, CI E2E et 600+ tests."
+  },
+  "problem": {
+    "tags": ["Feed anonyme", "Spam", "Cohérence temps réel", "Exploitable par un client"],
+    "paragraphs": [
+      "Les réseaux sociaux classiques lient chaque message à une identité publique. Pour partager une confidence ou un petit drame, beaucoup préfèrent un espace où l'on publie sans exposer son nom, mais où une vraie communauté réagit, commente et fait remonter ce qui « chauffe ».",
+      "Ce type de produit attire deux problèmes dès le premier jour. Le premier est le spam : sans compte public à protéger, rien n'empêche de publier cent posts à la minute, surtout via l'API directe. Le second est la cohérence : un même post apparaît dans le feed, sur le profil et sur la page détail. Si un like ne se reflète que sur un écran sur trois, l'application paraît cassée.",
+      "Enfin, le produit devait pouvoir être exploité par quelqu'un d'autre que moi : tableau de bord, encarts sponsorisés gérables sans développeur, journal des erreurs et guide d'utilisation. Un feed qui marche ne suffisait pas : il fallait un outil qu'on peut piloter."
+    ]
+  },
+  "approach": {
+    "tags": ["Règles en base", "Feature-first", "Décisions écrites", "Tests dès le début"],
+    "paragraphs": [
+      "Mon principe directeur : toute règle qui protège le produit doit tenir même si l'interface est contournée. L'anti-spam, l'auteur réel d'un post, les compteurs de likes et de commentaires, les notifications : tout cela est appliqué par des triggers et des policies RLS dans Postgres. Les compteurs sont dans post_stats, lisible mais jamais écrite par les clients. Seuls les triggers la mettent à jour.",
+      "Côté code, j'ai organisé l'application par fonctionnalité (16 domaines dans features/). app/ ne fait que du routage et components/ ne contient que de l'UI pure. Les Server Actions passent toutes par next-safe-action : un seul wrapper qui vérifie l'authentification et valide avec Zod.",
+      "J'ai écrit les choix structurants en ADR : proxy unique pour l'auth et la langue (ADR-001), stores séparés avec synchronisation (ADR-002), i18n sans préfixe d'URL (ADR-003). Les tests sont arrivés en même temps que les fonctionnalités : dès la première semaine, la CI lançait des E2E authentifiés sur une base Supabase locale."
+    ]
+  },
+  "sections": {
+    "context": {
+      "title": "Contexte produit",
+      "tags": ["Communauté", "Contenu court", "Sponsoring", "Trois langues"],
+      "paragraphs": [
+        "Parcours membre : inscription multi-étapes, onboarding, puis le feed. On publie un crumb avec catégorie et image (HEIC iPhone accepté et converti), on réagit, on commente (panneau desktop / bottom sheet mobile), on suit ses notifications. Le profil affiche posts et statistiques.",
+        "Le « Top drama » met en avant le post le plus discuté. Score : likes - dislikes + 2 × commentaires. Un commentaire vaut deux fois plus qu'un like, parce qu'il signale un vrai engagement.",
+        "Côté exploitation : dashboard stats, CRUD des encarts sponsorisés, journal plateforme et signalements. Interface en français, anglais et espagnol, sans préfixe d'URL (cookie ou navigateur). Les sponsors ne paient pas en ligne : les encarts sont créés à la main depuis l'admin, pour valider le modèle sans intégrer de paiement."
+      ]
+    },
+    "architecture": {
+      "title": "Architecture",
+      "tags": ["App Router", "Stores synchronisés", "Triggers et RPC", "CI complète"],
+      "paragraphs": [
+        "Front : Next.js 16, Server Components par défaut. L'état des posts vit dans trois stores Zustand distincts (feed paginé, profil, détail). Les animations GSAP respectent prefers-reduced-motion.",
+        "Back : Server Actions typées et une route interne d'ingestion de logs. La logique métier lourde est en SQL : 45 migrations (schéma, RLS, triggers de compteurs et notifications, RPC Top drama / stats admin / pseudo, index). proxy.ts rafraîchit la session, résout la langue et attribue un identifiant de corrélation à chaque requête.",
+        "Observabilité : platform_log_events consultables sur /admin/logs, purgés automatiquement (30 jours plateforme, 14 jours perf) par un workflow GitHub planifié via service_role."
+      ],
+      "bullets": [
+        "16 pages, 16 domaines, ≈ 260 composants, ≈ 40 000 lignes utiles (cloc)",
+        "638 tests dans ≈ 200 fichiers Vitest, plus specs Playwright E2E",
+        "CI en deux jobs : audit, lint, type-check, tests avec seuils, build ; puis E2E sur Supabase local avec seed",
+        "Rate limits : connexion 10/15 min, inscription 5/h, réactions 30/min, commentaires 10/min, recherche 60/min",
+        "Scripts de charge dédiés qui vérifient chaque limite",
+        "TypeScript strict : 0 any, 0 ts-ignore, types générés depuis la base"
+      ]
+    },
+    "decisions": {
+      "title": "Décisions clés",
+      "tags": ["Anti-spam", "Sync multi-écrans", "Performance SQL", "Remédiation"],
+      "paragraphs": [
+        "L'anti-spam qui a failli ne jamais arriver en prod. La limite de 5 posts/jour est un trigger BEFORE INSERT. Il vérifie aussi que l'auteur déclaré est l'utilisateur connecté (POST_AUTHOR_MISMATCH), même via l'API REST. Pendant le développement, ce trigger gênait les tests manuels : je l'avais désactivé par une migration « TODO(prod) ». Le risque : livrer sans anti-spam. Je l'ai traité par une migration de réactivation (24/06), synchronisée avec POST_DAILY_LIMIT côté app.",
+        "Un like, trois écrans, plusieurs onglets. Dans l'ADR-002 j'ai comparé store global, refetch, React Query et Context. J'ai retenu trois stores spécialisés reliés par un registre de synchronisation. Une mutation est diffusée aux trois stores, un BroadcastChannel la relaie aux autres onglets, Supabase Realtime aux autres utilisateurs. Réaction d'abord optimiste (+1/-1 animé), puis réconciliée. Dette notée : tout nouveau store doit s'enregistrer dans le registre.",
+        "Perf SQL : policies RLS réécrites en (select auth.uid()) évalué une fois ; Top drama via colonne générée stockée drama_level indexée (Index Scan, pas full scan) ; recherche de pseudo via index trigramme pg_trgm ; pagination commentaires via index composite. Bug Storage : ma première policy lisait mal le chemin userId/postId/file (foldername vs filename) ; corrigée puis bucket restreint aux MIME photo."
+      ],
+      "bullets": [
+        "ADR-001 : un seul proxy.ts pour session et langue",
+        "ADR-003 : i18n sans préfixe (cookie NEXT_LOCALE + Accept-Language)",
+        "Notifications par triggers SQL, sans auto-notification sur son propre post",
+        "Rate limit Upstash avec repli mémoire si non configuré"
+      ]
+    },
+    "execution": {
+      "title": "Exécution et suite",
+      "tags": ["MVP en 3 semaines", "Audit fin octobre", "Chiffres", "Prochaines étapes"],
+      "paragraphs": [
+        "6-10 juin 2026 : socle Next/Supabase/i18n, splash, auth multi-étapes, feed, publication, réactions, commentaires. 11-14 juin : optimisation feed, E2E auth en CI, profil, détail, sync onglets, Top drama. 22-26 juin : notifications, admin, WebP, anti-spam, SEO, sponsoring, logs. 29-30 juin : onboarding, guide client, grand refactor (31 commits le 29/06). 10 juillet : doc développeur. 26-30 octobre : audit, montée Next 16.4.3, remédiation P0/P1, aplatissement architecture, déploiement limité à main.",
+        "L'audit de fin octobre : le 26/10 montée de Next et dépendances sensibles. Le 29/10, migration de durcissement : un membre ne peut plus lister qui a liké quoi (likes lisibles par leur auteur seulement, compteurs via post_stats) ; âge 18+ et champs d'inscription vérifiés en base ; rôle/pseudo/naissance/genre immuables côté profil ; limites SQL 10 commentaires et 30 réactions/heure. Côté produit : signalement, mot de passe oublié, export et suppression de compte, focus clavier et contraste. Le 30/10 : déploiements limités à main.",
+        "Chiffres : 230 commits (6 juin → 30 octobre), 16 pages, 45 migrations, 638 tests, ≈ 40 000 lignes utiles, ≈ 43 docs dont 3 ADR. Lighthouse pages publiques : Perf 97, a11y 98-100. Honnêteté : sur un produit de confidences, l'anonymat se garantit en base. Prochaines étapes : file de modération admin, vraie PWA, splash plus court pour les connectés, fonctions en région UE, relecture juridique des CGU."
+      ]
+    }
+  }
+}

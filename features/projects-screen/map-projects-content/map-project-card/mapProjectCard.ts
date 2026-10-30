@@ -23,7 +23,10 @@ export function mapProjectCard(
     highlights: asTranslationStringArray(t.raw(highlightsKey) as object, highlightsKey),
     tags: t.has(tagsKey) ? asTranslationStringArray(t.raw(tagsKey) as object, tagsKey) : [],
     stack: asTranslationStringArray(t.raw(stackKey) as object, stackKey),
-    liveUrl: entry.liveUrl,
+    // Sites live uniquement : pas de lien démo sur les cards « En développement ».
+    liveUrl: entry.tier === "live" ? entry.liveUrl : undefined,
     caseStudyHref: entry.hasCaseStudy ? `/projects/${slug}` : undefined,
+    coverImage: entry.coverImage,
+    tier: entry.tier,
   };
 }

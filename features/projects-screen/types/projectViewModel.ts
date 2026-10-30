@@ -1,4 +1,4 @@
-import type { ProjectSlug } from "@/lib/projects/project-catalog";
+import type { ProjectCoverImage, ProjectSlug } from "@/lib/projects/project-catalog";
 
 export type ProjectCardViewModel = Readonly<{
   slug: ProjectSlug;
@@ -13,6 +13,8 @@ export type ProjectCardViewModel = Readonly<{
   stack: readonly string[];
   liveUrl?: string;
   caseStudyHref?: string;
+  coverImage?: ProjectCoverImage;
+  tier: "live" | "in-development";
 }>;
 
 export type ProjectCaseStudySectionViewModel = Readonly<{
@@ -53,7 +55,11 @@ export type ProjectsContentViewModel = Readonly<{
   title: string;
   introParagraphs: readonly string[];
   featuredLabel: string;
+  featuredNoteLead: string;
+  featuredNote: string;
   secondaryLabel: string;
+  inDevelopmentNoteLead: string;
+  inDevelopmentNote: string;
   selectionNote: string;
   readCaseStudyLabel: string;
   viewLiveLabel: string;
@@ -63,4 +69,7 @@ export type ProjectsContentViewModel = Readonly<{
   }>;
   featured: readonly ProjectCardViewModel[];
   secondary: readonly ProjectCardViewModel[];
+  /** Alias sémantiques (live / in-dev). */
+  live: readonly ProjectCardViewModel[];
+  inDevelopment: readonly ProjectCardViewModel[];
 }>;

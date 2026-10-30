@@ -1,0 +1,104 @@
+{
+  "focusTags": [
+    "Projet client",
+    "Storytelling animé",
+    "Refonte d'architecture",
+    "Bilingue FR/EN",
+    "Prototype UX",
+    "Sécurité dépendances"
+  ],
+  "name": "Maxwel Jones",
+  "tagline": "Le site one-page d'une holding qui fédère un réseau d'entrepreneurs : un récit animé Learn / Earn / Return, un panneau réseau et un parcours de contact en deux temps",
+  "type": "Projet client",
+  "status": "En ligne",
+  "year": "2026",
+  "role": "Pour Maxwel Jones, une holding construite autour d'un modèle en trois temps (apprendre, gagner, redonner), j'ai conçu une page qui raconte une vision au fil du scroll. 8 sections animées avec GSAP, un panneau latéral des membres, un formulaire de contact et un prototype de prise de rendez-vous pour valider le parcours avant d'investir dans un vrai système. Après une V1, j'ai refondu le code en modules par fonctionnalité et documenté ces choix. 71 commits, en ligne sur maxweljones.com.",
+  "stack": [
+    "Next.js 15",
+    "React 19",
+    "TypeScript",
+    "Tailwind CSS 4",
+    "GSAP (ScrollTrigger)",
+    "Context API",
+    "Web3Forms",
+    "react-hot-toast",
+    "ESLint Airbnb",
+    "Husky",
+    "Vercel"
+  ],
+  "meta": {
+    "title": "Maxwel Jones · Étude de cas",
+    "description": "One-page narrative pour une holding : storytelling GSAP, panneau réseau et contact en deux temps."
+  },
+  "problem": {
+    "tags": ["Vision à raconter", "Réseau à montrer", "Contact qualifié", "Image premium"],
+    "paragraphs": [
+      "Maxwel Jones n'est pas un produit qu'on achète en un clic. C'est une holding avec une philosophie Learn / Earn / Return et un réseau de personnes. Le site devait faire comprendre ce modèle et donner envie d'en faire partie, avec un rendu à la hauteur (noir et or, signature Connecting and Entertaining People).",
+      "Le premier écran devait poser l'identité : hero animé lettre par lettre, barres dorées, header qui apparaît au bon moment.",
+      "Il fallait montrer le réseau sans transformer la page en annuaire, et accueillir deux types de contact : table ronde (Roundtable) et rendez-vous consultant à terme, sans complexifier la page."
+    ]
+  },
+  "approach": {
+    "tags": [
+      "One-page narrative",
+      "Features modulaires",
+      "Prototype avant système",
+      "Qualité dès J1"
+    ],
+    "paragraphs": [
+      "Dès J1 : ESLint Airbnb + a11y, Prettier, Husky. V1 avril 2025 en pages séparées.",
+      "Novembre 2025 : refonte one-page à défilement aimanté. Chaque section est un module (ui/, hooks/, utils/). Extraction de la logique métier et doc d'architecture (DRY, SOLID, inversion de dépendance).",
+      "Trade-off : la prise de RDV est un prototype (calendrier, créneaux, consultant, confirmation) sans réservation enregistrée, affiché Coming Soon. Le parcours existe sans le coût d'un vrai outil."
+    ]
+  },
+  "sections": {
+    "context": {
+      "title": "Contexte produit",
+      "tags": ["Holding et réseau", "Bilingue FR/EN", "Contact en deux onglets"],
+      "paragraphs": [
+        "Publics : entrepreneurs et partenaires qui veulent rejoindre ou solliciter le réseau ; personnes qui découvrent la holding.",
+        "8 sections : Hero, À propos (voir plus/moins), Philosophie, Learn, Earn, Return, Réseau, Contact. Contact : onglet Roundtable (formulaire e-mail + toast) et Book a Meeting (jours ouvrés, créneaux 15 min, choix consultant).",
+        "Hors périmètre v1 : réservation réelle, espace membre, blog, back-office."
+      ]
+    },
+    "architecture": {
+      "title": "Architecture",
+      "tags": ["App Router", "Contexts React", "GSAP maîtrisé"],
+      "paragraphs": [
+        "Front : Next.js 15 + React 19. Layout : SEO (OG, Twitter, JSON-LD Organization) et providers langue/menu/réseau/animations. Page = 8 modules via index.ts.",
+        "Données : pas de backend. Textes FR/EN via t() à clés imbriquées ; membres dans un fichier typé ; langue mémorisée dans le navigateur.",
+        "Calendrier isolé (useContactCalendar, modal, bookingUtils) : jours ouvrés, 4 créneaux 12:00-12:45. Confirmation injectée en paramètre : toast aujourd'hui, API demain sans toucher l'UI. Formulaire Web3Forms + toast. Hébergement Vercel."
+      ],
+      "bullets": [
+        "8 sections + header, menu mobile, panneau réseau, modale calendrier, footer",
+        "6 modules d'animation GSAP",
+        "Image OG générée, JSON-LD, sitemap, robots",
+        "≈ 4 000 à 5 000 lignes, 186 fichiers TS/TSX"
+      ]
+    },
+    "decisions": {
+      "title": "Décisions clés",
+      "tags": ["Hydratation", "Animations propres", "Scroll maîtrisé", "Veille sécurité"],
+      "paragraphs": [
+        "Bug d'hydratation, pas à pas. Le serveur ne connaît pas la langue du navigateur. Première version : lecture immédiate de la préférence → HTML FR côté serveur, EN côté client, clignotement. Correctif (23/11) : démarrer en FR des deux côtés, appliquer la préférence après montage. Effet de bord : changer de langue relançait le Hero ; découplé le 01/12.",
+        "Animations GSAP dans gsap.context(), annulées au démontage : sans ça, les ScrollTrigger s'accumulent et animent des éléments morts.",
+        "Scroll aimanté + panneau : enregistrement puis restauration de la position de lecture à la fermeture. Navigation unifiée qui tient compte de la hauteur du header."
+      ],
+      "bullets": [
+        "Refonte 23/11, extraction logique 02/12, composants partagés 30/01/2026",
+        "Inversion de dépendance : confirmation calendrier en paramètre",
+        "CVE-2025-55182 corrigée le 07/12/2025, React 19.2.4",
+        "Migration ESLint 9 flat config"
+      ]
+    },
+    "execution": {
+      "title": "Exécution et suite",
+      "tags": ["Refonte nov. 2025", "Prod février 2026", "Prochaines étapes"],
+      "paragraphs": [
+        "03-09/04/2025 : V1 multi-pages, ESLint, Husky. 23/11 : refonte one-page, scroll aimanté, hydratation, README client. 01-02/12 : hero, header, panneau, menu, extraction métier. 07/12 : CVE. 29-30/01/2026 : Book a call, ESLint 9, React 19. 01-06/02 : À propos, SEO, Web3Forms, prod.",
+        "Chiffres : 71 commits sur 12 jours actifs, 2 PR majeures, 8 sections, 2 langues, 6 modules d'animation.",
+        "Honnêteté : architecture et UX avant tests. Pas encore de tests auto ni CI (lint + Husky). Langue côté navigateur : Google n'indexe que le FR. Prochaines étapes : vraie réservation, Vitest calendrier/formulaire, routes /fr /en, vraies photos des membres."
+      ]
+    }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "focusTags": [
+    "Client project",
+    "Sports business",
+    "Player catalog",
+    "Video",
+    "SEO",
+    "Jest tests"
+  ],
+  "name": "Purpose Sport",
+  "tagline": "Site for a basketball player management agency, built as a talent catalog for clubs and partners",
+  "type": "Client project",
+  "status": "Live",
+  "year": "2025",
+  "role": "For an agency representing basketball players, I built a showcase that explains the mission in a few screens, then presents each player like a recruitment dossier (career, awards, highlight video). Bilingual Next.js one-pager, indexed from launch (metadata, Search Console, auto sitemap), with Analytics and Jest tests per section. V1 in three days, then a full art-direction rewrite. 61 commits, live on purpose-sport.com.",
+  "stack": [
+    "Next.js 15",
+    "React 19",
+    "TypeScript",
+    "Tailwind CSS",
+    "Framer Motion",
+    "i18next",
+    "react-player",
+    "Web3Forms",
+    "next-sitemap",
+    "Vercel Analytics",
+    "Jest",
+    "Testing Library",
+    "Husky",
+    "Vercel"
+  ],
+  "meta": {
+    "title": "Purpose Sport · Case study",
+    "description": "Basketball management agency showcase: player catalog, video, SEO and Jest tests."
+  },
+  "problem": {
+    "tags": ["Agency credibility", "Players to sell", "Busy recruiters", "Google visibility"],
+    "paragraphs": [
+      "A sports management agency sells trust. A sporting director must quickly see who it represents and why to trust it. Without a credible site it depends on word of mouth and social media.",
+      "Core need: the players. A recruiter wants position, career, awards and game footage, fast, without ten tabs.",
+      "The site also had to be findable: name on Google, clean social previews."
+    ]
+  },
+  "approach": {
+    "tags": ["Fast V1", "Assumed rewrite", "Data separated", "Behavior tests"],
+    "paragraphs": [
+      "V1 in three days (16-18/01/2025): nav, hero, about, player accordion, contact. Goal: something concrete to discuss.",
+      "23/03/2025: hard call to delete everything and restart. The accordion hid players. Rebuild around a central Players section (card + video) and objective cards, then new art direction in early April. Restarting cost less than bending the old code.",
+      "Content separated from code: players in typed data/data.ts. Adding a player is an entry. Jest tests what users see (active player, pagination, player), not implementation details."
+    ]
+  },
+  "sections": {
+    "context": {
+      "title": "Product context",
+      "tags": ["Basketball agency", "Bilingual EN/FR", "Clubs and partners"],
+      "paragraphs": [
+        "Audiences: club recruiters and sporting directors, partners/sponsors, then players and families.",
+        "One page, six blocks: Hero, About, Objectives, Players, Contact, Footer. Horizontal nav follows scroll and hides near the form.",
+        "Out of v1: player area, per-player indexable pages, live stats, back office. Content edited in code, reasonable for ~10 profiles."
+      ]
+    },
+    "architecture": {
+      "title": "Architecture",
+      "tags": ["App Router", "Content as data", "On-demand video"],
+      "paragraphs": [
+        "Layout: full SEO (OG, Twitter, canonical, robots, Search Console, manifest), three next/font faces, Analytics, i18n and scroll providers.",
+        "Players: active card (career, awards, video) + paginated list of 6. react-player via dynamic ssr:false for light first paint and no hydration issues.",
+        "Contact: five a11y-labeled fields via Web3Forms. No database: players, videos and translations ship with the site. Sitemap/robots regenerated postbuild."
+      ],
+      "bullets": [
+        "1 page, 6 sections, 2 languages (EN default)",
+        "11 profiles (10 shown), 3 highlight videos",
+        "6 Jest files (one per section + navigation)",
+        "~5–6k lines including player data and i18n"
+      ]
+    },
+    "decisions": {
+      "title": "Key decisions",
+      "tags": ["Rewrite", "Video without penalty", "Smart scroll", "Test usage"],
+      "paragraphs": [
+        "Restart at the right time. March 2025 V1 worked but contradicted the goal. Delete and rebuild in three days rather than pile patches.",
+        "Video without tanking the page: player loaded on demand client-side only.",
+        "Scroll-aware nav via shared IntersectionObserver; navbar hides when the form fills the viewport."
+      ],
+      "bullets": [
+        "Usage-oriented tests (player, pagination, player)",
+        "Content separated from code",
+        "SEO from launch (Search Console, next-sitemap)",
+        "RSC CVE fix on 23/12/2025 then release 1.0.0"
+      ]
+    },
+    "execution": {
+      "title": "Delivery and next steps",
+      "tags": ["V1 in 3 days", "March 2025 rewrite", "Next steps"],
+      "paragraphs": [
+        "16-18/01/2025: V1. 13/03: animations, skeletons, mobile. 23-25/03: rewrite, objectives, Players+video, Husky, Jest. 04-10/04: desktop/mobile, Analytics, art direction, Search Console, sitemap. 23/12/2025: security fix and release 1.0.0.",
+        "Numbers: 61 commits on 13 active days, 6 tests, 20 components, 11 profiles, 2 languages, 1 full rewrite.",
+        "Honesty: early-2025 project. Larger components than I write today, videos in the repo, unfinished locale detection. Next: split sections, host videos elsewhere with posters, visible form failure states, CI, per-player indexable pages."
+      ]
+    }
+  }
+}

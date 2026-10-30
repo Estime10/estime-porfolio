@@ -1,0 +1,104 @@
+{
+  "focusTags": [
+    "Client project",
+    "Animated storytelling",
+    "Architecture rewrite",
+    "Bilingual FR/EN",
+    "UX prototype",
+    "Dependency security"
+  ],
+  "name": "Maxwel Jones",
+  "tagline": "One-page site for a holding that unites an entrepreneur network: an animated Learn / Earn / Return story, a network panel and a two-step contact journey",
+  "type": "Client project",
+  "status": "Live",
+  "year": "2026",
+  "role": "For Maxwel Jones, a holding built around learn, earn, return, I designed a page that tells a vision through scroll. Eight GSAP-animated sections, a side panel of network members, a contact form and a meeting-booking prototype to validate the journey before investing in a real system. After a V1 I refactored into feature modules and documented the choices. 71 commits, live on maxweljones.com.",
+  "stack": [
+    "Next.js 15",
+    "React 19",
+    "TypeScript",
+    "Tailwind CSS 4",
+    "GSAP (ScrollTrigger)",
+    "Context API",
+    "Web3Forms",
+    "react-hot-toast",
+    "ESLint Airbnb",
+    "Husky",
+    "Vercel"
+  ],
+  "meta": {
+    "title": "Maxwel Jones · Case study",
+    "description": "Narrative one-pager for a holding: GSAP storytelling, network panel and two-step contact."
+  },
+  "problem": {
+    "tags": ["Vision to tell", "Network to show", "Qualified contact", "Premium image"],
+    "paragraphs": [
+      "Maxwel Jones is not a one-click product. It is a holding with a Learn / Earn / Return philosophy and a network of people. The site had to make that model clear and desirable, with a premium black-and-gold feel.",
+      "First screen had to set identity: letter-by-letter hero, gold bars, header that appears at the right moment.",
+      "Show the network without turning the page into a directory, and host two contact modes: Roundtable and consultant meetings later, without complicating the page."
+    ]
+  },
+  "approach": {
+    "tags": [
+      "Narrative one-pager",
+      "Modular features",
+      "Prototype before system",
+      "Quality from day 1"
+    ],
+    "paragraphs": [
+      "Day 1: Airbnb ESLint + a11y, Prettier, Husky. April 2025 V1 as separate pages.",
+      "November 2025: snap-scroll one-pager rewrite. Each section is a module (ui/, hooks/, utils/). Business logic extracted and architecture documented.",
+      "Trade-off: meeting booking is a functional prototype (calendar, slots, consultant, confirmation) without persisted reservations, shown as Coming Soon."
+    ]
+  },
+  "sections": {
+    "context": {
+      "title": "Product context",
+      "tags": ["Holding and network", "Bilingual FR/EN", "Two contact tabs"],
+      "paragraphs": [
+        "Audiences: entrepreneurs and partners joining or requesting the network; people discovering the holding.",
+        "Eight sections: Hero, About, Philosophy, Learn, Earn, Return, Network, Contact. Contact tabs: Roundtable form and Book a Meeting (weekdays, 15-min slots).",
+        "Out of v1: real booking, member area, blog, back office."
+      ]
+    },
+    "architecture": {
+      "title": "Architecture",
+      "tags": ["App Router", "React contexts", "Controlled GSAP"],
+      "paragraphs": [
+        "Front: Next.js 15 + React 19. Root layout carries SEO and language/menu/network/animation providers. Page assembles eight modules.",
+        "Data: no backend. FR/EN via nested-key t(); members in a typed file; locale stored in the browser.",
+        "Calendar isolated in hooks/utils: weekdays, four slots 12:00–12:45. Confirmation injected as a parameter (toast today, API tomorrow). Web3Forms + toast. Hosted on Vercel."
+      ],
+      "bullets": [
+        "8 sections + header, mobile menu, network panel, calendar modal, footer",
+        "6 GSAP animation modules",
+        "Generated OG image, JSON-LD, sitemap, robots",
+        "~4–5k lines, 186 TS/TSX files"
+      ]
+    },
+    "decisions": {
+      "title": "Key decisions",
+      "tags": ["Hydration", "Clean animations", "Controlled scroll", "Security watch"],
+      "paragraphs": [
+        "Hydration bug, step by step. Server does not know the browser locale. First version read preference immediately → FR HTML vs EN client flash. Fix (23/11): start FR on both sides, apply preference after mount. Side effect: language change restarted the Hero; decoupled on 01/12.",
+        "GSAP in gsap.context(), torn down on unmount so ScrollTriggers do not animate dead nodes.",
+        "Snap scroll + panel: save and restore read position on close. Unified navigation accounts for header height."
+      ],
+      "bullets": [
+        "Rewrite 23/11, logic extraction 02/12, shared components 30/01/2026",
+        "Dependency inversion: calendar confirmation as a parameter",
+        "CVE-2025-55182 fixed 07/12/2025, React 19.2.4",
+        "ESLint 9 flat config migration"
+      ]
+    },
+    "execution": {
+      "title": "Delivery and next steps",
+      "tags": ["Nov 2025 rewrite", "Feb 2026 prod", "Next steps"],
+      "paragraphs": [
+        "03-09/04/2025: multi-page V1. 23/11: one-page rewrite, snap scroll, hydration, client README. 01-02/12: hero, header, network, menu, logic extraction. 07/12: CVE. 29-30/01/2026: Book a call, ESLint 9, React 19. 01-06/02: About, SEO, Web3Forms, prod.",
+        "Numbers: 71 commits on 12 active days, 2 major PRs, 8 sections, 2 languages, 6 animation modules.",
+        "Honesty: architecture and UX before tests. No automated tests or CI yet (lint + Husky). Browser-side locale means Google mostly indexes FR. Next: real booking, Vitest for calendar/form, /fr /en routes, real member photos."
+      ]
+    }
+  }
+}

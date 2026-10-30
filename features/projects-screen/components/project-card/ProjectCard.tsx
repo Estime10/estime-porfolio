@@ -66,17 +66,21 @@ export function ProjectCard({
         variant="stack"
       />
 
-      <div className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-6">
-        {project.caseStudyHref ? (
-          <CtaGradientLink href={project.caseStudyHref}>{readCaseStudyLabel}</CtaGradientLink>
-        ) : null}
+      {project.caseStudyHref || project.liveUrl ? (
+        <div className="mt-auto flex flex-wrap items-center justify-between gap-3 pt-6">
+          {project.caseStudyHref ? (
+            <CtaGradientLink href={project.caseStudyHref}>{readCaseStudyLabel}</CtaGradientLink>
+          ) : null}
 
-        {project.liveUrl ? (
-          <CtaGradientLink external href={project.liveUrl}>
-            {viewLiveLabel}
-          </CtaGradientLink>
-        ) : null}
-      </div>
+          {project.liveUrl ? (
+            <CtaGradientLink external href={project.liveUrl}>
+              {viewLiveLabel}
+            </CtaGradientLink>
+          ) : null}
+        </div>
+      ) : (
+        <div className="mt-auto pt-6" aria-hidden />
+      )}
     </article>
   );
 }

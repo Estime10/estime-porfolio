@@ -1,82 +1,183 @@
-/** Slugs stables pour i18n, routes et assets futurs. */
-export const FEATURED_PROJECT_SLUGS = ["fleetscan", "shadow", "spill-crumb", "jikowood"] as const;
-
-export const SECONDARY_PROJECT_SLUGS = [
-  "ttc-v0",
-  "enna",
-  "maxweljones",
+/**
+ * Live (prod + cover) en tête — ordre portfolio.
+ * In-dev = produits en cours, résumé sans image.
+ */
+export const LIVE_PROJECT_SLUGS = [
+  "kozy-antwerp",
   "nana",
+  "jikowood",
+  "maxweljones",
+  "enna",
   "purpose-sport",
 ] as const;
 
-/** Projets avec page `/projects/[slug]` (featured + other work enrichi). */
-export const CASE_STUDY_PROJECT_SLUGS = [
-  ...FEATURED_PROJECT_SLUGS,
-  ...SECONDARY_PROJECT_SLUGS,
+export const IN_DEVELOPMENT_PROJECT_SLUGS = [
+  "spill-crumb",
+  "ttc-v0",
+  "fleetscan",
+  "shadow",
 ] as const;
 
-export const PROJECT_SLUGS = [...FEATURED_PROJECT_SLUGS, ...SECONDARY_PROJECT_SLUGS] as const;
+/** @deprecated Prefer LIVE / IN_DEVELOPMENT — alias listing historique. */
+export const FEATURED_PROJECT_SLUGS = LIVE_PROJECT_SLUGS;
+/** @deprecated Prefer LIVE / IN_DEVELOPMENT */
+export const SECONDARY_PROJECT_SLUGS = IN_DEVELOPMENT_PROJECT_SLUGS;
 
-export type FeaturedProjectSlug = (typeof FEATURED_PROJECT_SLUGS)[number];
-export type SecondaryProjectSlug = (typeof SECONDARY_PROJECT_SLUGS)[number];
+/** Pages `/projects/[slug]` — études de cas live (+ legacy in-dev encore routées). */
+export const CASE_STUDY_PROJECT_SLUGS = [
+  "kozy-antwerp",
+  "nana",
+  "jikowood",
+  "maxweljones",
+  "enna",
+  "purpose-sport",
+  "fleetscan",
+  "shadow",
+  "spill-crumb",
+  "ttc-v0",
+] as const;
+
+export const PROJECT_SLUGS = [...LIVE_PROJECT_SLUGS, ...IN_DEVELOPMENT_PROJECT_SLUGS] as const;
+
+export type LiveProjectSlug = (typeof LIVE_PROJECT_SLUGS)[number];
+export type InDevelopmentProjectSlug = (typeof IN_DEVELOPMENT_PROJECT_SLUGS)[number];
+export type FeaturedProjectSlug = LiveProjectSlug;
+export type SecondaryProjectSlug = InDevelopmentProjectSlug;
 export type CaseStudyProjectSlug = (typeof CASE_STUDY_PROJECT_SLUGS)[number];
 export type ProjectSlug = (typeof PROJECT_SLUGS)[number];
 
-export type ProjectTier = "featured" | "secondary";
+export type ProjectTier = "live" | "in-development";
+
+export type ProjectCoverImage = Readonly<{
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}>;
 
 export type ProjectCatalogEntry = Readonly<{
+  coverImage?: ProjectCoverImage;
+  hasCaseStudy: boolean;
+  liveUrl?: string;
   slug: ProjectSlug;
   tier: ProjectTier;
   year: number;
-  hasCaseStudy: boolean;
-  liveUrl?: string;
 }>;
 
+const LIVE_COVERS: Record<LiveProjectSlug, ProjectCoverImage> = {
+  "kozy-antwerp": {
+    src: "/image/projects/kozywp.png",
+    alt: "Kozy Antwerp, site de gestion locative",
+    width: 1600,
+    height: 1000,
+  },
+  nana: {
+    src: "/image/projects/horcadrewp.png",
+    alt: "Hors Cadre, portfolio photographie",
+    width: 1600,
+    height: 1000,
+  },
+  jikowood: {
+    src: "/image/projects/jikobasewp.png",
+    alt: "Jikowood, vitrine menuiserie",
+    width: 1600,
+    height: 1000,
+  },
+  maxweljones: {
+    src: "/image/projects/maxwelwp.png",
+    alt: "Maxwel Jones, site holding",
+    width: 1600,
+    height: 1000,
+  },
+  enna: {
+    src: "/image/projects/ennawp.png",
+    alt: "Enna Consulting, site RH",
+    width: 1600,
+    height: 1000,
+  },
+  "purpose-sport": {
+    src: "/image/projects/purposewp.png",
+    alt: "Purpose Sport, agence sportive",
+    width: 1600,
+    height: 1000,
+  },
+};
+
 export const PROJECT_CATALOG: readonly ProjectCatalogEntry[] = [
-  { slug: "fleetscan", tier: "featured", year: 2026, hasCaseStudy: true },
-  { slug: "shadow", tier: "featured", year: 2026, hasCaseStudy: true },
-  { slug: "spill-crumb", tier: "featured", year: 2026, hasCaseStudy: true },
   {
-    slug: "jikowood",
-    tier: "featured",
+    slug: "kozy-antwerp",
+    tier: "live",
     year: 2026,
     hasCaseStudy: true,
-    liveUrl: "https://jikowood-refonte.vercel.app",
-  },
-  {
-    slug: "ttc-v0",
-    tier: "secondary",
-    year: 2026,
-    hasCaseStudy: true,
-    liveUrl: "https://take-the-crown-v001.vercel.app/",
-  },
-  {
-    slug: "enna",
-    tier: "secondary",
-    year: 2026,
-    hasCaseStudy: true,
-    liveUrl: "https://www.ennabv.be",
-  },
-  {
-    slug: "maxweljones",
-    tier: "secondary",
-    year: 2026,
-    hasCaseStudy: true,
-    liveUrl: "https://www.maxweljones.com",
+    liveUrl: "https://kozyantwerp.be",
+    coverImage: LIVE_COVERS["kozy-antwerp"],
   },
   {
     slug: "nana",
-    tier: "secondary",
+    tier: "live",
     year: 2026,
     hasCaseStudy: true,
-    liveUrl: "https://horscadre-photography.vercel.app/",
+    liveUrl: "https://horscadre-photography.vercel.app",
+    coverImage: LIVE_COVERS.nana,
+  },
+  {
+    slug: "jikowood",
+    tier: "live",
+    year: 2025,
+    hasCaseStudy: true,
+    liveUrl: "https://jikowood.be",
+    coverImage: LIVE_COVERS.jikowood,
+  },
+  {
+    slug: "maxweljones",
+    tier: "live",
+    year: 2026,
+    hasCaseStudy: true,
+    liveUrl: "https://www.maxweljones.com",
+    coverImage: LIVE_COVERS.maxweljones,
+  },
+  {
+    slug: "enna",
+    tier: "live",
+    year: 2026,
+    hasCaseStudy: true,
+    liveUrl: "https://www.ennabv.be",
+    coverImage: LIVE_COVERS.enna,
   },
   {
     slug: "purpose-sport",
-    tier: "secondary",
+    tier: "live",
     year: 2025,
     hasCaseStudy: true,
-    liveUrl: "https://purpose-sport.com",
+    liveUrl: "https://www.purpose-sport.com",
+    coverImage: LIVE_COVERS["purpose-sport"],
+  },
+  {
+    slug: "spill-crumb",
+    tier: "in-development",
+    year: 2026,
+    hasCaseStudy: true,
+    liveUrl: "https://spill-crumb-v1.vercel.app",
+  },
+  {
+    slug: "ttc-v0",
+    tier: "in-development",
+    year: 2026,
+    hasCaseStudy: true,
+    liveUrl: "https://take-the-crown-v001.vercel.app",
+  },
+  {
+    slug: "fleetscan",
+    tier: "in-development",
+    year: 2026,
+    hasCaseStudy: true,
+    liveUrl: "https://fleet-scan-v1.vercel.app",
+  },
+  {
+    slug: "shadow",
+    tier: "in-development",
+    year: 2026,
+    hasCaseStudy: true,
   },
 ] as const;
 
@@ -88,10 +189,20 @@ export function isCaseStudyProjectSlug(value: string): value is CaseStudyProject
   return (CASE_STUDY_PROJECT_SLUGS as readonly string[]).includes(value);
 }
 
-export function getFeaturedProjects(): readonly ProjectCatalogEntry[] {
-  return PROJECT_CATALOG.filter((item) => item.tier === "featured");
+export function getLiveProjects(): readonly ProjectCatalogEntry[] {
+  return PROJECT_CATALOG.filter((item) => item.tier === "live");
 }
 
+export function getInDevelopmentProjects(): readonly ProjectCatalogEntry[] {
+  return PROJECT_CATALOG.filter((item) => item.tier === "in-development");
+}
+
+/** @deprecated Prefer getLiveProjects */
+export function getFeaturedProjects(): readonly ProjectCatalogEntry[] {
+  return getLiveProjects();
+}
+
+/** @deprecated Prefer getInDevelopmentProjects */
 export function getSecondaryProjects(): readonly ProjectCatalogEntry[] {
-  return PROJECT_CATALOG.filter((item) => item.tier === "secondary");
+  return getInDevelopmentProjects();
 }

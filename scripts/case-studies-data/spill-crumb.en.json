@@ -1,0 +1,107 @@
+{
+  "focusTags": [
+    "Realtime",
+    "Rules in SQL",
+    "600+ tests",
+    "CI + E2E",
+    "Observability",
+    "Audit and remediation"
+  ],
+  "name": "Spill The Crumb",
+  "tagline": "An anonymous realtime gossip social network, built as a real product: live feed across tabs, DB-enforced anti-spam, back office and 600+ automated tests",
+  "type": "Web product · Social",
+  "status": "Live",
+  "year": "2026",
+  "role": "Spill The Crumb is a community feed where people share and comment on “crumbs” without exposing their identity. I built it as a product ready to grow, not a demo. The feed updates live across tabs; every reaction shows instantly then reconciles with the server; critical rules (anti-spam, counters, notifications) live in Postgres. Around that: CI with E2E on a real local DB, load tests, in-house observability, ADRs and a client guide. Totals: 230 commits, 45 SQL migrations, 638 tests, Lighthouse 97/100 performance on public pages.",
+  "stack": [
+    "Next.js 16",
+    "React 19",
+    "TypeScript strict",
+    "Supabase (Auth, Realtime, Storage)",
+    "PostgreSQL (RLS, triggers, RPC, pg_trgm)",
+    "next-safe-action",
+    "Zod",
+    "React Hook Form",
+    "Zustand",
+    "Upstash Redis",
+    "next-intl",
+    "GSAP",
+    "Tailwind CSS 4",
+    "Vitest",
+    "Playwright",
+    "GitHub Actions",
+    "Vercel"
+  ],
+  "meta": {
+    "title": "Spill The Crumb · Case study",
+    "description": "Anonymous gossip social network: realtime feed, DB anti-spam, CI E2E and 600+ tests."
+  },
+  "problem": {
+    "tags": ["Anonymous feed", "Spam", "Realtime consistency", "Runnable by a client"],
+    "paragraphs": [
+      "Classic social networks attach every post to a public identity. For a private confidence or small drama, people want a place to post without exposing their name, while a real community still reacts, comments and surfaces what is hot.",
+      "Two day-one problems: spam (without a public reputation to protect, someone can fire a hundred posts a minute via the API) and consistency (the same post lives in the feed, profile and detail; if a like updates only one of three screens, the app feels broken).",
+      "The product also had to be operable by someone else: dashboard, sponsored slots editable without a developer, readable error log and a user guide. A working feed was not enough."
+    ]
+  },
+  "approach": {
+    "tags": ["Rules in the database", "Feature-first", "Written decisions", "Tests from day one"],
+    "paragraphs": [
+      "Guiding principle: every rule that protects the product must hold even if the UI is bypassed. Anti-spam, real post authorship, like/comment counters and notifications are enforced by triggers and RLS. Counters live in post_stats: readable by clients, never writable; only triggers update them.",
+      "Code is feature-first (16 domains under features/). app/ only routes; components/ is pure UI. Every Server Action goes through next-safe-action: one wrapper for auth + Zod.",
+      "Structural choices as ADRs: single proxy for auth and locale (ADR-001), separate stores with sync (ADR-002), i18n without URL prefix (ADR-003). Tests arrived with features: week one CI already ran authenticated E2E on local Supabase."
+    ]
+  },
+  "sections": {
+    "context": {
+      "title": "Product context",
+      "tags": ["Community", "Short content", "Sponsoring", "Three languages"],
+      "paragraphs": [
+        "Member journey: multi-step signup, onboarding, then the feed. Publish a crumb with category and image (iPhone HEIC accepted and converted), react, comment (desktop panel / mobile sheet), follow notifications. Profile shows posts and stats.",
+        "Top drama highlights the hottest post. Score: likes - dislikes + 2 × comments. A comment counts twice a like because it signals real engagement.",
+        "Ops: stats dashboard, sponsored slot CRUD, platform log and reports. UI in FR/EN/ES without URL prefix. Sponsors do not pay online: slots are created manually in admin to validate the model without payments."
+      ]
+    },
+    "architecture": {
+      "title": "Architecture",
+      "tags": ["App Router", "Synced stores", "Triggers and RPCs", "Full CI"],
+      "paragraphs": [
+        "Front: Next.js 16, Server Components by default. Post state lives in three Zustand stores (paginated feed, profile, detail). GSAP respects prefers-reduced-motion.",
+        "Back: typed Server Actions and an internal log ingest route. Heavy logic in SQL: 45 migrations (schema, RLS, counter/notification triggers, Top drama / admin stats / username RPCs, indexes). proxy.ts refreshes the session, resolves locale and assigns a correlation id per request.",
+        "Observability: platform_log_events on /admin/logs, auto-purged (30 days platform, 14 days perf) by a scheduled GitHub workflow via service_role."
+      ],
+      "bullets": [
+        "16 pages, 16 domains, ~260 components, ~40k useful lines (cloc)",
+        "638 tests in ~200 Vitest files, plus Playwright E2E",
+        "Two-job CI: audit, lint, type-check, covered tests, build; then E2E on seeded local Supabase",
+        "App rate limits: login 10/15m, signup 5/h, reactions 30/m, comments 10/m, search 60/m",
+        "Dedicated load scripts for each limit",
+        "Strict TypeScript: 0 any, 0 ts-ignore, generated DB types"
+      ]
+    },
+    "decisions": {
+      "title": "Key decisions",
+      "tags": ["Anti-spam", "Multi-screen sync", "SQL performance", "Remediation"],
+      "paragraphs": [
+        "Anti-spam that almost never shipped. 5 posts/day is a BEFORE INSERT trigger that also checks the declared author is the authenticated user (POST_AUTHOR_MISMATCH), even via REST. During development I disabled it with a TODO(prod) migration. Risk: ship without anti-spam. Fixed with an explicit re-enable migration (24/06) aligned with POST_DAILY_LIMIT in the app.",
+        "One like, three screens, many tabs. ADR-002 compared a global store, refetch, React Query and Context. I kept three specialized stores linked by a sync registry. Mutations fan out to the three stores, BroadcastChannel to other tabs, Supabase Realtime to other users. Optimistic reaction first (+1/-1), then reconcile. Noted debt: every new store must register.",
+        "SQL perf: RLS policies rewritten to (select auth.uid()) once per query; Top drama via stored generated drama_level column (Index Scan); username search via pg_trgm; comment pagination via composite index. Storage path bug: first policy misread userId/postId/file (foldername vs filename); fixed then MIME-restricted the bucket."
+      ],
+      "bullets": [
+        "ADR-001: single proxy.ts for session and locale",
+        "ADR-003: i18n without URL prefix (NEXT_LOCALE cookie + Accept-Language)",
+        "Notifications from SQL triggers, no self-notify on own posts",
+        "Upstash rate limit with in-memory fallback if unset"
+      ]
+    },
+    "execution": {
+      "title": "Delivery and next steps",
+      "tags": ["MVP in 3 weeks", "Late October audit", "Numbers", "Next steps"],
+      "paragraphs": [
+        "6-10 Jun 2026: Next/Supabase/i18n, splash, multi-step auth, feed, publishing, reactions, comments. 11-14 jun: feed optimization, authenticated E2E in CI, profile, detail, cross-tab sync, Top drama. 22-26 jun: notifications, admin, WebP, anti-spam, SEO, sponsoring, logs. 29-30 jun: onboarding, client guide, large refactor (31 commits on 29/06). 10 jul: developer docs. 26-30 oct: audit, Next 16.4.3, P0/P1 remediation, architecture flattening, deploy limited to main.",
+        "Late October audit: 26/10 dependency upgrades. 29/10 hardening migration: members can no longer list who liked what (likes readable by author only, counters via post_stats); 18+ and signup fields checked in DB; role/username/birth/gender immutable on profile; SQL limits 10 comments and 30 reactions/hour. Product: reporting, forgot password, export/delete account, keyboard focus and contrast. 30/10: Vercel deploys limited to main.",
+        "Numbers: 230 commits (6 Jun → 30 Oct), 16 pages, 45 migrations, 638 tests, ~40k useful lines, ~43 docs including 3 ADRs. Lighthouse public pages: Perf 97, a11y 98-100. Honesty: on a confidences product, anonymity is guaranteed in the database. Next: admin moderation queue, real PWA, shorter splash for signed-in users, EU function region, legal review of terms."
+      ]
+    }
+  }
+}

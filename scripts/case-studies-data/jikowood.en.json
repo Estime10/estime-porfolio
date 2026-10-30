@@ -1,0 +1,107 @@
+{
+  "focusTags": [
+    "Real client",
+    "In production",
+    "Local SEO",
+    "Image optimization",
+    "Three languages",
+    "One-year follow-up"
+  ],
+  "name": "Jikowood",
+  "tagline": "Showcase and portfolio for a custom carpentry workshop in Brussels: 100+ project photos, three languages, client reviews and local SEO",
+  "type": "Real client · Brussels",
+  "status": "Live",
+  "year": "2025",
+  "role": "A carpentry workshop sells through photos. For this Brussels client I designed and built jikowood.be end to end: a filterable portfolio of 17 custom projects, a page per project, reviews in a database, a contact form and a FR/EN/NL interface. The challenge: serve ~106 HD photos without slowing the site, and be found locally on Google. Live since January 2025, evolved for a year with new jobs (177 commits, 11 reviews, 81 sitemap URLs).",
+  "stack": [
+    "Next.js 14 (App Router)",
+    "React 18",
+    "Tailwind CSS 3",
+    "framer-motion",
+    "Swiper",
+    "Zustand",
+    "MongoDB / Mongoose",
+    "Web3Forms",
+    "sharp / critters",
+    "next-sitemap",
+    "Vercel Analytics",
+    "Speed Insights",
+    "Vercel"
+  ],
+  "meta": {
+    "title": "Jikowood · Case study",
+    "description": "Brussels carpentry showcase: photo portfolio, local SEO, i18n and reviews in a database."
+  },
+  "problem": {
+    "tags": ["Local craftsman", "Heavy photos", "Google visibility", "Multilingual Brussels"],
+    "paragraphs": [
+      "Custom carpentry is not a catalog product: it sells craft, proven by real projects. Someone looking for a walk-in closet or TV unit wants concrete interiors before requesting a quote.",
+      "Immediate technical problem: a credible portfolio is ~100 HD photos, and heavy photos bounce mobile visitors. The site had to stay fast while showing a lot.",
+      "It also had to be found. In Brussels the same prospect may search in French, Dutch or English. Ranking for local queries matters more than a campaign. And the client needed to add reviews without calling me every time."
+    ]
+  },
+  "approach": {
+    "tags": [
+      "Photos first",
+      "SEO from sprint one",
+      "Content without redeploy",
+      "Continuous evolution"
+    ],
+    "paragraphs": [
+      "Built around projects. Home: About, Services, Work, Reviews, Contact. Filterable portfolio and slug pages that are shareable and indexable.",
+      "SEO in sprint one: 15 Jan Open Graph, sitemap, robots; 16 Jan dedicated SEO pass. LocalBusiness JSON-LD for local results.",
+      "Reviews in MongoDB instead of hardcoding: client adds them without redeploy (1-5 rating, approval status). Projects stay static files: fastest to serve, rarely change."
+    ]
+  },
+  "sections": {
+    "context": {
+      "title": "Product context",
+      "tags": ["Carpentry and fit-out", "Quotes", "Brussels homeowners"],
+      "paragraphs": [
+        "Typical visitor: homeowner with a fit-out project. Arrives from search or a shared link, browses similar work, reads reviews, requests a quote.",
+        "Short visual journey: see, trust, contact. Form via Web3Forms, no mail server to maintain.",
+        "Basic offline mode (service worker + offline.html), Vercel Analytics and Speed Insights."
+      ]
+    },
+    "architecture": {
+      "title": "Architecture",
+      "tags": ["App Router", "Optimized images", "Reviews API", "Vercel"],
+      "paragraphs": [
+        "Front: Next.js 14 App Router by screen. framer-motion animations, Swiper carousels. Locale in Zustand, copy in three JSON dictionaries.",
+        "Images are the performance core. WebP sources; next/image serves AVIF/WebP with sizes 640–3840. sharp processing, critical CSS via critters, JS bundle splitting.",
+        "Back: API route for MongoDB reviews via Mongoose. 17 static projects. HTTPS + HSTS and restrictive security headers."
+      ],
+      "bullets": [
+        "17 projects, ~106 WebP photos, 4 categories",
+        "11 reviews via /api/testimonials",
+        "81 sitemap URLs (projects × languages)",
+        "3 languages: FR, EN, NL",
+        "~6,000 lines, ESLint airbnb + jsx-a11y"
+      ]
+    },
+    "decisions": {
+      "title": "Key decisions",
+      "tags": ["Performance", "Cache", "Local SEO", "Client autonomy"],
+      "paragraphs": [
+        "Client kept seeing an old version after photo updates (browser/CDN/build cache). Fixed 4 Apr in five commits: timestamped generateBuildId, Cache-Control for HTML revalidation, image versioning from March. In hindsight only HTML and replaced images need revalidation; hashed assets can cache for a year.",
+        "Keep portfolio richness and optimize the pipeline (WebP, modern formats, responsive sizes, 24h optimized-image cache, lazy load).",
+        "Local discovery: LocalBusiness JSON-LD, metadata, Open Graph, hreflang sitemap. SEO passes in February and April."
+      ],
+      "bullets": [
+        "Reviews in DB: content without pinging me",
+        "Static projects: most viewed content is fastest",
+        "Web3Forms: no email infra for a brochure site",
+        "Next security bump to 14.2.35 in December 2025"
+      ]
+    },
+    "execution": {
+      "title": "Delivery and next steps",
+      "tags": ["Live since January 2025", "One-year follow-up", "Numbers", "Rewrite"],
+      "paragraphs": [
+        "7-16 Jan 2025: initial sprint. February: SEO. March: new projects, image versioning. April: cache, build id, refactor, new photos. May: new job. December 2025: Next security fix and redeploy.",
+        "Numbers: 177 commits, 4 pages, 2 API routes, 17 projects, ~106 photos, 11 reviews, 3 languages, 81 sitemap URLs, ~6k lines.",
+        "Honesty: first client site in production, maintained a year. What I would strengthen (and a rewrite targets): server title/meta on home, real per-locale URLs so the sitemap stops pointing at 404s, manual review approval, long cache on static assets, TypeScript everywhere, tests and CI."
+      ]
+    }
+  }
+}

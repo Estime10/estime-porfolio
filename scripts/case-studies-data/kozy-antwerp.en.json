@@ -1,0 +1,99 @@
+{
+  "focusTags": ["Real client", "SEO cutover", "Supabase", "Stripe", "Feature flags", "GDPR"],
+  "name": "Kozy Antwerp",
+  "tagline": "Production site for an Antwerp short-stay management company: WordPress to Next.js without SEO loss, back office and booking engine",
+  "type": "Real client · Antwerp",
+  "status": "Live",
+  "year": "2026",
+  "role": "For a real Antwerp client, I replaced a dated WordPress site with a trilingual Next.js platform: an owner-facing showcase built to convert, a property back office, and a booking engine (admin validation, Stripe) whose rules are enforced in the database. I started with the PRD and a decision log with the client, then shipped to kozyantwerp.be in two months (217 commits, 46 migrations).",
+  "stack": [
+    "Next.js 16",
+    "React 19",
+    "TypeScript",
+    "Supabase",
+    "PostgreSQL (RLS, RPC, pgTAP)",
+    "Stripe Checkout",
+    "Resend",
+    "React Email",
+    "GSAP",
+    "Tailwind CSS 4",
+    "Zod",
+    "Vitest",
+    "Playwright",
+    "Vercel"
+  ],
+  "meta": {
+    "title": "Kozy Antwerp · Case study",
+    "description": "Production site for a short-stay property manager: WordPress cutover without SEO loss, back office, and DB-enforced booking."
+  },
+  "problem": {
+    "tags": ["Dated WordPress", "SEO to preserve", "Owner conversion", "Internal tool"],
+    "paragraphs": [
+      "Kozy Antwerp manages short stays and B&Bs in Antwerp on behalf of owners. Its WordPress/Elementor site missed the point: in ten seconds, an owner must understand that Kozy handles everything and want a yield estimate. That sentence became the PRD job-to-be-done. Every showcase section was judged against it.",
+      "Hard constraint: replace an already indexed site without breaking old URLs. Google history had to survive cutover, with a rollback plan that kept WordPress for at least seven days. Concretely: 52 addresses to remap (property pages, Dutch legal pages, a yield simulator, a stay. booking subdomain) plus WordPress noise (wp-login, wp-admin, feeds, MetForm, empty categories).",
+      "Behind the showcase, the team needed a real tool: property CRUD, calendars, weekday/weekend/event pricing, booking requests, admin validation, Stripe and transactional email. Not a generic CMS. A CMS manages content; Kozy needed business rules: who can book which dates, at what price, how long a pending request blocks the calendar, and what happens to guest data after checkout."
+    ]
+  },
+  "approach": {
+    "tags": ["Docs first", "Rules in SQL", "Feature flag", "SEO cutover"],
+    "paragraphs": [
+      "I started with the PRD and a 20-decision log (D01-D20) before code. Jira KA-xx tickets, named branches, master/prod and develop/staging. First commit 30 Aug 2026: design system and legal pages. Same day: product docs. Structural choices became ADRs: admin auth and properties (ADR-005), public booking (ADR-006), URLs without language prefix (ADR-008).",
+      "Critical invariants live in Postgres and are covered with pgTAP: no double booking under load (pg_advisory_xact_lock, 48h soft-block, exclusion constraint), pending → accepted → confirmed, GDPR anonymization 30 days after checkout. Why in the database? UI rules protect nothing if someone hits the API directly, and races are only fixed at transaction level. Guests never write to bookings: a Zod-validated Server Action calls a single RPC (create_public_booking) with service_role.",
+      "Assumed trade-off: one feature flag cuts booking navigation, URLs and server actions. The client could ship the showcase while Stripe stayed in test. Not display:none: when off, navigation is filtered, booking URLs redirect to Collection, create returns booking_disabled and payment checkout_disabled server-side."
+    ]
+  },
+  "sections": {
+    "context": {
+      "title": "Product context",
+      "tags": ["Short stays", "Trilingual NL/FR/EN", "Antwerp"],
+      "paragraphs": [
+        "Personas by priority: Dutch-speaking owners, French-speaking owners, international guests. Internally, Kozy uses the admin panel (Supabase Auth, pending promotion to admin). The panel URL is configurable; its internal path returns 404.",
+        "Guests have no account. They pick a property, open a calendar modal that keeps its own URL, enter dates (1-30 nights, earliest check-in tomorrow, Brussels time) and identity, then see “Request recorded, reply within 48h”. A signed HMAC cancel link (14 days) works until payment. After confirmation, a pre-arrival email sends access details the day before.",
+        "Out of v1: guest accounts, OTA iCal sync (KA-48 unmerged), blog, analytics (D12: no trackers, so no cookie banner).",
+        "Primary CTA (“Calculate my yield”) goes to contact while the flag is off. Old WordPress “gratis-simulatie” redirects to /contact?intent=yield. Contact uses a Resend Server Action with honeypot, rate limit and Reply-To to the prospect (KA-26)."
+      ]
+    },
+    "architecture": {
+      "title": "Architecture",
+      "tags": ["App Router", "RPC SECURITY DEFINER", "Vercel crons"],
+      "paragraphs": [
+        "Front: Next.js 16 App Router. proxy.ts translates localized public URLs (no /en/ prefix), applies WordPress 301/410s and the booking flag, including Flight soft-nav and Server Actions. Flat routes; proxy rewrites /start (NL) or /accueil (FR). Intercepted booking modal route: modal from Collection, full page from a shared link. Brand motion (panels, FLIP) via GSAP.",
+        "Back: Server Actions + Zod, four API routes (two crons, Stripe webhook, llms.txt). Sensitive logic in SECURITY DEFINER RPCs with locked search_path and role grants, verified by pgTAP definer_hardening_catalog. Stripe Checkout hosted; React Email NL/FR/EN via Resend. Webhook stores stripe_events and pays only through mark_booking_paid_guards.",
+        "Data: 46 SQL migrations. WebP Storage. Staging staging.kozyantwerp.be (Vercel auth + noindex), prod kozyantwerp.be. Only master/develop deploy. Public calendar never reads bookings: an RPC returns date ranges only, no PII."
+      ],
+      "bullets": [
+        "133 Vitest, 4 Playwright booking specs, 15 pgTAP files",
+        "10 email templates × 3 languages plus 2 shared components and a dev preview page",
+        "Crons: daily pre-arrival, weekly PII purge",
+        "52 WordPress URLs as 301s, WP noise as 410s",
+        "Trilingual sitemap, hreflang, JSON-LD, llms.txt, robots without admin slug leak",
+        "Weekday/weekend/event pricing computed in SQL (pgTAP compute_stay_total)",
+        "Prod headers: HSTS preload, X-Frame-Options DENY, CSP frame-ancestors none"
+      ]
+    },
+    "decisions": {
+      "title": "Key decisions",
+      "tags": ["Booking integrity", "Cutover", "Security", "Progressive delivery"],
+      "paragraphs": [
+        "Path to “no double booking” in three steps on 19 Oct. Exclusion constraint only covered accepted/confirmed, so pending could overlap a confirmed stay. Fix 1: explicit pre-insert check aligned with the public calendar, locked by pgTAP. Then the race: two requests at the same millisecond both pass “does a booking exist?” before either writes, creating N pending requests and N emails. Added pg_advisory_xact_lock per property so creates serialize; concurrency + soft-block e2e followed. Inclusive range keeps checkout day free for turnover.",
+        "SEO migration: CSV of 52 URLs, 301s in next.config with proxy fallback, 410 for wp-login/admin/feeds, redirects for .com/www/stay. Cutover runbook in nine steps (content freeze, tagged deploy, smoke, DNS, TLS, multilingual smoke, sitemap, 301 sample, done). 301 vs 410 is intentional. Lighthouse baseline 25/10: SEO 100.",
+        "Security day (19/10, 36 commits) from a defensive audit (0 critical, 7 P2, 12 P3), KA-47. F-01: admin only guarded in proxy; next-action could bypass → RSC layout guard + POST-only. F-07: anon could read bookings via REST/Realtime → policy removed, calendar via date-only RPC. F-12: column revoke useless with table GRANT → revoke table, grant public columns only. Same day: security headers, account enumeration protection, email redaction in logs, signed cancel links, fail-closed real IP on Vercel."
+      ],
+      "bullets": [
+        "URLs without language prefix (ADR-008) with coherent hreflang/canonicals",
+        "Flag D20 / KA-59: one variable cuts navigation, URLs and Checkout",
+        "Admin validation before payment: a business requirement",
+        "GDPR: idempotent purge_booking_guest_pii(30), service_role only, weekly cron"
+      ]
+    },
+    "execution": {
+      "title": "Delivery and next steps",
+      "tags": ["Prod 27/10/2026", "Numbers", "Next steps"],
+      "paragraphs": [
+        "30-31 Aug: design system, GSAP nav, legal pages, PRD, hero/panels. September: Services, FLIP Collection, booking modal, WebP; contact demo 30/09. 2-7 Oct: back office, Auth. 9 Oct: first booking in DB, secure RPC, archivable properties, Playwright on both modal variants. 13 Oct: SEO crawlability. 16 Oct: moderation, Stripe, React Email, rate limit, honeypot, 48h expiry, AVIF. 18 Oct: pricing, pre-arrival. 19 Oct: security day + concurrency lock (KA-13). 24-25 Oct: booking hidden (KA-59), prefixless URLs (KA-61), JSON-LD (KA-60), Resend leads (KA-26), Checkout blocked. 27 Oct 2026: staging noindex, final WP redirects, hero videos, prod kozyantwerp.be.",
+        "Numbers: 217 commits (31 merges), 15 Jira tickets KA-13 to KA-62, ~54k source lines + ~7.7k tests, Lighthouse staging Perf 83 / SEO 100 / A11y 100 / BP 96. Also 18 pages, ~236 components, 46 migrations, 133 Vitest files, 4 Playwright specs, 15 pgTAP, 24 docs. Live 30/10: four properties, 21 sitemap URLs, wp-login 410, .com/www → kozyantwerp.be.",
+        "Honesty: booking and Stripe not public yet (client choice). No GitHub Actions CI (Husky + Vercel builds). Engine is ready: flipping one variable opens it. Perf 83 is mostly hero videos. iCal sync exists on a branch waiting for direct booking. Next: open booking, CI, KA-48, hero perf."
+      ]
+    }
+  }
+}
