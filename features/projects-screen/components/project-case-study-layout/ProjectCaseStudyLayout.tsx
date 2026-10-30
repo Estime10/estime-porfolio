@@ -20,7 +20,6 @@ export function ProjectCaseStudyLayout({ content }: ProjectCaseStudyLayoutProps)
         status={content.status}
         tagline={content.tagline}
         type={content.type}
-        year={content.year}
       />
 
       <div className="mt-10 md:mt-12 lg:mt-14 lg:grid lg:grid-cols-[minmax(0,13rem)_minmax(0,1fr)] lg:items-start lg:gap-16 xl:gap-20">

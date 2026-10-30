@@ -1,5 +1,6 @@
-import { LiveProjectCard } from "@/features/projects-screen/components/live-project-card/LiveProjectCard";
+import { ProjectCard } from "@/features/projects-screen/components/project-card/ProjectCard";
 import { ProjectsPageHeader } from "@/features/projects-screen/components/projects-page-header/ProjectsPageHeader";
+import { ProjectsSectionIntro } from "@/features/projects-screen/components/projects-section-intro/ProjectsSectionIntro";
 import type { ProjectsContentViewModel } from "@/features/projects-screen/types/projectViewModel";
 
 export type ProjectsLayoutProps = Readonly<{
@@ -18,17 +19,16 @@ export function ProjectsLayout({ content }: ProjectsLayoutProps) {
       />
 
       <section aria-labelledby="live-projects-heading" className="mt-10 md:mt-14">
-        <h2 id="live-projects-heading" className="text-h2 text-foreground">
-          {content.featuredLabel}
-        </h2>
-        <p className="text-body text-muted mt-3 max-w-prose">
-          <strong className="font-semibold text-foreground">{content.featuredNoteLead}</strong>{" "}
-          {content.featuredNote}
-        </p>
+        <ProjectsSectionIntro
+          headingId="live-projects-heading"
+          label={content.liveLabel}
+          noteLead={content.liveNoteLead}
+          note={content.liveNote}
+        />
 
         {leadLive ? (
           <div className="mt-8 md:mt-10">
-            <LiveProjectCard
+            <ProjectCard
               featured
               project={leadLive}
               readCaseStudyLabel={content.readCaseStudyLabel}
@@ -41,7 +41,7 @@ export function ProjectsLayout({ content }: ProjectsLayoutProps) {
           <ul className="mt-16 grid list-none grid-cols-1 items-stretch gap-14 p-0 md:mt-20 md:grid-cols-2 md:gap-x-10 md:gap-y-16">
             {restLive.map((project) => (
               <li key={project.slug} className="flex h-full min-h-0 flex-col">
-                <LiveProjectCard
+                <ProjectCard
                   project={project}
                   readCaseStudyLabel={content.readCaseStudyLabel}
                   viewLiveLabel={content.viewLiveLabel}
@@ -56,17 +56,16 @@ export function ProjectsLayout({ content }: ProjectsLayoutProps) {
         aria-labelledby="in-dev-projects-heading"
         className="border-stroke-default mt-20 border-t pt-16 md:mt-28 md:pt-20"
       >
-        <h2 id="in-dev-projects-heading" className="text-h2 text-foreground">
-          {content.secondaryLabel}
-        </h2>
-        <p className="text-body text-muted mt-3 max-w-prose">
-          <strong className="font-semibold text-foreground">{content.inDevelopmentNoteLead}</strong>{" "}
-          {content.inDevelopmentNote}
-        </p>
+        <ProjectsSectionIntro
+          headingId="in-dev-projects-heading"
+          label={content.inDevelopmentLabel}
+          noteLead={content.inDevelopmentNoteLead}
+          note={content.inDevelopmentNote}
+        />
         <ul className="mt-10 grid list-none grid-cols-1 items-stretch gap-14 p-0 md:mt-12 md:grid-cols-2 md:gap-x-10 md:gap-y-16">
           {content.inDevelopment.map((project) => (
             <li key={project.slug} className="flex h-full min-h-0 flex-col">
-              <LiveProjectCard
+              <ProjectCard
                 project={project}
                 readCaseStudyLabel={content.readCaseStudyLabel}
                 viewLiveLabel={content.viewLiveLabel}

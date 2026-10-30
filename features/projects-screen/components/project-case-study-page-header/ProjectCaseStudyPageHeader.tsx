@@ -12,7 +12,6 @@ export type ProjectCaseStudyPageHeaderProps = Readonly<{
   status: string;
   tagline: string;
   type: string;
-  year: number;
 }>;
 
 export function ProjectCaseStudyPageHeader({
@@ -25,13 +24,10 @@ export function ProjectCaseStudyPageHeader({
   status,
   tagline,
   type,
-  year,
 }: ProjectCaseStudyPageHeaderProps) {
   return (
     <header className="max-w-3xl">
-      <p className={CARD_EYEBROW_CLASS}>
-        {type} · {year}
-      </p>
+      <p className={CARD_EYEBROW_CLASS}>{type}</p>
       <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
         <h1 className="text-h1 text-foreground min-w-0 flex-1">{name}</h1>
         <span className={`${CHROME_GRADIENT_STATUS_BADGE} shrink-0`}>{status}</span>

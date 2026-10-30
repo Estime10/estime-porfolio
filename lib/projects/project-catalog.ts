@@ -1,6 +1,6 @@
 /**
- * Live (prod + cover) en tête — ordre portfolio.
- * In-dev = produits en cours, résumé sans image.
+ * Catalogue projets : source de vérité structurelle (tier, URLs, covers, études).
+ * Les textes marketing vivent dans i18n ProjectsScreen.
  */
 export const LIVE_PROJECT_SLUGS = [
   "kozy-antwerp",
@@ -18,12 +18,7 @@ export const IN_DEVELOPMENT_PROJECT_SLUGS = [
   "shadow",
 ] as const;
 
-/** @deprecated Prefer LIVE / IN_DEVELOPMENT — alias listing historique. */
-export const FEATURED_PROJECT_SLUGS = LIVE_PROJECT_SLUGS;
-/** @deprecated Prefer LIVE / IN_DEVELOPMENT */
-export const SECONDARY_PROJECT_SLUGS = IN_DEVELOPMENT_PROJECT_SLUGS;
-
-/** Pages `/projects/[slug]` — études de cas live (+ legacy in-dev encore routées). */
+/** Pages `/projects/[slug]` — aligné sur `hasCaseStudy` du catalogue. */
 export const CASE_STUDY_PROJECT_SLUGS = [
   "kozy-antwerp",
   "nana",
@@ -41,11 +36,8 @@ export const PROJECT_SLUGS = [...LIVE_PROJECT_SLUGS, ...IN_DEVELOPMENT_PROJECT_S
 
 export type LiveProjectSlug = (typeof LIVE_PROJECT_SLUGS)[number];
 export type InDevelopmentProjectSlug = (typeof IN_DEVELOPMENT_PROJECT_SLUGS)[number];
-export type FeaturedProjectSlug = LiveProjectSlug;
-export type SecondaryProjectSlug = InDevelopmentProjectSlug;
 export type CaseStudyProjectSlug = (typeof CASE_STUDY_PROJECT_SLUGS)[number];
 export type ProjectSlug = (typeof PROJECT_SLUGS)[number];
-
 export type ProjectTier = "live" | "in-development";
 
 export type ProjectCoverImage = Readonly<{
@@ -58,6 +50,7 @@ export type ProjectCoverImage = Readonly<{
 export type ProjectCatalogEntry = Readonly<{
   coverImage?: ProjectCoverImage;
   hasCaseStudy: boolean;
+  /** Présent uniquement pour les projets live publiés. */
   liveUrl?: string;
   slug: ProjectSlug;
   tier: ProjectTier;
@@ -157,21 +150,18 @@ export const PROJECT_CATALOG: readonly ProjectCatalogEntry[] = [
     tier: "in-development",
     year: 2026,
     hasCaseStudy: true,
-    liveUrl: "https://spill-crumb-v1.vercel.app",
   },
   {
     slug: "ttc-v0",
     tier: "in-development",
     year: 2026,
     hasCaseStudy: true,
-    liveUrl: "https://take-the-crown-v001.vercel.app",
   },
   {
     slug: "fleetscan",
     tier: "in-development",
     year: 2026,
     hasCaseStudy: true,
-    liveUrl: "https://fleet-scan-v1.vercel.app",
   },
   {
     slug: "shadow",
@@ -195,14 +185,4 @@ export function getLiveProjects(): readonly ProjectCatalogEntry[] {
 
 export function getInDevelopmentProjects(): readonly ProjectCatalogEntry[] {
   return PROJECT_CATALOG.filter((item) => item.tier === "in-development");
-}
-
-/** @deprecated Prefer getLiveProjects */
-export function getFeaturedProjects(): readonly ProjectCatalogEntry[] {
-  return getLiveProjects();
-}
-
-/** @deprecated Prefer getInDevelopmentProjects */
-export function getSecondaryProjects(): readonly ProjectCatalogEntry[] {
-  return getInDevelopmentProjects();
 }

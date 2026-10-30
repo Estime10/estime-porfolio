@@ -1,20 +1,15 @@
 import type { ProjectCoverImage, ProjectSlug } from "@/lib/projects/project-catalog";
 
+/** Données affichées sur une card listing (live ou in-dev). */
 export type ProjectCardViewModel = Readonly<{
   slug: ProjectSlug;
   name: string;
   tagline: string;
   type: string;
-  status: string;
-  year: number;
   summary: string;
-  highlights: readonly string[];
-  tags: readonly string[];
-  stack: readonly string[];
   liveUrl?: string;
   caseStudyHref?: string;
   coverImage?: ProjectCoverImage;
-  tier: "live" | "in-development";
 }>;
 
 export type ProjectCaseStudySectionViewModel = Readonly<{
@@ -37,7 +32,6 @@ export type ProjectCaseStudyViewModel = Readonly<{
   tagline: string;
   type: string;
   status: string;
-  year: number;
   role: string;
   focusTags: readonly string[];
   stack: readonly string[];
@@ -54,22 +48,15 @@ export type ProjectCaseStudyViewModel = Readonly<{
 export type ProjectsContentViewModel = Readonly<{
   title: string;
   introParagraphs: readonly string[];
-  featuredLabel: string;
-  featuredNoteLead: string;
-  featuredNote: string;
-  secondaryLabel: string;
+  liveLabel: string;
+  liveNoteLead: string;
+  liveNote: string;
+  inDevelopmentLabel: string;
   inDevelopmentNoteLead: string;
   inDevelopmentNote: string;
   selectionNote: string;
   readCaseStudyLabel: string;
   viewLiveLabel: string;
-  tagLabels: Readonly<{
-    focus: string;
-    stack: string;
-  }>;
-  featured: readonly ProjectCardViewModel[];
-  secondary: readonly ProjectCardViewModel[];
-  /** Alias sémantiques (live / in-dev). */
   live: readonly ProjectCardViewModel[];
   inDevelopment: readonly ProjectCardViewModel[];
 }>;

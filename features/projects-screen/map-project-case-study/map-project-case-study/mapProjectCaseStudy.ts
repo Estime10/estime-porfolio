@@ -53,7 +53,6 @@ export function mapProjectCaseStudy(
     tagline: t(`${slug}.tagline`),
     type: t(`${slug}.type`),
     status: t(`${slug}.status`),
-    year: Number(t(`${slug}.year`)),
     role: t(`${slug}.role`),
     focusTags: asTranslationStringArray(t.raw(focusTagsKey) as object, focusTagsKey),
     stack: asTranslationStringArray(t.raw(stackKey) as object, stackKey),
