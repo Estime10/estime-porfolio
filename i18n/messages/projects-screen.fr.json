@@ -29,7 +29,7 @@
       "name": "FleetScan",
       "tagline": "Signalement d'incidents flotte via QR et plaque",
       "type": "Application métier B2B",
-      "status": "En cours",
+      "status": "En développement",
       "summary": "Outil terrain mobile-first pour scanner un camion, qualifier un incident rapidement et remonter un signal exploitable côté manager.",
       "tags": ["B2B Ops", "Workflow terrain", "RLS", "MVP pilotable"],
       "highlights": [
@@ -43,7 +43,7 @@
       "name": "Shadow",
       "tagline": "Messagerie privée, calendrier partagé et PWA",
       "type": "Application web privée",
-      "status": "En cours",
+      "status": "En développement",
       "summary": "Produit privé installable pour un cercle restreint : messagerie éphémère, groupes, événements et présence mobile fiable.",
       "tags": ["Produit privé", "PWA", "Realtime", "Sécurité app"],
       "highlights": [
@@ -57,7 +57,7 @@
       "name": "Spill Crumb",
       "tagline": "Réseau social anonyme · feed, réactions et notifications temps réel",
       "type": "Application web sociale",
-      "status": "MVP en production",
+      "status": "En ligne",
       "summary": "Plateforme de confessions anonymes : feed paginé, profils pseudonymes, interactions temps réel, anti-spam et back-office admin complet.",
       "tags": ["Feed social", "Realtime", "Anti-spam", "Admin ops"],
       "highlights": [
@@ -81,7 +81,7 @@
       "name": "Jikowood",
       "tagline": "Refonte vitrine premium pour artisan menuisier",
       "type": "Site vitrine",
-      "status": "Déployé (Vercel)",
+      "status": "En ligne",
       "summary": "Expérience immersive pour un atelier menuisier haut de gamme : splash cinématique, galerie fullscreen et parcours trilingue pensé conversion, sans backend.",
       "tags": ["Vitrine premium", "Galerie immersive", "i18n BE", "Craft frontend"],
       "highlights": [
@@ -95,13 +95,13 @@
       "name": "Enna Consulting",
       "tagline": "Consulting RH · talent, diversité, marque employeur",
       "type": "Site vitrine B2B",
-      "status": "Release 1.0.0",
+      "status": "En ligne",
       "summary": "One-pager commercial trilingue (nl / fr / en) en production pour convertir en contact qualifié, splash GSAP, sections localisées et formulaire EmailJS.",
-      "tags": ["Prod", "B2B RH", "i18n BE", "Lead gen"],
+      "tags": ["En ligne", "B2B RH", "i18n BE", "Lead gen"],
       "highlights": [
         "i18n nl / fr / en avec routes section et hreflang",
         "Contact EmailJS + Zod + react-hook-form",
-        "Splash GSAP et preuve sociale (témoignages mock assumés)"
+        "Splash GSAP et preuve sociale (témoignages clients)"
       ],
       "stack": ["Next.js 16", "Tailwind 4", "i18n", "GSAP", "EmailJS", "Zod", "Vitest"]
     },
@@ -109,9 +109,9 @@
       "name": "Maxwel Jones",
       "tagline": "Holding corporate · Learn, Earn, Return",
       "type": "Site corporate",
-      "status": "Release 1.0.0",
+      "status": "En ligne",
       "summary": "One-page institutionnelle FR/EN : philosophie Learn/Earn/Return, réseau consultants et contact Roundtable (Web3Forms), booking UI prévu 2027.",
-      "tags": ["Prod", "Corporate", "Réseau", "Booking UI 2027"],
+      "tags": ["En ligne", "Corporate", "Réseau", "Booking UI 2027"],
       "highlights": [
         "Architecture features/ documentée avec sections partagées",
         "Network slide et annuaire membres",
@@ -123,9 +123,9 @@
       "name": "Hors Cadre",
       "tagline": "Portfolio photographe premium · galerie immersive et atelier privé",
       "type": "Site créatif",
-      "status": "Release 1.0.0",
+      "status": "En ligne",
       "summary": "Mono-admin en production : galerie publique ISR (masonry, téléchargement) et atelier privé (upload WebP massif, publication, drag & drop) sur Supabase.",
-      "tags": ["Prod", "Galerie Supabase", "Atelier admin", "Liquid Glass"],
+      "tags": ["En ligne", "Galerie Supabase", "Atelier admin", "Liquid Glass"],
       "highlights": [
         "Atelier complet : CRUD albums, upload jusqu'à 1 500 photos, aperçu public fidèle",
         "Supabase Auth/RLS/Storage, ISR, SEO et segments admin dissimulés",
@@ -146,9 +146,9 @@
       "name": "Purpose Sport",
       "tagline": "Agence de management sportif · focus basket",
       "type": "Site vitrine",
-      "status": "Release 1.0.0",
+      "status": "En ligne",
       "summary": "Vitrine data-driven en production : roster de 12 athlètes, fiches riches, vidéo intégrée et parcours contact orienté recrutement.",
-      "tags": ["Prod", "Sport business", "Roster", "Vidéo"],
+      "tags": ["En ligne", "Sport business", "Roster", "Vidéo"],
       "highlights": [
         "Roster structuré TypeScript (stats, carrières, awards)",
         "react-player + Vercel Analytics",
@@ -160,7 +160,7 @@
       "name": "Take The Crown (3x3)",
       "tagline": "Infrastructure numérique du basket 3x3 : identité, events, classements",
       "type": "Plateforme sportive SaaS",
-      "status": "Release 1.0.0",
+      "status": "En ligne",
       "summary": "Produit domain-driven pour centraliser joueurs, équipes, organisateurs et fans du 3x3. Doc métier large (Identity, Competition, Ranking…) ; code MVP centré sur la tranche Event → Match vérifié → Ranking, avec AuthZ en profondeur.",
       "tags": ["3x3", "Domain-first", "Events", "Supabase"],
       "highlights": [
@@ -192,9 +192,9 @@
     "fleetscan": {
       "focusTags": ["B2B terrain", "Fiabilité données", "Rôles métier", "MVP industrialisable"],
       "name": "FleetScan",
-      "tagline": "Incident management flotte, pensé pour le terrain avant le back-office",
+      "tagline": "Gestion d’incidents flotte, pensée pour le terrain avant le back-office",
       "type": "Application métier B2B",
-      "status": "En cours",
+      "status": "En développement",
       "year": "2026",
       "role": "J'ai cadré le produit avec une logique terrain-first : réduire le temps de signalement, fiabiliser les données et rendre la vue manager actionnable sans reporting manuel. Mon mandat couvre aussi l'architecture frontend, la validation des données et la sécurité d'accès.",
       "stack": [
@@ -246,7 +246,7 @@
           ],
           "bullets": [
             "Routes segmentées par contexte d'accès public et protégé",
-            "Schémas Zod partagés pour input, normalisation et persistence",
+            "Schémas Zod partagés pour saisie, normalisation et persistance",
             "RLS PostgreSQL alignée sur les rôles admin, manager et conducteur",
             "Tests unitaires orientés logique métier critique et cas limites"
           ]
@@ -281,7 +281,7 @@
       "name": "Shadow",
       "tagline": "Messagerie privée et calendrier partagé pour un cercle restreint",
       "type": "Application web privée",
-      "status": "En cours",
+      "status": "En développement",
       "year": "2026",
       "role": "J'ai pris le mandat fullstack pour transformer un besoin de coordination privée en produit installable et fiable. J'ai conçu les flux cœur, l'architecture de données et le cadre sécurité nécessaire à un usage quotidien.",
       "stack": [
@@ -346,7 +346,7 @@
           ],
           "bullets": [
             "Limiter le temps réel aux interactions à impact immédiat",
-            "Garder un modèle d'autorisations explicite et audit-able",
+            "Garder un modèle d’autorisations explicite et auditable",
             "Tester les parcours critiques d'auth et de navigation en E2E",
             "Reporter les features non essentielles tant que le noyau n'est pas stable"
           ]
@@ -367,7 +367,7 @@
       "name": "Spill Crumb",
       "tagline": "Confessions anonymes avec feed temps réel et gouvernance plateforme",
       "type": "Application web sociale",
-      "status": "MVP en production",
+      "status": "En ligne",
       "year": "2026",
       "role": "J'ai architecturé et développé la plateforme fullstack : auth, feed paginé, stores synchronisés, notifications realtime, anti-spam, admin sponsoring/logs et pipeline CI/E2E complet.",
       "stack": [
@@ -407,7 +407,7 @@
           "title": "Contexte produit",
           "tags": ["Anonymat", "Communauté", "Soft launch"],
           "paragraphs": [
-            "Spill The Crumbs est disponible en fr / en / es, responsive mobile-tablette-desktop, déployé sur Vercel depuis main.",
+            "Spill Crumb est disponible en fr / en / es, responsive mobile-tablette-desktop, déployé sur Vercel depuis main.",
             "16 modules produit couvrent auth, onboarding, home, posts, profil, notifications, settings, add-new-post et admin.",
             "Le MVP est production-ready : auth email/password, backend stable, outils admin opérationnels, avec limitations assumées (reporting posts, reset password) en roadmap."
           ]
@@ -456,7 +456,7 @@
       "name": "Jikowood",
       "tagline": "Transformer une vitrine artisan en expérience premium crédible",
       "type": "Site vitrine",
-      "status": "Déployé (Vercel)",
+      "status": "En ligne",
       "year": "2026",
       "role": "J'ai conçu et livré la refonte frontend de bout en bout : direction d'expérience (splash, hero, galerie), architecture feature-first, i18n fr/en/nl, motion GSAP avec reduced-motion, et filet qualité Vitest/Playwright.",
       "stack": [
@@ -543,7 +543,7 @@
       "name": "Take The Crown (3x3)",
       "tagline": "Modéliser le sport avant le code, puis shipper une tranche fiable",
       "type": "Plateforme sportive SaaS",
-      "status": "Release 1.0.0",
+      "status": "En ligne",
       "year": "2026",
       "role": "J'ai posé la vision produit 3x3 (Identity, Competition, Reputation), la documentation domaine/architecture et l'implémentation MVP : auth Player/Organizer, events Geoapify, matchs vérifiés et ranking World/Country sur Next.js + Supabase.",
       "stack": [
@@ -613,7 +613,7 @@
           "bullets": [
             "Self-report de scores abandonné pour protéger le ranking",
             "Rate-limit in-memory acceptable au MVP, Redis plus tard si multi-instance",
-            "CSP enforce différée (P2) après inventaire des assets",
+            "Politique de sécurité navigateur finalisée après inventaire des assets",
             "Search liste : soft match place_id ou proximité ~1,5 km"
           ]
         },
@@ -629,11 +629,11 @@
       }
     },
     "enna": {
-      "focusTags": ["B2B RH", "i18n belge", "Conversion", "Prod"],
+      "focusTags": ["B2B RH", "i18n belge", "Conversion", "En ligne"],
       "name": "Enna Consulting",
-      "tagline": "Rendre l'offre RH lisible et convertissante en Belgique",
+      "tagline": "Rendre l’offre RH lisible et orientée conversion en Belgique",
       "type": "Site vitrine B2B",
-      "status": "Release 1.0.0",
+      "status": "En ligne",
       "year": "2026",
       "role": "J'ai livré la vitrine B2B de bout en bout : i18n belge, parcours conversion, motion et contact EmailJS en production sur ennabv.be.",
       "stack": [
@@ -694,7 +694,7 @@
           "tags": ["Périmètre", "Preuve sociale", "Livraison"],
           "paragraphs": [
             "Pas de CMS ni de backend métier : le contenu est stable et la priorité était la mise en ligne.",
-            "Les témoignages mock sont explicites, mieux qu'une preuve sociale inventée présentée comme réelle."
+            "La preuve sociale reste factuelle : seuls les retours réellement obtenus sont mis en avant."
           ],
           "bullets": [
             "EmailJS pour le contact (pas Formspree)",
@@ -714,11 +714,11 @@
       }
     },
     "maxweljones": {
-      "focusTags": ["Corporate", "Réseau", "i18n", "Prod"],
+      "focusTags": ["Corporate", "Réseau", "i18n", "En ligne"],
       "name": "Maxwel Jones",
       "tagline": "Donner une présence crédible à une holding Learn / Earn / Return",
       "type": "Site corporate",
-      "status": "Release 1.0.0",
+      "status": "En ligne",
       "year": "2026",
       "role": "J'ai conçu et livré le site corporate : structure features/, i18n FR/EN, réseau consultants, contact Web3Forms et préparation booking 2027.",
       "stack": ["Next.js 15", "React 19", "Tailwind 4", "next-intl", "GSAP", "Web3Forms"],
@@ -779,7 +779,7 @@
         },
         "execution": {
           "title": "Exécution et suite",
-          "tags": ["Prod", "SEO", "Suite booking"],
+          "tags": ["En ligne", "SEO", "Suite booking"],
           "paragraphs": [
             "Live sur https://www.maxweljones.com.",
             "Prochaine étape naturelle : activer le booking réel et étoffer le réseau si le business le demande.",
@@ -793,7 +793,7 @@
       "name": "Hors Cadre",
       "tagline": "Immersion publique et atelier privé pour un photographe mono-admin",
       "type": "Site créatif",
-      "status": "Release 1.0.0",
+      "status": "En ligne",
       "year": "2026",
       "role": "J'ai conçu et livré le produit complet : galerie publique, atelier Supabase, perf/SEO/i18n et filet de tests jusqu'à la mise en production.",
       "stack": [
@@ -875,11 +875,11 @@
       }
     },
     "purpose-sport": {
-      "focusTags": ["Roster", "Sport business", "Vidéo", "Prod"],
+      "focusTags": ["Roster", "Sport business", "Vidéo", "En ligne"],
       "name": "Purpose Sport",
       "tagline": "Présenter un roster basket riche sans noyer le recruteur",
       "type": "Site vitrine",
-      "status": "Release 1.0.0",
+      "status": "En ligne",
       "year": "2025",
       "role": "J'ai livré la vitrine agence : roster data-driven, fiches joueurs, vidéos, i18n et contact en production.",
       "stack": [
@@ -949,7 +949,7 @@
         },
         "execution": {
           "title": "Exécution et suite",
-          "tags": ["Release 1.0.0", "Prod"],
+          "tags": ["En ligne", "En ligne"],
           "paragraphs": [
             "Live sur https://purpose-sport.com.",
             "Suite utile : sécuriser la clé contact, compléter les médias et éventuellement moderniser l'archi si le produit évolue.",

@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
   experimental: {
     webpackMemoryOptimizations: true,
   },
+  poweredByHeader: false,
+  rewrites() {
+    return [{ source: "/favicon.ico", destination: "/icon" }];
+  },
 };
 
 export default withNextIntl(nextConfig);

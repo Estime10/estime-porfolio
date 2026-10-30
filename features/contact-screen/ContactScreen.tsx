@@ -6,12 +6,7 @@ import { getTranslations } from "next-intl/server";
 
 export async function ContactScreen() {
   const t = await getTranslations("ContactScreen");
-  const tHero = await getTranslations("HomeScreen.hero");
-  const content = mapContactContent(
-    t,
-    mapContactStripLabels(tHero),
-    getContactFormSubmissionConfig(),
-  );
+  const content = mapContactContent(t, mapContactStripLabels(t), getContactFormSubmissionConfig());
 
   return <ContactLayout content={content} />;
 }

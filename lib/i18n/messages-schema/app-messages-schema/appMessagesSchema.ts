@@ -63,10 +63,10 @@ export const appMessagesSchema = z.object({
     hero: z.object({
       name: z.string().min(1),
       role: z.string().min(1),
+      availability: z.string().min(1),
       intro: z.string().min(1),
       ctaStartProject: z.string().min(1),
       ctaViewProjects: z.string().min(1),
-      contactStrip: contactStripLabelsSchema,
     }),
     meta: pageMetaSchema,
   }),
@@ -113,6 +113,7 @@ export const appMessagesSchema = z.object({
     intro: z.object({
       paragraphs: translationStringArraySchema,
     }),
+    contactStrip: contactStripLabelsSchema,
     form: z.object({
       intent: z.object({
         legend: z.string().min(1),
@@ -137,6 +138,17 @@ export const appMessagesSchema = z.object({
       }),
       fields: createSlugRecordSchema(CONTACT_FIELD_IDS, contactFieldCopySchema),
     }),
+    meta: pageMetaSchema,
+  }),
+  ThemeToggle: z.object({
+    light: z.string().min(1),
+    dark: z.string().min(1),
+  }),
+  NotFound: z.object({
+    title: z.string().min(1),
+    description: z.string().min(1),
+    viewProjects: z.string().min(1),
+    contact: z.string().min(1),
     meta: pageMetaSchema,
   }),
 });

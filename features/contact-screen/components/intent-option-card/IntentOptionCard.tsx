@@ -4,6 +4,7 @@ import {
   CONTACT_INTENT_DEFAULT_SURFACE,
   CONTACT_INTENT_SELECTED_SURFACE,
 } from "@/features/contact-screen/lib/contact-intent-surface-classes/contactIntentSurfaceClasses";
+import { CARD_SUPPORT_CLASS, CARD_TITLE_CLASS } from "@/lib/ui/cardTypography";
 
 export type IntentOptionCardProps = Readonly<{
   description: string;
@@ -37,10 +38,8 @@ export function IntentOptionCard({
         type="radio"
         value={value}
       />
-      <span className="pointer-events-none text-body text-foreground font-medium text-balance max-sm:text-small max-sm:leading-snug">
-        {label}
-      </span>
-      <span className="text-small text-muted pointer-events-none leading-snug text-pretty max-sm:text-xs">
+      <span className={`pointer-events-none ${CARD_TITLE_CLASS} max-sm:text-small`}>{label}</span>
+      <span className={`pointer-events-none ${CARD_SUPPORT_CLASS} max-sm:text-xs`}>
         {description}
       </span>
     </label>

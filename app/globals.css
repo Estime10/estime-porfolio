@@ -20,7 +20,7 @@
   --stroke-strong: rgb(15 23 42 / 0.12);
   --color-text-primary: #111827;
   --color-text-secondary: #4b5563;
-  --color-text-tertiary: #6b7280;
+  --color-text-tertiary: #5b6472;
   /* Accent « encre ardoise » : profond mais neutre */
   --accent: #2a3342;
   --accent-hover: #1e2632;
@@ -180,7 +180,7 @@ html.dark {
   --stroke-strong: rgb(248 250 252 / 0.16);
   --color-text-primary: #e8ecf1;
   --color-text-secondary: #9ca3af;
-  --color-text-tertiary: #6b7280;
+  --color-text-tertiary: #9ca3af;
   /* Accent « encre ardoise » inversé pour le mode sombre */
   --accent: #d4dae3;
   --accent-hover: #eef1f5;

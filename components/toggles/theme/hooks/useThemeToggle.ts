@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useRef, useSyncExternalStore } from "react";
+import { useTranslations } from "next-intl";
 import { animateThemeTransition } from "@/lib/animation";
 import type { ThemeMode } from "@/lib/constants";
 import { getServerThemeSnapshot, getThemeFromDocument, subscribeTheme } from "@/lib/theme";
@@ -13,6 +14,7 @@ export type UseThemeToggleReturn = {
 };
 
 export function useThemeToggle(): UseThemeToggleReturn {
+  const t = useTranslations("ThemeToggle");
   const mode = useSyncExternalStore(subscribeTheme, getThemeFromDocument, getServerThemeSnapshot);
 
   const transitionLock = useRef(false);
@@ -31,7 +33,7 @@ export function useThemeToggle(): UseThemeToggleReturn {
     });
   }, [mode]);
 
-  const label = mode === "dark" ? "Passer au thème clair" : "Passer au thème sombre";
+  const label = mode === "dark" ? t("light") : t("dark");
 
   return {
     mode,

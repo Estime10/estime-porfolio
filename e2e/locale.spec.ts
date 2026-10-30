@@ -5,9 +5,9 @@ test.describe("locale", () => {
   test("affiche le contenu en anglais via ?lang=en", async ({ page }) => {
     await visitMainRoute(page, "/home", "en");
 
-    await expect(page.getByRole("button", { name: "Start a project" })).toBeVisible();
+    await expect(page.getByRole("link", { name: "Start a project" })).toBeVisible();
     await expect(
-      page.getByRole("button", { name: /Choose language \(currently English\)/i }),
+      page.getByRole("button", { name: /EN, choose language \(currently English\)/i }),
     ).toBeVisible();
   });
 

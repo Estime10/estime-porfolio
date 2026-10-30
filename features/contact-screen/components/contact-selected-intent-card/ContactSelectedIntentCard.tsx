@@ -1,6 +1,7 @@
 import { CtaOutlineButton } from "@/components/button";
 import { CONTACT_INTENT_SELECTED_SURFACE } from "@/features/contact-screen/lib/contact-intent-surface-classes/contactIntentSurfaceClasses";
 import type { ContactIntentOptionViewModel } from "@/features/contact-screen/types/contactFormViewModel";
+import { CARD_SUPPORT_CLASS, CARD_TITLE_CLASS } from "@/lib/ui/cardTypography";
 
 export type ContactSelectedIntentCardProps = Readonly<{
   cancelLabel: string;
@@ -26,10 +27,8 @@ export function ContactSelectedIntentCard({
           CONTACT_INTENT_SELECTED_SURFACE,
         ].join(" ")}
       >
-        <p className="text-body text-foreground font-medium text-balance max-sm:text-small max-sm:leading-snug">
-          {intent.label}
-        </p>
-        <p className="text-small text-muted mt-2 leading-snug text-pretty max-sm:mt-1.5 max-sm:text-xs">
+        <p className={`${CARD_TITLE_CLASS} max-sm:text-small`}>{intent.label}</p>
+        <p className={`${CARD_SUPPORT_CLASS} mt-2 max-sm:mt-1.5 max-sm:text-xs`}>
           {intent.description}
         </p>
       </div>

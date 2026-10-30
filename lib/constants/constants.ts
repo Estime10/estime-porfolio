@@ -224,7 +224,7 @@ export const LIGHT_THEME_PALETTE: Record<ThemeAnimatedCssVar, string> = {
   /** Texte secondaire */
   "--color-text-secondary": "#4b5563",
   /** Texte tertiaire */
-  "--color-text-tertiary": "#6b7280",
+  "--color-text-tertiary": "#5b6472",
   /** Accent principal */
   "--accent": "#2a3342",
   /** Accent au survol */
@@ -260,7 +260,7 @@ export const DARK_THEME_PALETTE: Record<ThemeAnimatedCssVar, string> = {
   /** Texte secondaire (sombre) */
   "--color-text-secondary": "#9ca3af",
   /** Texte tertiaire (sombre) */
-  "--color-text-tertiary": "#6b7280",
+  "--color-text-tertiary": "#9ca3af",
   /** Accent principal (sombre) */
   "--accent": "#d4dae3",
   /** Accent au survol (sombre) */

@@ -13,6 +13,7 @@ export async function generateMetadata() {
     description: t("description"),
     pathname: HOME_ROUTE_PATH,
     locale,
+    titleAbsolute: true,
   });
 }
 

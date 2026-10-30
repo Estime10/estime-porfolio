@@ -2,6 +2,7 @@ import { CtaGradientLink } from "@/components/button";
 import { ProjectTagList } from "@/features/projects-screen/components/project-tag-list/ProjectTagList";
 import type { ProjectCardViewModel } from "@/features/projects-screen/types/projectViewModel";
 import { CHROME_GRADIENT_STATUS_BADGE } from "@/lib/ui/brandChrome";
+import { CARD_EYEBROW_CLASS, CARD_SUPPORT_CLASS, CARD_TITLE_CLASS } from "@/lib/ui/cardTypography";
 
 export type ProjectCardProps = Readonly<{
   project: ProjectCardViewModel;
@@ -26,11 +27,11 @@ export function ProjectCard({
     <article className="ui-card-surface flex h-full flex-col">
       <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-x-4 gap-y-2">
         <div className="min-w-0">
-          <p className="text-label text-tertiary">
+          <p className={CARD_EYEBROW_CLASS}>
             {project.type} · {project.year}
           </p>
-          <h2 className="text-h3 text-foreground mt-2">{project.name}</h2>
-          <p className="text-body text-muted mt-2">{project.tagline}</p>
+          <h2 className={`${CARD_TITLE_CLASS} mt-2`}>{project.name}</h2>
+          <p className={`${CARD_SUPPORT_CLASS} mt-2`}>{project.tagline}</p>
         </div>
         <span
           className={`${CHROME_GRADIENT_STATUS_BADGE} max-w-[8.5rem] shrink-0 justify-self-end text-right leading-snug`}

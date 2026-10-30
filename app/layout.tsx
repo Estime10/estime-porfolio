@@ -1,9 +1,8 @@
 import { IBM_Plex_Mono, Instrument_Sans } from "next/font/google";
-import Script from "next/script";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
+import { ThemeInitScript } from "@/components/toggles/theme/ThemeInitScript";
 import { getRootMetadata } from "@/lib/metadata/get-root-metadata/getRootMetadata";
-import { getThemeInitInlineScript } from "@/lib/theme";
 import "./globals.css";
 
 const fontSans = Instrument_Sans({
@@ -21,7 +20,7 @@ const fontMono = IBM_Plex_Mono({
   adjustFontFallback: true,
 });
 
-/** Fallback pour les routes hors `(main)` (ex. splash `/`). Les pages du groupe `(main)` définissent leur propre métadonnée dans `app/(main)/layout.tsx`. */
+/** Fallback pour les routes hors `(main)`. Les pages du groupe `(main)` définissent leur propre métadonnée. */
 export const metadata = getRootMetadata({
   title: {
     default: "Estime Vangu",
@@ -41,14 +40,10 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       className={`${fontSans.variable} ${fontMono.variable} h-full antialiased`}
     >
+      <head>
+        <ThemeInitScript />
+      </head>
       <body className="bg-background text-foreground min-h-full flex flex-col font-sans">
-        <Script
-          id="theme-init"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: getThemeInitInlineScript(),
-          }}
-        />
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>

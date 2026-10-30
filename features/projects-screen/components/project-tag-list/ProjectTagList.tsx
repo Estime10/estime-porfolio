@@ -1,4 +1,4 @@
-import { CHROME_GRADIENT_PROJECT_TAG, CHROME_SURFACE_RADIUS_IMPORTANT } from "@/lib/ui/brandChrome";
+import { CHROME_OUTLINE_BORDER, CHROME_SURFACE_RADIUS_IMPORTANT } from "@/lib/ui/brandChrome";
 
 export type ProjectTagVariant = "stack" | "focus";
 
@@ -11,7 +11,8 @@ export type ProjectTagListProps = Readonly<{
 
 const STACK_TAG_CLASS = `text-label text-secondary bg-bg-muted ${CHROME_SURFACE_RADIUS_IMPORTANT} px-3 py-1 leading-snug`;
 
-const FOCUS_TAG_CLASS = CHROME_GRADIENT_PROJECT_TAG;
+/** Tags plats — distincts des CTA glossy. */
+const FOCUS_TAG_CLASS = `text-label text-secondary bg-surface ${CHROME_SURFACE_RADIUS_IMPORTANT} ${CHROME_OUTLINE_BORDER} px-3 py-1 leading-snug`;
 
 export function ProjectTagList({
   ariaLabel,

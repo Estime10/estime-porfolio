@@ -6,14 +6,16 @@ export function getContactChannelLabel(
   channelId: PublicContactChannelId,
 ): string {
   switch (channelId) {
-    case "instagram":
-      return labels.instagramLabel;
     case "linkedin":
       return labels.linkedinLabel;
+    case "github":
+      return labels.githubLabel;
     case "email":
       return labels.emailLabel;
     case "phone":
       return labels.phoneLabel;
+    case "instagram":
+      return labels.instagramLabel;
     default: {
       const _exhaustive: never = channelId;
       return _exhaustive;

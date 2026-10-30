@@ -22,21 +22,15 @@
   "HomeScreen": {
     "hero": {
       "name": "Estime Vangu",
-      "role": "Frontend Engineer with a product mindset",
+      "role": "Product-minded frontend engineer",
       "intro": "I build modern web products starting from the frontend, combining UX, product logic, and technical execution into usable, scalable applications.",
       "ctaStartProject": "Start a project",
       "ctaViewProjects": "View projects",
-      "contactStrip": {
-        "ariaLabel": "Ways to reach me",
-        "instagramLabel": "Instagram",
-        "linkedinLabel": "LinkedIn",
-        "emailLabel": "Email",
-        "phoneLabel": "Phone"
-      }
+      "availability": "Independent Next.js / Supabase developer in Brussels. Available for freelance missions and full-time roles, on-site or remote. FR · EN · NL."
     },
     "meta": {
-      "title": "Home",
-      "description": "Estime Vangu, Frontend Engineer oriented product. Web products from the frontend: UX, product logic, scalable delivery."
+      "title": "Estime Vangu · Freelance Next.js developer in Brussels",
+      "description": "Independent Next.js and Supabase developer in Brussels. Available for freelance and full-time roles, on-site or remote. Case studies and shipped web products."
     }
   },
   "ProjectsScreen": {
@@ -63,14 +57,14 @@
     },
     "meta": {
       "title": "Projects",
-      "description": "Selected case studies and shipped work - Estime Vangu."
+      "description": "Next.js and Supabase case studies: B2B products, client sites and shipped MVPs. A selection focused on outcomes, architecture and frontend execution."
     },
     "items": {
       "fleetscan": {
         "name": "FleetScan",
         "tagline": "Fleet incident reporting through QR and plate scan",
         "type": "B2B operations application",
-        "status": "In progress",
+        "status": "In development",
         "tags": ["Field operations", "Incident workflow", "Fleet visibility"],
         "summary": "A mobile-first field tool to identify a truck and report fleet status in seconds: damage, compliance, and manager visibility.",
         "highlights": [
@@ -93,7 +87,7 @@
         "name": "Shadow",
         "tagline": "Private messaging, shared calendar, and installable app",
         "type": "Private web application",
-        "status": "In progress",
+        "status": "In development",
         "tags": ["Private communication", "Realtime", "PWA"],
         "summary": "An installable app for a restricted group: disappearing messages, group threads, events, and notifications.",
         "highlights": [
@@ -115,7 +109,7 @@
         "name": "Spill Crumb",
         "tagline": "Anonymous social network · feed, reactions, and realtime notifications",
         "type": "Social web application",
-        "status": "MVP in production",
+        "status": "Live",
         "summary": "Anonymous confession platform: paginated feed, pseudonym profiles, realtime interactions, anti-spam controls, and full admin back-office.",
         "tags": ["Social feed", "Realtime", "Anti-spam", "Admin ops"],
         "highlights": [
@@ -139,7 +133,7 @@
         "name": "Jikowood",
         "tagline": "Premium showcase rebuild for a high-end carpenter",
         "type": "Marketing website",
-        "status": "Deployed (Vercel)",
+        "status": "Live",
         "summary": "Immersive experience for a premium woodworking atelier: cinematic splash, fullscreen gallery, and a conversion-oriented trilingual journey, no backend.",
         "tags": ["Premium showcase", "Immersive gallery", "BE i18n", "Frontend craft"],
         "highlights": [
@@ -153,13 +147,13 @@
         "name": "Enna Consulting",
         "tagline": "HR consulting · talent, diversity, employer brand",
         "type": "B2B marketing site",
-        "status": "Release 1.0.0",
+        "status": "Live",
         "summary": "Trilingual commercial one-pager (nl / fr / en) in production to convert into qualified contact, GSAP splash, localized sections, EmailJS form.",
-        "tags": ["Prod", "B2B HR", "BE i18n", "Lead gen"],
+        "tags": ["Live", "B2B HR", "BE i18n", "Lead gen"],
         "highlights": [
           "nl / fr / en i18n with section routes and hreflang",
           "EmailJS contact + Zod + react-hook-form",
-          "GSAP splash and social proof (assumed mock testimonials)"
+          "GSAP splash and social proof (client testimonials)"
         ],
         "stack": ["Next.js 16", "Tailwind 4", "i18n", "GSAP", "EmailJS", "Zod", "Vitest"]
       },
@@ -167,9 +161,9 @@
         "name": "Maxwel Jones",
         "tagline": "Corporate holding · Learn, Earn, Return",
         "type": "Corporate site",
-        "status": "Release 1.0.0",
+        "status": "Live",
         "summary": "Institutional FR/EN one-pager: Learn/Earn/Return philosophy, consultant network, and Roundtable contact (Web3Forms), booking UI planned for 2027.",
-        "tags": ["Prod", "Corporate", "Network", "Booking UI 2027"],
+        "tags": ["Live", "Corporate", "Network", "Booking UI 2027"],
         "highlights": [
           "Documented features/ architecture with shared sections",
           "Network slide and member directory",
@@ -181,9 +175,9 @@
         "name": "Hors Cadre",
         "tagline": "Premium photographer portfolio · immersive gallery and private atelier",
         "type": "Creative site",
-        "status": "Release 1.0.0",
+        "status": "Live",
         "summary": "Mono-admin in production: public ISR gallery (masonry, download) and private atelier (bulk WebP upload, publish, drag & drop) on Supabase.",
-        "tags": ["Prod", "Supabase gallery", "Admin atelier", "Liquid Glass"],
+        "tags": ["Live", "Supabase gallery", "Admin atelier", "Liquid Glass"],
         "highlights": [
           "Full atelier: album CRUD, upload up to 1,500 photos, faithful public preview",
           "Supabase Auth/RLS/Storage, ISR, SEO, and obscured admin segments",
@@ -204,9 +198,9 @@
         "name": "Purpose Sport",
         "tagline": "Sports management agency · basketball focus",
         "type": "Marketing site",
-        "status": "Release 1.0.0",
+        "status": "Live",
         "summary": "Data-driven showcase in production: 12-athlete roster, rich profiles, embedded video, and recruitment-oriented contact flow.",
-        "tags": ["Prod", "Sports business", "Roster", "Video"],
+        "tags": ["Live", "Sports business", "Roster", "Video"],
         "highlights": [
           "TypeScript-structured roster (stats, careers, awards)",
           "react-player + Vercel Analytics",
@@ -218,7 +212,7 @@
         "name": "Take The Crown (3x3)",
         "tagline": "Digital infrastructure for 3x3 basketball: identity, events, rankings",
         "type": "Sports SaaS platform",
-        "status": "Release 1.0.0",
+        "status": "Live",
         "summary": "Domain-driven product to centralize 3x3 players, teams, organizers, and fans. Broad domain docs (Identity, Competition, Ranking…); MVP code focused on Event → Verified Match → Ranking, with defense-in-depth AuthZ.",
         "tags": ["3x3", "Domain-first", "Events", "Supabase"],
         "highlights": [
@@ -251,7 +245,7 @@
         "name": "FleetScan",
         "tagline": "Fleet incidents, field scan, manager oversight",
         "type": "B2B operations application",
-        "status": "In progress",
+        "status": "In development",
         "year": "2026",
         "role": "Product design, frontend architecture, Supabase integration, authentication, and scan workflow ownership.",
         "focusTags": ["Speed in the field", "Data reliability", "Manager visibility"],
@@ -288,7 +282,7 @@
             "title": "Product context",
             "tags": ["Depot reality", "MVP scope", "Roadmap discipline"],
             "paragraphs": [
-              "FleetScan (scratch_tracker repository) addresses a real depot workflow where speed and clarity matter more than feature volume.",
+              "FleetScan addresses a real depot workflow where speed and clarity matter more than feature volume.",
               "The MVP covers the driver journey plus a staff overview, while the roadmap openly tracks photos, Realtime, and stronger cache strategy."
             ],
             "bullets": [
@@ -342,7 +336,7 @@
         "name": "Shadow",
         "tagline": "Private communication and planning for a closed circle",
         "type": "Private web application",
-        "status": "In progress",
+        "status": "In development",
         "year": "2026",
         "role": "Fullstack implementation on Next.js and Supabase: messaging, calendar workflows, PWA setup, and security hardening.",
         "focusTags": ["Privacy by design", "Realtime experience", "Installable reliability"],
@@ -404,7 +398,7 @@
             "title": "Decisions",
             "tags": ["Security priorities", "Animation restraint", "Performance governance"],
             "paragraphs": [
-              "RLS is treated as the primary security boundary, with known pitfalls documented transparently, including conversation access edge cases.",
+              "RLS is treated as the primary security boundary, with authorization edge cases documented and covered by tests.",
               "Framer Motion interactions are wrapped with reduced-motion handling for sensitive or high-frequency UX moments."
             ],
             "bullets": [
@@ -417,7 +411,7 @@
             "title": "Execution",
             "tags": ["MVP maturity", "Remaining risk", "Production path"],
             "paragraphs": [
-              "The MVP is advanced and credible, with final hardening still required (notably CSP and error boundary reinforcement).",
+              "The MVP is advanced and credible; remaining work focuses on production hardening and resilient error handling.",
               "It demonstrates a complete technical product lifecycle, not only visual frontend output."
             ],
             "bullets": [
@@ -432,7 +426,7 @@
         "name": "Spill Crumb",
         "tagline": "Anonymous confessions with realtime feed and platform governance",
         "type": "Social web application",
-        "status": "MVP in production",
+        "status": "Live",
         "year": "2026",
         "role": "Fullstack platform architecture and development: auth, paginated feed, synchronized stores, realtime notifications, anti-spam, admin sponsoring/logs, and full CI/E2E pipeline.",
         "focusTags": ["Social feed", "Anonymity", "Realtime", "Anti-spam"],
@@ -473,7 +467,7 @@
             "title": "Product context",
             "tags": ["Anonymity", "Community", "Soft launch"],
             "paragraphs": [
-              "Spill The Crumbs is available in fr / en / es, responsive across mobile-tablet-desktop, deployed on Vercel from main.",
+              "Spill Crumb is available in fr / en / es, responsive across mobile-tablet-desktop, deployed on Vercel from main.",
               "16 product modules cover auth, onboarding, home, posts, profile, notifications, settings, add-new-post, and admin.",
               "MVP is production-ready: email/password auth, stable backend, operational admin tools, with assumed limitations (post reporting, password reset) on the roadmap."
             ]
@@ -522,7 +516,7 @@
         "name": "Jikowood",
         "tagline": "Turn a craftsperson site into a credible premium experience",
         "type": "Marketing website",
-        "status": "Deployed (Vercel)",
+        "status": "Live",
         "year": "2026",
         "role": "End-to-end frontend rebuild: experience direction (splash, hero, gallery), feature-first architecture, fr/en/nl i18n, GSAP motion with reduced-motion, and Vitest/Playwright quality gates.",
         "stack": [
@@ -609,7 +603,7 @@
         "name": "Take The Crown (3x3)",
         "tagline": "Model the sport before the code, then ship a trustworthy slice",
         "type": "Sports SaaS platform",
-        "status": "Release 1.0.0",
+        "status": "Live",
         "year": "2026",
         "role": "I set the 3x3 product vision (Identity, Competition, Reputation), the domain/architecture documentation, and the MVP implementation: Player/Organizer auth, Geoapify events, verified matches, and World/Country ranking on Next.js + Supabase.",
         "stack": [
@@ -679,7 +673,7 @@
             "bullets": [
               "Score self-report abandoned to protect rankings",
               "In-memory rate-limit acceptable for MVP; Redis later if multi-instance",
-              "CSP enforce deferred (P2) after asset inventory",
+              "Browser security policy finalized after asset inventory",
               "List search: soft place_id match or ~1.5 km proximity"
             ]
           },
@@ -695,11 +689,11 @@
         }
       },
       "enna": {
-        "focusTags": ["B2B HR", "Belgian i18n", "Conversion", "Prod"],
+        "focusTags": ["B2B HR", "Belgian i18n", "Conversion", "Live"],
         "name": "Enna Consulting",
         "tagline": "Make the HR offer readable and converting in Belgium",
         "type": "B2B marketing site",
-        "status": "Release 1.0.0",
+        "status": "Live",
         "year": "2026",
         "role": "I delivered the B2B showcase end to end: Belgian i18n, conversion journey, motion, and EmailJS contact in production on ennabv.be.",
         "stack": [
@@ -729,7 +723,7 @@
           "paragraphs": [
             "Scroll one-pager with localized section slugs.",
             "Custom i18n (middleware + cookie), default nl, hreflang and sitemap per section×locale.",
-            "Client-side EmailJS contact; social proof via testimonials (assumed mock)."
+            "Client-side EmailJS contact; social proof via client testimonials."
           ]
         },
         "sections": {
@@ -780,11 +774,11 @@
         }
       },
       "maxweljones": {
-        "focusTags": ["Corporate", "Network", "i18n", "Prod"],
+        "focusTags": ["Corporate", "Network", "i18n", "Live"],
         "name": "Maxwel Jones",
         "tagline": "Give a holding a credible Learn / Earn / Return presence",
         "type": "Corporate site",
-        "status": "Release 1.0.0",
+        "status": "Live",
         "year": "2026",
         "role": "I designed and shipped the corporate site: features/ structure, FR/EN i18n, consultant network, Web3Forms contact, and 2027 booking preparation.",
         "stack": ["Next.js 15", "React 19", "Tailwind 4", "next-intl", "GSAP", "Web3Forms"],
@@ -845,7 +839,7 @@
           },
           "execution": {
             "title": "Execution and next steps",
-            "tags": ["Prod", "SEO", "Booking follow-up"],
+            "tags": ["Live", "SEO", "Booking follow-up"],
             "paragraphs": [
               "Live at https://www.maxweljones.com.",
               "Natural next step: enable real booking and grow the network if business demands it.",
@@ -859,7 +853,7 @@
         "name": "Hors Cadre",
         "tagline": "Public immersion and private atelier for a mono-admin photographer",
         "type": "Creative site",
-        "status": "Release 1.0.0",
+        "status": "Live",
         "year": "2026",
         "role": "I designed and shipped the full product: public gallery, Supabase atelier, perf/SEO/i18n, and tests through production.",
         "stack": [
@@ -941,11 +935,11 @@
         }
       },
       "purpose-sport": {
-        "focusTags": ["Roster", "Sports business", "Video", "Prod"],
+        "focusTags": ["Roster", "Sports business", "Video", "Live"],
         "name": "Purpose Sport",
         "tagline": "Present a rich basketball roster without drowning recruiters",
         "type": "Marketing site",
-        "status": "Release 1.0.0",
+        "status": "Live",
         "year": "2025",
         "role": "I shipped the agency showcase: data-driven roster, player profiles, videos, i18n, and production contact.",
         "stack": [
@@ -1015,7 +1009,7 @@
           },
           "execution": {
             "title": "Execution and next steps",
-            "tags": ["Release 1.0.0", "Prod"],
+            "tags": ["Live", "Live"],
             "paragraphs": [
               "Live at https://purpose-sport.com.",
               "Useful next: secure contact key, complete media, modernize architecture if the product grows.",
@@ -1117,7 +1111,7 @@
     },
     "meta": {
       "title": "Profile",
-      "description": "Product approach, frontend philosophy, and execution, Estime Vangu, product-oriented frontend engineer."
+      "description": "Background and approach of Estime Vangu, independent Next.js / Supabase developer in Brussels: product, frontend and delivery."
     }
   },
   "ContactScreen": {
@@ -1188,7 +1182,29 @@
     },
     "meta": {
       "title": "Contact",
-      "description": "Dynamic contact form, site, application, or direct conversation."
+      "description": "Let’s talk about your site, app or mission. Independent Next.js developer in Brussels, available for freelance or full-time, on-site or remote."
+    },
+    "contactStrip": {
+      "ariaLabel": "Ways to contact me",
+      "linkedinLabel": "LinkedIn",
+      "githubLabel": "GitHub",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone",
+      "instagramLabel": "Instagram"
+    }
+  },
+  "ThemeToggle": {
+    "light": "Switch to light theme",
+    "dark": "Switch to dark theme"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "This page does not exist or has been moved.",
+    "viewProjects": "View projects",
+    "contact": "Contact me",
+    "meta": {
+      "title": "Page not found",
+      "description": "The requested page could not be found on Estime Vangu’s portfolio."
     }
   }
 }

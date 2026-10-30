@@ -1,5 +1,6 @@
 import { Mail, Phone } from "lucide-react";
 import {
+  GlyphGithub,
   GlyphInstagram,
   GlyphLinkedin,
 } from "@/components/contact-channels/brand-contact-glyphs/BrandContactGlyphs";
@@ -22,14 +23,16 @@ export function ContactChannelIcon({
   const cls = ICON_CLASS[variant];
 
   switch (channel) {
-    case "instagram":
-      return <GlyphInstagram className={cls} />;
     case "linkedin":
       return <GlyphLinkedin className={cls} />;
+    case "github":
+      return <GlyphGithub className={cls} />;
     case "email":
       return <Mail aria-hidden className={cls} strokeWidth={2} />;
     case "phone":
       return <Phone aria-hidden className={cls} strokeWidth={2} />;
+    case "instagram":
+      return <GlyphInstagram className={cls} />;
     default: {
       const _exhaustive: never = channel;
       return _exhaustive;

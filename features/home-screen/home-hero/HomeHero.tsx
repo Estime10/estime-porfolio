@@ -1,9 +1,9 @@
 import { HomeHeroCtas } from "@/features/home-screen/home-hero/cta/HomeHeroCtas";
 import { HeroLowerFade } from "@/features/home-screen/home-hero/components/HeroLowerFade";
-import type { ContactStripLabels } from "@/lib/contact-channels/types/contact-strip-labels/contactStripLabels";
 
 export type HomeHeroProps = Readonly<{
-  contactStrip: ContactStripLabels;
+  availability: string;
+  contactHref: string;
   ctaStartProject: string;
   ctaViewProjects: string;
   intro: string;
@@ -13,7 +13,8 @@ export type HomeHeroProps = Readonly<{
 }>;
 
 export function HomeHero({
-  contactStrip,
+  availability,
+  contactHref,
   ctaStartProject,
   ctaViewProjects,
   intro,
@@ -32,11 +33,12 @@ export function HomeHero({
             {name}
           </h1>
           <h2 className="text-h2 text-muted mt-4">{role}</h2>
+          <p className="text-body text-secondary mt-3 max-w-prose">{availability}</p>
           <h3 className="text-body-lg text-muted mt-6 max-w-prose whitespace-pre-line font-normal md:mt-4">
             {intro}
           </h3>
           <HomeHeroCtas
-            contactStrip={contactStrip}
+            contactHref={contactHref}
             startProjectLabel={ctaStartProject}
             viewProjectsLabel={ctaViewProjects}
             projectHref={projectHref}

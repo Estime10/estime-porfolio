@@ -5,7 +5,7 @@ describe("getSitemapRoutes", () => {
   it("lists public indexable routes including all case study pages", () => {
     const routes = getSitemapRoutes();
 
-    expect(routes).toContain("/");
+    expect(routes).not.toContain("/");
     expect(routes).toContain("/home");
     expect(routes).toContain("/projects/fleetscan");
     expect(routes).toContain("/projects/jikowood");

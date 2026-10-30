@@ -1,14 +1,16 @@
 import type { ContactStripLabels } from "@/lib/contact-channels/types/contact-strip-labels/contactStripLabels";
-import { getTranslations } from "next-intl/server";
 
-type HomeScreenHeroTranslator = Awaited<ReturnType<typeof getTranslations<"HomeScreen.hero">>>;
+type ContactStripTranslator = {
+  (key: `contactStrip.${string}`): string;
+};
 
-export function mapContactStripLabels(tHero: HomeScreenHeroTranslator): ContactStripLabels {
+export function mapContactStripLabels(t: ContactStripTranslator): ContactStripLabels {
   return {
-    ariaLabel: tHero("contactStrip.ariaLabel"),
-    instagramLabel: tHero("contactStrip.instagramLabel"),
-    linkedinLabel: tHero("contactStrip.linkedinLabel"),
-    emailLabel: tHero("contactStrip.emailLabel"),
-    phoneLabel: tHero("contactStrip.phoneLabel"),
+    ariaLabel: t("contactStrip.ariaLabel"),
+    linkedinLabel: t("contactStrip.linkedinLabel"),
+    githubLabel: t("contactStrip.githubLabel"),
+    emailLabel: t("contactStrip.emailLabel"),
+    phoneLabel: t("contactStrip.phoneLabel"),
+    instagramLabel: t("contactStrip.instagramLabel"),
   };
 }

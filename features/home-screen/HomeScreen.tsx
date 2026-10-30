@@ -1,14 +1,14 @@
 import { getTranslations } from "next-intl/server";
 import { HomeHero } from "@/features/home-screen/home-hero/HomeHero";
-import { mapContactStripLabels } from "@/lib/contact-channels/map-contact-strip-labels/mapContactStripLabels";
-import { PROJECTS_ROUTE_PATH } from "@/lib/constants";
+import { CONTACT_ROUTE_PATH, PROJECTS_ROUTE_PATH } from "@/lib/constants";
 
 export async function HomeScreen() {
   const t = await getTranslations("HomeScreen.hero");
 
   return (
     <HomeHero
-      contactStrip={mapContactStripLabels(t)}
+      availability={t("availability")}
+      contactHref={CONTACT_ROUTE_PATH}
       ctaStartProject={t("ctaStartProject")}
       ctaViewProjects={t("ctaViewProjects")}
       intro={t("intro")}

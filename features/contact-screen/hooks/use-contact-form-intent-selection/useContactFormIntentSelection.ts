@@ -1,12 +1,9 @@
 "use client";
 
-import { isGeneralContactIntent } from "@/features/contact-screen/domain/is-general-contact-intent/isGeneralContactIntent";
-import { transitionFromIntentPanelToDirectChannels } from "@/features/contact-screen/lib/transition-from-intent-panel-to-direct-channels/transitionFromIntentPanelToDirectChannels";
 import type { ContactIntentId } from "@/features/contact-screen/types/contact-intent-id/contactIntentId";
 import { useCallback, useRef, type RefObject } from "react";
 
 export type UseContactFormIntentSelectionParams = Readonly<{
-  onOpenDirectChannels: (intentId: ContactIntentId) => void;
   onStartWizard: (intentId: ContactIntentId) => void;
 }>;
 
@@ -16,23 +13,15 @@ export type UseContactFormIntentSelectionReturn = Readonly<{
 }>;
 
 export function useContactFormIntentSelection({
-  onOpenDirectChannels,
   onStartWizard,
 }: UseContactFormIntentSelectionParams): UseContactFormIntentSelectionReturn {
   const intentPanelRef = useRef<HTMLDivElement>(null);
 
   const selectIntent = useCallback(
     (intentId: ContactIntentId) => {
-      if (isGeneralContactIntent(intentId)) {
-        transitionFromIntentPanelToDirectChannels(intentPanelRef.current, () => {
-          onOpenDirectChannels(intentId);
-        });
-        return;
-      }
-
       onStartWizard(intentId);
     },
-    [onOpenDirectChannels, onStartWizard],
+    [onStartWizard],
   );
 
   return { intentPanelRef, selectIntent };

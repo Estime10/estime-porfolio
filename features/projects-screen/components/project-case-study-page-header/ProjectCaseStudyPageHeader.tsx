@@ -1,5 +1,6 @@
 import { ProjectTagList } from "@/features/projects-screen/components/project-tag-list/ProjectTagList";
 import { CHROME_GRADIENT_STATUS_BADGE } from "@/lib/ui/brandChrome";
+import { CARD_EYEBROW_CLASS } from "@/lib/ui/cardTypography";
 
 export type ProjectCaseStudyPageHeaderProps = Readonly<{
   focusTags: readonly string[];
@@ -28,17 +29,13 @@ export function ProjectCaseStudyPageHeader({
 }: ProjectCaseStudyPageHeaderProps) {
   return (
     <header className="max-w-3xl">
-      <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-x-4 gap-y-2">
-        <p className="text-label text-tertiary">
-          {type} · {year}
-        </p>
-        <span
-          className={`${CHROME_GRADIENT_STATUS_BADGE} max-w-[8.5rem] shrink-0 justify-self-end text-right leading-snug`}
-        >
-          {status}
-        </span>
+      <p className={CARD_EYEBROW_CLASS}>
+        {type} · {year}
+      </p>
+      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
+        <h1 className="text-h1 text-foreground min-w-0 flex-1">{name}</h1>
+        <span className={`${CHROME_GRADIENT_STATUS_BADGE} shrink-0`}>{status}</span>
       </div>
-      <h1 className="text-h1 text-foreground mt-3">{name}</h1>
       <p className="text-body-lg text-muted mt-4">{tagline}</p>
       <p className="text-body text-foreground/90 mt-6">{role}</p>
       <ProjectTagList ariaLabel={focusTagsLabel} tags={focusTags} variant="focus" />

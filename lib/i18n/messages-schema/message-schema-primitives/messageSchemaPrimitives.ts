@@ -9,10 +9,11 @@ export const pageMetaSchema = z.object({
 
 export const contactStripLabelsSchema = z.object({
   ariaLabel: z.string().min(1),
-  instagramLabel: z.string().min(1),
   linkedinLabel: z.string().min(1),
+  githubLabel: z.string().min(1),
   emailLabel: z.string().min(1),
   phoneLabel: z.string().min(1),
+  instagramLabel: z.string().min(1),
 });
 
 export const taggedParagraphBlockSchema = z.object({
